@@ -1,0 +1,19 @@
+:root {
+    --gr-educka: linear-gradient(91.2deg, #E7939A -14.58%, #E6939A -14.57%, #BD52FF 119.28%, #BD52FF 119.28%);
+    --white:#fff;
+    --black:#1e1e1e;
+    --neutro-educka:#CE6CD5;
+}
+
+.btn-white{
+    background: var(--gr-educka);
+    border: none !important;
+    padding: 20px 40px 20px 40px !important;
+    color: var(--white);
+}
+.btn-white:hover{
+    background: var(--white);
+    border: none !important;
+    padding: 20px 40px 20px 40px !important;
+    color: var(--neutro-educka);
+}
