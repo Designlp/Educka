@@ -4,7 +4,7 @@
                     <div class="container page__container page-section d-flex flex-column">
                         <p class="text-70 brand mb-24pt">
                             <img class="brand-icon"
-                                 src="<?= media() ?>/images/logo/black-70@2x.png"
+                                 src="Assets/images/logo/black-70@2x.png"
                                  width="30"
                                  alt="Luma"> Luma
                         </p>
@@ -40,7 +40,7 @@
 
                             <span class="avatar avatar-sm ">
 
-                                <span class="avatar-title rounded bg-primary"><img src="<?= media() ?>/images/illustration/student/128/white.svg"
+                                <span class="avatar-title rounded bg-primary"><img src="Assets/images/illustration/student/128/white.svg"
                                          class="img-fluid"
                                          alt="logo" /></span>
 
@@ -1039,29 +1039,29 @@
         <!-- // END Drawer Layout -->
 
         <!-- jQuery -->
-        <script src="<?= media() ?>/vendor/jquery.min.js"></script>
+        <script src="Assets/vendor/jquery.min.js"></script>
 
         <!-- Bootstrap -->
-        <script src="<?= media() ?>/vendor/popper.min.js"></script>
-        <script src="<?= media() ?>/vendor/bootstrap.min.js"></script>
+        <script src="Assets/vendor/popper.min.js"></script>
+        <script src="Assets/vendor/bootstrap.min.js"></script>
 
         <!-- Perfect Scrollbar -->
-        <script src="<?= media() ?>/vendor/perfect-scrollbar.min.js"></script>
+        <script src="Assets/vendor/perfect-scrollbar.min.js"></script>
 
         <!-- DOM Factory -->
-        <script src="<?= media() ?>/vendor/dom-factory.js"></script>
+        <script src="Assets/vendor/dom-factory.js"></script>
 
         <!-- MDK -->
-        <script src="<?= media() ?>/vendor/material-design-kit.js"></script>
+        <script src="Assets/vendor/material-design-kit.js"></script>
 
         <!-- App JS -->
-        <script src="<?= media() ?>/js/app.js"></script>
+        <script src="Assets/js/app.js"></script>
 
         <!-- Preloader -->
-        <script src="<?= media() ?>/js/preloader.js"></script>
+        <script src="Assets/js/preloader.js"></script>
 
         <!-- Sidebar Mini JS -->
-        <script src="<?= media() ?>/js/sidebar-mini.js"></script>
+        <script src="Assets/js/sidebar-mini.js"></script>
         <script>
             (function() {
                 'use strict';

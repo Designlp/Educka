@@ -88,10 +88,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="<?=media();?>/js/script.min.js"></script>
     
-    <script src="<?= media() ?>/js/printThis.js"></script>
-    <script type="text/javascript" src="<?= media() ?>/js/<?= $data['page_js'] ?>"></script>
+    <script src="Assets/js/printThis.js"></script>
+    <script type="text/javascript" src="Assets/js/<?= $data['page_js'] ?>"></script>
 
-    <script type="text/javascript" src="<?= media() ?>/js/plugins/sweetalert.min.js"></script>
+    <script type="text/javascript" src="Assets/js/plugins/sweetalert.min.js"></script>
 </body>
 
 </html>
