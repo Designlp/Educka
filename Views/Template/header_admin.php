@@ -19,35 +19,35 @@
 
         <!-- Preloader -->
         <link type="text/css"
-              href="Assets/vendor/spinkit.css"
+              href="<?= media() ?>/vendor/spinkit.css"
               rel="stylesheet">
 
         <!-- Perfect Scrollbar -->
         <link type="text/css"
-              href="Assets/vendor/perfect-scrollbar.css"
+              href="<?= media() ?>/vendor/perfect-scrollbar.css"
               rel="stylesheet">
 
         <!-- Material Design Icons -->
         <link type="text/css"
-              href="Assets/css/material-icons.css"
+              href="<?= media() ?>/css/material-icons.css"
               rel="stylesheet">
 
         <!-- Font Awesome Icons -->
         <link type="text/css"
-              href="Assets/css/fontawesome.css"
+              href="<?= media() ?>/css/fontawesome.css"
               rel="stylesheet">
 
         <!-- Preloader -->
         <link type="text/css"
-              href="Assets/css/preloader.css"
+              href="<?= media() ?>/css/preloader.css"
               rel="stylesheet">
 
         <!-- App CSS -->
         <link type="text/css"
-              href="Assets/css/app.css"
+              href="<?= media() ?>/css/app.css"
               rel="stylesheet">
         <link type="text/css"
-              href="Assets/css/educka.css"
+              href="<?= media() ?>/css/educka.css"
               rel="stylesheet">
 
     </head>
@@ -95,11 +95,11 @@
                     <!-- Navbar Brand -->
                     <a href="index.html"
                        class="navbar-brand mr-16pt d-lg-none">
-                        <!-- <img class="navbar-brand-icon" src="Assets/images/logo/white-100@2x.png" width="30" alt="Luma"> -->
+                        <!-- <img class="navbar-brand-icon" src="<?= media() ?>/images/logo/white-100@2x.png" width="30" alt="Luma"> -->
 
                         <span class="avatar avatar-sm navbar-brand-icon mr-0 mr-lg-8pt">
 
-                            <span class="avatar-title rounded bg-primary"><img src="Assets/images/illustration/student/128/white.svg"
+                            <span class="avatar-title rounded bg-primary"><img src="<?= media() ?>/images/illustration/student/128/white.svg"
                                      alt="logo"
                                      class="img-fluid" /></span>
 
