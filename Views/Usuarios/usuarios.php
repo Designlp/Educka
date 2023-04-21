@@ -1,6 +1,6 @@
 <?php 
   headeradmin($data);
-  getmodal('modalroles',$data);
+  getmodal('modalusuarios',$data);
   ?>
 <!-- Page Content -->
 
