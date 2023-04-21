@@ -94,7 +94,7 @@
         </script>
 
 
-        <script src="<?= media() ?>/js/<?= $data['page_js'] ?>"></script>
+        <script src="<?= media() ?>/js/functions/<?= $data['page_js'] ?>"></script>
     </body>
 
 </html>
