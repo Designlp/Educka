@@ -81,7 +81,7 @@
                                        aria-selected="false">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">format_shapes</i>
                                         <span class="sidebar-menu-text">Instructor</span>
-                                    </a>2
+                                    </a>
                                 </li>
                                 <li class="sidebar-menu-item "
                                     data-toggle="tooltip"
