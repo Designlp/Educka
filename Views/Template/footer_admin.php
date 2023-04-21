@@ -56,8 +56,10 @@
         <script type="text/javascript" src="<?= media() ?>/js/plugins/dataTables.bootstrap.min.js"></script>
 
         <!-- Bootstrap -->
-        <!-- El popper libreria qua muestras -->
+        <!-- El popper libreria qua muestra mensajes emmergentes -->
+        <!-- Esta Vendor-->
         <script src="<?= media() ?>/vendor/popper.min.js"></script>
+
         <script src="<?= media() ?>/vendor/bootstrap.min.js"></script>
 
         <!-- Perfect Scrollbar -->
