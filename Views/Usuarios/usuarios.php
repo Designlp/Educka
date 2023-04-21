@@ -10,7 +10,8 @@
                         <li class="breadcrumb-item">Components</li>
                         <li class="breadcrumb-item active">Tables</li>
                     </ol>
-                    <button class="btn btn-primary btn-sm" type="button" onclick="openmodal()" style="margin-left: 20px;" >Nuevo</button>
+                    <br>
+                    <button class="btn btn-primary btn-sm" type="button" onclick="openmodal()"  >Nuevo</button>
                 </div>
 
                 
