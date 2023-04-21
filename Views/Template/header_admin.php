@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
+<html lang="es"
+      dir="ltr">
 
-      <meta name="description" content="">  
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="theme-color" content="#008688">
-      <link rel="shortcut icon" href="">
-      <title><?= $data['page_title']?></title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible"
+              content="IE=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Educka</title>
 
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots"
