@@ -1,5 +1,6 @@
 <?php 
   headeradmin($data);
+  getmodal('modalroles',$data);
   ?>
 <!-- Page Content -->
 
@@ -11,6 +12,8 @@
                         <li class="breadcrumb-item active">Tables</li>
                     </ol>
                 </div>
+
+                <button class="btn btn-primary btn-sm" type="button" onclick="openmodal()" style="margin-left: 20px;" >Nuevo</button>
 
                 <div class="container page__container page-section">
 
