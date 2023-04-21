@@ -1,6 +1,5 @@
 <?php 
   headeradmin($data);
-  getmodal('modalusuarios',$data);
   ?>
 <!-- Page Content -->
 
@@ -50,5 +49,7 @@
                 <!-- // END Page Content -->
 
 <?php 
+
+getmodal('modalusuarios',$data);
   footeradmin($data);
 ?>
