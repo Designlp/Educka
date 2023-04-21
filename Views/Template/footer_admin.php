@@ -32,9 +32,31 @@
         <!-- // END Drawer Layout -->
 
         <!-- jQuery -->
+
+
+
+
         <script src="<?= media() ?>/vendor/jquery.min.js"></script>
 
+
+        <!-- jQuery personalisado-->
+              
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="<?= media() ?>/js/jquery-3.3.1.min.js"></script>
+        
+        <script src="<?= media() ?>/js/popper.min.js"></script>
+        <script src="<?= media() ?>/js/bootstrap.min.js"></script>
+        <script src="<?= media() ?>/js/main.js"></script>
+
+        <!-- Data table plugin-->
+        <script type="text/javascript" src="<?= media() ?>/js/plugins/jquery.dataTables.min.js"></script>
+        
+        <!-- Data table plugin-->
+        <!-- Permite crear tablas de datos atractivas y altamente funcionales-->
+        <script type="text/javascript" src="<?= media() ?>/js/plugins/dataTables.bootstrap.min.js"></script>
+
         <!-- Bootstrap -->
+        <!-- El popper libreria-->
         <script src="<?= media() ?>/vendor/popper.min.js"></script>
         <script src="<?= media() ?>/vendor/bootstrap.min.js"></script>
 
