@@ -30,6 +30,7 @@
                                     <th>Nombre</th>
                                     <th>Apellidos</th>
                                     <th>Correo</th>
+                                    <th>Rol</th>
                                     <th>Estado</th>
                                     </tr>
                                 </thead>

@@ -14,7 +14,11 @@
             $this->views->getview($this,"usuarios",$data);
             
         }
-
+        public function getusuarios(){
+            $arrdata= $this->model->selectusuarios();
+            echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
+            die();
+        }
 
     }
 ?>
