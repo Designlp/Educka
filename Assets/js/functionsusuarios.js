@@ -1,4 +1,4 @@
 var tableroles;
 
-    tableroles=$('#tableroles').DataTable();
-    $('#tableroles').DataTable();
+    tableroles=$('#tableusuarios').DataTable();
+    $('#tableusuarios').DataTable();

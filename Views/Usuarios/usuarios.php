@@ -23,26 +23,17 @@
                         <div class="tile">
                             <div class="tile-body">
                             <div class="table-responsive">
-                                <table class="table table-hover table-bordered" id="tableroles">
+                                <table class="table table-hover table-bordered" id="tableusuarios">
                                 <thead>
                                     <tr>
                                     <th>ID</th>
                                     <th>Nombre</th>
-                                    <th>Descripcion</th>
-                                    <th>Estatus</th>
-                                    <th>Acciones</th>
+                                    <th>Apellidos</th>
+                                    <th>Correo</th>
+                                    <th>Estado</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                    <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011-04-25</td>
-                                    </tr>
-
                                 </tbody>
                                 </table>
                             </div>
@@ -57,4 +48,3 @@
 <?php 
   footeradmin($data);
 ?>
-   
