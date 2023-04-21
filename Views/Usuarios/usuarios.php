@@ -50,6 +50,7 @@
 
 <?php 
 
-getmodal('modalusuarios',$data);
+
   footeradmin($data);
+  getmodal('modalusuarios',$data);
 ?>
