@@ -43,11 +43,10 @@
               
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="<?= media() ?>/js/jquery-3.3.1.min.js"></script>
-        
         <script src="<?= media() ?>/js/popper.min.js"></script>
         <script src="<?= media() ?>/js/bootstrap.min.js"></script>
         <script src="<?= media() ?>/js/main.js"></script>
-
+        <script src="<?= media() ?>/js/plugins/pace.min.js"></script>
         <!-- Data table plugin-->
         <script type="text/javascript" src="<?= media() ?>/js/plugins/jquery.dataTables.min.js"></script>
         
@@ -94,6 +93,8 @@
             })()
         </script>
 
+
+        <script src="<?= media() ?>/js/<?= $data['page_js'] ?>"></script>
     </body>
 
 </html>
