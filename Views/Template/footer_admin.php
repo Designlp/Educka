@@ -56,7 +56,7 @@
         <script type="text/javascript" src="<?= media() ?>/js/plugins/dataTables.bootstrap.min.js"></script>
 
         <!-- Bootstrap -->
-        <!-- El popper libreria-->
+        <!-- El popper libreria qua muestras -->
         <script src="<?= media() ?>/vendor/popper.min.js"></script>
         <script src="<?= media() ?>/vendor/bootstrap.min.js"></script>
 
