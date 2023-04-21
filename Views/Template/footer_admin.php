@@ -95,6 +95,4 @@
 
 
         <script src="<?= media() ?>/js/functions/<?= $data['page_js'] ?>"></script>
-    </body>
 
-</html>
