@@ -14,9 +14,9 @@
           <input id="idusuario" name="idusuario" type="hidden" value="">
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
-
+          <!-- Esta es la clase de alertas son los mensaje -->
           <div class="was-validated">
-
+            <!-- Utiliza la clase feedback -->
             <div class="form-row">
               <div class="form-group col-md-4">
                 <label class="control-label">Cedula de Identidad </label>
@@ -43,33 +43,33 @@
                 <input class="form-control" id="txttelefono" name="txttelefono" type="text" placeholder="Numero de Celular" required="">
               </div>
             </div>
-
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label class="control-label">Rol</label>
-                <select class="form-control" data-live-search="true" id="txtrol" name="txtrol" placeholder="Rol">
-                </select>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="exampleSelect1">Estado</label>
-                <select class="form-control" id="liststatus" name="liststatus" placeholder="Estado">
-                  <option value="1">Activo</option>
-                  <option value="2">Inactivo</option>
-                </select>
-              </div>
-            </div><br>
-            <div class="tile-footer">
-              <button id="btnactionform" class="btn btn-primary" type="submit">
-                <i class="fa fa-fw fa-lg fa-check-circle"></i>
-                <span id="btntext">Guardar</span>
-              </button>&nbsp;&nbsp;&nbsp;
-              <a class="btn btn-secondary" href="#" data-dismiss="modal">
-                <i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label class="control-label">Rol</label>
+              <select class="form-control" data-live-search="true" id="txtrol" name="txtrol" placeholder="Rol">
+              </select>
             </div>
+            <div class="form-group col-md-6">
+              <label for="exampleSelect1">Estado</label>
+              <select class="form-control" id="liststatus" name="liststatus" placeholder="Estado">
+                <option value="1">Activo</option>
+                <option value="2">Inactivo</option>
+              </select>
+            </div>
+          </div><br>
+          <div class="tile-footer">
+            <button id="btnactionform" class="btn btn-primary" type="submit">
+              <i class="fa fa-fw fa-lg fa-check-circle"></i>
+              <span id="btntext">Guardar</span>
+            </button>&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-secondary" href="#" data-dismiss="modal">
+              <i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
+          </div>
 
 
 
-            <div>
+
         </form>
 
       </div>

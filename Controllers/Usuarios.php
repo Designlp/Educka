@@ -32,7 +32,7 @@
             die();
         }
 
-        
+
         //Insert
         public function setusuarios(){
             if($_POST){	
@@ -40,48 +40,49 @@
             {
                 $arrresponse = array("status" => false, "msg" => 'Datos incorrectos.');
             }else{ 
-                $idUsuario = intval($_POST['idusuario']);
+                // No importa el orden de las variables
+                $idusuario = intval($_POST['idusuario']);
+                $strci = strclean($_POST['txtci']);
                 $strnombre = ucwords(strclean($_POST['txtnombre']));
                 $strapellido = ucwords(strclean($_POST['txtapellido']));
-                $strcorreo = strtolower(strclean($_POST['txttelefono']));
-                $strdireccion = strclean($_POST['txtcorrreo']);
-                $inttelefono = intval(strclean($_POST['txtcontrasenia']));
+                $strcorreo = strtolower(strclean($_POST['txtcorreo']));
+                $inttelefono = intval(strclean($_POST['txttelefono']));
+                $intestado = intval(strclean($_POST['liststatus']));
                 $intidrol=intval($_POST['txtrol']);
-
-                if($idUsuario == 0)
+                //Ojo No recordamos
+                if($idusuario == 0)
                 {
+                    //Se incrementa mediante la respuesta del request de model
                     $option = 1;
                     $strpassword =  empty($_POST['txtcontrasenia']) ? passgenerator() : $_POST['txtcontrasenia'];
                     $strpasswordencript=hash("SHA256",$strpassword);
+
                     $requestusuario = $this->model->insertusuario(
-                    $intidrol=$intidrol,
+                    $intidrol,
                     $strci,
                     $strnombre, 
                     $strapellido, 
-                    $strcorreo, 
-                    $strdireccion,
-                    $inttelefono, 
-                    $strnombretr,
-                    $intnit,
+                    $strcorreo,
+                    $inttelefono,
                     $strpasswordencript, 
-                    $intstatus
+                    $intestado
                  );
                 }else{
                     $option = 2;
+                    
                     $strpassword =  empty($_POST['txtcontrasenia']) ? "" : hash("SHA256",$_POST['txtcontrasenia']);
+                    $strpassword =  empty($_POST['txtcontrasenia']) ? passgenerator() : $_POST['txtcontrasenia'];
+                    $strpasswordencript=hash("SHA256",$strpassword);
+                    
                     $requestusuario = $this->model->updateusuario(
-                    $intidrol=$intidrol,
-                    $idUsuario,
+                    $intidrol,
                     $strci,
                     $strnombre, 
                     $strapellido, 
-                    $strcorreo, 
-                    $strdireccion,
-                    $inttelefono, 
-                    $strnombretr,
-                    $intnit,
-                    $strpassword, 
-                    $intstatus
+                    $strcorreo,
+                    $inttelefono,
+                    $strpasswordencript, 
+                    $intestado
 
                     );
 
@@ -117,11 +118,6 @@
         }
         die();
         }
-
-
-
-
-
 
     }
 ?>

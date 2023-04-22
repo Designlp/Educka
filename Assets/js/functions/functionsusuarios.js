@@ -24,7 +24,38 @@ document.addEventListener("DOMContentLoaded",function(){
         "order":[[0,"desc"]]
 
     });
-});
+    //Insert
+    var forminsert= document.querySelector("#modalformusuario");
+    forminsert.onsubmit=function(e){
+        e.preventDefault();
+        var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        var ajaxUrl = baseurl+'/Usuarios/setusuarios';
+        var formdata=new FormData(forminsert);
+        request.open("POST",ajaxUrl,true);
+        request.send(formdata);
+        request.onreadystatechange =function(){
+            if(request.readyState == 4 && request.status==200){
+                console.log(request.responseText);
+                var obdata=JSON.parse(request.responseText);
+                console.log(obdata);
+                if(obdata.status){
+                    $('#formusuario').modal("hide");
+                    forminsert.reset();
+                    swal("Usuario Nuevo", obdata.msg ,"success");
+                    //Ojo 
+                    tablemateriales.ajax.reload(function(){
+                        //fnteditrol();
+                        //fntdelrol();
+                        //fntpermisosrol();
+                    });
+                   
+                } else{
+                    swal("Error",obdata.msg,"error");
+                }
+            }
+        }
+    }
+},false);
 
 
 function openmodal(){
@@ -32,6 +63,5 @@ function openmodal(){
     
 }
 
-// Insertar 
 
 

@@ -40,24 +40,21 @@
 			$return = 0;
 
 			$sql = "SELECT * FROM tusuarios 
-                    WHERE Correo = '{$this->strcorreo}' OR ci = '{$this->strci}' OR Nit = '{$this->intnit}' ";
+                    WHERE Correo = '{$this->strcorreo}' OR ci = '{$this->intci}'";
 			$request = $this->selectall($sql);
 
 			if(empty($request))
 			{
-				$query  = "INSERT INTO tusuarios(IdRoles,ci,Nit,Nombre,NombreFiscal,Apellido,Telefono,Correo,Direccion,Contrasenia,Estado) 
-								  VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+				$query  = "INSERT INTO tusuarios(idroles,ci,nombre,apellido,telefono,correo,password,estado) 
+								  VALUES(?,?,?,?,?,?,?,?)";
 	        	$arrdata = array($this->intidrol,
-        						$this->strci,
-        						$this->intnit,
+        						$this->intci,
         						$this->strnombre,
-        						$this->strnombretr,
                                 $this->strapellido,
         						$this->inttelefono,
         						$this->strcorreo,
-        						$this->strdireccion,
                                 $this->strpassword,
-                                $this->intstatus,
+                                $this->intestado,
                             );
 	        	$request = $this->insert($query,$arrdata);
 	        	$return = $request;
