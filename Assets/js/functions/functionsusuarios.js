@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded",function(){
             { "data": 'apellidos' },
             { "data": 'correo' },
             { "data": 'idroles' },
-            { "data": 'estado' }
+            { "data": 'estado' },
+            { "data": 'acciones' }
         ],
         "resonsieve":"true",
         "bDestroy":true,
