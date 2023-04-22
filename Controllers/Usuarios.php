@@ -32,7 +32,7 @@
                 $btndelete='<button class="btn btn-danger btn-sm btndelstyle btndelusuario" rl="'.$arrdata[$i]['IdUsuario'].'" title="Eliminar" type="button"><i class="fas fa-trash-alt"></i></button>';
                 
             }
-            $arrdata[$i]['options']= '<div class="text-center">'.$btnview.' '.$btnedit.' '.$btndelete.' </div>';
+            $arrdata[$i]['acciones']= '<div class="text-center">'.$btnview.' '.$btnedit.' '.$btndelete.' </div>';
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             die();
         }
