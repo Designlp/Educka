@@ -30,9 +30,9 @@
                 $btnview='<button class="btn btn-info btn-sm btnviewsstyle btnviewusuario" onClick="fntviewcliente('.$arrdata[$i]['IdUsuario'].')" title="Ver usuario"><i class="far fa-eye"></i></button>';
                 $btnedit='<button class="btn btn-primary btn-sm btneditstyle btneditusuario" rl="'.$arrdata[$i]['IdUsuario'].'" title="Editar" type="button"><i class="fas fa-pencil-alt"></i></button>';
                 $btndelete='<button class="btn btn-danger btn-sm btndelstyle btndelusuario" rl="'.$arrdata[$i]['IdUsuario'].'" title="Eliminar" type="button"><i class="fas fa-trash-alt"></i></button>';
-                
+                $arrdata[$i]['acciones']= '<div class="text-center">'.$btnview.' '.$btnedit.' '.$btndelete.' </div>';
             }
-            $arrdata[$i]['acciones']= '<div class="text-center">'.$btnview.' '.$btnedit.' '.$btndelete.' </div>';
+            
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             die();
         }
