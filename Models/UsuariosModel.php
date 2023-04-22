@@ -64,7 +64,7 @@
             
             return $return;
         }
-        
+        //Update
         public function updateusuario(int $rol,string $ci,string $nomnbre, string $apellido, int $telefono, int $estado){
 			$this->intidrol = $rol;
 			$this->strci = $ci;
@@ -91,7 +91,8 @@
         						$this->strcorreo,
         						$this->strdireccion,
                            
-                                $this->intstatus,
+                                $this->intstatus
+                    );
                 $requestupdate= $this->update($queryupdate,$arrdata);
                 $return=$requestupdate;
                 
@@ -101,6 +102,26 @@
             
             return $return;
 
+        }
+        //Pate del Update
+        public function selectusuario(int $iduser){
+            $this->intiduser= $iduser;
+            $sql= "SELECT tu.IdUsuario, 
+            tu.IdRoles, 
+            tu.ci, 
+            tu.Nit, 
+            tu.Nombre, 
+            tu.NombreFiscal, 
+            tu.Apellido, 
+            tu.Telefono, 
+            tu.Correo, 
+            tu.Direccion, 
+            tu.Contrasenia, 
+            tu.Estado, 
+            tr.Tipo
+            FROM tusuarios tu, troles tr WHERE tu.IdRoles = tr.IdRoles AND tu.IdUsuario = $this->intiduser";
+            $request=$this->select($sql);
+            return $request;
         }
 
 
