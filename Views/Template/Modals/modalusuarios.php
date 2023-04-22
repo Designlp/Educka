@@ -48,6 +48,8 @@
             <div class="form-group col-md-6">
               <label class="control-label">Rol</label>
               <select class="form-control" data-live-search="true" id="txtrol" name="txtrol" placeholder="Rol">
+              <option value="1">Activo</option>
+                <option value="2">Inactivo</option>
               </select>
             </div>
             <div class="form-group col-md-6">
