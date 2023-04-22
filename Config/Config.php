@@ -11,13 +11,13 @@
     const DB_PASSWORD = "Edk.Oln2320";
     const DB_CHARSET = "utf8";
 
-    const NOMBRE_REMITENTE = "Tienda de Ropa Romeo y Julieta";
-	const EMAIL_REMITENTE = "no-reply@admin.com";
-	const NOMBRE_EMPESA = "Tienda de Ropa Romeo y Julieta";
-	const WEB_EMPRESA = "www.admin.com";
-    const DIRECCION = "Av. Mariscal Sta. Cruz, La Paz";
-    const TELEMPRESA = "67512458";
-    const EMAIL_EMPRESA = "RomeoyJulietaStore@admin.com";
+    const NOMBRE_REMITENTE = "Educka Cursos online";
+	const EMAIL_REMITENTE = "no-reply@educka.online";
+	const NOMBRE_EMPESA = "Educka";
+	const WEB_EMPRESA = "educka.online";
+    const DIRECCION = "";
+    const TELEMPRESA = "";
+    const EMAIL_EMPRESA = "educka@gmail.com";
 
     //Deliminadores decimal y millar Ej. 24,1989.00
 	const SPD = ".";
@@ -25,7 +25,7 @@
 
     //Simbolo de moneda
 	const SMONEY = "Bs.";
-    const KEY = "contraromeojuli";
+    const KEY = "";
     const METHODENCRIPT = "AES-128-ECB";
 
 ?>

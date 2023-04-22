@@ -64,16 +64,11 @@
                     $strapellido, 
                     $strcorreo,
                     $inttelefono,
-                    $strpasswordencript, 
+                    $strpasswordencript,
                     $intestado
                  );
                 }else{
                     $option = 2;
-                    
-                    $strpassword =  empty($_POST['txtcontrasenia']) ? "" : hash("SHA256",$_POST['txtcontrasenia']);
-                    $strpassword =  empty($_POST['txtcontrasenia']) ? passgenerator() : $_POST['txtcontrasenia'];
-                    $strpasswordencript=hash("SHA256",$strpassword);
-                    
                     $requestusuario = $this->model->updateusuario(
                     $intidrol,
                     $strci,
@@ -81,9 +76,7 @@
                     $strapellido, 
                     $strcorreo,
                     $inttelefono,
-                    $strpasswordencript, 
                     $intestado
-
                     );
 
                 }
@@ -97,7 +90,7 @@
                             'nombreuser'=>$nombreuser,
                             'email'=>$stremail,
                             'password'=>$strpassword,
-                            'asunto'=>'Bienvenido a tu tienda en línea'
+                            'asunto'=>'Bienvenido'
                          
                         );
                         sendEmail($datausuario,'emailbienvenida');

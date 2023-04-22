@@ -15,7 +15,7 @@
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
           <!-- Esta es la clase de alertas son los mensaje -->
-          <div class="validated">
+          <div class="was-validated">
             <!-- Utiliza la clase feedback -->
             <div class="form-row">
               <div class="form-group col-md-4">

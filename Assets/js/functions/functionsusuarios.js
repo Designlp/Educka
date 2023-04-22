@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
     });
     //Insert
-    var forminsert= document.querySelector("#modalformusuario");
+    var forminsert= document.querySelector("#formusuario");
     forminsert.onsubmit=function(e){
         e.preventDefault();
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 var obdata=JSON.parse(request.responseText);
                 console.log(obdata);
                 if(obdata.status){
-                    $('#formusuario').modal("hide");
+                    $('#modalformusuario').modal("hide");
                     forminsert.reset();
                     swal("Usuario Nuevo", obdata.msg ,"success");
                     //Ojo 
