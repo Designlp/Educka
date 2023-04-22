@@ -31,6 +31,8 @@
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             die();
         }
+
+        
         //Insert
         public function setusuarios(){
             if($_POST){	
