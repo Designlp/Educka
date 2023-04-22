@@ -47,6 +47,8 @@
         <script src="<?= media() ?>/js/bootstrap.min.js"></script>
         <script src="<?= media() ?>/js/main.js"></script>
         <script src="<?= media() ?>/js/plugins/pace.min.js"></script>
+        <script src="<?= media() ?>/js/plugins/bootstrap-notify.min.js"></script>
+        <script type="text/javascript" src="<?= media() ?>/js/plugins/sweetalert.min.js"></script>
         <!-- Data table plugin-->
         <script type="text/javascript" src="<?= media() ?>/js/plugins/jquery.dataTables.min.js"></script>
         
