@@ -10,6 +10,8 @@
         public $intestado;
         public $inttelefono;
         public $intci;
+
+        public $strpassword;
   
 
         public function __construct() {
@@ -25,18 +27,15 @@
         }
 
 
-        public function insertusuario(int $idrol,string $ci, string $nombre, string $apellido, string $email, string $direccion, int $telefono,string $nombretr,int $nit, string $password,  int $status){
+        public function insertusuario(int $idrol,string $ci, string $nombre, string $apellido, string $email, int $telefono, string $password,  int $estado){
             $this->intidrol = $idrol;
-			$this->strci = $ci;
+			$this->intci = $ci;
 			$this->strnombre = $nombre;
 			$this->strapellido = $apellido;
 			$this->strcorreo = $email;
-			$this->strdireccion = $direccion;
 			$this->inttelefono = $telefono;
-			$this->strnombretr = $nombretr;
-            $this->intnit = $nit;
             $this->strpassword = $password;
-			$this->intstatus = $status;
+			$this->intestado = $estado;
             
 			$return = 0;
 
