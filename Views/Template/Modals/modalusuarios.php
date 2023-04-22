@@ -8,6 +8,9 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <div class="modal-body">
+      <div class="tile">
+           
       <div class="col-lg-8 d-flex align-items-center">
                             <div class="flex" style="max-width: 100%">
 
@@ -53,6 +56,9 @@
 
                             </div>
                         </div>
+          </div>
+      </div>
+      
     </div>
   </div>
 </div>
