@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded",function(){
                    
                 } else{
                     swal("Error",obdata.msg,"error");
+                    forminsert.reset();
                 }
             }
         }

@@ -26,10 +26,10 @@
                 }else{
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
                 }
-
-                $btnview='<button class="btn btn-info btn-sm btnviewsstyle btnviewusuario" onClick="fntviewcliente('.$arrdata[$i]['IdUsuario'].')" title="Ver usuario"><i class="far fa-eye"></i></button>';
-                $btnedit='<button class="btn btn-primary btn-sm btneditstyle btneditusuario" rl="'.$arrdata[$i]['IdUsuario'].'" title="Editar" type="button"><i class="fas fa-pencil-alt"></i></button>';
-                $btndelete='<button class="btn btn-danger btn-sm btndelstyle btndelusuario" rl="'.$arrdata[$i]['IdUsuario'].'" title="Eliminar" type="button"><i class="fas fa-trash-alt"></i></button>';
+                //Id Usuario de acuerdo a su tabla en la base de datos esto recupera los datos de la BD
+                $btnview='<button class="btn btn-info btn-sm btnviewsstyle btnviewusuario" onClick="fntviewcliente('.$arrdata[$i]['idusuario'].')" title="Ver usuario"><i class="far fa-eye"></i></button>';
+                $btnedit='<button class="btn btn-primary btn-sm btneditstyle btneditusuario" rl="'.$arrdata[$i]['idusuario'].'" title="Editar" type="button"><i class="fas fa-pencil-alt"></i></button>';
+                $btndelete='<button class="btn btn-danger btn-sm btndelstyle btndelusuario" rl="'.$arrdata[$i]['idusuario'].'" title="Eliminar" type="button"><i class="fas fa-trash-alt"></i></button>';
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$btnview.' '.$btnedit.' '.$btndelete.' </div>';
             }
             
@@ -89,16 +89,20 @@
 
                     if($option == 1 ){
                         $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
+                        $token= token();
                         $nombreuser= $strnombre.' '.$strapellido;
-                        $stremail= $strcorreo;
-                        $datausuario = array(
+                        $stremail = strtolower(strclean($strcorreo));
+                        
+                        $urlrecuperar= base_url().'/Login/confirmuser/'.$stremail.'/'.$token;
+                        $requestupdate = $this->model->settokenuser($requestusuario,$token);
+
+                           $datausuario = array(
                             'nombreuser'=>$nombreuser,
                             'email'=>$stremail,
-                            'password'=>$strpassword,
-                            'asunto'=>'Bienvenido'
-                         
+                            'asunto'=>'Recuperar cuenta - '.NOMBRE_REMITENTE,
+                            'urlrecuperacion'=>$urlrecuperar
                         );
-                        sendEmail($datausuario,'emailbienvenida');
+                        $sendemail= sendEmail($datausuario,'emailcambiopassword');
 
                     }
                     if($option == 2 ){
@@ -116,6 +120,32 @@
         }
         die();
         }
+        //Update
+        public function getusuario($idusuario){
+            $intiduser=intval(strclean($idusuario));
+            if ($intiduser>0){
+                $arrdata = $this->model->selectusuario($intiduser);
+                if(empty($arrdata)){
+                    $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
+                }else{
+                    $arrresponse= array('status'=>true,'data'=>$arrdata);
+                }
+                echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
+            }
+            die();
+         }
 
+
+
+
+
+
+
+
+
+
+
+
+        
     }
 ?>
