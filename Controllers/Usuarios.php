@@ -12,7 +12,7 @@
             $data['page_title']= "Pagina Principal";
             $data['page_name'] = "usuarios";
             $data['page_js'] = "functionsusuarios.js";
-            session_start();
+    
             $this->views->getview($this,"usuarios",$data);
             
         }
@@ -136,16 +136,5 @@
          }
 
 
-
-
-
-
-
-
-
-
-
-
-        
     }
 ?>
