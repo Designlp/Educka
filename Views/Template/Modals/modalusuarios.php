@@ -11,7 +11,7 @@
       <div class="modal-body">
         <div class="tile">
           <div class="tile-body">
-            // form
+            <!--form-->
             <form class="form-horizontal" id="formusuario" name="formusuario" enctype="multipart/form-data">
               <div class="col-lg-8 d-flex align-items-center">
                 <div class="flex" style="max-width: 100%">
@@ -48,15 +48,21 @@
                     </div>
                     <!--2 Horizontal-->
                     <div class="form-row">
-                      <div class="col-12 col-md-6 mb-3">
+                    <div class="col-12 col-md-6 mb-3">
                         <label class="form-label" for="validationSample03">Contraseña</label>
                         <input type="password" class="form-control" id="txtcontrasenia" placeholder="*******" required="">
+                        <div class="invalid-feedback">Por favor llene el campo</div>
+                        <div class="valid-feedback">Nice</div>
+                      </div>   
+                      <div class="col-12 col-md-6 mb-3">
+                        <label class="form-label" for="validationSample03">Rol</label>
+                        <select class="form-control" data-live-search="true" id="txtrol" placeholder="Escoga" required="">
                         <div class="invalid-feedback">Por favor llene el campo</div>
                         <div class="valid-feedback">Nice</div>
                       </div>
                     </div>
                   </div>
-                  <button class="btn btn-primary" type="submit">Submit</button>
+                  <button class="btn btn-primary" type="submit">Insertar</button>
                 </div>
               </div>
           </div>
