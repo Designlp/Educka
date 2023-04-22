@@ -11,7 +11,8 @@
       <div class="modal-body">
       <div class="tile">
            
-      <div class="col-lg-8 d-flex align-items-center">
+            <div class="tile-body">
+            <div class="col-lg-8 d-flex align-items-center">
                             <div class="flex" style="max-width: 100%">
 
                                 <div class="was-validated">
@@ -56,6 +57,8 @@
 
                             </div>
                         </div>
+            </div>
+            
           </div>
       </div>
       
