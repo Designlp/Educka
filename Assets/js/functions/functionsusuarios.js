@@ -36,13 +36,14 @@ document.addEventListener("DOMContentLoaded",function(){
         request.send(formdata);
         request.onreadystatechange =function(){
             if(request.readyState == 4 && request.status==200){
-                alert();
+                
                 console.log(request.responseText);
                 var obdata=JSON.parse(request.responseText);
                 console.log(obdata);
                 if(obdata.status){
                     $('#modalformusuario').modal("hide");
                     forminsert.reset();
+                    alert(obdata.msg);
                     swal("Usuario Nuevo", obdata.msg ,"success");
                     //Ojo 
                     tablemateriales.ajax.reload(function(){
