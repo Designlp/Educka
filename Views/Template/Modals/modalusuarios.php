@@ -16,7 +16,7 @@
               <div class="col-lg-8 d-flex align-items-center">
                 <div class="flex" style="max-width: 100%">
                   <div class="was-validated">
-                    //2 Horizontal
+                    <!--2 Horizontal-->
                     <div class="form-row">
                       <div class="col-12 col-md-6 mb-3">
                         <label class="form-label" for="validationSample01">Nombre</label>
@@ -31,7 +31,7 @@
                         <div class="valid-feedback">Nice</div>
                       </div>
                     </div>
-                    //2 Horizontal
+                    <!-- 2 Horizontal -->
                     <div class="form-row">
                       <div class="col-12 col-md-6 mb-3">
                         <label class="form-label" for="validationSample03">Telefono</label>
@@ -46,11 +46,11 @@
                         <div class="valid-feedback">Nice</div>
                       </div>
                     </div>
-                    //2 Horizontal
+                    <!--2 Horizontal-->
                     <div class="form-row">
                       <div class="col-12 col-md-6 mb-3">
                         <label class="form-label" for="validationSample03">Contraseña</label>
-                        <input type="text" class="form-control" id="txtcontrasenia" placeholder="*******" required="">
+                        <input type="password" class="form-control" id="txtcontrasenia" placeholder="*******" required="">
                         <div class="invalid-feedback">Por favor llene el campo</div>
                         <div class="valid-feedback">Nice</div>
                       </div>
