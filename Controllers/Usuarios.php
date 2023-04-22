@@ -3,6 +3,7 @@
         public function __construct() {
             parent::__construct();
         }
+        //Visualizacion
         public function Usuarios(){
 
             $data['page_id'] = 1;
@@ -14,6 +15,7 @@
             $this->views->getview($this,"usuarios",$data);
             
         }
+        //Visualizacion
         public function getusuarios(){
             $arrdata= $this->model->selectusuarios();
 
@@ -28,6 +30,47 @@
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             die();
         }
+        //Insert
+        public function setusuarios(){
+            
+            $intidmaterial=intval($_POST['']);
+            $strmaterial=strclean($_POST['txtnombre']);
+            $strdescripcion=strclean($_POST['txtdescripcion']);
+            $intstatus=intval($_POST['liststatus']);
+            if($intidmaterial == 0){
+                 $requestrol=$this->model->insertmaterials($strmaterial,$strdescripcion,$intstatus);
+                 $option=1;
+            }
+            if($intidmaterial != 0){
+                 $requestrol=$this->model->updatematerials( $intidmaterial,$strmaterial,$strdescripcion,$intstatus);
+                 $option=2;
+            }
+ 
+            if($requestrol > 0){
+ 
+                 if($option == 1 ){
+                     $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
+                 }
+                 if($option == 2 ){
+                     $arrresponse= array('status'=>true,'msg'=>'Datos Actualizados Correctamente');
+                 }
+                 
+            }else{
+                 if($requestrol == -1){
+                     $arrresponse= array('status'=>false,'msg'=>'!Atencion! El Material ya existe');
+                 }else
+                 $arrresponse= array('status'=>true,'msg'=>'No se almaceno los datos');
+            }
+            
+            
+            echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
+            die();
+            
+         }
+
+
+
+
 
     }
 ?>
