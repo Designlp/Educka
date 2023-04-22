@@ -45,7 +45,7 @@
 
 			if(empty($request))
 			{
-				$query  = "INSERT INTO tusuarios(idroles,ci,nombre,apellido,telefono,correo,password,estado) 
+				$query  = "INSERT INTO tusuarios(idroles,ci,nombre,apellidos,telefono,correo,password,estado) 
 								  VALUES(?,?,?,?,?,?,?,?)";
 	        	$arrdata = array($this->intidrol,
         						$this->intci,
