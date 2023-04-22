@@ -31,3 +31,7 @@ function openmodal(){
     $('#modalformusuario').modal("show");
     
 }
+
+// Insertar 
+
+
