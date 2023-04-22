@@ -3,6 +3,7 @@
         public function __construct() {
             parent::__construct();
         }
+        
         //Visualizacion
         public function Usuarios(){
 
@@ -32,41 +33,89 @@
         }
         //Insert
         public function setusuarios(){
-            
-            $intidmaterial=intval($_POST['']);
-            $strmaterial=strclean($_POST['txtnombre']);
-            $strdescripcion=strclean($_POST['txtdescripcion']);
-            $intstatus=intval($_POST['liststatus']);
-            if($intidmaterial == 0){
-                 $requestrol=$this->model->insertmaterials($strmaterial,$strdescripcion,$intstatus);
-                 $option=1;
+            if($_POST){	
+            if(empty($_POST['txtnombre']) || empty($_POST['txtapellido']) || empty($_POST['txtcorreo']) )
+            {
+                $arrresponse = array("status" => false, "msg" => 'Datos incorrectos.');
+            }else{ 
+                $idUsuario = intval($_POST['idusuario']);
+                $strnombre = ucwords(strclean($_POST['txtnombre']));
+                $strapellido = ucwords(strclean($_POST['txtapellido']));
+                $strcorreo = strtolower(strclean($_POST['txttelefono']));
+                $strdireccion = strclean($_POST['txtcorrreo']);
+                $inttelefono = intval(strclean($_POST['txtcontrasenia']));
+                $intidrol=intval($_POST['txtrol']);
+
+                if($idUsuario == 0)
+                {
+                    $option = 1;
+                    $strpassword =  empty($_POST['txtcontrasenia']) ? passgenerator() : $_POST['txtcontrasenia'];
+                    $strpasswordencript=hash("SHA256",$strpassword);
+                    $requestusuario = $this->model->insertusuario(
+                    $intidrol=$intidrol,
+                    $strci,
+                    $strnombre, 
+                    $strapellido, 
+                    $strcorreo, 
+                    $strdireccion,
+                    $inttelefono, 
+                    $strnombretr,
+                    $intnit,
+                    $strpasswordencript, 
+                    $intstatus
+                 );
+                }else{
+                    $option = 2;
+                    $strpassword =  empty($_POST['txtcontrasenia']) ? "" : hash("SHA256",$_POST['txtcontrasenia']);
+                    $requestusuario = $this->model->updateusuario(
+                    $intidrol=$intidrol,
+                    $idUsuario,
+                    $strci,
+                    $strnombre, 
+                    $strapellido, 
+                    $strcorreo, 
+                    $strdireccion,
+                    $inttelefono, 
+                    $strnombretr,
+                    $intnit,
+                    $strpassword, 
+                    $intstatus
+
+                    );
+
+                }
+                if($requestusuario > 0){
+
+                    if($option == 1 ){
+                        $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
+                        $nombreuser= $strnombre.' '.$strapellido;
+                        $stremail= $strcorreo;
+                        $datausuario = array(
+                            'nombreuser'=>$nombreuser,
+                            'email'=>$stremail,
+                            'password'=>$strpassword,
+                            'asunto'=>'Bienvenido a tu tienda en línea'
+                         
+                        );
+                        sendEmail($datausuario,'emailbienvenida');
+
+                    }
+                    if($option == 2 ){
+                        $arrresponse= array('status'=>true,'msg'=>'Datos Actualizados Correctamente');
+                    }
+                    
+               }else{
+                    if($requestusuario == -1){
+                        $arrresponse= array('status'=>false,'msg'=>'!Atencion! El usuario ya existe');
+                    }else
+                    $arrresponse= array('status'=>true,'msg'=>'No se almaceno los datos');
+               }
             }
-            if($intidmaterial != 0){
-                 $requestrol=$this->model->updatematerials( $intidmaterial,$strmaterial,$strdescripcion,$intstatus);
-                 $option=2;
-            }
- 
-            if($requestrol > 0){
- 
-                 if($option == 1 ){
-                     $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
-                 }
-                 if($option == 2 ){
-                     $arrresponse= array('status'=>true,'msg'=>'Datos Actualizados Correctamente');
-                 }
-                 
-            }else{
-                 if($requestrol == -1){
-                     $arrresponse= array('status'=>false,'msg'=>'!Atencion! El Material ya existe');
-                 }else
-                 $arrresponse= array('status'=>true,'msg'=>'No se almaceno los datos');
-            }
-            
-            
             echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
-            die();
-            
-         }
+        }
+        die();
+        }
+
 
 
 
