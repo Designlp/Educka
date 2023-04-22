@@ -58,10 +58,10 @@
 
         <!-- Bootstrap -->
         <!-- El popper libreria qua muestra mensajes emmergentes -->
-        <!-- Esta Vendor-->
+        <!-- Esta Vendor
         <script src="<?= media() ?>/vendor/popper.min.js"></script>
 
-        <script src="<?= media() ?>/vendor/bootstrap.min.js"></script>
+        <script src="<?= media() ?>/vendor/bootstrap.min.js"></script>-->
 
         <!-- Perfect Scrollbar -->
         <script src="<?= media() ?>/vendor/perfect-scrollbar.min.js"></script>
