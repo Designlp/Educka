@@ -1,9 +1,10 @@
 <?php 
 //Moises
     class UsuariosModel extends Mysql{
-
+        //Nivel de accesos
         private $intidusuario;
         private $intidrol;
+        private $strci;
         private $strnombre;
         private $strapellido;
         private $strcorreo;
@@ -107,18 +108,15 @@
         //Pate del Update
         public function selectusuario(int $iduser){
             $this->intidusuario= $iduser;
-            $sql= "SELECT tu.IdUsuario, 
-            tu.IdRoles, 
-            tu.ci, 
-            tu.Nombre, 
-            tu.Apellido, 
-            tu.Telefono, 
-            tu.Correo, 
-            tu.Direccion, 
-            tu.Contrasenia, 
-            tu.Estado, 
-            tr.Tipo
-            FROM tusuarios tu, troles tr WHERE tu.IdRoles = tr.IdRoles AND tu.IdUsuario = $this->intidusuario";
+            $sql= "SELECT tu.idusuario, 
+            tu.idroles,  
+            tu.nombre, 
+            tu.apellido,  
+            tu.telefono, 
+            tu.correo,  
+            tu.estado, 
+            tr.tipo
+            FROM tusuarios tu, troles tr WHERE tu.idroles = tr.idroles AND tu.idusuario = $this->intidusuario";
             $request=$this->select($sql);
             return $request;
         }
