@@ -129,6 +129,7 @@
         }
         //Update
         public function getusuario($idusuario){
+            
             $intkey=intval(strclean($idusuario));
             if ($intkey>0){
                 $arrdata = $this->model->selectusuario($intkey);
@@ -140,6 +141,21 @@
                 echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
             }
             die();
+        }
+        //Especial funciones de visualizacion
+
+        public function getselectroles(){
+
+            $htmloptions="";
+            $arrdata = $this->model->selectroles();
+            if(count($arrdata) > 0){
+                for($i=0;$i < count($arrdata); $i++){
+                    $htmloptions.='<option value="'.$arrdata[$i]['idroles'].'">'.$arrdata[$i]['tipo'].'</option>';
+                }
+            }
+            echo $htmloptions;
+            die();
+
          }
 
 

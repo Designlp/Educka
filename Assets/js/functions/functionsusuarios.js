@@ -73,6 +73,11 @@ function openmodal(){
     $('#modalformusuario').modal("show");
     
 }
+//Funciones Usuarios
+window.addEventListener('load',function(){
+    fntrolesusuario();
+},false)
+
 
 //Update
 function fnteditusuario(){
@@ -107,7 +112,7 @@ function fnteditusuario(){
                         document.querySelector("#txtrol").value=objdata.data.idroles;
                         $('#txtrol').selectpicker('render');
                         //Estado Especial
-                        document.querySelector("#liststatus").value=objdata.data.Estado;
+                        document.querySelector("#liststatus").value=objdata.data.estado;
                         $('#liststatus').selectpicker('render');
 
                         $('#modalformusuario').modal("show");
@@ -120,6 +125,24 @@ function fnteditusuario(){
         });
     });
     
+}
+//Especial
+function fntrolesusuario(){
+    if( document.querySelector('#txtrol')){
+        var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        var ajaxUrl = baseurl+'/Usuarios/getselectroles';
+        request.open("GET",ajaxUrl,true);
+        request.send();
+
+        request.onreadystatechange =function(){
+            if(request.readyState == 4 && request.status==200){
+             
+                document.querySelector('#txtrol').innerHTML= request.responseText;
+                document.querySelector('#txtrol').value=1;
+                $('#txtrol').selectpicker('render');
+            }
+        }
+    }    
 }
 
 
