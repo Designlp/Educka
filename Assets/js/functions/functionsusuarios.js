@@ -115,7 +115,7 @@ function fnteditusuario(){
                   
                         //Estado Especial
                         document.querySelector("#liststatus").value=objdata.data.estado;
-                        
+                        $('#liststatus').selectpicker('destroy'); 
                         $('#liststatus').selectpicker('render');
 
                         $('#modalformusuario').modal("show");
