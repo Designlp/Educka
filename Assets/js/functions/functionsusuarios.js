@@ -110,7 +110,7 @@ function fnteditusuario(){
                         document.querySelector("#txttelefono").value=objdata.data.telefono;
                         //FK especial
                         document.querySelector("#txtrol").value=objdata.data.idroles;
-                
+                        $('#txtrol').selectpicker('destroy'); 
                         $('#txtrol').selectpicker('render');
                   
                         //Estado Especial
