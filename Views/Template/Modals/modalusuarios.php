@@ -21,8 +21,8 @@
               <div class="form-group col-md-4">
                 <label class="control-label">Cedula de Identidad </label>
                 <input class="form-control" id="txtci" name="txtci" type="text" placeholder="Cedula de Identidad" required="">
-                <div class="invalid-feedback">Please provide a last name.</div>
-                <div class="valid-feedback">Looks good!</div>
+                <!-- <div class="invalid-feedback">Please provide a last name.</div>
+                <div class="valid-feedback">Looks good!</div>-->
               </div>
               <div class="form-group col-md-4">
                 <label class="control-label">Nombre</label>
@@ -48,7 +48,6 @@
             <div class="form-group col-md-6">
               <label class="control-label">Rol</label>
               <select class="form-control" data-live-search="true" id="txtrol" name="txtrol" placeholder="Rol">
-   
               </select>
             </div>
             <div class="form-group col-md-6">
