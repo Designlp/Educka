@@ -1,4 +1,5 @@
 var tablero;
+//Esto es un js
 document.addEventListener("DOMContentLoaded",function(){
     tablero=$('#tableusuarios').DataTable({
         "aProcessing":true,
