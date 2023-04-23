@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 console.log(obdata);
                 if(obdata.status){
                     $('#modalformusuario').modal("hide");
-                    forminsert.reset();
+                    //forminsert.reset();
                     
                     swal("Usuario Nuevo", obdata.msg ,"success");
                     //Ojo 
@@ -69,7 +69,7 @@ function openmodal(){
     document.querySelector('.modal-header').classList.replace("headerupdate","headerregister");
     document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
     document.querySelector('#btntext').innerHTML="Guardar";
-    
+    document.querySelector('#formusuario').reset();
     $('#modalformusuario').modal("show");
     
 }
@@ -99,8 +99,9 @@ function fnteditusuario(){
             request.send();
             request.onreadystatechange =function(){
                 if(request.readyState == 4 && request.status==200){
-                    //console.log(request.responseText);
+     
                     var objdata=JSON.parse(request.responseText);
+                    
                     if(objdata.status){
                         document.querySelector("#idusuario").value=objdata.data.idusuario;
                         document.querySelector("#txtci").value=objdata.data.ci;
