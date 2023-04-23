@@ -37,14 +37,14 @@ document.addEventListener("DOMContentLoaded",function(){
         request.onreadystatechange =function(){
             if(request.readyState == 4 && request.status==200){
                
-                console.log(request.responseText);
+                //console.log(request.responseText);
                 var obdata=JSON.parse(request.responseText);
-                console.log(obdata);
+                //console.log(obdata);
                 if(obdata.status){
                     $('#modalformusuario').modal("hide");
-                    //forminsert.reset();
-                    
-                    swal("Usuario Nuevo", obdata.msg ,"success");
+                    forminsert.reset();
+                    //Validar datos repetodos
+                    swal("Administración de Usuarios", obdata.msg ,"success");
                     //Ojo 
                     tablero.ajax.reload(function(){
                         //fnteditrol();
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded",function(){
                    
                 } else{
                     swal("Error",obdata.msg,"error");
-                    forminsert.reset();
+                    //forminsert.reset();
                 }
             }
         }
