@@ -1,6 +1,6 @@
-var tableroles;
+var tablero;
 document.addEventListener("DOMContentLoaded",function(){
-    tableroles=$('#tableusuarios').DataTable({
+    tablero=$('#tableusuarios').DataTable({
         "aProcessing":true,
         "aSeverSide":true,
         "language" :{
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded",function(){
                     
                     swal("Usuario Nuevo", obdata.msg ,"success");
                     //Ojo 
-                    tablemateriales.ajax.reload(function(){
+                    tablero.ajax.reload(function(){
                         //fnteditrol();
                         //fntdelrol();
                         //fntpermisosrol();
@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded",function(){
             }
         }
     }
+
 },false);
 
 
@@ -67,5 +68,52 @@ function openmodal(){
     
 }
 
+//Update
+function fnteditusuario(){
+    var btneditusuario=Array.apply(null, document.querySelectorAll(".btneditusuario"));    
+    btneditusuario.forEach(function(btneditusuario){
+        
+        btneditusuario.addEventListener("click",function(){
+            //alert("Click to close...");
+            document.querySelector('#titlemodal').innerHTML = "Actualizar Usuario";
+            document.querySelector('.modal-header').classList.replace("headerregister","headerupdate");
+            document.querySelector('#btnactionform').classList.replace("btn-primary","btn-info");
+            document.querySelector('#btntext').innerHTML="Actualizar";
+            //Recupera
+            var idkey = this.getAttribute("rl");
+            var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            //El getusuario esta en Singular !Cuidado confunfir!
+            var ajaxUrl = baseurl+'/Usuarios/getusuario/'+idkey;
+            request.open("GET",ajaxUrl,true);
+            request.send();
+            request.onreadystatechange =function(){
+                if(request.readyState == 4 && request.status==200){
+                    //console.log(request.responseText);
+                    var objdata=JSON.parse(request.responseText);
+                    if(objdata.status){
+                        document.querySelector("#idusuario").value=objdata.data.idusuario;
+                        document.querySelector("#txtci").value=objdata.data.ci;
+                        document.querySelector("#txtnombre").value=objdata.data.nombre;
+                        document.querySelector("#txtapellido").value=objdata.data.apellidos;
+                        document.querySelector("#txtcorreo").value=objdata.data.correo;
+                        document.querySelector("#txttelefono").value=objdata.data.telefono;
+                        //FK especial
+                        document.querySelector("#txtrol").value=objdata.data.idroles;
+                        $('#txtrol').selectpicker('render');
+                        //Estado Especial
+                        document.querySelector("#liststatus").value=objdata.data.Estado;
+                        $('#liststatus').selectpicker('render');
+
+                        $('#modalformusuario').modal("show");
+                    }else{
+                        swal("Error",objdata.msg,"error");
+                    }
+                }
+            }
+           
+        });
+    });
+    
+}
 
 

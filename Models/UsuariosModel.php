@@ -2,17 +2,17 @@
 //Moises
     class UsuariosModel extends Mysql{
 
-        public $intidusuario;
-        public $intidrol;
-        public $strnombre;
-        public $strapellido;
-        public $strcorreo;
-        public $intestado;
-        public $inttelefono;
-        public $intci;
+        private $intidusuario;
+        private $intidrol;
+        private $strnombre;
+        private $strapellido;
+        private $strcorreo;
+        private $intestado;
+        private $inttelefono;
+        private $intci;
 
-        public $strpassword;
-  
+        private $strpassword;
+        private $strtoken;
 
         public function __construct() {
 
@@ -92,6 +92,7 @@
         						$this->strdireccion,
                            
                                 $this->intstatus
+                                //Cuidao al borrar
                     );
                 $requestupdate= $this->update($queryupdate,$arrdata);
                 $return=$requestupdate;
@@ -105,13 +106,11 @@
         }
         //Pate del Update
         public function selectusuario(int $iduser){
-            $this->intiduser= $iduser;
+            $this->intidusuario= $iduser;
             $sql= "SELECT tu.IdUsuario, 
             tu.IdRoles, 
             tu.ci, 
-            tu.Nit, 
             tu.Nombre, 
-            tu.NombreFiscal, 
             tu.Apellido, 
             tu.Telefono, 
             tu.Correo, 
@@ -119,7 +118,7 @@
             tu.Contrasenia, 
             tu.Estado, 
             tr.Tipo
-            FROM tusuarios tu, troles tr WHERE tu.IdRoles = tr.IdRoles AND tu.IdUsuario = $this->intiduser";
+            FROM tusuarios tu, troles tr WHERE tu.IdRoles = tr.IdRoles AND tu.IdUsuario = $this->intidusuario";
             $request=$this->select($sql);
             return $request;
         }
@@ -131,9 +130,9 @@
 
 
         public function settokenuser(int $iduser, string $token){
-            $this->intiduser = $iduser;
+            $this->intidusuario = $iduser;
             $this->strtoken= $token;
-            $queryupdate="UPDATE tusuarios SET token = ? WHERE idusuario =$this->intiduser";
+            $queryupdate="UPDATE tusuarios SET token = ? WHERE idusuario =$this->intidusuario";
             $arrdata = array($this->strtoken);
             $requestupdate= $this->update($queryupdate,$arrdata);
             return $requestupdate;
