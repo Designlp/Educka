@@ -120,8 +120,13 @@
             $request=$this->select($sql);
             return $request;
         }
-
-
+        //Especial
+        public function selectroles(){
+          
+            $sql="SELECT * FROM troles WHERE estado != 0";
+            $request=$this->selectall($sql);
+            return $request;
+        }
 
 
 
