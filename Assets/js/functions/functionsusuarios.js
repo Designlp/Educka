@@ -110,10 +110,12 @@ function fnteditusuario(){
                         document.querySelector("#txttelefono").value=objdata.data.telefono;
                         //FK especial
                         document.querySelector("#txtrol").value=objdata.data.idroles;
+                        $('#txtrol').remove();
                         $('#txtrol').selectpicker('refresh');
                         $('#txtrol').selectpicker('render');
                         //Estado Especial
                         document.querySelector("#liststatus").value=objdata.data.estado;
+                        
                         $('#liststatus').selectpicker('render');
 
                         $('#modalformusuario').modal("show");
