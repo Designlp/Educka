@@ -83,7 +83,7 @@
             
             if(empty($requestupdate)){
 
-                    $queryupdate="UPDATE tusuarios SET idroles=?, nombre=?, apellidos=?,telefono=?,correo=?,Estado=? WHERE idusuario=$this->intidusuario";
+                    $queryupdate="UPDATE tusuarios SET idroles=?, ci=?, nombre=?, apellidos=?, telefono=?,correo=?,Estado=? WHERE idusuario=$this->intidusuario";
                     $arrdata = array(
                                 $this->intidrol,
         						$this->strci,
