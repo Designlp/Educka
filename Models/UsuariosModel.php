@@ -88,9 +88,8 @@
                                 $this->intidrol,
         						$this->strci,
         						$this->strnombre,
-        						$this->strnombre,
                                 $this->strapellido,
-        						$this->inttelefono,
+        						$this->strcorreo,
         						$this->inttelefono,
                                 $this->intestado
                                 //Cuidao al borrar
