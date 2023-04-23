@@ -60,7 +60,7 @@
 	        	$request = $this->insert($query,$arrdata);
 	        	$return = $request;
 			}else{
-                $return=-1;
+                $return=-1; 
             }
             
             return $return;
