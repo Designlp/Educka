@@ -109,6 +109,7 @@
             $this->intidusuario= $iduser;
             $sql= "SELECT tu.idusuario, 
             tu.idroles,  
+            tu.ci,
             tu.nombre, 
             tu.apellidos,  
             tu.telefono, 
