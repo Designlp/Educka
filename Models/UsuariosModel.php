@@ -111,7 +111,7 @@
             $sql= "SELECT tu.idusuario, 
             tu.idroles,  
             tu.nombre, 
-            tu.apellido,  
+            tu.apellidos,  
             tu.telefono, 
             tu.correo,  
             tu.estado, 
