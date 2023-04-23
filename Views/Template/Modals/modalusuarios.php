@@ -15,7 +15,7 @@
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
           <!-- Esta es la clase de alertas son los mensaje -->
-          <div class="was-validated">
+          <!--<div class="was-validated">-->
             <!-- Utiliza la clase feedback -->
             <div class="form-row">
               <div class="form-group col-md-4">
@@ -43,13 +43,12 @@
                 <input class="form-control" id="txttelefono" name="txttelefono" type="text" placeholder="Numero de Celular" required="">
               </div>
             </div>
-          </div>
+          <!--</div>-->
           <div class="form-row">
             <div class="form-group col-md-6">
               <label class="control-label">Rol</label>
               <select class="form-control" data-live-search="true" id="txtrol" name="txtrol" placeholder="Rol">
-              <option value="1">Activo</option>
-                <option value="2">Inactivo</option>
+   
               </select>
             </div>
             <div class="form-group col-md-6">
