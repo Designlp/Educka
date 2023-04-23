@@ -78,7 +78,7 @@
             $this->intestado     = $estado;
             
 
-            $sql= "SELECT * FROM tusuarios WHERE Nombre='{$this->strnombre}' AND Apellido='{$this->strapellido}' AND IdUsuario != $this->intidusuario";
+            $sql= "SELECT * FROM tusuarios WHERE nombre='{$this->strnombre}' AND apellidos='{$this->strapellido}' AND idusuario != $this->intidusuario";
             $requestupdate = $this->selectall($sql);
             
             if(empty($requestupdate)){
