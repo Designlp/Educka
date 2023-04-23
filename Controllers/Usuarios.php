@@ -30,7 +30,12 @@
                 $btnview='<button class="btn btn-info btn-sm btnviewsstyle btnviewusuario" onClick="fntviewcliente('.$arrdata[$i]['idusuario'].')" title="Ver usuario"><i class="far fa-eye"></i></button>';
                 $btnedit='<button class="btn btn-primary btn-sm btneditstyle btneditusuario" rl="'.$arrdata[$i]['idusuario'].'" title="Editar" type="button"><i class="fas fa-pencil-alt"></i></button>';
                 $btndelete='<button class="btn btn-danger btn-sm btndelstyle btndelusuario" rl="'.$arrdata[$i]['idusuario'].'" title="Eliminar" type="button"><i class="fas fa-trash-alt"></i></button>';
-                $arrdata[$i]['acciones']= '<div class="text-center">'.$btnview.' '.$btnedit.' '.$btndelete.' </div>';
+
+                if($i == (count($arrdata)-1)){
+                    $script='<script type="text/javascript"> fnteditusuario();fntdelusuario();</script>';
+                }
+
+                $arrdata[$i]['acciones']= '<div class="text-center">'.$btnview.' '.$btnedit.' '.$btndelete.' '.$script.'</div>';
             }
             
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
@@ -38,7 +43,8 @@
         }
 
 
-        //Insert
+        //Insert 
+        //Logica update como
         public function setusuarios(){
             if($_POST){	
             if(empty($_POST['txtnombre']) || empty($_POST['txtapellido']) || empty($_POST['txtcorreo']) )
@@ -54,7 +60,7 @@
                 $inttelefono = intval(strclean($_POST['txttelefono']));
                 $intestado = intval(strclean($_POST['liststatus']));
                 $intidrol=intval($_POST['txtrol']);
-                //Ojo No recordamos
+                //Esto se basa en el id oculto que se usa en rl 
                 if($idusuario == 0)
                 {
                     //Se incrementa mediante la respuesta del request de model
@@ -75,6 +81,7 @@
                 }else{
                     $option = 2;
                     $requestusuario = $this->model->updateusuario(
+                    $idusuario,
                     $intidrol,
                     $strci,
                     $strnombre, 
@@ -122,9 +129,9 @@
         }
         //Update
         public function getusuario($idusuario){
-            $intiduser=intval(strclean($idusuario));
-            if ($intiduser>0){
-                $arrdata = $this->model->selectusuario($intiduser);
+            $intkey=intval(strclean($idusuario));
+            if ($intkey>0){
+                $arrdata = $this->model->selectusuario($intkey);
                 if(empty($arrdata)){
                     $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
                 }else{

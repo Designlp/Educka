@@ -66,33 +66,33 @@
             return $return;
         }
         //Update
-        public function updateusuario(int $rol,string $ci,string $nomnbre, string $apellido, int $telefono, int $estado){
-			$this->intidrol = $rol;
-			$this->strci = $ci;
-			$this->strnombre = $nomnbre;
-			$this->strapellido = $apellido;
-			$this->inttelefono = $telefono;
-            $this->intidrol=$estado;
+        public function updateusuario(int $idusuario, int $rol,string $ci,string $nombre, string $apellido, string $correo,int $telefono, int $estado){
+			
+            $this->intidusuario = $idusuario;
+            $this->intidrol     = $rol;
+			$this->strci        = $ci;
+			$this->strnombre    = $nombre;
+			$this->strapellido  = $apellido;
+			$this->strcorreo    = $correo;
+			$this->inttelefono  = $telefono;
+            $this->intestado     = $estado;
             
 
-            $sql= "SELECT * FROM tusuarios WHERE nombre='{$this->strnombre}' AND apellidos='{$this->strapellido}' AND IdUsuario != $this->intidusuario";
+            $sql= "SELECT * FROM tusuarios WHERE nombre='{$this->strnombre}' AND apellidos='{$this->strapellido}' AND idusuario != $this->intidusuario";
             $requestupdate = $this->selectall($sql);
             
             if(empty($requestupdate)){
 
-                    $queryupdate="UPDATE tusuarios SET IdRoles=?, ci=?,Nit=?,Nombre=?,NombreFiscal=?,Apellido=?,Telefono=?,Correo=?,Direccion=?,Estado=? WHERE IdUsuario=$this->intidusuario";
+                    $queryupdate="UPDATE tusuarios SET idroles=?, nombre=?, apellidos=?,telefono=?,correo=?,Estado=? WHERE idusuario=$this->intidusuario";
                     $arrdata = array(
                                 $this->intidrol,
         						$this->strci,
-        						$this->intnit,
         						$this->strnombre,
-        						$this->strnombretr,
+        						$this->strnombre,
                                 $this->strapellido,
         						$this->inttelefono,
-        						$this->strcorreo,
-        						$this->strdireccion,
-                           
-                                $this->intstatus
+        						$this->inttelefono,
+                                $this->intestado
                                 //Cuidao al borrar
                     );
                 $requestupdate= $this->update($queryupdate,$arrdata);
