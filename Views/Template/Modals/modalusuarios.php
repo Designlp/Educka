@@ -51,7 +51,7 @@
               </select>
             </div>
             <div class="form-group col-md-6">
-              <label for="exampleSelect1">Estado</label>
+              <label for="liststatus">Estado</label>
               <select class="form-control" id="liststatus" name="liststatus" placeholder="Estado">
                 <option value="1">Activo</option>
                 <option value="2">Inactivo</option>
