@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Main CSS-->
-  <link rel="stylesheet" type="text/css" href="<?=media()?>/css/main.css">
-  <link rel="stylesheet" type="text/css" href="<?=media()?>/css/style.css">
+  <link rel="stylesheet" type="text/css" href="<?=media()?>/formstyle/css/main.css">
+  <link rel="stylesheet" type="text/css" href="<?=media()?>/formstyle/css/style.css">
   <!-- Font-icon css-->
   <title></title>
 
