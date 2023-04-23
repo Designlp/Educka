@@ -13,7 +13,7 @@
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots"
               content="noindex">
-
+              <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
               rel="stylesheet">
          <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/sweetalert.css">
