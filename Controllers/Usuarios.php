@@ -32,7 +32,7 @@
                 $btndelete='<button class="btn btn-danger btn-sm btndelstyle btndelusuario" rl="'.$arrdata[$i]['idusuario'].'" title="Eliminar" type="button"><i class="fas fa-trash-alt"></i></button>';
 
                 if($i == (count($arrdata)-1)){
-                    $script='<script type="text/javascript"> fnteditusuario();fntdelusuario();</script>';
+                    $script='<script type="text/javascript"> fnteditusuario();</script>';
                 }
 
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$btnview.' '.$btnedit.' '.$btndelete.' '.$script.'</div>';
