@@ -1,6 +1,6 @@
 var tablero;
 //Esto es un js
-//Prueba
+//Prueba a
 document.addEventListener("DOMContentLoaded",function(){
     tablero=$('#tableusuarios').DataTable({
         "aProcessing":true,
@@ -150,5 +150,53 @@ function fntrolesusuario(){
         }
     }    
 }
+//Delete logic
+function fntdelusuario(){
 
+    var btndelusuario = document.querySelectorAll(".btndelusuario")
+    btndelusuario.forEach(function(btndelusuario){
+        btndelusuario.addEventListener("click",function(){
+            var idusuarios = this.getAttribute("rl");
+            swal({
+                title:"Eliminar Usuario",
+                text: "¿Realmente Quiere eliminar el Usuario?",
+                type:"warning",
+                showCancelButton:true,
+                confirmButtonText: "Si, Eliminar",
+                cancelButtonText: "No, Cancelar",
+                closeOnConfirm:false,
+                closeOnCancel:true
+            },function(isConfirm){
+                if(isConfirm){
+                var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+                var ajaxUrl = baseurl+'/Usuarios/delusuario/';
+                var strdata = "idusuario="+idusuarios;
+                request.open("POST",ajaxUrl,true);
+                request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                request.send(strdata);
+                request.onreadystatechange =function(){
+                        if(request.readyState == 4 && request.status==200){
+                            console.log(request.responseText);
+                            var objdata=JSON.parse(request.responseText);
+                            if(objdata.status){
+                                swal("Eliminar!",objdata.msg,"success");
+                                tableusuarios.ajax.reload(function(){
+                                    //funeditsuario();
+                                    //fundelusuario();
+                                    //fntpermisosrol();
+                                });
+
+                            }else{
+                                swal("Error",objdata.msg,"error");
+                            }
+                        }
+                    }
+                }
+
+            });
+        });
+    });
+
+    
+}
 

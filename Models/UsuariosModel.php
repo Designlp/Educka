@@ -141,6 +141,33 @@
             return $requestupdate;
                 
         }
+        //Delete
+        public function deleteusaurio(int $idusuarios){
+    
+            $this->intidusuario=$idusuarios;
+            $querydelete="UPDATE tusuarios SET wstado=? WHERE idusuario = $this->intidusuario";
+            $arrdata = array(0);
+            $requestdelete= $this->update($querydelete,$arrdata);
+
+                //$querydelete="DELETE FROM rol  WHERE idrol = $this->intidrol";
+                //$arrdata = array(0);
+                //$requestdelete= $this->delete($querydelete,$arrdata);
+
+                if($requestdelete){
+                    $requestdelete='ok';
+                    $return=$requestdelete;
+                }else{
+                    $request='error';
+                    $return=$request;
+                }
+                /*
+            }else{
+                $return='existe';
+            }
+            */
+            return $return;
+
+        }
 
 
     }
