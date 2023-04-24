@@ -225,13 +225,10 @@ function fntviewcliente(idpersona){
                 var pendiente="Datos Pendientes";
 
                 document.querySelector("#celIdentificacion").innerHTML = (ci != null) ? ci : pendiente;
-                document.querySelector("#celNit").innerHTML = (nit != null) ? nit : pendiente;
                 document.querySelector("#celNombre").innerHTML = (nombre != null) ? nombre : pendiente;
-                document.querySelector("#celNombrefiscal").innerHTML = (nombrefical != null) ? nombrefical : pendiente;
                 document.querySelector("#celApellido").innerHTML = (apellido != null) ? apellido : pendiente;
                 document.querySelector("#celTelefono").innerHTML = (telefono != null) ? telefono : pendiente;
                 document.querySelector("#celEmail").innerHTML = (correo != null) ? correo : pendiente;
-                document.querySelector("#celDireccion").innerHTML = (direccion != null) ? direccion : pendiente;
                 document.querySelector("#celEstado").innerHTML = estadoUsuario;
          
                 $('#modalviewuser').modal('show');
