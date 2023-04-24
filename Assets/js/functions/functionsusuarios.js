@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded",function(){
             { "data": 'idusuario' },
             { "data": 'nombre' },
             { "data": 'apellidos' },
+            { "data": 'telefono' },
             { "data": 'correo' },
             { "data": 'idroles' },
             { "data": 'estado' },
