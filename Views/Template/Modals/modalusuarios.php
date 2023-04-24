@@ -118,21 +118,10 @@
                 <td id="celEmail">Pendiente</td>
               </tr>
               <tr>
-                <td>Direccion:</td>
-                <td id="celDireccion">Pendiente</td>
-              </tr>
-              <tr>
                 <td>Estado:</td>
                 <td id="celEstado">Pendiente</td>
               </tr>
-              <tr>
-                <td>Nit:</td>
-                <td id="celNit">Pendiente</td>
-              </tr>
-              <tr>
-                <td>Nombre Fiscal:</td>
-                <td id="celNombrefiscal">Pendiente</td>
-              </tr>
+      
 
             </tbody>
           </table>

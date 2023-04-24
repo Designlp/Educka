@@ -181,6 +181,7 @@ function fntdelusuario(){
                             var objdata=JSON.parse(request.responseText);
                             if(objdata.status){
                                 swal("Eliminar!",objdata.msg,"success");
+                                //Libreria de reload solucionar
                                 tableusuarios.ajax.reload(function(){
                                     //funeditsuario();
                                     //fundelusuario();
@@ -197,7 +198,46 @@ function fntdelusuario(){
             });
         });
     });
-
-    
 }
 
+//Ver al usuario
+function fntviewcliente(idpersona){
+    var idpersona = idpersona;
+    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    var ajaxurl = baseurl+'/Usuarios/getusuario/'+idpersona;
+    request.open("GET",ajaxurl,true);
+    request.send();
+    request.onreadystatechange = function(){
+        if(request.readyState == 4 && request.status == 200){
+            var objdata = JSON.parse(request.responseText);
+
+            if(objdata.status)
+            {
+               var estadoUsuario = objdata.data.Estado == 1 ? 
+                '<span class="badge badge-success">Activo</span>' : 
+                '<span class="badge badge-danger">Inactivo</span>';
+
+                var ci =objdata.data.ci;
+                var nombre= objdata.data.nombre;
+                var apellido = objdata.data.apellidos;
+                var telefono = objdata.data.telefono;
+                var correo= objdata.data.correo;
+                var pendiente="Datos Pendientes";
+
+                document.querySelector("#celIdentificacion").innerHTML = (ci != null) ? ci : pendiente;
+                document.querySelector("#celNit").innerHTML = (nit != null) ? nit : pendiente;
+                document.querySelector("#celNombre").innerHTML = (nombre != null) ? nombre : pendiente;
+                document.querySelector("#celNombrefiscal").innerHTML = (nombrefical != null) ? nombrefical : pendiente;
+                document.querySelector("#celApellido").innerHTML = (apellido != null) ? apellido : pendiente;
+                document.querySelector("#celTelefono").innerHTML = (telefono != null) ? telefono : pendiente;
+                document.querySelector("#celEmail").innerHTML = (correo != null) ? correo : pendiente;
+                document.querySelector("#celDireccion").innerHTML = (direccion != null) ? direccion : pendiente;
+                document.querySelector("#celEstado").innerHTML = estadoUsuario;
+         
+                $('#modalviewuser').modal('show');
+            }else{
+                swal("Error", objdata.msg , "error");
+            }
+        }
+    }
+}
