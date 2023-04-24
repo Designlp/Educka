@@ -32,7 +32,8 @@
                 $btndelete='<button class="btn btn-danger btn-sm btndelstyle btndelusuario" rl="'.$arrdata[$i]['idusuario'].'" title="Eliminar" type="button"><i class="fas fa-trash-alt"></i></button>';
 
                 if($i == (count($arrdata)-1)){
-                    $script='<script type="text/javascript"> fnteditusuario();</script>';
+                    //Necesario agregar para que funciones las funciones de delete y update
+                    $script='<script type="text/javascript"> fnteditusuario(); fntdelusuario(); </script>';
                 }
 
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$btnview.' '.$btnedit.' '.$btndelete.' '.$script.'</div>';

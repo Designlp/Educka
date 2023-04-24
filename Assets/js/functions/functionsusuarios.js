@@ -151,7 +151,7 @@ function fntrolesusuario(){
     }    
 }
 //Delete logic
-function fntdelusuaio(){
+function fntdelusuario(){
    
     var btndelusuario = document.querySelectorAll(".btndelusuario");
 
