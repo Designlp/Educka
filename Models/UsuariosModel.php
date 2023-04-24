@@ -142,10 +142,10 @@
                 
         }
         //Delete
-        public function deleteusaurio(int $idusuarios){
+        public function deleteusaurio(int $idusuario){
     
-            $this->intidusuario=$idusuarios;
-            $querydelete="UPDATE tusuarios SET wstado=? WHERE idusuario = $this->intidusuario";
+            $this->intidusuario=$idusuario;
+            $querydelete="UPDATE tusuarios SET estado=? WHERE idusuario = $this->intidusuario";
             $arrdata = array(0);
             $requestdelete= $this->update($querydelete,$arrdata);
 
