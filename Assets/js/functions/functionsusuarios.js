@@ -152,7 +152,7 @@ function fntrolesusuario(){
 }
 //Delete logic
 function fntdelusuario(){
-
+    alert("aqc")
     var btndelusuario = document.querySelectorAll(".btndelusuario")
     btndelusuario.forEach(function(btndelusuario){
         btndelusuario.addEventListener("click",function(){
