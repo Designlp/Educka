@@ -168,7 +168,7 @@
                 $requestdelete=$this->model->deleteusaurio($intidusuario);
 
                 if($requestdelete == 'ok'){
-                    $arrresponse= array('status'=>true,'msg'=>'Datos Eliminados Correctamente'.$requestdelete);
+                    $arrresponse= array('status'=>true,'msg'=>'Datos Eliminados Correctamente '.$requestdelete);
                 
                 }else{
                     if($requestdelete == 'existe'){
