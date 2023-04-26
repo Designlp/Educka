@@ -4,6 +4,7 @@ $('.login-content [data-toggle="flip"]').click(function () {
 });
 
 document.addEventListener("DOMContentLoaded",function () {
+  
     if (document.querySelector("#formlogin")) {
       let formlogin = document.querySelector("#formlogin");
       formlogin.onsubmit = function (e) {

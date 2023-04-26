@@ -35,7 +35,7 @@
                         $arrdata=$requestuser;
                         if($arrdata['Estado']==1){
 
-                            $_SESSION['iduser']=$arrdata['IdUsuario'];
+                            $_SESSION['iduser']=$arrdata['idusuario'];
                             $_SESSION['login']=true;
                             $arrdata= $this->model->sessionlogin($_SESSION['iduser']);
 
