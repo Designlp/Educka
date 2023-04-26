@@ -183,7 +183,7 @@ function fntdelusuario(){
                             if(objdata.status){
                                 swal("Eliminar!",objdata.msg,"success");
                                 //Libreria de reload solucionar
-                                tableusuarios.ajax.reload(function(){
+                                tablero.ajax.reload(function(){
                                     //funeditsuario();
                                     //fundelusuario();
                                     //fntpermisosrol();
