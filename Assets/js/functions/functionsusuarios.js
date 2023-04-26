@@ -183,6 +183,7 @@ function fntdelusuario(){
                             if(objdata.status){
                                 swal("Eliminar!",objdata.msg,"success");
                                 //Libreria de reload solucionar
+                                //tablero generico
                                 tablero.ajax.reload(function(){
                                     //funeditsuario();
                                     //fundelusuario();
@@ -211,7 +212,6 @@ function fntviewcliente(idpersona){
     request.onreadystatechange = function(){
         if(request.readyState == 4 && request.status == 200){
             var objdata = JSON.parse(request.responseText);
-
             if(objdata.status)
             {
                var estadoUsuario = objdata.data.Estado == 1 ? 
