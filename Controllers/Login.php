@@ -129,8 +129,8 @@
 
         public function setpassword(){
             if(empty($_POST['iduser']) || empty($_POST['txtpasswordcam']) || empty($_POST['txtpasswordconfirm']) || empty($_POST['txtemail'])  || empty($_POST['txttoken'])){
-                
-                $arrresponse= array('status'=>false,'msg'=>'No es posible realizar el proceso revise sus datos'.$_POST['iduser']);
+                $id=$_POST['iduser'];
+                $arrresponse= array('status'=>false,'msg'=>'No es posible realizar el proceso revise sus datos');
             }else{
                 $intiduser= intval( $_POST['iduser']);
                 $strpassword=$_POST['txtpasswordcam'];
