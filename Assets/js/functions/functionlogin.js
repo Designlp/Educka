@@ -102,13 +102,14 @@ document.addEventListener("DOMContentLoaded",function () {
     let formcambio=document.querySelector('#formcambiarpass');
     formcambio.onsubmit = function(e){
       e.preventDefault();
-      alert();
+     
       let strpassword=document.querySelector('#txtpasswordcam').value;
       let strpasswordconfirm=document.querySelector('#txtpasswordconfirm').value;
       let iduser=document.querySelector('#iduser').value;
+      let strtoken=document.querySelector('#txttoken').value;
       if(strpassword == "" || strpasswordconfirm == ""){
           swal("Por favor", "Escribe la nueva contraseña.","error");
-          alert(iduser+" "+ +" ");
+       alert(strtoken+"");
           return false;
       }else{
         if(strpassword.lenght < 5){
