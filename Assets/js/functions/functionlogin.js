@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded",function () {
     let formcambio=document.querySelector('#formcambiarpass');
     formcambio.onsubmit = function(e){
       e.preventDefault();
+      alert();
       let strpassword=document.querySelector('#txtpasswordcam').value;
       let strpasswordconfirm=document.querySelector('#txtpasswordconfirm').value;
       let iduser=document.querySelector('#iduser').value;
