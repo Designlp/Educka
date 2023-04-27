@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded",function () {
            
               },function(isConfirm){
                   if(isConfirm){
-                      window.location= baseurl+'/login';
+                      window.location= baseurl+'/Login';
                   }
               });
             }else{
