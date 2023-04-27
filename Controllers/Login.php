@@ -116,7 +116,7 @@
                     $data['page_title']= "Login";
                     $data['page_name'] = "cambiarcontraseña";
                     $data['page_functions_js'] = "functionlogin.js"; 
-                    $data['idusuario']=$requestresponse['idusuario '];
+                    $data['idusuario']=$requestresponse['idusuario'];
                     $data['correo']= $stremail;
                     $data['token']= $strtoken;
                     $this->views->getview($this,"cambiopassword",$data);
