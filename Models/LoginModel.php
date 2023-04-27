@@ -17,7 +17,7 @@
         public function loginuser(string $user, string $password){
             $this->struser=$user;
             $this->strpassword=$password;
-            $sql= "SELECT idusuario , estado FROM tusuarios WHERE correo='$this->struser'  AND estado != 0";
+            $sql= "SELECT idusuario , estado FROM tusuarios WHERE correo='$this->struser'  AND password= '$this->strpassword' AND estado != 0";
             $request=$this->select($sql);
             return $request;
         }
