@@ -24,11 +24,11 @@
         public function sessionlogin(int $iduser){
             $this->intiduser=$iduser;
          
-            $sql= "SELECT tu.IdUsuario, tu.IdRoles, tr.Tipo, tu.Nombre, tu.Apellido, tu.Correo, tu.ci, tu.Nit, tu.NombreFiscal, tu.Telefono, tu.Direccion, tu.Estado
+            $sql= "SELECT tu.idusuario , tu.idroles , tr.tipo, tu.nombre, tu.apellidos, tu.correo, tu.ci, tu.telefono, tu.estado
             FROM tusuarios tu
             INNER JOIN troles tr
-            ON tu.IdRoles = tr.IdRoles
-            WHERE tu.IdUsuario = $this->intiduser";
+            ON tu.idroles  = tr.idroles 
+            WHERE tu.idusuario = $this->intiduser";
             $request=$this->select($sql);
             $_SESSION['userdata']= $request;
             return $request;
