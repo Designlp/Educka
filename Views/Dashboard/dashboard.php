@@ -16,7 +16,7 @@ headeradmin($data);
                             <p class="lead measure-hero-lead mx-auto text-white mb-48pt parrafo">Educka es una academia de educacion en linea
                                 Referente a la tecnologia y el desarrolo de software</p>
 
-                            <a href="courses.html"
+                            <a href="<?= base_url()?>/logout"
                                class="btn btn-lg btn-white btn--raised mb-16pt">Comienza ahora</a>
 
                             <p class="mb-0"><a href=""
