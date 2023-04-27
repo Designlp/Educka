@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded",function () {
       let iduser=document.querySelector('#iduser').value;
       if(strpassword == "" || strpasswordconfirm == ""){
           swal("Por favor", "Escribe la nueva contraseña.","error");
+          alert(iduser+" "+ +" ");
           return false;
       }else{
         if(strpassword.lenght < 5){
