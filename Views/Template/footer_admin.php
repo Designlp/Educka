@@ -75,13 +75,13 @@
         <script src="<?= media() ?>/vendor/material-design-kit.js"></script>
 
         <!-- App JS -->
-        <script src="<?= media() ?>/js/app.js"></script>
+        <script src="<?= media() ?>/js/template/app.js"></script>
 
         <!-- Preloader -->
-        <script src="<?= media() ?>/js/preloader.js"></script>
+        <script src="<?= media() ?>/js/template/preloader.js"></script>
 
         <!-- Sidebar Mini JS -->
-        <script src="<?= media() ?>/js/sidebar-mini.js"></script>
+        <script src="<?= media() ?>/js/template/sidebar-mini.js"></script>
         <script>
             (function() {
                 'use strict';
