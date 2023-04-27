@@ -23,9 +23,9 @@
           <div class="card-body my-4">
 
             <form id="formcambiarpass" name="formcambiarpass" class="forget-form" action="index.html">
-                <input type="hidden" id="iduser" name="iduser" value="<?= $data['IdUsuario'] ?>" required>
-                <input type="hidden" id="txtemail" name="txtemail" value="<?= $data['Correo'] ?>" required>
-                <input type="hidden" id="txttoken" name="txttoken" value="<?= $data['Token'] ?>" required>
+                <input type="hidden" id="iduser" name="iduser" value="<?= $data['idusuario '] ?>" required>
+                <input type="hidden" id="txtemail" name="txtemail" value="<?= $data['correo'] ?>" required>
+                <input type="hidden" id="txttoken" name="txttoken" value="<?= $data['token'] ?>" required>
                 <div class="col-12 my-4">
                 <div class="text-center">
                     <h3 class="fw-bold">Cambiar Contraseña</h3>

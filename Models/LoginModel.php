@@ -37,7 +37,7 @@
         public function getuseremail(string $email){
             $this->struser=$email;
          
-            $sql= "SELECT IdUsuario, Nombre, Apellido, Estado FROM tusuarios WHERE Correo='$this->struser' AND Estado = 1";
+            $sql= "SELECT idusuario , nombre, apellidos, estado FROM tusuarios WHERE correo='$this->struser' AND estado = 1";
             $request=$this->select($sql);
             return $request;
         }
@@ -45,7 +45,7 @@
         public function settokenuser(int $iduser, string $tokrn){
             $this->intiduser = $iduser;
             $this->strtoken= $tokrn;
-            $queryupdate="UPDATE tusuarios SET Token = ? WHERE IdUsuario=$this->intiduser";
+            $queryupdate="UPDATE tusuarios SET token = ? WHERE idusuario =$this->intiduser";
             $arrdata = array($this->strtoken);
             $requestupdate= $this->update($queryupdate,$arrdata);
             return $requestupdate;
@@ -55,7 +55,7 @@
         public function getuser(string $email, string $token){
             $this->struser=$email;
             $this->strtoken= $token;
-            $sql= "SELECT IdUsuario FROM tusuarios WHERE Correo='$this->struser' AND Token= '$this->strtoken' AND Estado = 1";
+            $sql= "SELECT idusuario  FROM tusuarios WHERE correo='$this->struser' AND token= '$this->strtoken' AND estado = 1";
             $request=$this->select($sql);
             return $request;
             
@@ -66,7 +66,7 @@
         public function insertpassword(int $iduser, string $password){
             $this->intiduser = $iduser;
             $this->strpassword= $password;
-            $queryupdate="UPDATE tusuarios SET Contrasenia=?, Token = ? WHERE IdUsuario=$this->intiduser";
+            $queryupdate="UPDATE tusuarios SET password = ?, token = ? WHERE idusuario = $this->intiduser";
             $arrdata = array($this->strpassword,"");
             $requestupdate= $this->update($queryupdate,$arrdata);
             return $requestupdate;
