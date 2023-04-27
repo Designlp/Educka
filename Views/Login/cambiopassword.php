@@ -81,8 +81,7 @@
   <script src="<?=media()?>/js/plugins/pace.min.js"></script>
 
   <script type="text/javascript" src="<?=media()?>/js/plugins/sweetalert.min.js"></script>
-
-  <script src="<?=media()?>/js/<?=$data['page_functions_js']?>"></script>
+  <script src="<?=media()?>/js/functions/<?=$data['page_functions_js']?>"></script>
 
   <script type="text/javascript">
     // Login Page Flipbox control
