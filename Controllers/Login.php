@@ -33,7 +33,7 @@
                         $arrresponse= array('status'=>false,'msg'=>'El usuario o contraseña es incorrectos');
                     }else{
                         $arrdata=$requestuser;
-                        if($arrdata['Estado']==1){
+                        if($arrdata['estado']==1){
 
                             $_SESSION['iduser']=$arrdata['idusuario'];
                             $_SESSION['login']=true;
