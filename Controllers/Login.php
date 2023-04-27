@@ -66,8 +66,8 @@
                     if(empty($arrdata)){
                         $arrresponse= array('status'=>false,'msg'=>'Usuario no encontrado');
                     }else{
-                        $idpersona = $arrdata['IdUsuario'];
-                        $nombreuser= $arrdata['Nombre'].' '.$arrdata['Apellido'];
+                        $idpersona = $arrdata['idusuario'];
+                        $nombreuser= $arrdata['nombre'].' '.$arrdata['apellidos'];
 
                         $urlrecuperar= base_url().'/Login/confirmuser/'.$stremail.'/'.$token;
                         $requestupdate = $this->model->settokenuser($idpersona,$token);
