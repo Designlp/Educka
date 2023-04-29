@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded",function(){
 //Activacion del Modal
 $('#tableroles').DataTable();
 function openmodal(){
-    document.querySelector('#idroles').value="";
+    document.querySelector('#idrol').value="";
     document.querySelector('#titlemodal').innerHTML = "Nuevo Rol";
     document.querySelector('.modal-header').classList.replace("headerupdate","headerregister");
     document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
