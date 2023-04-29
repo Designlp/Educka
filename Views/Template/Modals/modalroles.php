@@ -11,7 +11,7 @@
       <div class="modal-body">
         <!-- Form-->
         <form autocomplete="off" class="form-horizontal" id="formroles" name="formroles" enctype="multipart/form-data">
-        
+          <!-- Aqui esta el id del rol en oculto-->
           <input id="idrol" name="idrol" type="hidden" value="">
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
