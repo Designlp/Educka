@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded",function(){
 
     });
     //Insert
-    var forminsert= document.querySelector("#formusuario");
+    var forminsert= document.querySelector("#formroles");
     forminsert.onsubmit=function(e){
         e.preventDefault();
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = baseurl+'/Usuarios/setusuarios';
+        var ajaxUrl = baseurl+'/Roles/setroles';
         var formdata=new FormData(forminsert);
         request.open("POST",ajaxUrl,true);
         request.send(formdata);
@@ -61,16 +61,16 @@ document.addEventListener("DOMContentLoaded",function(){
     }
 
 },false);
-
+//Activacion del Modal
 $('#tableroles').DataTable();
 function openmodal(){
     document.querySelector('#idroles').value="";
-    document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";
+    document.querySelector('#titlemodal').innerHTML = "Nuevo Rol";
     document.querySelector('.modal-header').classList.replace("headerupdate","headerregister");
     document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
     document.querySelector('#btntext').innerHTML="Guardar";
-    document.querySelector('#formusuario').reset();
-    $('#modalformusuario').modal("show");
+    document.querySelector('#formroles').reset();
+    $('#modalformroles').modal("show");
     
 }
 //Funciones Usuarios

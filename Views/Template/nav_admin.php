@@ -30,15 +30,7 @@
                                     data-title="Estudiantes"
                                     data-placement="right"
                                     data-boundary="window">
-                                    <a class="sidebar-menu-button"
-                                       href="#sm_student"
-                                       data-toggle="tab"
-                                       role="tab"
-                                       aria-controls="sm_student"
-                                       aria-selected="true">
-                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
-                                    
-                                    </a>
+                                 
                                 </li>
                                 <li class="sidebar-menu-item"
                                     data-toggle="tooltip"
@@ -103,7 +95,7 @@
                                 </li>
                                 <li class="sidebar-menu-item"
                                     data-toggle="tooltip"
-                                    data-title="Components"
+                                    data-title="Estudiantes"
                                     data-placement="right"
                                     data-container="body"
                                     data-boundary="window">
@@ -222,48 +214,9 @@
                                                     <span class="sidebar-menu-text">Departments</span>
                                                 </a>
                                             </li>
-                                            <!-- <li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="documents.html">
-    <span class="sidebar-menu-text">Documents</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="attendance.html">
-    <span class="sidebar-menu-text">Attendance</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="recruitment.html">
-    <span class="sidebar-menu-text">Recruitment</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="payroll.html">
-    <span class="sidebar-menu-text">Payroll</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="training.html">
-    <span class="sidebar-menu-text">Training</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="employee-profile.html">
-    <span class="sidebar-menu-text">Employee Profile</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="accounting.html">
-    <span class="sidebar-menu-text">Accounting</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="inventory.html">
-    <span class="sidebar-menu-text">Inventory</span>
-  </a>
-</li> -->
                                         </ul>
                                     </li>
+
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
                                            data-toggle="collapse"
