@@ -17,8 +17,8 @@
             
         }
         //Visualizacion
-        public function getusuarios(){
-            $arrdata= $this->model->selectusuarios();
+        public function getroles(){
+            $arrdata= $this->model->selectroles();
 
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){

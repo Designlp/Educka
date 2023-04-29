@@ -2,23 +2,20 @@ var tablero;
 //Esto es un js
 //Prueba a com
 document.addEventListener("DOMContentLoaded",function(){
-    tablero=$('#tableusuarios').DataTable({
+    tablero=$('#tableroles').DataTable({
         "aProcessing":true,
         "aSeverSide":true,
         "language" :{
             "url":"https://cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json"
         },
         "ajax":{
-            "url":" "+baseurl+"/usuarios/getusuarios",
+            "url":" "+baseurl+"/roles/getroles",
             "dataSrc":""
         },
         "columns": [
-            { "data": 'idusuario' },
-            { "data": 'nombre' },
-            { "data": 'apellidos' },
-            { "data": 'telefono' },
-            { "data": 'correo' },
             { "data": 'idroles' },
+            { "data": 'tipo' },
+            { "data": 'descripcion' },
             { "data": 'estado' },
             { "data": 'acciones' }
         ],
