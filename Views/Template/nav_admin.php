@@ -27,7 +27,7 @@
                                 role="tablist">
                                 <li class="sidebar-menu-item active"
                                     data-toggle="tooltip"
-                                    data-title="Student"
+                                    data-title="Students"
                                     data-placement="right"
                                     data-boundary="window">
                                     <a class="sidebar-menu-button"
@@ -37,7 +37,7 @@
                                        aria-controls="sm_student"
                                        aria-selected="true">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
-                                        <span class="sidebar-menu-text">Estudiante</span>
+                                        <span class="sidebar-menu-text">Student</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-menu-item"
