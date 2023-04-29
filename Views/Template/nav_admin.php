@@ -34,7 +34,8 @@
                                        href="#sm_student"
                                        data-toggle="tab"
                                        role="tab"
-                                       aria-selected="true">
+                                       aria-controls="sm_student"
+                                     >
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
                                         <span class="sidebar-menu-text">Student</span>
                                     </a>
