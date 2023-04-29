@@ -27,7 +27,7 @@
                                 role="tablist">
                                 <li class="sidebar-menu-item active"
                                     data-toggle="tooltip"
-                                    data-title="Students"
+                                    data-title="Estudiantes"
                                     data-placement="right"
                                     data-boundary="window">
                                     <a class="sidebar-menu-button"

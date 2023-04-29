@@ -49,12 +49,12 @@
         //Logica update como
         public function setroles(){
             if($_POST){	
-            if(empty($_POST['txtnombre']) || empty($_POST['txtapellido']) || empty($_POST['txtcorreo']) )
+            if(empty($_POST['txttipo']) || empty($_POST['txtdescripcion']))
             {
                 $arrresponse = array("status" => false, "msg" => 'Datos incorrectos.');
             }else{ 
                 // No importa el orden de las variables
-                $idusuario = intval($_POST['idusuario']);
+                $idrol = intval($_POST['idrol']);
                 $strci = strclean($_POST['txtci']);
                 $strnombre = ucwords(strclean($_POST['txtnombre']));
                 $strapellido = ucwords(strclean($_POST['txtapellido']));
@@ -63,7 +63,7 @@
                 $intestado = intval(strclean($_POST['liststatus']));
                 $intidrol=intval($_POST['txtrol']);
                 //Esto se basa en el id oculto que se usa en rl 
-                if($idusuario == 0)
+                if($idrol == 0)
                 {
                     //Se incrementa mediante la respuesta del request de model
                     $option = 1;
@@ -83,7 +83,7 @@
                 }else{
                     $option = 2;
                     $requestusuario = $this->model->updateusuario(
-                    $idusuario,
+                    $idrol,
                     $intidrol,
                     $strci,
                     $strnombre, 
