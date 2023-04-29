@@ -28,9 +28,9 @@
                 }
                 //Id Usuario de acuerdo a su tabla en la base de datos esto recupera los datos de la BD
                 //El funcion fntwiew ya se inicializa con un evento
-                $btnview='<button class="btn btn-info btn-sm btnviewsstyle btnviewusuario" onClick="fntviewcliente('.$arrdata[$i]['idusuario'].')" title="Ver usuario"><i class="far fa-eye"></i></button>';
-                $btnedit='<button class="btn btn-primary btn-sm btneditstyle btneditusuario" rl="'.$arrdata[$i]['idusuario'].'" title="Editar" type="button"><i class="fas fa-pencil-alt"></i></button>';
-                $btndelete='<button class="btn btn-danger btn-sm btndelstyle btndelusuario" rl="'.$arrdata[$i]['idusuario'].'" title="Eliminar" type="button"><i class="fas fa-trash-alt"></i></button>';
+                $btnview='<button class="btn btn-info btn-sm btnviewsstyle btnviewroles" onClick="fntviewcliente('.$arrdata[$i]['idroles'].')" title="Ver usuario"><i class="far fa-eye"></i></button>';
+                $btnedit='<button class="btn btn-primary btn-sm btneditstyle btneditroles" rl="'.$arrdata[$i]['idroles'].'" title="Editar" type="button"><i class="fas fa-pencil-alt"></i></button>';
+                $btndelete='<button class="btn btn-danger btn-sm btndelstyle btndelroles" rl="'.$arrdata[$i]['idusuidrolesario'].'" title="Eliminar" type="button"><i class="fas fa-trash-alt"></i></button>';
 
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
@@ -55,46 +55,21 @@
             }else{ 
                 // No importa el orden de las variables
                 $idrol = intval($_POST['idrol']);
-                $strci = strclean($_POST['txtci']);
-                $strnombre = ucwords(strclean($_POST['txtnombre']));
-                $strapellido = ucwords(strclean($_POST['txtapellido']));
-                $strcorreo = strtolower(strclean($_POST['txtcorreo']));
-                $inttelefono = intval(strclean($_POST['txttelefono']));
+                $strtipo = ucwords(strclean($_POST['txttipo']));
+                $strdescripcion = ucwords(strclean($_POST['txtdescripcion']));
                 $intestado = intval(strclean($_POST['liststatus']));
-                $intidrol=intval($_POST['txtrol']);
                 //Esto se basa en el id oculto que se usa en rl 
-                if($idrol == 0)
-                {
-                    //Se incrementa mediante la respuesta del request de model
-                    $option = 1;
-                    $strpassword =  empty($_POST['txtcontrasenia']) ? passgenerator() : $_POST['txtcontrasenia'];
-                    $strpasswordencript=hash("SHA256",$strpassword);
+                //Modo sencillo
+                if($idrol == 0){
+                    $requestrol=$this->model->insertrol($strtipo,$strdescripcion,$intestado);
+                    $option=1;
+               }
+               if($idrol != 0){
+                    $requestrol=$this->model->updaterol( $intidrol,$strrol,$strdescripcion,$intstatus);
+                    $option=2;
+               }
 
-                    $requestusuario = $this->model->insertusuario(
-                    $intidrol,
-                    $strci,
-                    $strnombre, 
-                    $strapellido, 
-                    $strcorreo,
-                    $inttelefono,
-                    $strpasswordencript,
-                    $intestado
-                 );
-                }else{
-                    $option = 2;
-                    $requestusuario = $this->model->updateusuario(
-                    $idrol,
-                    $intidrol,
-                    $strci,
-                    $strnombre, 
-                    $strapellido, 
-                    $strcorreo,
-                    $inttelefono,
-                    $intestado
-                    );
-
-                }
-                if($requestusuario > 0){
+                if($requestrol > 0){
 
                     if($option == 1 ){
                         $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
@@ -119,7 +94,7 @@
                     }
                     
                }else{
-                    if($requestusuario == -1){
+                    if($requestrol == -1){
                         $arrresponse= array('status'=>false,'msg'=>'!Atencion! El usuario ya existe');
                     }else
                     $arrresponse= array('status'=>true,'msg'=>'No se almaceno los datos');

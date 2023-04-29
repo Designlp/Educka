@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded",function(){
                     $('#modalformusuario').modal("hide");
                     forminsert.reset();
                     //Validar datos repetodos
-                    swal("Administración de Usuarios", obdata.msg ,"success");
+                    swal("Administración de Roles", obdata.msg ,"success");
                     //Ojo 
                     tablero.ajax.reload(function(){
                         //fnteditrol();
