@@ -25,10 +25,10 @@
                              data-perfect-scrollbar>
                             <ul class="nav flex-shrink-0 flex-nowrap flex-column sidebar-menu mb-0 js-sidebar-mini-tabs"
                                 role="tablist">
-                                <li class="sidebar-menu-item"
+                                <li class="sidebar-menu-item active"
                                     data-toggle="tooltip"
                                     data-title="Estudiantes"
-                                    data-placement="right"
+                                    
                                     data-boundary="window">
                                     <a class="sidebar-menu-button"
                                        href="#sm_student"
