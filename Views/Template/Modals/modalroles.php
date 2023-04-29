@@ -11,7 +11,8 @@
       <div class="modal-body">
         <!-- Form-->
         <form autocomplete="off" class="form-horizontal" id="formroles" name="formroles" enctype="multipart/form-data">
-          <input id="idusuario" name="idusuario" type="hidden" value="">
+        
+          <input id="idrol" name="idrol" type="hidden" value="">
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
           <!-- Esta es la clase de alertas son los mensaje -->
@@ -19,37 +20,16 @@
             <!-- Utiliza la clase feedback -->
             <div class="form-row">
               <div class="form-group col-md-4">
-                <label class="control-label">Cedula de Identidad </label>
-                <input class="form-control" id="txtci" name="txtci" type="text" placeholder="Cedula de Identidad" required="">
-                <!-- <div class="invalid-feedback">Please provide a last name.</div>
-                <div class="valid-feedback">Looks good!</div>-->
+                <label class="control-label">Tipo</label>
+                <input class="form-control" id="txttipo" name="txttipo" minlength="2" maxlength="20" pattern="[a-zA-Z ]{2,20}" type="text" placeholder="Nombre del Rol" required="">
               </div>
               <div class="form-group col-md-4">
-                <label class="control-label">Nombre</label>
-                <input class="form-control" id="txtnombre" name="txtnombre" minlength="2" maxlength="20" pattern="[a-zA-Z ]{2,20}" type="text" placeholder="Nombre del Usuario" required="">
-              </div>
-              <div class="form-group col-md-4">
-                <label class="control-label">Apellidos</label>
-                <input class="form-control" id="txtapellido" name="txtapellido" minlength="4" maxlength="20" pattern="[a-zA-Z ]{4,20}" type="text" placeholder="Apellido del Usuario" required="">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label class="control-label">Correo</label>
-                <input type="text" class="form-control" id="txtcorreo" name="txtcorreo" minlength="8" maxlength="50" pattern="[a-zA-Z0-9$@.-]{8,50}" placeholder="Correo" required="">
-              </div>
-              <div class="form-group col-md-6">
-                <label class="control-label">Numero telefonico</label>
-                <input class="form-control" id="txttelefono" name="txttelefono" type="text" placeholder="Numero de Celular" required="">
+                <label class="control-label">Descripcion</label>
+                <input class="form-control" id="txtdescripcion" name="txtdescripcion" type="text" placeholder="" required="">
               </div>
             </div>
           <!--</div>-->
           <div class="form-row">
-            <div class="form-group col-md-6">
-              <label class="control-label">Rol</label>
-              <select class="form-control" data-live-search="true" id="txtrol" name="txtrol" placeholder="Rol">
-              </select>
-            </div>
             <div class="form-group col-md-6">
               <label for="liststatus">Estado</label>
               <select class="form-control" id="liststatus" name="liststatus" placeholder="Estado">
