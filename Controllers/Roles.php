@@ -47,7 +47,7 @@
 
         //Insert 
         //Logica update como
-        public function setusuarios(){
+        public function setroles(){
             if($_POST){	
             if(empty($_POST['txtnombre']) || empty($_POST['txtapellido']) || empty($_POST['txtcorreo']) )
             {

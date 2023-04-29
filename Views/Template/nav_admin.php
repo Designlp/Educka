@@ -37,7 +37,7 @@
                                        aria-controls="sm_student"
                                        aria-selected="true">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
-                                        <span class="sidebar-menu-text">Student</span>
+                                        <span class="sidebar-menu-text">Estudiante</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-menu-item"
