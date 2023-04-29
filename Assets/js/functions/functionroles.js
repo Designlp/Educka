@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded",function(){
 $('#tableroles').DataTable();
 
 function openmodal(){
+    alert();
     document.querySelector('#idrol').value="";
     document.querySelector('#titlemodal').innerHTML = "Nuevo Rol";
     document.querySelector('.modal-header').classList.replace("headerupdate","headerregister");
