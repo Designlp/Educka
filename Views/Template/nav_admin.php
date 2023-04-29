@@ -30,7 +30,15 @@
                                     data-title="Estudiantes"
                                     data-placement="right"
                                     data-boundary="window">
-                                 
+                                    <a class="sidebar-menu-button"
+                                       href="#sm_student"
+                                       data-toggle="tab"
+                                       role="tab"
+                                       aria-controls="sm_student"
+                                       aria-selected="true">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
+                                        <span class="sidebar-menu-text">Student</span>
+                                    </a>
                                 </li>
                                 <li class="sidebar-menu-item"
                                     data-toggle="tooltip"
