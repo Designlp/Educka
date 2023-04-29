@@ -27,17 +27,14 @@
                         <div class="tile">
                             <div class="tile-body">
                             <div class="table-responsive">
-                                <table class="table table-hover table-bordered" id="tableusuarios">
+                                <table class="table table-hover table-bordered" id="tableroles">
                                 <thead>
                                     <tr>
                                     <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Apellidos</th>
-                                    <th>Telefono</th>
-                                    <th>Correo</th>
-                                    <th>Rol</th>
-                                    <th>Estado</th>
-                                    <th>Acciones</th>
+                                        <th>Nombre</th>
+                                        <th>Descripcion</th>
+                                        <th>Estatus</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>

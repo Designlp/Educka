@@ -1,19 +1,19 @@
 <?php 
-    class Usuarios extends Controllers{
+    class Roles extends Controllers{
         public function __construct() {
             parent::__construct();
         }
         
         //Visualizacion
-        public function Usuarios(){
+        public function Roles(){
 
             $data['page_id'] = 1;
-            $data['page_tag'] = "Usuarios";
+            $data['page_tag'] = "Roles";
             $data['page_title']= "Pagina Principal";
-            $data['page_name'] = "usuarios";
-            $data['page_js'] = "functionsusuarios.js";
+            $data['page_name'] = "roles";
+            $data['page_js'] = "functionroles.js";
     
-            $this->views->getview($this,"usuarios",$data);
+            $this->views->getview($this,"roles",$data);
             
         }
         //Visualizacion
