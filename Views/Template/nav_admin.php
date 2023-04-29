@@ -25,7 +25,7 @@
                              data-perfect-scrollbar>
                             <ul class="nav flex-shrink-0 flex-nowrap flex-column sidebar-menu mb-0 js-sidebar-mini-tabs"
                                 role="tablist">
-                                <li class="sidebar-menu-item active"
+                                <li class="sidebar-menu-item"
                                     data-toggle="tooltip"
                                     data-title="Estudiantes"
                                     data-placement="right"
