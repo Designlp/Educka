@@ -3,14 +3,14 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header headerregister">
-        <h5 class="modal-title" id="titlemodal">Nuevo Usuario</h5>
+        <h5 class="modal-title" id="titlemodal">Nuevo Rol</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <!-- Form-->
-        <form autocomplete="off" class="form-horizontal" id="formusuario" name="formusuario" enctype="multipart/form-data">
+        <form autocomplete="off" class="form-horizontal" id="formroles" name="formroles" enctype="multipart/form-data">
           <input id="idusuario" name="idusuario" type="hidden" value="">
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
