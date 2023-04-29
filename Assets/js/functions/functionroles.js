@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 var obdata=JSON.parse(request.responseText);
                 //console.log(obdata);
                 if(obdata.status){
-                    $('#modalformusuario').modal("hide");
+                    $('#modalformroles').modal("hide");
                     forminsert.reset();
                     //Validar datos repetodos
                     swal("Administración de Roles", obdata.msg ,"success");
@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded",function(){
 },false);
 //Activacion del Modal
 $('#tableroles').DataTable();
+
 function openmodal(){
     document.querySelector('#idrol').value="";
     document.querySelector('#titlemodal').innerHTML = "Nuevo Rol";
