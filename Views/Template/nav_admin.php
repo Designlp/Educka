@@ -78,81 +78,17 @@
                          <li class="sidebar-menu-item">
                              <a class="sidebar-menu-button" data-toggle="collapse" href="#plugins_menu">
                                  <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">account_box</span>
-                                 Roles
+                                 Roles de Usuarios
                                  <span class="ml-auto sidebar-menu-toggle-icon"></span>
                              </a>
 
                              <ul class="sidebar-submenu collapse sm-indent" id="plugins_menu">
                                  <li class="sidebar-menu-item">
                                      <a class="sidebar-menu-button" href="ui-plugin-charts.html">
-                                         <span class="sidebar-menu-text">Charts</span>
+                                         <span class="sidebar-menu-text">Roles</span>
                                      </a>
                                  </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-flatpickr.html">
-                                         <span class="sidebar-menu-text">Flatpickr</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-daterangepicker.html">
-                                         <span class="sidebar-menu-text">Date Range Picker</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-dragula.html">
-                                         <span class="sidebar-menu-text">Dragula</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-dropzone.html">
-                                         <span class="sidebar-menu-text">Dropzone</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-range-sliders.html">
-                                         <span class="sidebar-menu-text">Range Sliders</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-quill.html">
-                                         <span class="sidebar-menu-text">Quill</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-select2.html">
-                                         <span class="sidebar-menu-text">Select2</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-nestable.html">
-                                         <span class="sidebar-menu-text">Nestable</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-fancytree.html">
-                                         <span class="sidebar-menu-text">Fancy Tree</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-maps-vector.html">
-                                         <span class="sidebar-menu-text">Vector Maps</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-sweet-alert.html">
-                                         <span class="sidebar-menu-text">Sweet Alert</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-toastr.html">
-                                         <span class="sidebar-menu-text">Toastr</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button disabled" href="">
-                                         <span class="sidebar-menu-text">Disabled</span>
-                                     </a>
-                                 </li>
+                                 
                              </ul>
                          </li>
                      </ul>
