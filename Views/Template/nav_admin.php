@@ -87,15 +87,7 @@
                                      <a class="sidebar-menu-button"  href="<?=base_url()?>/Roles">
                                          <span class="sidebar-menu-text">Roles</span>
                                      </a>
-                                     <div class="dropdown">
-                                                <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
-                                                <div class="dropdown-menu dropdown-menu-right" style="">
-                                                    <a href="student-take-quiz.html" class="dropdown-item">Continue</a>
-                                                    <a href="student-quiz-result-details.html" class="dropdown-item">View Result</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a href="student-take-quiz.html" class="dropdown-item text-danger">Reset Quiz</a>
-                                                </div>
-                                            </div>
+                                     
                                  </li>
                                  
                              </ul>
