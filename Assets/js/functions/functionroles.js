@@ -78,6 +78,7 @@ function openmodal(){
 window.addEventListener('load',function(){
     fntrolesusuario();
     fnteditrol();
+    fntdelrol();
 },false)
 
 
@@ -132,16 +133,15 @@ function fnteditrol(){
 }
 
 //Delete logic
-function fntdelusuario(){
-   
-    var btndelusuario = document.querySelectorAll(".btndelusuario");
 
-    btndelusuario.forEach(function(btndelusuario){
-        btndelusuario.addEventListener("click",function(){
-            var idusuarios = this.getAttribute("rl");
+function fntdelrol(){
+    var btndelrol = document.querySelectorAll(".btndelroles");
+    btndelrol.forEach(function(btndelrol){
+        btndelrol.addEventListener("click",function(){
+            var idrol = this.getAttribute("rl");
             swal({
-                title:"Eliminar Usuario",
-                text: "¿Realmente Quiere eliminar el Usuario?",
+                title:"Eliminar Rol",
+                text: "¿Realmente Quiere eliminar el Rol?",
                 type:"warning",
                 showCancelButton:true,
                 confirmButtonText: "Si, Eliminar",
@@ -151,23 +151,21 @@ function fntdelusuario(){
             },function(isConfirm){
                 if(isConfirm){
                 var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-                var ajaxUrl = baseurl+'/Usuarios/delusuario/';
-                var strdata = "idusuario="+idusuarios;
+                var ajaxUrl = baseurl+'/Roles/delrol/';
+                var strdata = "idrol="+idrol;
                 request.open("POST",ajaxUrl,true);
                 request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 request.send(strdata);
-                request.onreadystatechange =function(){
+                request.onreadystatechange = function(){
                         if(request.readyState == 4 && request.status==200){
-                            console.log(request.responseText);
+                            //console.log(request.responseText);
                             var objdata=JSON.parse(request.responseText);
                             if(objdata.status){
                                 swal("Eliminar!",objdata.msg,"success");
-                                //Libreria de reload solucionar
-                                //tablero generico
-                                tablero.ajax.reload(function(){
-                                    //funeditsuario();
-                                    //fundelusuario();
-                                    //fntpermisosrol();
+                                tableroles.ajax.reload(function(){
+                                    fnteditrol();
+                                    fntdelrol();
+                                    fntpermisosrol();
                                 });
 
                             }else{
@@ -181,5 +179,3 @@ function fntdelusuario(){
         });
     });
 }
-
-//Ver al usuario
