@@ -1,5 +1,5 @@
 <?php 
-    class Usuarios extends Controllers{
+    class Userscenter extends Controllers{
         public function __construct() {
             parent::__construct();
             session_start();
@@ -9,15 +9,15 @@
         }
         
         //Visualizacion
-        public function Usuarios(){
+        public function Userscenter(){
 
-         
+       
             $data['page_tag'] = "Usuarios";
             $data['page_title']= "Pagina Principal";
             $data['page_name'] = "usuarios";
-            $data['page_js'] = "functionsusuarios.js";
+            $data['page_js'] = "functionsuserscenter.js";
     
-            $this->views->getview($this,"usuarios",$data);
+            $this->views->getview($this,"userscenter",$data);
             
         }
         //Visualizacion
@@ -30,14 +30,6 @@
                 }else{
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
                 }
-                //Id Usuario de acuerdo a su tabla en la base de datos esto recupera los datos de la BD
-                //El funcion fntwiew ya se inicializa con un evento
-
-
-              //  $btnview='<button class="btn btn-info btn-sm btnviewsstyle btnviewusuario" onClick="fntviewcliente('.$arrdata[$i]['idusuario'].')" title="Ver usuario"><i class="far fa-eye"></i></button>';
-              //  $btnedit='<button class="btn btn-primary btn-sm btneditstyle btneditusuario" rl="'.$arrdata[$i]['idusuario'].'" title="Editar" type="button"><i class="fas fa-pencil-alt"></i></button>';
-              //  $btndelete='<button class="btn btn-danger btn-sm btndelstyle btndelusuario" rl="'.$arrdata[$i]['idusuario'].'" title="Eliminar" type="button"><i class="fas fa-trash-alt"></i></button>';
-
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
                     $script='<script type="text/javascript"> fnteditusuario(); fntdelusuario();</script>';
