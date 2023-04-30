@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded",function(){
                     forminsert.reset();
                     //Validar datos todos
                     swal("Administración de Roles", obdata.msg ,"success");
-                    //Ojo 
+                    //Ojo el tablero tiene que ser generico
                     tablero.ajax.reload(function(){
                         //fnteditrol();
                         //fntdelrol();
@@ -76,7 +76,6 @@ function openmodal(){
 }
 //Funciones Usuarios
 window.addEventListener('load',function(){
-    fntrolesusuario();
     fnteditrol();
     fntdelrol();
 },false)
@@ -162,10 +161,9 @@ function fntdelrol(){
                             var objdata=JSON.parse(request.responseText);
                             if(objdata.status){
                                 swal("Eliminar!",objdata.msg,"success");
-                                tableroles.ajax.reload(function(){
+                                tablero.ajax.reload(function(){
                                     fnteditrol();
                                     fntdelrol();
-                                    fntpermisosrol();
                                 });
 
                             }else{

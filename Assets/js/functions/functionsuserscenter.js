@@ -121,7 +121,7 @@ function fnteditusuario(){
                  
                         $('#liststatus').selectpicker('render');
 
-                        $('#modalformusuario').modal("show");
+                        $('#modalformuserscenter').modal("show");
                     }else{
                         swal("Error",objdata.msg,"error");
                     }
