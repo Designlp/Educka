@@ -32,7 +32,7 @@
             $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.titulo, tc.privado, tc.estado
             FROM tcursos tc
             JOIN tusuarios tu ON tc.idusuario = tu.idusuario 
-            WHERE tc.estado != 0 AND tu.idusuario = $this->intidcurso";
+            WHERE tc.estado != 0 AND tc.idcurso = $this->intidcurso";
 
             $request=$this->select($sql);
             return $request;
