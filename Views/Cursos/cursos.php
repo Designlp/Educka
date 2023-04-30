@@ -52,7 +52,7 @@
 
 <?php 
   footeradmin($data);
-  getmodal('modaluserscenter',$data);
+  getmodal('modalcursos',$data);
 ?>
 
 </body>

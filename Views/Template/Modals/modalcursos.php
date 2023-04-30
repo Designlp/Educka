@@ -13,7 +13,7 @@
            
             <div class="tile-body">
               <form id="formrol" name="formrol">
-              <input id="idrol" name="idrol" type="hidden" value="">
+              <input id="idcurso" name="idcurso" type="hidden" value="">
                 
                 <div class="form-group">
                   <label class="control-label">Nombre</label>
