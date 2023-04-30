@@ -53,16 +53,12 @@
 
 			if(empty($request))
 			{
-				$query  = "INSERT INTO tusuarios(idroles,ci,nombre,apellidos,telefono,correo,password,suscripcion,estado) 
-								  VALUES(?,?,?,?,?,?,?,?,?)";
-	        	$arrdata = array($this->intidrol,
-        						$this->intci,
-        						$this->strnombre,
-                                $this->strapellido,
-        						$this->inttelefono,
-        						$this->strcorreo,
-                                $this->strpassword,
-                                $this->intsuscripcion,
+				$query  = "INSERT INTO tcursos(idusuario,titulo,descripcion,privado,estado) 
+								  VALUES(?,?,?,?,?)";
+	        	$arrdata = array($this->intidusuario,
+        						$this->strtitulo,
+        						$this->strdescripcion,
+                                $this->intprivado,
                                 $this->intestado,
                             );
 	        	$request = $this->insert($query,$arrdata);
@@ -73,7 +69,7 @@
             
             return $return;
         }
-        
+
         //Update
         public function updateusuario(int $idusuario, int $rol,string $ci,string $nombre, string $apellido, string $correo,int $telefono, int $suscripcion, int $estado){
 			
