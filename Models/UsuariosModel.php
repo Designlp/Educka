@@ -21,7 +21,7 @@
         }
         //YO
         public function selectusuarios(){
-            $sql= "SELECT tu.idusuario, tu.idroles, tu.nombre, tu.apellidos, tu.correo, tu.password, tu.estado, tr.tipo 
+            $sql= "SELECT tu.idusuario, tu.idroles, tu.nombre, tu.apellidos, tu.correo, tu.telefono,tu.password, tu.estado, tr.tipo 
             FROM tusuarios tu 
             JOIN troles tr ON tu.idroles = tr.idroles 
             WHERE tu.estado = 1 AND tr.estado = 1 AND tu.idroles != 2 AND tu.idroles != 3";
