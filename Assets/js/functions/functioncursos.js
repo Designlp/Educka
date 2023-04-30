@@ -116,7 +116,7 @@ function fnteditcurso(){
                  
                         $('#liststatus').selectpicker('render');
 
-                        $('#modalformuserscenter').modal("show");
+                        $('#modalformcursos').modal("show");
                     }else{
                         swal("Error",objdata.msg,"error");
                     }
