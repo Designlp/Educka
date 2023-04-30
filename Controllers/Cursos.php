@@ -49,7 +49,7 @@
 
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditusuario(); fntdelusuario();</script>';
+                    $script='<script type="text/javascript"> fnteditcurso(); fntdelcurso();</script>';
                 }
 
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
@@ -59,11 +59,11 @@
             die();
         }
 
-        public function getusuario($idusuario){
+        public function getcurso($idcurso){
             
-            $intkey=intval(strclean($idusuario));
+            $intkey=intval(strclean($idcurso));
             if ($intkey>0){
-                $arrdata = $this->model->selectusuario($intkey);
+                $arrdata = $this->model->selectcurso($intkey);
                 if(empty($arrdata)){
                     $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
                 }else{

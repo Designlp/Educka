@@ -76,17 +76,17 @@ function openmodal(){
 }
 //Funciones Usuarios
 window.addEventListener('load',function(){
-    fntrolesusuario();
+
 },false)
 
 
-//Update
-function fnteditusuario(){
-    var btneditusuario=Array.apply(null, document.querySelectorAll(".btneditusuario"));    
+//Updates
+function fnteditcurso(){
+    var btneditusuario=Array.apply(null, document.querySelectorAll(".btneditcurso"));    
     btneditusuario.forEach(function(btneditusuario){
         
         btneditusuario.addEventListener("click",function(){
-            //alert("Click to close...");
+            //alert("Click to close...");s
             document.querySelector('#titlemodal').innerHTML = "Actualizar Usuario";
             document.querySelector('.modal-header').classList.replace("headerregister","headerupdate");
             document.querySelector('#btnactionform').classList.replace("btn-primary","btn-info");
@@ -95,7 +95,7 @@ function fnteditusuario(){
             var idkey = this.getAttribute("rl");
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             //El getusuario esta en Singular !Cuidado confunfir!
-            var ajaxUrl = baseurl+'/Userscenter/getusuario/'+idkey;
+            var ajaxUrl = baseurl+'/Cursos/getusuario/'+idkey;
             request.open("GET",ajaxUrl,true);
             request.send();
             request.onreadystatechange =function(){
@@ -135,6 +135,7 @@ function fnteditusuario(){
     });
     
 }
+
 //Especial
 function fntrolesusuario(){
     if( document.querySelector('#txtrol')){

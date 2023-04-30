@@ -26,12 +26,14 @@
             return $request;
         }
 
-        public function selectusuario(int $iduser){
-            $this->intidusuario= $iduser;
-            $sql= "SELECT tu.idusuario, tu.idroles, tu.ci, tu.nombre, tu.apellidos, tu.telefono, tu.correo, tu.estado,tu.suscripcion, tr.tipo
-            FROM tusuarios tu
-            JOIN troles tr ON tu.idroles = tr.idroles
-            WHERE tu.idusuario = $this->intidusuario";
+        public function selectcurso(int $idcurso){
+            $this->intidcurso= $idcurso;
+
+            $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.titulo, tc.privado, tc.estado
+            FROM tcursos tc
+            JOIN tusuarios tu ON tc.idusuario = tu.idusuario 
+            WHERE tc.estado != 0 AND tu.idusuario = $this->intidusuario";
+
             $request=$this->select($sql);
             return $request;
         }
