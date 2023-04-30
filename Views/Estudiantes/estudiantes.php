@@ -30,7 +30,9 @@
                                 <table class="table table-hover table-bordered" id="tableestudiantes">
                                 <thead>
                                     <tr>
-                                    <th>ID</th>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Descripcion</th>
                                         <th>Nombre</th>
                                         <th>Descripcion</th>
                                         <th>Estatus</th>
