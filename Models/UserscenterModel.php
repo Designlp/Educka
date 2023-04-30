@@ -81,7 +81,7 @@
             return $return;
         }
         //Update
-        public function updateusuario(int $idusuario, int $rol,string $ci,string $nombre, string $apellido, string $correo,int $telefono, int $estado){
+        public function updateusuario(int $idusuario, int $rol,string $ci,string $nombre, string $apellido, string $correo,int $telefono, int $suscripcion, int $estado){
 			
             $this->intidusuario = $idusuario;
             $this->intidrol     = $rol;
@@ -90,6 +90,7 @@
 			$this->strapellido  = $apellido;
 			$this->strcorreo    = $correo;
 			$this->inttelefono  = $telefono;
+            $this->intsuscripcion = $suscripcion;
             $this->intestado     = $estado;
             
 
@@ -98,7 +99,7 @@
             
             if(empty($requestupdate)){
 
-                    $queryupdate="UPDATE tusuarios SET idroles=?, ci=?, nombre=?, apellidos=?, correo=? ,telefono=?,Estado=? WHERE idusuario=$this->intidusuario";
+                    $queryupdate="UPDATE tusuarios SET idroles=?, ci=?, nombre=?, apellidos=?, correo=? ,telefono=?, suscripcion=? ,estado=? WHERE idusuario=$this->intidusuario";
                     $arrdata = array(
                                 $this->intidrol,
         						$this->strci,
@@ -106,6 +107,7 @@
                                 $this->strapellido,
         						$this->strcorreo,
         						$this->inttelefono,
+                                $this->intsuscripcion,
                                 $this->intestado
                                 //Cuidao al borrar
                     );

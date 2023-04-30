@@ -116,6 +116,7 @@
                     $strapellido, 
                     $strcorreo,
                     $inttelefono,
+                    $intsuscripcion,
                     $intestado
                     );
 
