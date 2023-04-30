@@ -95,7 +95,7 @@ function fnteditcurso(){
             var idkey = this.getAttribute("rl");
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             //El getusuario esta en Singular !Cuidado confunfir!
-            var ajaxUrl = baseurl+'/Cursos/getusuario/'+idkey;
+            var ajaxUrl = baseurl+'/Cursos/getcurso/'+idkey;
             request.open("GET",ajaxUrl,true);
             request.send();
             request.onreadystatechange =function(){

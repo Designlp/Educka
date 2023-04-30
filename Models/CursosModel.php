@@ -73,7 +73,7 @@
         }
 
         //Update
-        public function updateusuario(int $idusuario, int $rol,string $ci,string $nombre, string $apellido, string $correo,int $telefono, int $suscripcion, int $estado){
+        public function updateusuario(int $idususario, int $rol,string $ci,string $nombre, string $apellido, string $correo,int $telefono, int $suscripcion, int $estado){
 			
             $this->intidusuario = $idusuario;
             $this->intidrol     = $rol;

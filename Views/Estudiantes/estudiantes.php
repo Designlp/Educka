@@ -54,7 +54,7 @@
 
 <?php 
   footeradmin($data);
-  getmodal('modaluserscenter',$data);
+  getmodal('modalformestudiantes',$data);
 ?>
 
 </body>
