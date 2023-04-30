@@ -24,7 +24,7 @@
             $sql= "SELECT tu.idusuario, tu.idroles, tu.nombre, tu.apellidos, tu.correo, tu.telefono,tu.password, tu.estado, tr.tipo 
             FROM tusuarios tu 
             JOIN troles tr ON tu.idroles = tr.idroles 
-            WHERE tu.estado = 1 AND tr.estado = 1";
+            WHERE tu.estado != 0 AND tr.estado = 1";
             $request=$this->selectall($sql);
             return $request;
         }
