@@ -36,7 +36,7 @@
                                        data-toggle="tab"
                                        role="tab"
                                        aria-controls="sm_components">
-                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">users</i>
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">people</i>
                                         <span class="sidebar-menu-text">Usuarios</span>
                                     </a>
                                 </li>
