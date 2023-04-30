@@ -33,6 +33,14 @@
                       
                     </select>
                 </div>
+
+                <div class="form-group">
+                    <label for="exampleSelect1">Disponible</label>
+                    <select class="form-control" id="listprivado" name="listprivado" placeholder="Estado">
+                      <option value="0">Privado</option>
+                      <option value="1">Publico</option>
+                    </select>
+                </div>
                 <div class="tile-footer">
                     <button id="btnactionform" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btntext">Guardar</span></button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="#" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
                 </div>
