@@ -13,12 +13,10 @@ document.addEventListener("DOMContentLoaded",function(){
             "dataSrc":""
         },
         "columns": [
-            { "data": 'idusuario' },
+            { "data": 'idcurso' },
             { "data": 'nombre' },
-            { "data": 'apellidos' },
-            { "data": 'correo' },
-            { "data": 'tipo' },
-            { "data": 'suscripcion' },
+            { "data": 'titulo' },
+            { "data": 'privado' },
             { "data": 'estado' },
             { "data": 'acciones' }
         ],
