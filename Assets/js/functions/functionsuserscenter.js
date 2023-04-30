@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded",function(){
 
 $('#tableusuarios').DataTable();
 function openmodal(){
-    document.querySelector('#idusuario').value="";
     document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";
     document.querySelector('.modal-header').classList.replace("headerupdate","headerregister");
     document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
