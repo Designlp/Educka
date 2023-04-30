@@ -77,6 +77,7 @@ function openmodal(){
 //Funciones Usuarios
 window.addEventListener('load',function(){
     fntrolesusuario();
+    fnteditrol();
 },false)
 
 
@@ -105,9 +106,9 @@ function fnteditrol(){
                     //console.log(request.responseText);
                     var objdata=JSON.parse(request.responseText);
                     if(objdata.status){
-                        document.querySelector("#idrol").value=objdata.data.IdRoles;
-                        document.querySelector("#txtnombre").value=objdata.data.Tipo;
-                        document.querySelector("#txtdescripcion").value=objdata.data.Descripcion;
+                        document.querySelector("#idrol").value=objdata.data.idroles;
+                        document.querySelector("#txttipo").value=objdata.data.tipo;
+                        document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
                         if(objdata.data.Estado == 1){
                             var optionselect = '<option value="1" selected class="notblock">Activo</option>';
                         }else{
@@ -118,7 +119,7 @@ function fnteditrol(){
                                         <option value="2">Inactivo</option>
                                         `;
                         document.querySelector("#liststatus").innerHTML = htmlselect;
-                        $('#modalformrol').modal("show");
+                        $('#modalformroles').modal("show");
                     }else{
                         swal("Error",objdata.msg,"error");
                     }
