@@ -2,30 +2,26 @@
 //Moises
     class CursosModel extends Mysql{
         //Nivel de accesos
+
+        private $intidcurso;
         private $intidusuario;
         private $intidrol;
-        private $strci;
-        private $strnombre;
-        private $strapellido;
-        private $strcorreo;
+        private $strtitulo;
+        private $strdescripcion;
+        private $strprivado;
         private $intestado;
-        private $inttelefono;
-        private $intci;
-
-        private $strpassword;
-        private $intsuscripcion;
-        private $strtoken;
+     
 
         public function __construct() {
 
             parent::__construct();
         }
         //YO
-        public function selectusuarios(){
-            $sql= "SELECT tu.idusuario, tu.idroles, tu.nombre, tu.apellidos, tu.correo, tu.telefono,tu.password,tu.suscripcion, tu.estado, tr.tipo 
-            FROM tusuarios tu 
-            JOIN troles tr ON tu.idroles = tr.idroles 
-            WHERE tu.estado != 0 AND tr.estado = 1";
+        public function selectcursos(){
+            $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.titulo, tc.privado, tc.estado
+            FROM tcursos tc 
+            JOIN tusuarios tu ON tc.idusuario = tu.idusuario 
+            WHERE tc.estado != 0";
             $request=$this->selectall($sql);
             return $request;
         }

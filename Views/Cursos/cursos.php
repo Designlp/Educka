@@ -31,11 +31,9 @@
                                 <thead>
                                     <tr>
                                     <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Apellidos</th>
-                                    <th>Correo</th>
-                                    <th>Rol</th>
-                                    <th>Suscripcion</th>
+                                    <th>Autor</th>
+                                    <th>Titulo</th>
+                                    <th>Disponible</th>
                                     <th>Estado</th>
                                     <th>Acciones</th>
                                     </tr>

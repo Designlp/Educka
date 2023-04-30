@@ -21,8 +21,8 @@
             
         }
         //Visualizacion
-        public function getusuarios(){
-            $arrdata= $this->model->selectusuarios();
+        public function getcursos(){
+            $arrdata= $this->model->selectcursos();
 
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){
@@ -30,20 +30,14 @@
                 }else{
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
                 }
-
-                if($arrdata[$i]['suscripcion']==1){
-                    $arrdata[$i]['suscripcion']='<span class="badge badge-pill badge-success">Activo</span>';
-                }else{
-                    $arrdata[$i]['suscripcion']='<span class="badge badge-pill badge-danger">Inactivo</span>';
-                }
               
                 $crudopciones='<div class="dropdown">
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
                 <div class="dropdown-menu dropdown-menu-right" style="">
-                    <a onClick="fntviewcliente('.$arrdata[$i]['idusuario'].')" class="dropdown-item">Detalles</a>
-                    <a class="dropdown-item btneditusuario" rl="'.$arrdata[$i]['idusuario'].'">Editar</a>
+                
+                    <a class="dropdown-item btneditcurso" rl="'.$arrdata[$i]['idcurso'].'">Editar</a>
                     <div class="dropdown-divider"></div>
-                    <a  class="dropdown-item text-danger btndelusuario" rl="'.$arrdata[$i]['idusuario'].'">Eliminar</a>
+                    <a  class="dropdown-item text-danger btndelcurso" rl="'.$arrdata[$i]['idcurso'].'">Eliminar</a>
                 </div>
                 </div>';
 
