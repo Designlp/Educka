@@ -81,46 +81,44 @@ window.addEventListener('load',function(){
 
 
 //Update
-function fnteditusuario(){
-    var btneditusuario=Array.apply(null, document.querySelectorAll(".btneditusuario"));    
-    btneditusuario.forEach(function(btneditusuario){
+
+function fnteditrol(){
+    var btneditrol=Array.apply(null, document.querySelectorAll(".btneditroles"));
+ 
+    
+    btneditrol.forEach(function(btneditrol){
         
-        btneditusuario.addEventListener("click",function(){
+        btneditrol.addEventListener("click",function(){
             //alert("Click to close...");
-            document.querySelector('#titlemodal').innerHTML = "Actualizar Usuario";
+            document.querySelector('#titlemodal').innerHTML = "Actualizar Rol";
             document.querySelector('.modal-header').classList.replace("headerregister","headerupdate");
             document.querySelector('#btnactionform').classList.replace("btn-primary","btn-info");
             document.querySelector('#btntext').innerHTML="Actualizar";
-            //Recupera
-            var idkey = this.getAttribute("rl");
+
+            var idrol = this.getAttribute("rl");
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            //El getusuario esta en Singular !Cuidado confunfir!
-            var ajaxUrl = baseurl+'/Usuarios/getusuario/'+idkey;
+            var ajaxUrl = baseurl+'/Roles/getrol/'+idrol;
             request.open("GET",ajaxUrl,true);
             request.send();
             request.onreadystatechange =function(){
                 if(request.readyState == 4 && request.status==200){
-     
+                    //console.log(request.responseText);
                     var objdata=JSON.parse(request.responseText);
-                    
                     if(objdata.status){
-                        document.querySelector("#idusuario").value=objdata.data.idusuario;
-                        document.querySelector("#txtci").value=objdata.data.ci;
-                        document.querySelector("#txtnombre").value=objdata.data.nombre;
-                        document.querySelector("#txtapellido").value=objdata.data.apellidos;
-                        document.querySelector("#txtcorreo").value=objdata.data.correo;
-                        document.querySelector("#txttelefono").value=objdata.data.telefono;
-                        //FK especial
-                        document.querySelector("#txtrol").value=objdata.data.idroles;
-                  
-                        $('#txtrol').selectpicker('render');
-                  
-                        //Estado Especial
-                        document.querySelector("#liststatus").value=objdata.data.estado;
-                 
-                        $('#liststatus').selectpicker('render');
-
-                        $('#modalformusuario').modal("show");
+                        document.querySelector("#idrol").value=objdata.data.IdRoles;
+                        document.querySelector("#txtnombre").value=objdata.data.Tipo;
+                        document.querySelector("#txtdescripcion").value=objdata.data.Descripcion;
+                        if(objdata.data.Estado == 1){
+                            var optionselect = '<option value="1" selected class="notblock">Activo</option>';
+                        }else{
+                            var optionselect = '<option value="2" selected class="notblock">Inactivo</option>';
+                        }
+                        var htmlselect=`${optionselect} 
+                                        <option value="1">Activo</option> 
+                                        <option value="2">Inactivo</option>
+                                        `;
+                        document.querySelector("#liststatus").innerHTML = htmlselect;
+                        $('#modalformrol').modal("show");
                     }else{
                         swal("Error",objdata.msg,"error");
                     }
@@ -129,7 +127,7 @@ function fnteditusuario(){
            
         });
     });
-    
+    //alert(btneditrol);
 }
 
 //Delete logic

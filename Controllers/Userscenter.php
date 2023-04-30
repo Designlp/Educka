@@ -69,6 +69,7 @@
                 $strcorreo = strtolower(strclean($_POST['txtcorreo']));
                 $inttelefono = intval(strclean($_POST['txttelefono']));
                 $intestado = intval(strclean($_POST['liststatus']));
+                $intsuscripcion = intval(strclean($_POST['listsuscripcion']));
                 $intidrol=intval($_POST['txtrol']);
                 //Esto se basa en el id oculto que se usa en rl 
                 if($idusuario == 0)
@@ -86,6 +87,7 @@
                     $strcorreo,
                     $inttelefono,
                     $strpasswordencript,
+                    $intsuscripcion,
                     $intestado
                  );
                 }else{

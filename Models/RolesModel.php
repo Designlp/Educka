@@ -95,22 +95,19 @@
             $request=$this->select($sql);
             return $request;
         }
-        //Especial
+   
      
-
-
-
-
-
-        public function settokenuser(int $iduser, string $token){
-            $this->intidusuario = $iduser;
-            $this->strtoken= $token;
-            $queryupdate="UPDATE tusuarios SET token = ? WHERE idusuario =$this->intidusuario";
-            $arrdata = array($this->strtoken);
-            $requestupdate= $this->update($queryupdate,$arrdata);
-            return $requestupdate;
-                
+        //parte del delete
+        public function selectrol(int $idrol){
+            $this->intidrol= $idrol;
+            $sql="SELECT * FROM troles WHERE idroles = $this->intidrol";
+            $request=$this->select($sql);
+            return $request;
         }
+
+
+
+   
         //Delete
         public function deleteusaurio(int $idusuario){
     

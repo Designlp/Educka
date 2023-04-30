@@ -52,7 +52,7 @@
             </div>
             <div class="form-group col-md-4">
               <label for="listsuscripcion">Suscripción</label>
-              <select class="form-control" id="liststatus" name="listsuscripcion" placeholder="Suscripción">
+              <select class="form-control" id="listsuscripcion" name="listsuscripcion" placeholder="Suscripción">
                 <option value="0">Inactivo</option>
                 <option value="1">Activo</option>
               </select>

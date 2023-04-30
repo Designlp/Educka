@@ -87,11 +87,12 @@
          }
 
         //Update
-        public function getusuario($idusuario){
-            
-            $intkey=intval(strclean($idusuario));
-            if ($intkey>0){
-                $arrdata = $this->model->selectusuario($intkey);
+        public function getrol($idrol){
+            //dep($_POST);
+            $intidrol=intval(strclean($idrol));
+
+            if ($intidrol>0){
+                $arrdata = $this->model->selectrol($intidrol);
                 if(empty($arrdata)){
                     $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
                 }else{
@@ -100,7 +101,8 @@
                 echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
             }
             die();
-        }
+         }
+
         //Especial funciones de visualizacion
 
         public function getselectroles(){
