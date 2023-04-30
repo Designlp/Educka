@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 },false);
 //Activacion del Modal
-$('#tableroles').DataTable();
+$('#tableestudiantes').DataTable();
 
 function openmodal(){
     document.querySelector('#idrol').value="";
@@ -80,8 +80,8 @@ function openmodal(){
 }
 //Funciones Usuarios
 window.addEventListener('load',function(){
-    fnteditrol();
-    fntdelrol();
+    //fnteditrol();
+    //fntdelrol();
 },false)
 
 

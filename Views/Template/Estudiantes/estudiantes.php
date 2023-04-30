@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
-            <div class="tile-body">Roles de Estudiantes</div>
+            <div class="tile-body">Estudiantes</div>
             
           </div>
         </div>
