@@ -34,7 +34,7 @@
 
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditrol(); fntdelusuario();</script>';
+                    $script='<script type="text/javascript"> fnteditrol(); fntdelrol();</script>';
                 }
 
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$btnview.' '.$btnedit.' '.$btndelete.' '.$script.'</div>';
@@ -120,15 +120,12 @@
         }
 
         //Delete
-        public function delusuario(){
+        public function delrol(){
             if($_POST){
-                
-                $intidusuario=intval($_POST['idusuario']);
-                
-                $requestdelete=$this->model->deleteusaurio($intidusuario);
-
+                $intidrol=intval($_POST['idrol']);
+                $requestdelete=$this->model->deleterol($intidrol);
                 if($requestdelete == 'ok'){
-                    $arrresponse= array('status'=>true,'msg'=>'Datos Eliminados Correctamente '.$requestdelete);
+                    $arrresponse= array('status'=>true,'msg'=>'Datos Eliminados Correctamente'.$requestdelete);
                 
                 }else{
                     if($requestdelete == 'existe'){
@@ -139,7 +136,7 @@
                echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
             }
             die();
-    }
+        }
 
 
 

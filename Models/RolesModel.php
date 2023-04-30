@@ -77,17 +77,18 @@
 
    
         //Delete
-        public function deleteusaurio(int $idusuario){
+        public function deleterol(int $idrol){
+            
+            $this->intidrol=$idrol;
     
-            $this->intidusuario=$idusuario;
-            $querydelete="UPDATE tusuarios SET estado=? WHERE idusuario = $this->intidusuario";
-            $arrdata = array(0);
-            $requestdelete= $this->update($querydelete,$arrdata);
 
-                //$querydelete="DELETE FROM rol  WHERE idrol = $this->intidrol";
-                //$arrdata = array(0);
-                //$requestdelete= $this->delete($querydelete,$arrdata);
-
+            $sql= "SELECT * FROM tusuarios WHERE idroles=$this->intidrol";
+            $requestdelete = $this->selectall($sql);
+            
+            if(empty($requestdelete)){
+                $querydelete="UPDATE troles SET estado=? WHERE idroles = $this->intidrol";
+                $arrdata = array(0);
+                $requestdelete= $this->update($querydelete,$arrdata);
                 if($requestdelete){
                     $requestdelete='ok';
                     $return=$requestdelete;
@@ -95,11 +96,10 @@
                     $request='error';
                     $return=$request;
                 }
-                /*
             }else{
                 $return='existe';
             }
-            */
+            
             return $return;
 
         }

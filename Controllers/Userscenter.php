@@ -30,11 +30,7 @@
                 }else{
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
                 }
-                if($i == (count($arrdata)-1)){
-                    //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditusuario(); fntdelusuario();</script>';
-                }
-
+              
                 $crudopciones='<div class="dropdown">
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
                 <div class="dropdown-menu dropdown-menu-right" style="">
@@ -45,6 +41,11 @@
                 </div>
                 </div>';
 
+                if($i == (count($arrdata)-1)){
+                    //Necesario agregar para que funciones las funciones de delete y update
+                    $script='<script type="text/javascript"> fnteditusuario(); fntdelusuario();</script>';
+                }
+                
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
             }
             
