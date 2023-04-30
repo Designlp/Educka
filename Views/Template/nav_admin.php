@@ -53,22 +53,22 @@
                              </a>
                              <ul class="sidebar-submenu collapse sm-indent" id="components_menu">
                                  <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-buttons.html">
+                                     <a class="sidebar-menu-button"  href="<?=base_url()?>/Userscenter">
                                          <span class="sidebar-menu-text">Principal</span>
                                      </a>
                                  </li>
                                  <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-avatars.html">
+                                     <a class="sidebar-menu-button" href="<?=base_url()?>/Usuarios">
                                          <span class="sidebar-menu-text">Usuarios</span>
                                      </a>
                                  </li>
                                  <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-forms.html">
+                                     <a class="sidebar-menu-button"  href="<?=base_url()?>/Docentes">
                                          <span class="sidebar-menu-text">Docentes</span>
                                      </a>
                                  </li>
                                  <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-loaders.html">
+                                     <a class="sidebar-menu-button"  href="<?=base_url()?>/Estudiantes">
                                          <span class="sidebar-menu-text">Estudiantes</span>
                                      </a>
                                  </li>
@@ -84,7 +84,7 @@
 
                              <ul class="sidebar-submenu collapse sm-indent" id="plugins_menu">
                                  <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-plugin-charts.html">
+                                     <a class="sidebar-menu-button"  href="<?=base_url()?>/Roles">
                                          <span class="sidebar-menu-text">Roles</span>
                                      </a>
                                  </li>
