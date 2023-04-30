@@ -45,11 +45,26 @@
                     //Necesario agregar para que funciones las funciones de delete y update
                     $script='<script type="text/javascript"> fnteditusuario(); fntdelusuario();</script>';
                 }
-                
+
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
             }
             
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
+            die();
+        }
+
+        public function getusuario($idusuario){
+            
+            $intkey=intval(strclean($idusuario));
+            if ($intkey>0){
+                $arrdata = $this->model->selectusuario($intkey);
+                if(empty($arrdata)){
+                    $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
+                }else{
+                    $arrresponse= array('status'=>true,'data'=>$arrdata);
+                }
+                echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
+            }
             die();
         }
 
@@ -141,20 +156,7 @@
         die();
         }
         //Update
-        public function getusuario($idusuario){
-            
-            $intkey=intval(strclean($idusuario));
-            if ($intkey>0){
-                $arrdata = $this->model->selectusuario($intkey);
-                if(empty($arrdata)){
-                    $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
-                }else{
-                    $arrresponse= array('status'=>true,'data'=>$arrdata);
-                }
-                echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
-            }
-            die();
-        }
+      
         //Especial funciones de visualizacion
 
         public function getselectroles(){

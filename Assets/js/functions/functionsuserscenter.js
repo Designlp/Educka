@@ -96,7 +96,7 @@ function fnteditusuario(){
             var idkey = this.getAttribute("rl");
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             //El getusuario esta en Singular !Cuidado confunfir!
-            var ajaxUrl = baseurl+'/Usuarios/getusuario/'+idkey;
+            var ajaxUrl = baseurl+'/Userscenter/getusuario/'+idkey;
             request.open("GET",ajaxUrl,true);
             request.send();
             request.onreadystatechange =function(){
@@ -115,6 +115,10 @@ function fnteditusuario(){
                         document.querySelector("#txtrol").value=objdata.data.idroles;
                   
                         $('#txtrol').selectpicker('render');
+
+
+                        document.querySelector("#listsuscripcion").value=objdata.data.suscripcion;
+                        $('#listsuscripcion').selectpicker('render');
                   
                         //Estado Especial
                         document.querySelector("#liststatus").value=objdata.data.estado;

@@ -22,11 +22,21 @@
         }
         //YO
         public function selectusuarios(){
-            $sql= "SELECT tu.idusuario, tu.idroles, tu.nombre, tu.apellidos, tu.correo, tu.telefono,tu.password, tu.estado, tr.tipo 
+            $sql= "SELECT tu.idusuario, tu.idroles, tu.nombre, tu.apellidos, tu.correo, tu.telefono,tu.password,tu.suscripcion, tu.estado, tr.tipo 
             FROM tusuarios tu 
             JOIN troles tr ON tu.idroles = tr.idroles 
             WHERE tu.estado != 0 AND tr.estado = 1";
             $request=$this->selectall($sql);
+            return $request;
+        }
+
+        public function selectusuario(int $iduser){
+            $this->intidusuario= $iduser;
+            $sql= "SELECT tu.idusuario, tu.idroles, tu.ci, tu.nombre, tu.apellidos, tu.telefono, tu.correo, tu.estado,tu.suscripcion, tr.tipo
+            FROM tusuarios tu
+            JOIN troles tr ON tu.idroles = tr.idroles
+            WHERE tu.idusuario = $this->intidusuario";
+            $request=$this->select($sql);
             return $request;
         }
 
@@ -110,15 +120,7 @@
 
         }
         //Pate del Update
-        public function selectusuario(int $iduser){
-            $this->intidusuario= $iduser;
-            $sql= "SELECT tu.idusuario, tu.idroles, tu.ci, tu.nombre, tu.apellidos, tu.telefono, tu.correo, tu.estado,tu.suscripcion, tr.tipo
-            FROM tusuarios tu
-            JOIN troles tr ON tu.idroles = tr.idroles
-            WHERE tu.idusuario = $this->intidusuario";
-            $request=$this->select($sql);
-            return $request;
-        }
+    
         //Especial
         public function selectroles(){
           
