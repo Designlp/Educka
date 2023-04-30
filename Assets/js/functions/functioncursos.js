@@ -63,15 +63,15 @@ document.addEventListener("DOMContentLoaded",function(){
 
 },false);
 
-$('#tableusuarios').DataTable();
+$('#tablecursos').DataTable();
 function openmodal(){
-    document.querySelector('#idusuario').value="";
+    document.querySelector('#idcurso').value="";
     document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";
     document.querySelector('.modal-header').classList.replace("headerupdate","headerregister");
     document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
     document.querySelector('#btntext').innerHTML="Guardar";
     document.querySelector('#formusuario').reset();
-    $('#modalformuserscenter').modal("show");
+    $('#modalformcursos').modal("show");
     
 }
 //Funciones Usuarios

@@ -14,11 +14,10 @@ document.addEventListener("DOMContentLoaded",function(){
         },
         "columns": [
             { "data": 'idusuario' },
-            { "data": 'ci' },
             { "data": 'nombre' },
             { "data": 'apellidos' },
+            { "data": 'telefono' },
             { "data": 'correo' },
-            { "data": 'tipo' },
             { "data": 'suscripcion' },
             { "data": 'estado' },
             { "data": 'acciones' }

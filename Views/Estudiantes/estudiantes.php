@@ -32,9 +32,9 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Nombre</th>
-                                        <th>Descripcion</th>
-                                        <th>Nombre</th>
-                                        <th>Descripcion</th>
+                                        <th>Apellidos</th>
+                                        <th>Correo</th>
+                                        <th>Suscripcion</th>
                                         <th>Estatus</th>
                                         <th>Acciones</th>
                                     </tr>
