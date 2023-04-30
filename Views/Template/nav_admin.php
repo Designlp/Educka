@@ -26,7 +26,10 @@
                             <ul class="nav flex-shrink-0 flex-nowrap flex-column sidebar-menu mb-0 js-sidebar-mini-tabs"
                                 role="tablist">
                                 <li class="sidebar-menu-item active"
-                                 >
+                                    data-title="Usuarios"
+                                    data-placement="right"
+                                    data-container="body"
+                                    data-boundary="window">
                                     <a class="sidebar-menu-button"
                                        href="#sm_components"
                                        data-toggle="tab"
