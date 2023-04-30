@@ -25,6 +25,7 @@
                              data-perfect-scrollbar>
                             <ul class="nav flex-shrink-0 flex-nowrap flex-column sidebar-menu mb-0 js-sidebar-mini-tabs"
                                 role="tablist">
+                                      <!-- data-toggle="tooltip" sin hover de texto-->
                                 <li class="sidebar-menu-item active"
                                     data-title="Usuarios"
                                     data-placement="right"
@@ -39,8 +40,9 @@
                                         <span class="sidebar-menu-text">Usuarios</span>
                                     </a>
                                 </li>
+                                    <!-- data-toggle="tooltip" sin hover de texto-->
                                 <li class="sidebar-menu-item"
-                                    data-toggle="tooltip"
+                               
                                     data-title="Layouts"
                                     data-placement="right"
                                     data-boundary="window">
