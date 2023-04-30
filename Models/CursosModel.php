@@ -46,8 +46,9 @@
 		
 			$return = 0;
 
-			$sql = "SELECT * FROM tusuarios 
-                    WHERE correo = '{$this->strcorreo}' OR ci = '{$this->intci}'";
+			$sql = "SELECT * FROM tcursos 
+                    WHERE titulo = '{$this->strtitulo}'";
+
 			$request = $this->selectall($sql);
 
 			if(empty($request))
@@ -72,6 +73,7 @@
             
             return $return;
         }
+        
         //Update
         public function updateusuario(int $idusuario, int $rol,string $ci,string $nombre, string $apellido, string $correo,int $telefono, int $suscripcion, int $estado){
 			
