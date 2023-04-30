@@ -35,6 +35,7 @@
                                     <th>Apellidos</th>
                                     <th>Correo</th>
                                     <th>Rol</th>
+                                    <th>Suscripcion</th>
                                     <th>Estado</th>
                                     <th>Acciones</th>
                                     </tr>

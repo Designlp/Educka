@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded",function(){
             { "data": 'apellidos' },
             { "data": 'correo' },
             { "data": 'tipo' },
+            { "data": 'suscripcion' },
             { "data": 'estado' },
             { "data": 'acciones' }
         ],
