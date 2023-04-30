@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded",function(){
             { "data": 'apellidos' },
             { "data": 'telefono' },
             { "data": 'correo' },
-            { "data": 'idroles' },
+            { "data": 'tipo' },
             { "data": 'estado' },
             { "data": 'acciones' }
         ],
