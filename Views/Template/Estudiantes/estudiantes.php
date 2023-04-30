@@ -34,7 +34,6 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Nombre</th>
                       <th>C.I.</th>
                       <th>Nombres</th>
                       <th>Apellidos</th>
