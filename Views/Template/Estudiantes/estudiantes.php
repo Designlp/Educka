@@ -1,6 +1,6 @@
 <?php 
   headeradmin($data);
-  getmodal('modalroles',$data);
+  getmodal('modalestudiantes',$data);
 ?>
    
     <main class="app-content">
