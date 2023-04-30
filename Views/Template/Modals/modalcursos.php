@@ -16,8 +16,8 @@
               <input id="idcurso" name="idcurso" type="hidden" value="">
                 
                 <div class="form-group">
-                  <label class="control-label">Nombre</label>
-                  <input class="form-control" id="txtnombre" name="txtnombre" type="text" placeholder="Nombre del Rol" required="">
+                  <label class="control-label">Titulo</label>
+                  <input class="form-control" id="txttitulo" name="txttitulo" type="text" placeholder="Titulo" required="">
                 </div>
          
                 <div class="form-group">
