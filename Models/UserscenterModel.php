@@ -145,32 +145,7 @@
                 
         }
         //Delete
-        public function deleteusaurio(int $idusuario){
-    
-            $this->intidusuario=$idusuario;
-            $querydelete="UPDATE tusuarios SET estado=? WHERE idusuario = $this->intidusuario";
-            $arrdata = array(0);
-            $requestdelete= $this->update($querydelete,$arrdata);
-
-                //$querydelete="DELETE FROM rol  WHERE idrol = $this->intidrol";
-                //$arrdata = array(0);
-                //$requestdelete= $this->delete($querydelete,$arrdata);
-
-                if($requestdelete){
-                    $requestdelete='ok';
-                    $return=$requestdelete;
-                }else{
-                    $request='error';
-                    $return=$request;
-                }
-                /*
-            }else{
-                $return='existe';
-            }
-            */
-            return $return;
-
-        }
+      
 
 
     }

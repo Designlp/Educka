@@ -180,27 +180,7 @@
 
         }
 
-        //Delete
-        public function delusuario(){
-            if($_POST){
-                
-                $intidusuario=intval($_POST['idusuario']);
-                
-                $requestdelete=$this->model->deleteusaurio($intidusuario);
-
-                if($requestdelete == 'ok'){
-                    $arrresponse= array('status'=>true,'msg'=>'Datos Eliminados Correctamente '.$requestdelete);
-                
-                }else{
-                    if($requestdelete == 'existe'){
-                        $arrresponse= array('status'=>false,'msg'=>'No es Posible Eliminar un rol asociado a un usuario'.$requestdelete);
-                    }else
-                        $arrresponse= array('status'=>true,'msg'=>'No se elimino los datos'.$requestdelete);
-               }
-               echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
-            }
-            die();
-    }
+        
 
 
 
