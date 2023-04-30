@@ -15,7 +15,7 @@
             $data['page_tag'] = "Usuarios";
             $data['page_title']= "Pagina Principal";
             $data['page_name'] = "usuarios";
-            $data['page_js'] = "functionsuserscenter.js";
+            $data['page_js'] = "functioncursos.js";
     
             $this->views->getview($this,"cursos",$data);
             
