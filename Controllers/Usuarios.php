@@ -47,7 +47,7 @@
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
                 <div class="dropdown-menu dropdown-menu-right" style="">
                     <a onClick="fntviewcliente('.$arrdata[$i]['idusuario'].')" class="dropdown-item">Detalles</a>
-                    <a class="dropdown-item" rl="'.$arrdata[$i]['idusuario'].'">Editar</a>
+                    <a class="dropdown-item btneditusuario" rl="'.$arrdata[$i]['idusuario'].'">Editar</a>
                     <div class="dropdown-divider"></div>
                     <a  class="dropdown-item text-danger"  rl="'.$arrdata[$i]['idusuario'].'">Eliminar</a>
                 </div>
