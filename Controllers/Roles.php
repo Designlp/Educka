@@ -37,7 +37,7 @@
                     $script='<script type="text/javascript"> fnteditrol(); fntdelrol();</script>';
                 }
 
-                $arrdata[$i]['acciones']= '<div class="text-center">'.$btnview.' '.$btnedit.' '.$btndelete.' '.$script.'</div>';
+                $arrdata[$i]['acciones']= '<div class="text-center"> '.$btnedit.' '.$btndelete.' '.$script.'</div>';
             }
             
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
