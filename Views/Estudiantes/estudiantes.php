@@ -33,6 +33,7 @@
                                         <th>ID</th>
                                         <th>Nombre</th>
                                         <th>Apellidos</th>
+                                        <th>Telefono</th>
                                         <th>Correo</th>
                                         <th>Suscripcion</th>
                                         <th>Estatus</th>
