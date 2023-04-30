@@ -112,16 +112,10 @@
         //Pate del Update
         public function selectusuario(int $iduser){
             $this->intidusuario= $iduser;
-            $sql= "SELECT tu.idusuario, 
-            tu.idroles,  
-            tu.ci,
-            tu.nombre, 
-            tu.apellidos,  
-            tu.telefono, 
-            tu.correo,  
-            tu.estado, 
-            tr.tipo
-            FROM tusuarios tu, troles tr WHERE tu.idroles = tr.idroles AND tu.idusuario = $this->intidusuario";
+            $sql= "SELECT tu.idusuario, tu.idroles, tu.ci, tu.nombre, tu.apellidos, tu.telefono, tu.correo, tu.estado,tu.suscripcion, tr.tipo
+            FROM tusuarios tu
+            JOIN troles tr ON tu.idroles = tr.idroles
+            WHERE tu.idusuario = $this->intidusuario";
             $request=$this->select($sql);
             return $request;
         }
