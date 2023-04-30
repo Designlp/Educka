@@ -1,6 +1,5 @@
 var tablero;
 //Esto es un js
-//Prueba a com
 document.addEventListener("DOMContentLoaded",function(){
     tablero=$('#tableestudiantes').DataTable({
         "aProcessing":true,
@@ -29,32 +28,30 @@ document.addEventListener("DOMContentLoaded",function(){
 
     });
     //Insert
-    var forminsert= document.querySelector("#formusuario");
+    var forminsert= document.querySelector("#formestudiantes");
     forminsert.onsubmit=function(e){
         e.preventDefault();
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = baseurl+'/Userscenter/setusuarios';
+        var ajaxUrl = baseurl+'/Estudiantes/setestudiantes';
         var formdata=new FormData(forminsert);
         request.open("POST",ajaxUrl,true);
         request.send(formdata);
         request.onreadystatechange =function(){
             if(request.readyState == 4 && request.status==200){
-               
                 //console.log(request.responseText);
                 var obdata=JSON.parse(request.responseText);
                 //console.log(obdata);
                 if(obdata.status){
-                    $('#modalformuserscenter').modal("hide");
+                    $('#modalformestudiantes').modal("hide");
                     forminsert.reset();
                     //Validar datos repetodos
-                    swal("Administración de Usuarios", obdata.msg ,"success");
+                    swal("Administración de Estudiantes", obdata.msg ,"success");
                     //Ojo 
                     tablero.ajax.reload(function(){
                         //fnteditrol();
                         //fntdelrol();
                         //fntpermisosrol();
                     });
-                   
                 } else{
                     swal("Error",obdata.msg,"error");
                     //forminsert.reset();
@@ -62,18 +59,18 @@ document.addEventListener("DOMContentLoaded",function(){
             }
         }
     }
-
 },false);
 
+//Edit 
 $('#tableestudiantes').DataTable();
 function openmodal(){
     document.querySelector('#idusuario').value="";
-    document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";
+    document.querySelector('#titlemodal').innerHTML = "Nuevo Estudiante";
     document.querySelector('.modal-header').classList.replace("headerupdate","headerregister");
     document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
     document.querySelector('#btntext').innerHTML="Guardar";
-    document.querySelector('#formusuario').reset();
-    $('#modalformuserscenter').modal("show");
+    document.querySelector('#formestudiantes').reset();
+    $('#modalformestudiantes').modal("show");
     
 }
 //Funciones Usuarios
