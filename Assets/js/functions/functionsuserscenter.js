@@ -72,7 +72,7 @@ function openmodal(){
     document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
     document.querySelector('#btntext').innerHTML="Guardar";
     document.querySelector('#formusuario').reset();
-    $('#modalformusuario').modal("show");
+    $('#modalformuserscenter').modal("show");
     
 }
 //Funciones Usuarios
