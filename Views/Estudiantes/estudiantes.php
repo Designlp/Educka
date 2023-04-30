@@ -11,7 +11,7 @@
                         <li class="breadcrumb-item active">Tables</li>
                     </ol>
                     <br>
-                    <button class="btn btn-primary btn-sm" type="button" onclick="openmodal()">Nuevo</button>
+                    <button class="btn btn-primary btn-sm" type="button" onclick="openmodal()"  >Nuevo</button>
                 </div>
 
                 
@@ -27,17 +27,17 @@
                         <div class="tile">
                             <div class="tile-body">
                             <div class="table-responsive">
-                                <table class="table table-hover table-bordered" id="tableestudiantes">
+                                <table class="table table-hover table-bordered" id="tableusuarios">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Nombre</th>
-                                        <th>Apellidos</th>
-                                        <th>Telefono</th>
-                                        <th>Correo</th>
-                                        <th>Suscripcion</th>
-                                        <th>Estatus</th>
-                                        <th>Acciones</th>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Correo</th>
+                                    <th>Rol</th>
+                                    <th>Suscripcion</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,9 +54,8 @@
 
 <?php 
   footeradmin($data);
-  getmodal('modalroles',$data);
+  getmodal('modaluserscenter',$data);
 ?>
 
 </body>
 </html>
-   

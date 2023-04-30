@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded",function(){
 
     });
     //Insert
-    var forminsert= document.querySelector("#formusuario");
+    var forminsert= document.querySelector("#formcurso");
     forminsert.onsubmit=function(e){
         e.preventDefault();
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = baseurl+'/Userscenter/setusuarios';
+        var ajaxUrl = baseurl+'/Cursos/setcurso';
         var formdata=new FormData(forminsert);
         request.open("POST",ajaxUrl,true);
         request.send(formdata);
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 var obdata=JSON.parse(request.responseText);
                 //console.log(obdata);
                 if(obdata.status){
-                    $('#modalformuserscenter').modal("hide");
+                    $('#modalformcursos').modal("hide");
                     forminsert.reset();
                     //Validar datos repetodos
                     swal("Administración de Usuarios", obdata.msg ,"success");

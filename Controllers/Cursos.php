@@ -77,91 +77,46 @@
 
         //Insert 
         //Logica update como
-        public function setusuarios(){
-            if($_POST){	
-            if(empty($_POST['txtnombre']) || empty($_POST['txtapellido']) || empty($_POST['txtcorreo']) )
-            {
-                $arrresponse = array("status" => false, "msg" => 'Datos incorrectos.');
-            }else{ 
-                // No importa el orden de las variables
-                $idusuario = intval($_POST['idusuario']);
-                $strci = strclean($_POST['txtci']);
-                $strnombre = ucwords(strclean($_POST['txtnombre']));
-                $strapellido = ucwords(strclean($_POST['txtapellido']));
-                $strcorreo = strtolower(strclean($_POST['txtcorreo']));
-                $inttelefono = intval(strclean($_POST['txttelefono']));
-                $intestado = intval(strclean($_POST['liststatus']));
-                $intsuscripcion = intval(strclean($_POST['listsuscripcion']));
-                $intidrol=intval($_POST['txtrol']);
-                //Esto se basa en el id oculto que se usa en rl 
-                if($idusuario == 0)
-                {
-                    //Se incrementa mediante la respuesta del request de model
-                    $option = 1;
-                    $strpassword =  empty($_POST['txtcontrasenia']) ? passgenerator() : $_POST['txtcontrasenia'];
-                    $strpasswordencript=hash("SHA256",$strpassword);
-
-                    $requestusuario = $this->model->insertusuario(
-                    $intidrol,
-                    $strci,
-                    $strnombre, 
-                    $strapellido, 
-                    $strcorreo,
-                    $inttelefono,
-                    $strpasswordencript,
-                    $intsuscripcion,
-                    $intestado
-                 );
-                }else{
-                    $option = 2;
-                    $requestusuario = $this->model->updateusuario(
-                    $idusuario,
-                    $intidrol,
-                    $strci,
-                    $strnombre, 
-                    $strapellido, 
-                    $strcorreo,
-                    $inttelefono,
-                    $intsuscripcion,
-                    $intestado
-                    );
-
-                }
-                if($requestusuario > 0){
-
-                    if($option == 1 ){
-                        $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
-                        $token= token();
-                        $nombreuser= $strnombre.' '.$strapellido;
-                        $stremail = strtolower(strclean($strcorreo));
-                        
-                        $urlrecuperar= base_url().'/Login/confirmuser/'.$stremail.'/'.$token;
-                        $requestupdate = $this->model->settokenuser($requestusuario,$token);
-
-                           $datausuario = array(
-                            'nombreuser'=>$nombreuser,
-                            'email'=>$stremail,
-                            'asunto'=>'Recuperar cuenta - '.NOMBRE_REMITENTE,
-                            'urlrecuperacion'=>$urlrecuperar
-                        );
-                        $sendemail= sendEmail($datausuario,'emailcambiopassword');
-
-                    }
-                    if($option == 2 ){
-                        $arrresponse= array('status'=>true,'msg'=>'Datos Actualizados Correctamente');
-                    }
-                    
-               }else{
-                    if($requestusuario == -1){
-                        $arrresponse= array('status'=>false,'msg'=>'!Atencion! El usuario ya existe');
-                    }else
-                    $arrresponse= array('status'=>true,'msg'=>'No se almaceno los datos');
-               }
+        public function setcurso(){
+            //dep($_POST);
+            $intidcurso=intval($_POST['idcurso']);
+            $strtitulo=strclean($_POST['txttitulo']);
+            $strdescripcion=strclean($_POST['txtdescripcion']);
+            $intprivate=intval($_POST['listprivado']);
+            $intstatus=intval($_POST['liststatus']);
+            
+ 
+            if($intidcurso == 0){
+                 $requestrol=$this->model->insertrol($strrol,$strdescripcion,$intstatus);
+                 $option=1;
             }
+            if($intidcurso != 0){
+                 $requestrol=$this->model->updaterol( $intidcurso,$strrol,$strdescripcion,$intstatus);
+                 $option=2;
+            }
+ 
+            if($requestrol > 0){
+ 
+                 if($option == 1 ){
+                     $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
+                 }
+                 if($option == 2 ){
+                     $arrresponse= array('status'=>true,'msg'=>'Datos Actualizados Correctamente');
+                 }
+                 
+            }else{
+                 if($requestrol == -1){
+                     $arrresponse= array('status'=>false,'msg'=>'!Atencion! El rol ya existe');
+                 }else
+                 $arrresponse= array('status'=>true,'msg'=>'No se almaceno los datos');
+            }
+            
+            
             echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
-        }
-        die();
-        }
+            die();
+            
+         }
+ 
         //Update
       
         //Especial funciones de visualizacion
