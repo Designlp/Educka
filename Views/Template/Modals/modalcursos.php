@@ -12,7 +12,7 @@
       <div class="tile">
            
             <div class="tile-body">
-              <form id="formrol" name="formrol">
+              <form id="formcurso" name="formcurso">
               <input id="idcurso" name="idcurso" type="hidden" value="">
                 
                 <div class="form-group">
