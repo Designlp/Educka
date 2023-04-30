@@ -45,7 +45,7 @@
 			$return = 0;
 
 			$sql = "SELECT * FROM tusuarios 
-                    WHERE Correo = '{$this->strcorreo}' OR ci = '{$this->intci}'";
+                    WHERE correo = '{$this->strcorreo}' OR ci = '{$this->intci}'";
 			$request = $this->selectall($sql);
 
 			if(empty($request))

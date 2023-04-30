@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 var obdata=JSON.parse(request.responseText);
                 //console.log(obdata);
                 if(obdata.status){
-                    $('#modalformusuario').modal("hide");
+                    $('#modalformuserscenter').modal("hide");
                     forminsert.reset();
                     //Validar datos repetodos
                     swal("Administración de Usuarios", obdata.msg ,"success");
