@@ -41,37 +41,20 @@
             return $return;
         }
         //Update
-        public function updateusuario(int $idusuario, int $rol,string $ci,string $nombre, string $apellido, string $correo,int $telefono, int $estado){
-			
-            $this->intidusuario = $idusuario;
-            $this->intidrol     = $rol;
-			$this->strci        = $ci;
-			$this->strnombre    = $nombre;
-			$this->strapellido  = $apellido;
-			$this->strcorreo    = $correo;
-			$this->inttelefono  = $telefono;
-            $this->intestado     = $estado;
+        public function updaterol(int $idrol, string $tipo, string $descripcion, int $estado){
             
-
-            $sql= "SELECT * FROM tusuarios WHERE nombre='{$this->strnombre}' AND apellidos='{$this->strapellido}' AND idusuario != $this->intidusuario";
+            $this->intidrol=$idrol;
+            $this->strtipo=$tipo;
+            $this->strdescripcion=$descripcion;
+            $this->intestado=$estado;
+            $sql= "SELECT * FROM troles WHERE tipo='$this->strtipo' AND idroles != $this->intidrol";
             $requestupdate = $this->selectall($sql);
             
             if(empty($requestupdate)){
-
-                    $queryupdate="UPDATE tusuarios SET idroles=?, ci=?, nombre=?, apellidos=?, correo=? ,telefono=?,Estado=? WHERE idusuario=$this->intidusuario";
-                    $arrdata = array(
-                                $this->intidrol,
-        						$this->strci,
-        						$this->strnombre,
-                                $this->strapellido,
-        						$this->strcorreo,
-        						$this->inttelefono,
-                                $this->intestado
-                                //Cuidao al borrar
-                    );
+                $queryupdate="UPDATE troles SET tipo=?,estado=? ,descripcion=?WHERE idroles=$this->intidrol";
+                $arrdata = array($this->strtipo,$this->intestado,$this->strdescripcion);
                 $requestupdate= $this->update($queryupdate,$arrdata);
                 $return=$requestupdate;
-                
             }else{
                 $return=-1;
             }
@@ -79,22 +62,7 @@
             return $return;
 
         }
-        //Pate del Update
-        public function selectusuario(int $iduser){
-            $this->intidusuario= $iduser;
-            $sql= "SELECT tu.idusuario, 
-            tu.idroles,  
-            tu.ci,
-            tu.nombre, 
-            tu.apellidos,  
-            tu.telefono, 
-            tu.correo,  
-            tu.estado, 
-            tr.tipo
-            FROM tusuarios tu, troles tr WHERE tu.idroles = tr.idroles AND tu.idusuario = $this->intidusuario";
-            $request=$this->select($sql);
-            return $request;
-        }
+
    
      
         //parte del delete
