@@ -27,82 +27,6 @@
                                 role="tablist">
                                 <li class="sidebar-menu-item active"
                                     data-toggle="tooltip"
-                                    data-title="Estudiantes"
-                                    data-placement="right"
-                                    data-boundary="window">
-                                    <a class="sidebar-menu-button"
-                                       href="#sm_student"
-                                       data-toggle="tab"
-                                       role="tab"
-                                       aria-controls="sm_student"
-                                       aria-selected="true">
-                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
-                                        <span class="sidebar-menu-text">Student</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item"
-                                    data-toggle="tooltip"
-                                    data-title="Instructor"
-                                    data-placement="right"
-                                    data-container="body"
-                                    data-boundary="window">
-                                    <a class="sidebar-menu-button"
-                                       href="#sm_instructor"
-                                       data-toggle="tab"
-                                       role="tab"
-                                       aria-controls="sm_instructor"
-                                       aria-selected="false">
-                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">format_shapes</i>
-                                        <span class="sidebar-menu-text">Instructor</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item "
-                                    data-toggle="tooltip"
-                                    data-title="Apps"
-                                    data-placement="right"
-                                    data-container="body"
-                                    data-boundary="window">
-                                    <a class="sidebar-menu-button"
-                                       href="#sm_apps"
-                                       data-toggle="tab"
-                                       role="tab"
-                                       aria-controls="sm_apps">
-                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">apps</i>
-                                        <span class="sidebar-menu-text">Apps</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item "
-                                    data-toggle="tooltip"
-                                    data-title="Account"
-                                    data-placement="right"
-                                    data-container="body"
-                                    data-boundary="window">
-                                    <a class="sidebar-menu-button"
-                                       href="#sm_account"
-                                       data-toggle="tab"
-                                       role="tab"
-                                       aria-controls="sm_account">
-                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i>
-                                        <span class="sidebar-menu-text">Account</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item "
-                                    data-toggle="tooltip"
-                                    data-title="Messaging"
-                                    data-placement="right"
-                                    data-container="body"
-                                    data-boundary="window">
-                                    <a class="sidebar-menu-button"
-                                       href="#sm_messaging"
-                                       data-toggle="tab"
-                                       role="tab"
-                                       aria-controls="sm_messaging">
-                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">message</i>
-                                        <span class="sidebar-menu-text">Messaging</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-menu-item"
-                                    data-toggle="tooltip"
                                     data-title="Usuarios"
                                     data-placement="right"
                                     data-container="body"
@@ -112,8 +36,8 @@
                                        data-toggle="tab"
                                        role="tab"
                                        aria-controls="sm_components">
-                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">tune</i>
-                                        <span class="sidebar-menu-text">Components</span>
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">users</i>
+                                        <span class="sidebar-menu-text">Usuarios</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-menu-item"
