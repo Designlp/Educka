@@ -1,5 +1,5 @@
 <?php 
-    class Userscenter extends Controllers{
+    class Estudiantes extends Controllers{
         public function __construct() {
             parent::__construct();
             session_start();
@@ -9,20 +9,20 @@
         }
         
         //Visualizacion
-        public function Userscenter(){
+        public function Estudiantes(){
 
        
-            $data['page_tag'] = "Usuarios";
+            $data['page_tag'] = "Estudiantes";
             $data['page_title']= "Pagina Principal";
-            $data['page_name'] = "usuarios";
-            $data['page_js'] = "functionsuserscenter.js";
+            $data['page_name'] = "estudiantes";
+            $data['page_js'] = "functionestudiantes.js";
     
-            $this->views->getview($this,"userscenter",$data);
+            $this->views->getview($this,"estudiantes",$data);
             
         }
         //Visualizacion
-        public function getusuarios(){
-            $arrdata= $this->model->selectusuarios();
+        public function getestudiantes(){
+            $arrdata= $this->model->selectestudiantes();
 
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){

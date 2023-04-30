@@ -80,6 +80,7 @@
         public function setcurso(){
             //dep($_POST);
             $intidcurso=intval($_POST['idcurso']);
+            $intidautor=$_SESSION['iduser'];
             $strtitulo=strclean($_POST['txttitulo']);
             $strdescripcion=strclean($_POST['txtdescripcion']);
             $intprivate=intval($_POST['listprivado']);
@@ -87,7 +88,7 @@
             
  
             if($intidcurso == 0){
-                 $requestrol=$this->model->insertrol($strrol,$strdescripcion,$intstatus);
+                 $requestrol=$this->model->insertcurso($intidautor,$strtitulo,$strdescripcion, $intprivate,$intstatus);
                  $option=1;
             }
             if($intidcurso != 0){
@@ -106,7 +107,7 @@
                  
             }else{
                  if($requestrol == -1){
-                     $arrresponse= array('status'=>false,'msg'=>'!Atencion! El rol ya existe');
+                     $arrresponse= array('status'=>false,'msg'=>'!Atencion! El curso ya existe');
                  }else
                  $arrresponse= array('status'=>true,'msg'=>'No se almaceno los datos');
             }

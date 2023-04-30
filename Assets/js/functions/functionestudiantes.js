@@ -2,14 +2,14 @@ var tablero;
 //Esto es un js
 //Prueba a com
 document.addEventListener("DOMContentLoaded",function(){
-    tablero=$('#tableusuarios').DataTable({
+    tablero=$('#tableestudiantes').DataTable({
         "aProcessing":true,
         "aSeverSide":true,
         "language" :{
             "url":"https://cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json"
         },
         "ajax":{
-            "url":" "+baseurl+"/Userscenter/getusuarios",
+            "url":" "+baseurl+"/Estudiantes/getestudiantes",
             "dataSrc":""
         },
         "columns": [
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 },false);
 
-$('#tableusuarios').DataTable();
+$('#tableestudiantes').DataTable();
 function openmodal(){
     document.querySelector('#idusuario').value="";
     document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";

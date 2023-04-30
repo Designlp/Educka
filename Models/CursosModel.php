@@ -8,7 +8,7 @@
         private $intidrol;
         private $strtitulo;
         private $strdescripcion;
-        private $strprivado;
+        private $intprivado;
         private $intestado;
      
 
@@ -37,17 +37,13 @@
         }
 
 
-        public function insertusuario(int $idrol,string $ci, string $nombre, string $apellido, string $email, int $telefono, string $password, int $suscripcion, int $estado){
-            $this->intidrol = $idrol;
-			$this->intci = $ci;
-			$this->strnombre = $nombre;
-			$this->strapellido = $apellido;
-			$this->strcorreo = $email;
-			$this->inttelefono = $telefono;
-            $this->strpassword = $password;
-            $this->intsuscripcion = $suscripcion;
-			$this->intestado = $estado;
-            
+        public function insertcurso(int $idautor,string $titulo, string $descripcion, int $private, int $estado){
+            $this->intidusuario = $idautor;
+			$this->strtitulo = $titulo;
+			$this->strdescripcion = $descripcion;
+            $this->intprivado = $private;
+            $this->intestado = $estado;
+		
 			$return = 0;
 
 			$sql = "SELECT * FROM tusuarios 
