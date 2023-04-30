@@ -34,7 +34,7 @@
 
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditusuario(); fntdelusuario();</script>';
+                    $script='<script type="text/javascript"> fnteditrol(); fntdelusuario();</script>';
                 }
 
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$btnview.' '.$btnedit.' '.$btndelete.' '.$script.'</div>';
