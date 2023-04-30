@@ -29,7 +29,7 @@
         public function selectcurso(int $idcurso){
             $this->intidcurso= $idcurso;
 
-            $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.titulo, tc.privado, tc.estado
+            $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.descripcion, tc.titulo, tc.privado, tc.estado
             FROM tcursos tc
             JOIN tusuarios tu ON tc.idusuario = tu.idusuario 
             WHERE tc.estado != 0 AND tc.idcurso = $this->intidcurso";

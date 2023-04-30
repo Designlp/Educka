@@ -104,20 +104,12 @@ function fnteditcurso(){
                     var objdata=JSON.parse(request.responseText);
                     
                     if(objdata.status){
-                        document.querySelector("#idusuario").value=objdata.data.idusuario;
-                        document.querySelector("#txtci").value=objdata.data.ci;
-                        document.querySelector("#txtnombre").value=objdata.data.nombre;
-                        document.querySelector("#txtapellido").value=objdata.data.apellidos;
-                        document.querySelector("#txtcorreo").value=objdata.data.correo;
-                        document.querySelector("#txttelefono").value=objdata.data.telefono;
-                        //FK especial
-                        document.querySelector("#txtrol").value=objdata.data.idroles;
-                  
-                        $('#txtrol').selectpicker('render');
+                        document.querySelector("#idcurso").value=objdata.data.idcurso;
+                        document.querySelector("#txttitulo").value=objdata.data.titulo;
+                        document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
 
-
-                        document.querySelector("#listsuscripcion").value=objdata.data.suscripcion;
-                        $('#listsuscripcion').selectpicker('render');
+                        document.querySelector("#listprivado").value=objdata.data.privado;
+                        $('#listprivado').selectpicker('render');
                   
                         //Estado Especial
                         document.querySelector("#liststatus").value=objdata.data.estado;
