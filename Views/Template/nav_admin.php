@@ -54,67 +54,22 @@
                              <ul class="sidebar-submenu collapse sm-indent" id="components_menu">
                                  <li class="sidebar-menu-item">
                                      <a class="sidebar-menu-button" href="ui-buttons.html">
-                                         <span class="sidebar-menu-text">Buttons</span>
+                                         <span class="sidebar-menu-text">Principal</span>
                                      </a>
                                  </li>
                                  <li class="sidebar-menu-item">
                                      <a class="sidebar-menu-button" href="ui-avatars.html">
-                                         <span class="sidebar-menu-text">Avatars</span>
+                                         <span class="sidebar-menu-text">Usuarios</span>
                                      </a>
                                  </li>
                                  <li class="sidebar-menu-item">
                                      <a class="sidebar-menu-button" href="ui-forms.html">
-                                         <span class="sidebar-menu-text">Forms</span>
+                                         <span class="sidebar-menu-text">Docentes</span>
                                      </a>
                                  </li>
                                  <li class="sidebar-menu-item">
                                      <a class="sidebar-menu-button" href="ui-loaders.html">
-                                         <span class="sidebar-menu-text">Loaders</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-tables.html">
-                                         <span class="sidebar-menu-text">Tables</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-cards.html">
-                                         <span class="sidebar-menu-text">Cards</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-icons.html">
-                                         <span class="sidebar-menu-text">Icons</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-tabs.html">
-                                         <span class="sidebar-menu-text">Tabs</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-alerts.html">
-                                         <span class="sidebar-menu-text">Alerts</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-badges.html">
-                                         <span class="sidebar-menu-text">Badges</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-progress.html">
-                                         <span class="sidebar-menu-text">Progress</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button" href="ui-pagination.html">
-                                         <span class="sidebar-menu-text">Pagination</span>
-                                     </a>
-                                 </li>
-                                 <li class="sidebar-menu-item">
-                                     <a class="sidebar-menu-button disabled" href="">
-                                         <span class="sidebar-menu-text">Disabled</span>
+                                         <span class="sidebar-menu-text">Estudiantes</span>
                                      </a>
                                  </li>
                              </ul>
