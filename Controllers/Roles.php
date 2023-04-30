@@ -48,62 +48,44 @@
         //Insert 
         //Logica update como
         public function setroles(){
-            if($_POST){	
-            if(empty($_POST['txttipo']) || empty($_POST['txtdescripcion']))
-            {
-                $arrresponse = array("status" => false, "msg" => 'Datos incorrectos.');
-            }else{ 
-                // No importa el orden de las variables
-                $idrol = intval($_POST['idrol']);
-                $strtipo = ucwords(strclean($_POST['txttipo']));
-                $strdescripcion = ucwords(strclean($_POST['txtdescripcion']));
-                $intestado = intval(strclean($_POST['liststatus']));
-                //Esto se basa en el id oculto que se usa en rl 
-                //Modo sencillo
-                if($idrol == 0){
-                    $requestrol=$this->model->insertrol($strtipo,$strdescripcion,$intestado);
-                    $option=1;
-               }
-               if($idrol != 0){
-                    $requestrol=$this->model->updaterol( $intidrol,$strrol,$strdescripcion,$intstatus);
-                    $option=2;
-               }
-
-                if($requestrol > 0){
-
-                    if($option == 1 ){
-                        $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
-                        $token= token();
-                        $nombreuser= $strnombre.' '.$strapellido;
-                        $stremail = strtolower(strclean($strcorreo));
-                        
-                        $urlrecuperar= base_url().'/Login/confirmuser/'.$stremail.'/'.$token;
-                        $requestupdate = $this->model->settokenuser($requestusuario,$token);
-
-                           $datausuario = array(
-                            'nombreuser'=>$nombreuser,
-                            'email'=>$stremail,
-                            'asunto'=>'Recuperar cuenta - '.NOMBRE_REMITENTE,
-                            'urlrecuperacion'=>$urlrecuperar
-                        );
-                        $sendemail= sendEmail($datausuario,'emailcambiopassword');
-
-                    }
-                    if($option == 2 ){
-                        $arrresponse= array('status'=>true,'msg'=>'Datos Actualizados Correctamente');
-                    }
-                    
-               }else{
-                    if($requestrol == -1){
-                        $arrresponse= array('status'=>false,'msg'=>'!Atencion! El usuario ya existe');
-                    }else
-                    $arrresponse= array('status'=>true,'msg'=>'No se almaceno los datos');
-               }
+            //dep($_POST);
+            $intidrol=intval($_POST['idrol']);
+            $strtipo=strclean($_POST['txttipo']);
+            $strdescripcion=strclean($_POST['txtdescripcion']);
+            $intstatus=intval($_POST['liststatus']);
+            
+ 
+            if($intidrol == 0){
+                 $requestrol=$this->model->insertrol($strtipo,$strdescripcion,$intstatus);
+                 $option=1;
             }
+            if($intidrol != 0){
+                 $requestrol=$this->model->updaterol( $intidrol,$strtipo,$strdescripcion,$intstatus);
+                 $option=2;
+            }
+ 
+            if($requestrol > 0){
+ 
+                 if($option == 1 ){
+                     $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
+                 }
+                 if($option == 2 ){
+                     $arrresponse= array('status'=>true,'msg'=>'Datos Actualizados Correctamente');
+                 }
+                 
+            }else{
+                 if($requestrol == -1){
+                     $arrresponse= array('status'=>false,'msg'=>'!Atencion! El rol ya existe');
+                 }else
+                 $arrresponse= array('status'=>true,'msg'=>'No se almaceno los datos');
+            }
+            
+            
             echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
-        }
-        die();
-        }
+            die();
+            
+         }
+
         //Update
         public function getusuario($idusuario){
             
