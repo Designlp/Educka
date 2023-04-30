@@ -53,7 +53,7 @@
 
 <?php 
   footeradmin($data);
-  getmodal('modalformuserscenter',$data);
+  getmodal('modaluserscenter',$data);
 ?>
 
 </body>
