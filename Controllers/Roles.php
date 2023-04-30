@@ -28,7 +28,7 @@
                 }
                 //Id Usuario de acuerdo a su tabla en la base de datos esto recupera los datos de la BD
                 //El funcion fntwiew ya se inicializa con un evento
-                $btnview='<button class="btn btn-info btn-sm btnviewsstyle btnviewroles" onClick="fntviewcliente('.$arrdata[$i]['idroles'].')" title="Ver usuario"><i class="far fa-eye"></i></button>';
+                //$btnview='<button class="btn btn-info btn-sm btnviewsstyle btnviewroles" onClick="fntviewcliente('.$arrdata[$i]['idroles'].')" title="Ver usuario"><i class="far fa-eye"></i></button>';
                 $btnedit='<button class="btn btn-primary btn-sm btneditstyle btneditroles" rl="'.$arrdata[$i]['idroles'].'" title="Editar" type="button"><i class="fas fa-pencil-alt"></i></button>';
                 $btndelete='<button class="btn btn-danger btn-sm btndelstyle btndelroles" rl="'.$arrdata[$i]['idroles'].'" title="Eliminar" type="button"><i class="fas fa-trash-alt"></i></button>';
 
