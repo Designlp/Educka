@@ -74,10 +74,11 @@
                                  </li>
                              </ul>
                          </li>
+                         
                          <li class="sidebar-menu-item">
                              <a class="sidebar-menu-button" data-toggle="collapse" href="#plugins_menu">
-                                 <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">folder</span>
-                                 Plugins
+                                 <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">contact_support</span>
+                                 Roles
                                  <span class="ml-auto sidebar-menu-toggle-icon"></span>
                              </a>
                              <ul class="sidebar-submenu collapse sm-indent" id="plugins_menu">
