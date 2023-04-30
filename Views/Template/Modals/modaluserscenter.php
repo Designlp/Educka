@@ -16,33 +16,33 @@
 
           <!-- Esta es la clase de alertas son los mensaje -->
           <!--<div class="was-validated">-->
-            <!-- Utiliza la clase feedback -->
-            <div class="form-row">
-              <div class="form-group col-md-4">
-                <label class="control-label">Cedula de Identidad </label>
-                <input class="form-control" id="txtci" name="txtci" type="text" placeholder="Cedula de Identidad" required="">
-                <!-- <div class="invalid-feedback">Please provide a last name.</div>
+          <!-- Utiliza la clase feedback -->
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="control-label">Cedula de Identidad </label>
+              <input class="form-control" id="txtci" name="txtci" type="text" placeholder="Cedula de Identidad" required="">
+              <!-- <div class="invalid-feedback">Please provide a last name.</div>
                 <div class="valid-feedback">Looks good!</div>-->
-              </div>
-              <div class="form-group col-md-4">
-                <label class="control-label">Nombre</label>
-                <input class="form-control" id="txtnombre" name="txtnombre" minlength="2" maxlength="20" pattern="[a-zA-Z ]{2,20}" type="text" placeholder="Nombre del Usuario" required="">
-              </div>
-              <div class="form-group col-md-4">
-                <label class="control-label">Apellidos</label>
-                <input class="form-control" id="txtapellido" name="txtapellido" minlength="4" maxlength="20" pattern="[a-zA-Z ]{4,20}" type="text" placeholder="Apellido del Usuario" required="">
-              </div>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label class="control-label">Correo</label>
-                <input type="text" class="form-control" id="txtcorreo" name="txtcorreo" minlength="8" maxlength="50" pattern="[a-zA-Z0-9$@.-]{8,50}" placeholder="Correo" required="">
-              </div>
-              <div class="form-group col-md-6">
-                <label class="control-label">Numero telefonico</label>
-                <input class="form-control" id="txttelefono" name="txttelefono" type="text" placeholder="Numero de Celular" required="">
-              </div>
+            <div class="form-group col-md-4">
+              <label class="control-label">Nombre</label>
+              <input class="form-control" id="txtnombre" name="txtnombre" minlength="2" maxlength="20" pattern="[a-zA-Z ]{2,20}" type="text" placeholder="Nombre del Usuario" required="">
             </div>
+            <div class="form-group col-md-4">
+              <label class="control-label">Apellidos</label>
+              <input class="form-control" id="txtapellido" name="txtapellido" minlength="4" maxlength="20" pattern="[a-zA-Z ]{4,20}" type="text" placeholder="Apellido del Usuario" required="">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label class="control-label">Correo</label>
+              <input type="text" class="form-control" id="txtcorreo" name="txtcorreo" minlength="8" maxlength="50" pattern="[a-zA-Z0-9$@.-]{8,50}" placeholder="Correo" required="">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label">Numero telefonico</label>
+              <input class="form-control" id="txttelefono" name="txttelefono" type="text" placeholder="Numero de Celular" required="">
+            </div>
+          </div>
           <!--</div>-->
           <div class="form-row">
             <div class="form-group col-md-4">
@@ -53,8 +53,8 @@
             <div class="form-group col-md-4">
               <label for="listsuscripcion">Suscripción</label>
               <select class="form-control" id="liststatus" name="listsuscripcion" placeholder="Suscripción">
+                <option value="0">Inactivo</option>
                 <option value="1">Activo</option>
-                <option value="2">Inactivo</option>
               </select>
             </div>
             <div class="form-group col-md-4">
@@ -128,7 +128,7 @@
                 <td>Estado:</td>
                 <td id="celEstado">Pendiente</td>
               </tr>
-      
+
 
             </tbody>
           </table>
