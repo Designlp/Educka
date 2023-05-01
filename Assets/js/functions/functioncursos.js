@@ -109,11 +109,12 @@ function fnteditcurso(){
                         document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
 
                         document.querySelector("#listprivado").value=objdata.data.privado;
+                        $('#liststatus').selectpicker('refresh');
                         $('#listprivado').selectpicker('render');
                   
                         //Estado Especial
                         document.querySelector("#liststatus").value=objdata.data.estado;
-                 
+                        $('#liststatus').selectpicker('refresh');
                         $('#liststatus').selectpicker('render');
 
                         $('#modalformcursos').modal("show");
