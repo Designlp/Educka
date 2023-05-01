@@ -48,7 +48,7 @@
 		
 			$return = 0;
 
-			$sql = "SELECT * FROM tcursos 
+			$sql = "SELECT titulo FROM tcursos 
                     WHERE titulo = '{$this->strtitulo}'";
 
 			$request = $this->selectall($sql);
@@ -82,7 +82,7 @@
             $this->intprivado = $private;
             $this->intestado = $estado;
 
-            $sql = "SELECT * FROM tcursos 
+            $sql = "SELECT titulo FROM tcursos 
                     WHERE titulo = '{$this->strtitulo}' AND idcurso != $this->intidcurso";
 
             $requestupdate = $this->selectall($sql);
@@ -99,31 +99,40 @@
             return $return;
 
         }
-        //Pate del Update
+
+
+        public function deletecurso(int $idcurso){
+            
+            $this->intidcurso=$idcurso;
     
-        //Especial
-        public function selectroles(){
-          
-            $sql="SELECT * FROM troles WHERE estado != 0";
-            $request=$this->selectall($sql);
-            return $request;
-        }
 
+            $sql= "SELECT idcurso  FROM tlecciones WHERE idcurso =$this->intidcurso";
+            $requestdelete = $this->selectall($sql);
+            
+            if(empty($requestdelete)){
+                $querydelete="UPDATE tcursos SET estado=? WHERE idcurso  = $this->intidcurso";
+                $arrdata = array(0);
+                $requestdelete= $this->update($querydelete,$arrdata);
 
+                //$querydelete="DELETE FROM rol  WHERE idrol = $this->intidrol";
+                //$arrdata = array(0);
+                //$requestdelete= $this->delete($querydelete,$arrdata);
 
-
-
-        public function settokenuser(int $iduser, string $token){
-            $this->intidusuario = $iduser;
-            $this->strtoken= $token;
-            $queryupdate="UPDATE tusuarios SET token = ? WHERE idusuario =$this->intidusuario";
-            $arrdata = array($this->strtoken);
-            $requestupdate= $this->update($queryupdate,$arrdata);
-            return $requestupdate;
+                if($requestdelete){
+                    $requestdelete='ok';
+                    $return=$requestdelete;
+                }else{
+                    $request='error';
+                    $return=$request;
+                }
                 
+            }else{
+                $return='existe';
+            }
+            
+            return $return;
+
         }
-        //Delete
-      
 
 
     }

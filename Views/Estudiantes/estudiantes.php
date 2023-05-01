@@ -11,7 +11,7 @@
                         <li class="breadcrumb-item active">Tables</li>
                     </ol>
                     <br>
-                    <button class="btn btn-primary btn-sm" type="button" onclick="openmodal()"  >Nuevo</button>
+                    <button class="btn btn-primary btn-sm" type="button" onclick="openmodal()">Nuevo</button>
                 </div>
 
                 
@@ -54,8 +54,10 @@
 
 <?php 
   footeradmin($data);
-  getmodal('modalformestudiantes',$data);
+  
+  getmodal('modalestudiantes',$data);
 ?>
-
+    
+                <!-- En el getModal se pone el nombre del archivo-->
 </body>
 </html>

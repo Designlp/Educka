@@ -64,6 +64,12 @@ document.addEventListener("DOMContentLoaded",function(){
 $('#tableestudiantes').DataTable();
 function openmodal(){
     alert("Ca");
+    document.querySelector('#idusuario').value="";
+    document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";
+    document.querySelector('.modal-header').classList.replace("headerupdate","headerregister");
+    document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
+    document.querySelector('#btntext').innerHTML="Guardar";
+    document.querySelector('#formusuario').reset();
     $('#modalformestudiantes').modal("show");
     
 }

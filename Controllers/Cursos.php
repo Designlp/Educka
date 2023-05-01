@@ -118,38 +118,25 @@
             
          }
  
-         public function deletecurso(int $idrol){
-            
-            $this->intidrol=$idrol;
-    
+        
 
-            $sql= "SELECT * FROM tusuarios WHERE IdRoles=$this->intidrol";
-            $requestdelete = $this->selectall($sql);
-            
-            if(empty($requestdelete)){
-                $querydelete="UPDATE troles SET Estado=? WHERE IdRoles = $this->intidrol";
-                $arrdata = array(0);
-                $requestdelete= $this->update($querydelete,$arrdata);
-
-                //$querydelete="DELETE FROM rol  WHERE idrol = $this->intidrol";
-                //$arrdata = array(0);
-                //$requestdelete= $this->delete($querydelete,$arrdata);
-
-                if($requestdelete){
-                    $requestdelete='ok';
-                    $return=$requestdelete;
-                }else{
-                    $request='error';
-                    $return=$request;
-                }
+         public function delcurso(){
+            if($_POST){
+                $intidcurso=intval($_POST['idcurso']);
+                $requestdelete=$this->model->deletecurso($intidcurso);
+                if($requestdelete == 'ok'){
+                    $arrresponse= array('status'=>true,'msg'=>'Datos Eliminados Correctamente'.$requestdelete);
                 
-            }else{
-                $return='existe';
+                }else{
+                    if($requestdelete == 'existe'){
+                        $arrresponse= array('status'=>false,'msg'=>'No es Posible Eliminar un curso asociado a una leccion'.$requestdelete);
+                    }else
+                        $arrresponse= array('status'=>true,'msg'=>'No se elimino los datos'.$requestdelete);
+               }
+               echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
             }
-            
-            return $return;
-
-        }
+            die();
+         }
 
 
 

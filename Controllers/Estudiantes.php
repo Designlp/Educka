@@ -20,6 +20,7 @@
             $this->views->getview($this,"estudiantes",$data);
             
         }
+        
         //Visualizacion
         public function getestudiantes(){
             $arrdata= $this->model->selectestudiantes();
@@ -92,6 +93,7 @@
                 $inttelefono = intval(strclean($_POST['txttelefono']));
                 $intestado = intval(strclean($_POST['liststatus']));
                 $intidrol=intval(3);
+                $intsuscripcion = intval(0);
                 //Esto se basa en el id oculto que se usa en rl 
                 if($idusuario == 0)
                 {
@@ -106,6 +108,7 @@
                     $strnombre, 
                     $strapellido, 
                     $strcorreo,
+                    $intsuscripcion,
                     $inttelefono,
                     $strpasswordencript,
                     $intestado

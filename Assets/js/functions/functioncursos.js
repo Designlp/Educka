@@ -150,7 +150,7 @@ function fntdelcurso(){
             },function(isConfirm){
                 if(isConfirm){
                 var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-                var ajaxUrl = baseurl+'/Usuarios/delusuario/';
+                var ajaxUrl = baseurl+'/Cursos/delcurso/';
                 var strdata = "idusuario="+idusuarios;
                 request.open("POST",ajaxUrl,true);
                 request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
