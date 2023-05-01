@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded",function(){
     }
 },false);
 
-//Edit 
 $('#tableestudiantes').DataTable();
 function openmodal(){
     document.querySelector('#idusuario').value="";

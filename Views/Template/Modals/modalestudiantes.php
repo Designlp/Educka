@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modalformuserscenter" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modalformestudiantes" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header headerregister">
@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
         <!-- Form-->
-        <form autocomplete="off" class="form-horizontal" id="formusuario" name="formusuario" enctype="multipart/form-data">
+        <form autocomplete="off" class="form-horizontal" id="formestudiantes" name="formestudiantes" enctype="multipart/form-data">
           <input id="idusuario" name="idusuario" type="hidden" value="">
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
@@ -45,19 +45,7 @@
           </div>
           <!--</div>-->
           <div class="form-row">
-            <div class="form-group col-md-4">
-              <label class="control-label">Rol</label>
-              <select class="form-control" data-live-search="true" id="txtrol" name="txtrol" placeholder="Rol">
-              </select>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="listsuscripcion">Suscripción</label>
-              <select class="form-control" id="listsuscripcion" name="listsuscripcion" placeholder="Suscripción">
-                <option value="0">Inactivo</option>
-                <option value="1">Activo</option>
-              </select>
-            </div>
-            <div class="form-group col-md-4">
+            <div class="form-group">
               <label for="liststatus">Estado</label>
               <select class="form-control" id="liststatus" name="liststatus" placeholder="Estado">
                 <option value="1">Activo</option>

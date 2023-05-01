@@ -92,7 +92,7 @@
                  $option=1;
             }
             if($intidcurso != 0){
-                 $requestrol=$this->model->updaterol( $intidcurso,$strrol,$strdescripcion,$intstatus);
+                 $requestrol=$this->model->updatecurso( $intidcurso,$intidautor,$strtitulo,$strdescripcion, $intprivate,$intstatus);
                  $option=2;
             }
  

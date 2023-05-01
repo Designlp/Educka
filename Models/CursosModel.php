@@ -73,39 +73,25 @@
         }
 
         //Update
-        public function updateusuario(int $idususario, int $rol,string $ci,string $nombre, string $apellido, string $correo,int $telefono, int $suscripcion, int $estado){
-			
-            $this->intidusuario = $idusuario;
-            $this->intidrol     = $rol;
-			$this->strci        = $ci;
-			$this->strnombre    = $nombre;
-			$this->strapellido  = $apellido;
-			$this->strcorreo    = $correo;
-			$this->inttelefono  = $telefono;
-            $this->intsuscripcion = $suscripcion;
-            $this->intestado     = $estado;
+        public function updatecurso(int $idcurso, int $idautor,string $titulo, string $descripcion, int $private, int $estado){
             
+            $this->intidcurso = $idcurso;
+            $this->intidusuario = $idautor;
+			$this->strtitulo = $titulo;
+			$this->strdescripcion = $descripcion;
+            $this->intprivado = $private;
+            $this->intestado = $estado;
 
-            $sql= "SELECT * FROM tusuarios WHERE nombre='{$this->strnombre}' AND apellidos='{$this->strapellido}' AND idusuario != $this->intidusuario";
+            $sql = "SELECT * FROM tcursos 
+                    WHERE titulo = '{$this->strtitulo}' AND idcurso != $this->intidcurso";
+
             $requestupdate = $this->selectall($sql);
             
             if(empty($requestupdate)){
-
-                    $queryupdate="UPDATE tusuarios SET idroles=?, ci=?, nombre=?, apellidos=?, correo=? ,telefono=?, suscripcion=? ,estado=? WHERE idusuario=$this->intidusuario";
-                    $arrdata = array(
-                                $this->intidrol,
-        						$this->strci,
-        						$this->strnombre,
-                                $this->strapellido,
-        						$this->strcorreo,
-        						$this->inttelefono,
-                                $this->intsuscripcion,
-                                $this->intestado
-                                //Cuidao al borrar
-                    );
+                $queryupdate="UPDATE tcursos SET titulo=?,descripcion=? ,privado = ?, estado = ? WHERE idcurso=$this->intidcurso";
+                $arrdata = array($this->strtitulo,$this->strdescripcion,$this->intprivado,$this->intestado);
                 $requestupdate= $this->update($queryupdate,$arrdata);
                 $return=$requestupdate;
-                
             }else{
                 $return=-1;
             }
