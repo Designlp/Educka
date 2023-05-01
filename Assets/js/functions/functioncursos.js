@@ -129,27 +129,11 @@ function fnteditcurso(){
 }
 
 //Especial
-function fntrolesusuario(){
-    if( document.querySelector('#txtrol')){
-        var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = baseurl+'/Usuarios/getselectroles';
-        request.open("GET",ajaxUrl,true);
-        request.send();
 
-        request.onreadystatechange =function(){
-            if(request.readyState == 4 && request.status==200){
-             
-                document.querySelector('#txtrol').innerHTML= request.responseText;
-                document.querySelector('#txtrol').value=1;
-                $('#txtrol').selectpicker('render');
-            }
-        }
-    }    
-}
 //Delete logic
-function fntdelusuario(){
+function fntdelcurso(){
    
-    var btndelusuario = document.querySelectorAll(".btndelusuario");
+    var btndelusuario = document.querySelectorAll(".btndelcurso");
 
     btndelusuario.forEach(function(btndelusuario){
         btndelusuario.addEventListener("click",function(){
