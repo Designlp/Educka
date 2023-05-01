@@ -139,7 +139,7 @@ function fntdelcurso(){
         btndelusuario.addEventListener("click",function(){
             var idusuarios = this.getAttribute("rl");
             swal({
-                title:"Eliminar Usuario",
+                title:"Eliminar Curso",
                 text: "¿Realmente Quiere eliminar el Usuario?",
                 type:"warning",
                 showCancelButton:true,

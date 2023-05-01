@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 $('#tableestudiantes').DataTable();
 function openmodal(){
-  
+    alert("Ca");
     $('#modalformestudiantes').modal("show");
     
 }

@@ -118,25 +118,38 @@
             
          }
  
-        //Update
-      
-        //Especial funciones de visualizacion
+         public function deletecurso(int $idrol){
+            
+            $this->intidrol=$idrol;
+    
 
-        public function getselectroles(){
+            $sql= "SELECT * FROM tusuarios WHERE IdRoles=$this->intidrol";
+            $requestdelete = $this->selectall($sql);
+            
+            if(empty($requestdelete)){
+                $querydelete="UPDATE troles SET Estado=? WHERE IdRoles = $this->intidrol";
+                $arrdata = array(0);
+                $requestdelete= $this->update($querydelete,$arrdata);
 
-            $htmloptions="";
-            $arrdata = $this->model->selectroles();
-            if(count($arrdata) > 0){
-                for($i=0;$i < count($arrdata); $i++){
-                    $htmloptions.='<option value="'.$arrdata[$i]['idroles'].'">'.$arrdata[$i]['tipo'].'</option>';
+                //$querydelete="DELETE FROM rol  WHERE idrol = $this->intidrol";
+                //$arrdata = array(0);
+                //$requestdelete= $this->delete($querydelete,$arrdata);
+
+                if($requestdelete){
+                    $requestdelete='ok';
+                    $return=$requestdelete;
+                }else{
+                    $request='error';
+                    $return=$request;
                 }
+                
+            }else{
+                $return='existe';
             }
-            echo $htmloptions;
-            die();
+            
+            return $return;
 
         }
-
-        
 
 
 
