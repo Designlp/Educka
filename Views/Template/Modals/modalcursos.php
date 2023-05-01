@@ -26,8 +26,8 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="exampleSelect1">Estado</label>
-                    <select class="form-control" id="liststatus" name="liststatus" placeholder="Estado">
+                    <label for="liststatus">Estado</label>
+                    <select class="form-control" id="liststatus" name="liststatus" >
                       <option value="1">Activo</option>
                       <option value="2">Inactivo</option>
                       
@@ -35,8 +35,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleSelect1">Disponible</label>
-                    <select class="form-control" id="listprivado" name="listprivado" placeholder="Estado">
+                    <label for="listprivado">Disponible</label>
+                    <select class="form-control" id="listprivado" name="listprivado">
                       <option value="0">Privado</option>
                       <option value="1">Publico</option>
                     </select>
