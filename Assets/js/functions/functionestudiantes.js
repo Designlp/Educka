@@ -80,13 +80,13 @@ window.addEventListener('load',function(){
 
 
 //Update
-function fnteditusuario(){
-    var btneditusuario=Array.apply(null, document.querySelectorAll(".btneditusuario"));    
-    btneditusuario.forEach(function(btneditusuario){
+function fnteditestudiantes(){
+    var btneditestudiantes=Array.apply(null, document.querySelectorAll(".btneditestudiantes"));    
+    btneditestudiantes.forEach(function(btneditestudiantes){
         
-        btneditusuario.addEventListener("click",function(){
+        btneditestudiantes.addEventListener("click",function(){
             //alert("Click to close...");
-            document.querySelector('#titlemodal').innerHTML = "Actualizar Usuario";
+            document.querySelector('#titlemodal').innerHTML = "Actualizar Estudiante";
             document.querySelector('.modal-header').classList.replace("headerregister","headerupdate");
             document.querySelector('#btnactionform').classList.replace("btn-primary","btn-info");
             document.querySelector('#btntext').innerHTML="Actualizar";
@@ -94,7 +94,7 @@ function fnteditusuario(){
             var idkey = this.getAttribute("rl");
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             //El getusuario esta en Singular !Cuidado confunfir!
-            var ajaxUrl = baseurl+'/Userscenter/getusuario/'+idkey;
+            var ajaxUrl = baseurl+'/Estudiantes/getestudiante/'+idkey;
             request.open("GET",ajaxUrl,true);
             request.send();
             request.onreadystatechange =function(){
@@ -109,21 +109,13 @@ function fnteditusuario(){
                         document.querySelector("#txtapellido").value=objdata.data.apellidos;
                         document.querySelector("#txtcorreo").value=objdata.data.correo;
                         document.querySelector("#txttelefono").value=objdata.data.telefono;
-                        //FK especial
-                        document.querySelector("#txtrol").value=objdata.data.idroles;
-                  
-                        $('#txtrol').selectpicker('render');
-
-
-                        document.querySelector("#listsuscripcion").value=objdata.data.suscripcion;
-                        $('#listsuscripcion').selectpicker('render');
-                  
+                    
                         //Estado Especial
                         document.querySelector("#liststatus").value=objdata.data.estado;
                  
                         $('#liststatus').selectpicker('render');
 
-                        $('#modalformuserscenter').modal("show");
+                        $('#modalformestudiantes').modal("show");
                     }else{
                         swal("Error",objdata.msg,"error");
                     }
@@ -134,24 +126,7 @@ function fnteditusuario(){
     });
     
 }
-//Especial
-function fntrolesusuario(){
-    if( document.querySelector('#txtrol')){
-        var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = baseurl+'/Usuarios/getselectroles';
-        request.open("GET",ajaxUrl,true);
-        request.send();
 
-        request.onreadystatechange =function(){
-            if(request.readyState == 4 && request.status==200){
-             
-                document.querySelector('#txtrol').innerHTML= request.responseText;
-                document.querySelector('#txtrol').value=1;
-                $('#txtrol').selectpicker('render');
-            }
-        }
-    }    
-}
 //Delete logic
 function fntdelusuario(){
    
