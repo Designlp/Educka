@@ -128,12 +128,12 @@ function fnteditestudiantes(){
 }
 
 //Delete logic
-function fntdelusuario(){
+function fntdelestudiantes(){
    
-    var btndelusuario = document.querySelectorAll(".btndelusuario");
+    var btndelestudiantes = document.querySelectorAll(".btndelestudiantes");
 
-    btndelusuario.forEach(function(btndelusuario){
-        btndelusuario.addEventListener("click",function(){
+    btndelestudiantes.forEach(function(btndelestudiantes){
+        btndelestudiantes.addEventListener("click",function(){
             var idusuarios = this.getAttribute("rl");
             swal({
                 title:"Eliminar Usuario",
