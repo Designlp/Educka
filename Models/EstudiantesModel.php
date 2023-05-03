@@ -32,7 +32,7 @@
 
         public function selectestudiante(int $iduser){
             $this->intidusuario= $iduser;
-            $sql= "SELECT tu.idusuario, tu.ci, tu.nombre, tu.apellidos, tu.telefono, tu.estado
+            $sql= "SELECT tu.idusuario, tu.ci, tu.nombre, tu.apellidos, tu.correo, tu.telefono, tu.estado
             FROM tusuarios tu
             WHERE tu.idusuario = $this->intidusuario";
             $request=$this->select($sql);
