@@ -46,8 +46,8 @@
 			$this->intci = $ci;
 			$this->strnombre = $nombre;
 			$this->strapellido = $apellido;
-			$this->strcorreo = $email;
 			$this->inttelefono = $telefono;
+			$this->strcorreo = $email;
             $this->strpassword = $password;
             $this->intsuscripcion = $suscripcion;
 			$this->intestado = $estado;
@@ -61,15 +61,13 @@
 			if(empty($request))
 			{
 				$query  = "INSERT INTO tusuarios(idroles,ci,nombre, apellidos,telefono,correo, password, suscripcion ,estado) 
-								  VALUES(?,?,?, ?,?,?, ?,?,?)";
+								  VALUES(?,?,?,?,?,?,?,?,?)";
 	        	$arrdata = array($this->intidrol,
         						$this->intci,
         						$this->strnombre,
-                                
                                 $this->strapellido,
         						$this->inttelefono,
         						$this->strcorreo,
-                                
                                 $this->strpassword,
                                 $this->intsuscripcion,
                                 $this->intestado,

@@ -44,7 +44,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="<?= media() ?>/js/jquery-3.3.1.min.js"></script>
         <script src="<?= media() ?>/js/popper.min.js"></script>
-        <script src="<?= media() ?>/js/bootstrap.min.js"></script>
+        <!--<script src="<?= media() ?>/js/bootstrap.min.js"></script>-->
         <script src="<?= media() ?>/js/main.js"></script>
         <script src="<?= media() ?>/js/plugins/pace.min.js"></script>
         <script src="<?= media() ?>/js/plugins/bootstrap-notify.min.js"></script>
@@ -61,9 +61,9 @@
         <!-- Bootstrap -->
         <!-- El popper libreria qua muestra mensajes emmergentes -->
         <!-- Esta Vendor
-        <script src="<?= media() ?>/vendor/popper.min.js"></script>
+        <script src="<?= media() ?>/vendor/popper.min.js"></script>-->
 
-        <script src="<?= media() ?>/vendor/bootstrap.min.js"></script>-->
+        <script src="<?= media() ?>/vendor/bootstrap.min.js"></script>
 
         <!-- Perfect Scrollbar -->
         <script src="<?= media() ?>/vendor/perfect-scrollbar.min.js"></script>
