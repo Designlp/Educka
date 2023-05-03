@@ -31,6 +31,12 @@
                       <option value="1">Activo</option>
                       <option value="2">Inactivo</option>
                     </select>
+
+                    <label for="listprivado">Disponible</label>
+                    <select class="form-control selectpicker" id="listprivado" name="listprivado">
+                      <option value="0">Privado</option>
+                      <option value="1">Publico</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
