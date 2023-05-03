@@ -75,7 +75,7 @@ function openmodal(){
 }
 //Funciones Usuarios
 window.addEventListener('load',function(){
-    fntrolesusuario();
+
 },false)
 
 
