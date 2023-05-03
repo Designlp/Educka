@@ -100,3 +100,6 @@
 
         <script src="<?= media() ?>/js/functions/<?= $data['page_js'] ?>"></script>
 
+
+        <script type="text/javascript" src="<?= media() ?>/js/plugins/bootstrap-select.min.js"></script>
+
