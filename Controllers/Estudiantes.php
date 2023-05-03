@@ -108,8 +108,8 @@
                     $strnombre, 
                     $strapellido, 
                     $strcorreo,
-                    $intsuscripcion,
                     $inttelefono,
+                    $intsuscripcion,
                     $strpasswordencript,
                     $intestado
                  );

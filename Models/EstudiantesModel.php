@@ -46,10 +46,10 @@
 			$this->intci = $ci;
 			$this->strnombre = $nombre;
 			$this->strapellido = $apellido;
+            $this->strcorreo = $email;
 			$this->inttelefono = $telefono;
-			$this->strcorreo = $email;
-            $this->strpassword = $password;
             $this->intsuscripcion = $suscripcion;
+            $this->strpassword = $password;
 			$this->intestado = $estado;
             
 			$return = 0;
@@ -60,16 +60,16 @@
 
 			if(empty($request))
 			{
-				$query  = "INSERT INTO tusuarios(idroles,ci,nombre, apellidos,telefono,correo, password, suscripcion ,estado) 
+				$query  = "INSERT INTO tusuarios(idroles,ci,nombre, apellidos,correo, telefono, suscripcion, password ,estado) 
 								  VALUES(?,?,?,?,?,?,?,?,?)";
 	        	$arrdata = array($this->intidrol,
         						$this->intci,
         						$this->strnombre,
                                 $this->strapellido,
-        						$this->inttelefono,
         						$this->strcorreo,
-                                $this->strpassword,
+        						$this->inttelefono,
                                 $this->intsuscripcion,
+                                $this->strpassword,
                                 $this->intestado,
                             );
 	        	$request = $this->insert($query,$arrdata);
