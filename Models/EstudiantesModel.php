@@ -30,11 +30,10 @@
             return $request;
         }
 
-        public function selectusuario(int $iduser){
+        public function selectestudiante(int $iduser){
             $this->intidusuario= $iduser;
-            $sql= "SELECT tu.idusuario, tu.idroles, tu.ci, tu.nombre, tu.apellidos, tu.telefono, tu.correo, tu.estado,tu.suscripcion, tr.tipo
+            $sql= "SELECT tu.idusuario, tu.ci, tu.nombre, tu.apellidos, tu.telefono, tu.estado
             FROM tusuarios tu
-            JOIN troles tr ON tu.idroles = tr.idroles
             WHERE tu.idusuario = $this->intidusuario";
             $request=$this->select($sql);
             return $request;
@@ -81,16 +80,13 @@
             return $return;
         }
         //Update
-        public function updateusuario(int $idusuario, int $rol,string $ci,string $nombre, string $apellido, string $correo,int $telefono, int $suscripcion, int $estado){
+        public function updateestudiantes(int $idusuario,string $ci,string $nombre, string $apellido,int $telefono, int $estado){
 			
             $this->intidusuario = $idusuario;
-            $this->intidrol     = $rol;
 			$this->strci        = $ci;
 			$this->strnombre    = $nombre;
 			$this->strapellido  = $apellido;
-			$this->strcorreo    = $correo;
 			$this->inttelefono  = $telefono;
-            $this->intsuscripcion = $suscripcion;
             $this->intestado     = $estado;
             
 
@@ -99,15 +95,12 @@
             
             if(empty($requestupdate)){
 
-                    $queryupdate="UPDATE tusuarios SET idroles=?, ci=?, nombre=?, apellidos=?, correo=? ,telefono=?, suscripcion=? ,estado=? WHERE idusuario=$this->intidusuario";
+                    $queryupdate="UPDATE tusuarios SET ci=?, nombre=?, apellidos=?, correo=? ,telefono=?,estado=? WHERE idusuario=$this->intidusuario";
                     $arrdata = array(
-                                $this->intidrol,
         						$this->strci,
         						$this->strnombre,
                                 $this->strapellido,
-        						$this->strcorreo,
         						$this->inttelefono,
-                                $this->intsuscripcion,
                                 $this->intestado
                                 //Cuidao al borrar
                     );
@@ -121,20 +114,7 @@
             return $return;
 
         }
-        //Pate del Update
-    
-        //Especial
-        public function selectroles(){
-          
-            $sql="SELECT * FROM troles WHERE estado != 0";
-            $request=$this->selectall($sql);
-            return $request;
-        }
-
-
-
-
-
+   
         public function settokenuser(int $iduser, string $token){
             $this->intidusuario = $iduser;
             $this->strtoken= $token;

@@ -42,15 +42,15 @@
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
                 <div class="dropdown-menu dropdown-menu-right" style="">
                     <a onClick="fntviewcliente('.$arrdata[$i]['idusuario'].')" class="dropdown-item">Detalles</a>
-                    <a class="dropdown-item btneditusuario" rl="'.$arrdata[$i]['idusuario'].'">Editar</a>
+                    <a class="dropdown-item btneditestudiantes" rl="'.$arrdata[$i]['idusuario'].'">Editar</a>
                     <div class="dropdown-divider"></div>
-                    <a  class="dropdown-item text-danger btndelusuario" rl="'.$arrdata[$i]['idusuario'].'">Eliminar</a>
+                    <a  class="dropdown-item text-danger btndelestudiantes" rl="'.$arrdata[$i]['idusuario'].'">Eliminar</a>
                 </div>
                 </div>';
 
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditusuario(); fntdelusuario();</script>';
+                    $script='<script type="text/javascript"> fnteditestudiantes(); fntdelestudiantes();</script>';
                 }
 
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
@@ -60,11 +60,11 @@
             die();
         }
 
-        public function getusuario($idusuario){
+        public function getestudiante($idusuario){
             
             $intkey=intval(strclean($idusuario));
             if ($intkey>0){
-                $arrdata = $this->model->selectusuario($intkey);
+                $arrdata = $this->model->selectestudiante($intkey);
                 if(empty($arrdata)){
                     $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
                 }else{
@@ -115,15 +115,12 @@
                  );
                 }else{
                     $option = 2;
-                    $requestusuario = $this->model->updateusuario(
+                    $requestusuario = $this->model->updateestudiantes(
                     $idusuario,
-                    $intidrol,
                     $strci,
                     $strnombre, 
                     $strapellido, 
-                    $strcorreo,
                     $inttelefono,
-                    $intsuscripcion,
                     $intestado
                     );
 
@@ -163,23 +160,7 @@
         }
         die();
         }
-        //Update
-      
-        //Especial funciones de visualizacion
-
-        public function getselectroles(){
-
-            $htmloptions="";
-            $arrdata = $this->model->selectroles();
-            if(count($arrdata) > 0){
-                for($i=0;$i < count($arrdata); $i++){
-                    $htmloptions.='<option value="'.$arrdata[$i]['idroles'].'">'.$arrdata[$i]['tipo'].'</option>';
-                }
-            }
-            echo $htmloptions;
-            die();
-
-        }
+    
 
 
     }
