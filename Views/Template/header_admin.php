@@ -29,8 +29,8 @@
    <!-- Font Awesome Icons -->
    <link type="text/css" href="<?= media() ?>/css/fontawesome.css" rel="stylesheet">
 
-   <!-- Preloader 
-   <link type="text/css" href="<?= media() ?>/css/preloader.css" rel="stylesheet">-->
+   <!-- Preloader -->
+   <link type="text/css" href="<?= media() ?>/css/preloader.css" rel="stylesheet">
 
    <!-- App CSS -->
    <link type="text/css" href="<?= media() ?>/css/app.css" rel="stylesheet">

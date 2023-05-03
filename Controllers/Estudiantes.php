@@ -120,6 +120,7 @@
                     $strci,
                     $strnombre, 
                     $strapellido, 
+                    $strcorreo,
                     $inttelefono,
                     $intestado
                     );

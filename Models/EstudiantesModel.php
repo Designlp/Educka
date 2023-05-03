@@ -80,12 +80,13 @@
             return $return;
         }
         //Update
-        public function updateestudiantes(int $idusuario,string $ci,string $nombre, string $apellido,int $telefono, int $estado){
+        public function updateestudiantes(int $idusuario,string $ci,string $nombre, string $apellido, string $correo ,int $telefono, int $estado){
 			
             $this->intidusuario = $idusuario;
 			$this->strci        = $ci;
 			$this->strnombre    = $nombre;
 			$this->strapellido  = $apellido;
+            $this->strcorreo = $correo;
 			$this->inttelefono  = $telefono;
             $this->intestado     = $estado;
             
@@ -95,11 +96,12 @@
             
             if(empty($requestupdate)){
 
-                    $queryupdate="UPDATE tusuarios SET ci=?, nombre=?, apellidos=?, correo=? ,telefono=?,estado=? WHERE idusuario=$this->intidusuario";
+                    $queryupdate="UPDATE tusuarios SET ci=?, nombre=?, apellidos=?, correo=?,telefono=?,estado=? WHERE idusuario=$this->intidusuario";
                     $arrdata = array(
         						$this->strci,
         						$this->strnombre,
                                 $this->strapellido,
+        						$this->strcorreo,
         						$this->inttelefono,
                                 $this->intestado
                                 //Cuidao al borrar
