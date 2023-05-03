@@ -14,8 +14,8 @@
 
 
    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/sweetalert.css">
-   <!-- la libreria es parte de selectpicker
-   <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/bootstrap-select.min.css">-->
+   <!-- la libreria es parte de selectpicker-->
+   <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/bootstrap-select.min.css">
 
    <!-- Preloader -->
    <link type="text/css" href="<?= media() ?>/vendor/spinkit.css" rel="stylesheet">
