@@ -45,6 +45,7 @@
         <script src="<?= media() ?>/js/jquery-3.3.1.min.js"></script>
         <script src="<?= media() ?>/js/popper.min.js"></script>
         <!--<script src="<?= media() ?>/js/bootstrap.min.js"></script>-->
+        <script src="<?= media() ?>/vendor/bootstrap.min.js"></script>
         <script src="<?= media() ?>/js/main.js"></script>
         <script src="<?= media() ?>/js/plugins/pace.min.js"></script>
         <script src="<?= media() ?>/js/plugins/bootstrap-notify.min.js"></script>
@@ -63,7 +64,7 @@
         <!-- Esta Vendor
         <script src="<?= media() ?>/vendor/popper.min.js"></script>-->
 
-        <script src="<?= media() ?>/vendor/bootstrap.min.js"></script>
+     
 
         <!-- Perfect Scrollbar -->
         <script src="<?= media() ?>/vendor/perfect-scrollbar.min.js"></script>
