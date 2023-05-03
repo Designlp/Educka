@@ -114,9 +114,9 @@ function fnteditcurso(){
                         $('#liststatus').selectpicker('refresh');
                         //Estado Especial
                         document.querySelector("#liststatus").value=objdata.data.estado;
-                        $('#liststatus').selectpicker('refresh');
+                      
                         $('#liststatus').selectpicker('render');
-
+                        $('#liststatus').selectpicker('refresh');
                         $('#modalformcursos').modal("show");
                     }else{
                         swal("Error",objdata.msg,"error");
