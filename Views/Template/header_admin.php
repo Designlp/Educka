@@ -17,8 +17,8 @@
    <!-- la libreria es parte de selectpicker-->
 
 
-   <!-- Preloader -->
-   <link type="text/css" href="<?= media() ?>/vendor/spinkit.css" rel="stylesheet">
+   <!-- Preloader
+   <link type="text/css" href="<?= media() ?>/vendor/spinkit.css" rel="stylesheet"> -->
 
    <!-- Perfect Scrollbar -->
    <link type="text/css" href="<?= media() ?>/vendor/perfect-scrollbar.css" rel="stylesheet">
