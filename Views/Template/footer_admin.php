@@ -74,13 +74,16 @@
 
         <!-- MDK -->
         <script src="<?= media() ?>/vendor/material-design-kit.js"></script>
-        <script src="<?= media() ?>/vendor/select2/select2.min.js"></script>
-        <script src="<?= media() ?>/js/template/select2.js"></script>
+   
         <!-- App JS -->
         <script src="<?= media() ?>/js/template/app.js"></script>
 
         <!-- Preloader -->
         <script src="<?= media() ?>/js/template/preloader.js"></script>
+
+
+        <script src="<?= media() ?>/vendor/select2/select2.min.js"></script>
+        <script src="<?= media() ?>/js/template/select2.js"></script>
 
         <!-- Sidebar Mini JS -->
         <script src="<?= media() ?>/js/template/sidebar-mini.js"></script>
