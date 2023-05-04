@@ -57,12 +57,12 @@
         <!-- Permite crear tablas de datos atractivas y altamente funcionales-->
         <script type="text/javascript" src="<?= media() ?>/js/plugins/dataTables.bootstrap.min.js"></script>
   
-        <script type="text/javascript" src="<?= media() ?>/js/plugins/bootstrap-select.min.js"></script>
+       
         <script type="text/javascript" src="<?= media() ?>/js/plugins/moment.min.js"></script>
         <!-- Bootstrap -->
         <!-- El popper libreria qua muestra mensajes emmergentes -->
-        <!-- Esta Vendor
-        <script src="<?= media() ?>/vendor/popper.min.js"></script>-->
+        <!-- Esta Vendor-->
+        <script src="<?= media() ?>/vendor/popper.min.js"></script>
 
      
 
