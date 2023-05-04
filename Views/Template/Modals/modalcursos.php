@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="form-group">
-                <select id="select01" data-toggle="select" class="form-control select2-hidden-accessible" data-select2-id="select01" tabindex="-1" aria-hidden="true">
+                <select id="listprivado" data-toggle="select" class="form-control select2-hidden-accessible" data-select2-id="select01" tabindex="-1" aria-hidden="true">
                                         <option selected="" data-select2-id="2">My first option</option>
                                         <option data-select2-id="16">Another option</option>
                                         <option data-select2-id="17">Third option is here</option>
