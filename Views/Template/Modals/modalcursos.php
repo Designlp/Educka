@@ -34,11 +34,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">Disponible</label>
-                    <select class="form-control" id="listprivado" name="listprivado">
-                      <option value="0">Privado</option>
-                      <option value="1">Publico</option>
-                    </select>
+                <select id="select01" data-toggle="select" class="form-control select2-hidden-accessible" data-select2-id="select01" tabindex="-1" aria-hidden="true">
+                                        <option selected="" data-select2-id="2">My first option</option>
+                                        <option data-select2-id="16">Another option</option>
+                                        <option data-select2-id="17">Third option is here</option>
+                                    </select>
                 </div>
                 
                 <div class="tile-footer">
