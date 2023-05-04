@@ -35,7 +35,7 @@
 
                 <div class="form-group">
                     <label for="">Disponible</label>
-                    <select class="form-control" id="listprivado" name="listprivado" multiple="multiple">
+                    <select class="form-control" id="listprivado" name="listprivado">
                       <option value="0">Privado</option>
                       <option value="1">Publico</option>
                     </select>
