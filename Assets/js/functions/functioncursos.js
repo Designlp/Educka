@@ -110,11 +110,13 @@ function fnteditcurso(){
 
                         document.querySelector("#listprivado").value=objdata.data.privado;
                
-                        $('#listprivado').selectpicker('render');
+                        $('#listprivado').select2('destroy');
+                        $('#listprivado').select2();
                         //Estado Especial
                         document.querySelector("#liststatus").value=objdata.data.estado;
                
-                        $('#liststatus').selectpicker('render');
+                        $('#liststatus').select2('destroy');
+                        $('#liststatus').select2();
                      
                         $('#modalformcursos').modal("show");
                     }else{

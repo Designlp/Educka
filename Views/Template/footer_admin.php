@@ -74,7 +74,7 @@
 
         <!-- MDK -->
         <script src="<?= media() ?>/vendor/material-design-kit.js"></script>
-
+        <script src="<?= media() ?>/vendor/select2/select2.min.js"></script>
         <!-- App JS -->
         <script src="<?= media() ?>/js/template/app.js"></script>
 

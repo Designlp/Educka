@@ -37,6 +37,8 @@
    <link type="text/css" href="<?= media() ?>/css/educka.css" rel="stylesheet">
    
    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/bootstrap-select.min.css">
+
+   <script src="<?= media() ?>/vendor/select2/select2.min.css"></script>
 </head>
 
 <body class="layout-mini layout-mini">
