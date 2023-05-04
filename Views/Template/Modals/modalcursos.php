@@ -38,16 +38,6 @@
                     <select class="form-control" id="listprivado" name="listprivado">
                       <option value="0">Privado</option>
                       <option value="1">Publico</option>
-                      <option value="1">Publico</option>
-                      <option value="1">Publico</option>
-                      <option value="1">Publico</option>
-                      <option value="1">Publico</option>
-                      <option value="1">Publico</option>
-                      <option value="1">Publico</option>
-                      <option value="1">Publico</option>
-                      <option value="1">Publico</option>
-                      <option value="1">Publico</option>
-                      
                     </select>
                 </div>
                 
