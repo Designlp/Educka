@@ -15,7 +15,7 @@
 
    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/sweetalert.css">
    <!-- la libreria es parte de selectpicker-->
-
+   <link type="text/css" href="<?= media() ?>/vendor/select2/select2.min.css" rel="stylesheet">
 
    <!-- Preloader -->
    <link type="text/css" href="<?= media() ?>/vendor/spinkit.css" rel="stylesheet">
@@ -36,9 +36,8 @@
    <link type="text/css" href="<?= media() ?>/css/app.css" rel="stylesheet">
    <link type="text/css" href="<?= media() ?>/css/educka.css" rel="stylesheet">
    
-   <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/bootstrap-select.min.css">
 
-   <link type="text/css" href="<?= media() ?>/vendor/select2/select2.min.css" rel="stylesheet">
+   
 </head>
 
 <body class="layout-mini layout-mini">
