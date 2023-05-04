@@ -16,7 +16,7 @@
    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/sweetalert.css">
    <!-- la libreria es parte de selectpicker-->
    <link type="text/css" href="<?= media() ?>/vendor/select2/select2.min.css" rel="stylesheet">
-
+   <link type="text/css" href="<?= media() ?>/css/select2.css" rel="stylesheet">
    <!-- Preloader -->
    <link type="text/css" href="<?= media() ?>/vendor/spinkit.css" rel="stylesheet">
 
