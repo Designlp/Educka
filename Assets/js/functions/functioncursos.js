@@ -111,9 +111,9 @@ function fnteditcurso(){
                         document.querySelector("#listprivado").value=objdata.data.privado;
                         $('#listprivado').select2();
                         //Estado Especial
-                        document.querySelector("#liststatus").value=objdata.data.estado;
+                        document.querySelector(".liststatus").value=objdata.data.estado;
                
-                        $('#liststatus').select2();
+                        $('.liststatus').select2();
                      
                         $('#modalformcursos').modal("show");
                     }else{

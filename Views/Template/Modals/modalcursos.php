@@ -28,8 +28,8 @@
           
 
               <div class="form-group">
-                <label class="form-label" for="select01">Estado</label>
-                <select id="liststatus" data-toggle="select" class="form-control">
+                <label class="form-label" for="">Estado</label>
+                <select id="" data-toggle="select" class="form-control liststatus">
                   <option value="1">Activo</option>
                   <option value="2">Inactivo</option>
                 </select>
