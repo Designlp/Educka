@@ -49,8 +49,15 @@
                 </div>
 
                 <!-- // END Page Content -->
-
+                <div class="form-group">
+                <label for="liststatus">Estado</label>
+                <select class="form-control" id="liststatus" name="liststatus">
+                  <option value="1">Activo</option>
+                  <option value="2">Inactivo</option>
+                </select>
+              </div>
 <?php 
+
   footeradmin($data);
   getmodal('modalcursos',$data);
 ?>
