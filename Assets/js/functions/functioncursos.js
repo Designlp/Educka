@@ -109,8 +109,7 @@ function fnteditcurso(){
                         document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
 
                         document.querySelector("#listprivado").value=objdata.data.privado;
-                        $('#listprivado').select2('destroy');
-                        $('#listprivado').select2();
+               
                         document.querySelector("#liststatus").value=objdata.data.estado;
                
                         
