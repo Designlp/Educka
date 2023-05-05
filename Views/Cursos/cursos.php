@@ -51,9 +51,9 @@
                 <!-- // END Page Content -->
 
 <?php 
-
-  footeradmin($data);
   getmodal('modalcursos',$data);
+  footeradmin($data);
+
 ?>
 
 </body>
