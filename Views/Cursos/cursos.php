@@ -1,5 +1,6 @@
 <?php 
   headeradmin($data);
+  getmodal('modalcursos',$data);
   ?>
 <!-- Page Content -->
 
@@ -51,7 +52,7 @@
                 <!-- // END Page Content -->
 
 <?php 
-  getmodal('modalcursos',$data);
+
   footeradmin($data);
 
 ?>
