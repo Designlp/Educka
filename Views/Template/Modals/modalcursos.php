@@ -34,15 +34,14 @@
                 </select>
               </div>
 
-              
-              
               <div class="form-group">
-                <label class="form-label" for="">Estado</label>
-                <select id="" data-toggle="select" class="form-control" name="liststatus">
+                <label class="form-label" for="listprivado">Estado</label>
+                <select id="listprivado" data-toggle="select" class="form-control" name="listprivado">
                   <option value="1">Activo</option>
                   <option value="2">Inactivo</option>
                 </select>
               </div>
+ 
 
               
 
