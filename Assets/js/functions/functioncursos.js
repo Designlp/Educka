@@ -109,10 +109,10 @@ function fnteditcurso(){
                         document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
 
                         document.querySelector("#listprivado").value=objdata.data.privado;
-                 
+                        
                         document.querySelector("#liststatus").value=objdata.data.estado;
                
-               
+                        
                      
                         $('#modalformcursos').modal("show");
                     }else{

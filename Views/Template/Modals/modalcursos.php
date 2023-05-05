@@ -36,13 +36,15 @@
 
               
               <div class="form-group">
-                <label class="form-label" for="listprivado">Privacidad</label>
+                <label class="form-label" for="listprivado">Estado</label>
                 <select id="listprivado" data-toggle="select" class="form-control" name="listprivado">
-                  <option value="0">Privado</option>
-                  <option value="1">Publico</option>
+                  <option value="0">Activo</option>
+                  <option value="1">Inactivo</option>
                 </select>
               </div>
-    
+
+              
+
               <div class="tile-footer">
                 <button id="btnactionform" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btntext">Guardar</span></button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="#" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
               </div>
