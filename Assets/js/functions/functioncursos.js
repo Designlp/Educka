@@ -107,10 +107,8 @@ function fnteditcurso(){
                         document.querySelector("#idcurso").value=objdata.data.idcurso;
                         document.querySelector("#txttitulo").value=objdata.data.titulo;
                         document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
-
-                
                         $('#listpriv').val(objdata.data.privado).trigger('change');
-                        document.querySelector("#liststatus").value=objdata.data.estado;
+                        $('#liststatus').val(objdata.data.estado).trigger('change');
                
                         
                      
