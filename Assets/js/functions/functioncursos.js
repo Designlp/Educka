@@ -108,8 +108,8 @@ function fnteditcurso(){
                         document.querySelector("#txttitulo").value=objdata.data.titulo;
                         document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
 
-                        document.querySelector("#listprivado").value=objdata.data.privado;
-                        $('#listprivado').select2();
+                        document.querySelector(".listprivado").value=objdata.data.privado;
+                        $('.listprivado').select2();
                         //Estado Especial
                         document.querySelector(".liststatus").value=objdata.data.estado;
                
