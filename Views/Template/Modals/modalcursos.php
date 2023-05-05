@@ -25,6 +25,16 @@
                 <textarea class="form-control" id="txtdescripcion" name="txtdescripcion" rows="2" placeholder="Descripcion de Rol"></textarea>
               </div>
 
+
+              <div class="form-group">
+                <label class="form-label" for="liststatus">Estado</label>
+                <select id="liststatus" data-toggle="select" class="form-control" name="liststatus">
+                  <option value="1">Activo</option>
+                  <option value="2">Inactivo</option>
+                </select>
+              </div>
+
+              
               <div class="form-group">
                 <label class="form-label" for="listprivado">Privacidad</label>
                 <select id="listprivado" data-toggle="select" class="form-control" name="listprivado">
@@ -32,24 +42,7 @@
                   <option value="1">Publico</option>
                 </select>
               </div>
-
-              <div class="form-group">
-                <label class="form-label" for="liststatus">Estado</label>
-                <select id="liststatus" data-toggle="select" class="form-control" name="liststatus">
-                  <option value="1">Activo</option>
-                  <option value="2">Inactivo</option>
-                </select>
-              </div>
-
-              
-              <div class="form-group">
-                <label class="form-label" for="liststatus">Estado</label>
-                <select id="liststatus" data-toggle="select" class="form-control" name="liststatus">
-                  <option value="1">Activo</option>
-                  <option value="2">Inactivo</option>
-                </select>
-              </div>
-              
+    
               <div class="tile-footer">
                 <button id="btnactionform" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btntext">Guardar</span></button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="#" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
               </div>
