@@ -25,7 +25,13 @@
                 <textarea class="form-control" id="txtdescripcion" name="txtdescripcion" rows="2" placeholder="Descripcion de Rol"></textarea>
               </div>
 
-          
+              <div class="form-group">
+                <label class="form-label" for="select01">Privacidad</label>
+                <select id="select01 listprivado" data-toggle="select" class="form-control" >
+                  <option value="0">Privado</option>
+                  <option value="1">Publico</option>
+                </select>
+              </div>
 
               <div class="form-group">
                 <label class="form-label" for="select01">Estado</label>
@@ -34,13 +40,8 @@
                   <option value="2">Inactivo</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label class="form-label" for="select01">Privacidad</label>
-                <select id="select01 listprivado" data-toggle="select" class="form-control" >
-                <option value="0">Privado</option>
-                  <option value="1">Publico</option>
-                </select>
-              </div>
+
+         
 
 
 
