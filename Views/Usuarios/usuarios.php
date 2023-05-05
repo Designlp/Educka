@@ -53,9 +53,7 @@
                 <!-- // END Page Content -->
 
 <?php 
-  footeradmin($data);
-  getmodal('modalusuarios',$data);
+   footeradmin($data);
+   getmodal('modalusuarios',$data);
+   footerscript($data);
 ?>
-
-</body>
-</html>
