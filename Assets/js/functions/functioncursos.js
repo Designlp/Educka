@@ -126,7 +126,9 @@ function fnteditcurso(){
     });
     
 }
-
+$(document).ready(function() {
+    $('#listprivado').select2();
+});
 //Especial
 
 //Delete logic
