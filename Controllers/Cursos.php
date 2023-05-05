@@ -83,7 +83,7 @@
             $intidautor=$_SESSION['iduser'];
             $strtitulo=strclean($_POST['txttitulo']);
             $strdescripcion=strclean($_POST['txtdescripcion']);
-            $intprivate=intval($_POST['listprivado']);
+            $intprivate=intval($_POST['listpriv']);
             $intstatus=intval($_POST['liststatus']);
             
  
