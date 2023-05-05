@@ -54,6 +54,6 @@
 <?php 
 
   footeradmin($data);
-  getmodal('modalroles',$data);
+  getmodal('modalcursos',$data);
   footerscript($data);
 ?>
