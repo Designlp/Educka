@@ -56,6 +56,12 @@
                   <option value="2">Inactivo</option>
                 </select>
               </div>
+              <script>
+            // In your Javascript (external .js resource or <script> tag)
+            $(document).ready(function() {
+                $('#liststatus').select2();
+            });
+        </script>
 <?php 
 
   footeradmin($data);
