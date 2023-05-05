@@ -108,8 +108,8 @@ function fnteditcurso(){
                         document.querySelector("#txttitulo").value=objdata.data.titulo;
                         document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
 
-                        document.querySelector("#listpriv").value=objdata.data.privado;
-                        $('#listpriv').select2();
+                
+                        $('#listpriv').val(objdata.data.privado).trigger('change');
                         document.querySelector("#liststatus").value=objdata.data.estado;
                
                         
