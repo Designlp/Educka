@@ -32,9 +32,9 @@
                 }
 
                 if($arrdata[$i]['privado']==1){
-                    $arrdata[$i]['privado']='<span class="badge badge-pill badge-success">Activo</span>';
+                    $arrdata[$i]['privado']='<span class="badge badge-pill badge-success">Publico</span>';
                 }else{
-                    $arrdata[$i]['privado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
+                    $arrdata[$i]['privado']='<span class="badge badge-pill badge-danger">Privado</span>';
                 }
               
                 $crudopciones='<div class="dropdown">
