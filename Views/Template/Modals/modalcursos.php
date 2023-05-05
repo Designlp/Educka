@@ -25,13 +25,6 @@
                 <textarea class="form-control" id="txtdescripcion" name="txtdescripcion" rows="2" placeholder="Descripcion de Rol"></textarea>
               </div>
 
-              <div class="form-group">
-                <label for="liststatus">Estado</label>
-                <select class="form-control" id="liststatus" name="liststatus">
-                  <option value="1">Activo</option>
-                  <option value="2">Inactivo</option>
-                </select>
-              </div>
 
               <div class="form-group">
                 <label for="listprivado">Disponible</label>
@@ -42,16 +35,12 @@
               </div>
 
               <div class="form-group">
-                                    <label class="form-label"
-                                           for="select01">Basic</label>
-                                    <select id="select01"
-                                            data-toggle="select"
-                                            class="form-control">
-                                        <option selected="">My first option</option>
-                                        <option>Another option</option>
-                                        <option>Third option is here</option>
-                                    </select>
-                                </div>
+                <label class="form-label" for="liststatus">Basic</label>
+                <select id="liststatus" name="liststatus" data-toggle="select" class="form-control">
+                  <option value="1">Activo</option>
+                  <option value="2">Inactivo</option>
+                </select>
+              </div>
 
               <div class="tile-footer">
                 <button id="btnactionform" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btntext">Guardar</span></button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="#" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
