@@ -73,7 +73,7 @@
 
                <span class="avatar avatar-sm navbar-brand-icon mr-0 mr-lg-8pt">
 
-                  <span class="avatar-title rounded bg-primary"><img src="../../public/images/illustration/student/128/white.svg" alt="logo" class="img-fluid"></span>
+                  <span class="avatar-title rounded bg-primary"><img src="<?= media() ?>/images/illustration/student/128/white.svg" alt="logo" class="img-fluid"></span>
 
                </span>
 
