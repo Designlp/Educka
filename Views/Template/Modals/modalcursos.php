@@ -28,16 +28,16 @@
           
 
               <div class="form-group">
-                <label class="form-label" for="select01">Estado</label>
-                <select id="select01" data-toggle="select" class="form-control liststatus">
+                <label class="form-label" for="liststatus">Estado</label>
+                <select id="liststatus" data-toggle="select" class="form-control">
                   <option value="1">Activo</option>
                   <option value="2">Inactivo</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="select01">Privacidad</label>
-                <select id="select01" data-toggle="select" class="form-control listprivado">
+                <label class="form-label" for="listprivado">Privacidad</label>
+                <select id="listprivado" data-toggle="select" class="form-control">
                   <option value="0">Privado</option>
                   <option value="1">Publico</option>
                 </select>
