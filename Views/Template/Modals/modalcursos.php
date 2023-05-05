@@ -35,7 +35,7 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="listprivado">Estado</label>
+                <label class="form-label" for="listprivado">Privacidad</label>
                 <select id="listprivado" data-toggle="select" class="form-control" name="listprivado">
                   <option value="0">Activo</option>
                   <option value="1">Inactivo</option>
