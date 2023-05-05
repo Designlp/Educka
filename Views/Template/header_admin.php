@@ -52,7 +52,7 @@
 
 
 
-   <div class="mdk-drawer-layout js-mdk-drawer-layout" data-push data-responsive-width="992px">
+   <div class="" data-push data-responsive-width="992px">
       <div class="mdk-drawer-layout__content page-content">
 
          <!-- header-->
