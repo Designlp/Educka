@@ -29,14 +29,14 @@
 
               <div class="form-group">
                 <label class="form-label" for="select01">Estado</label>
-                <select id="select01 liststatus" data-toggle="select" class="form-control" name="liststatus">
+                <select id="select01 liststatus" data-toggle="select" class="form-control" >
                   <option value="1">Activo</option>
                   <option value="2">Inactivo</option>
                 </select>
               </div>
               <div class="form-group">
                 <label class="form-label" for="select01">Privacidad</label>
-                <select id="select01 listprivado" data-toggle="select" class="form-control" name="listprivado">
+                <select id="select01 listprivado" data-toggle="select" class="form-control" >
                 <option value="0">Privado</option>
                   <option value="1">Publico</option>
                 </select>
