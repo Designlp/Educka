@@ -27,7 +27,7 @@
 
               <div class="form-group">
                 <label class="form-label" for="listprivado">Privacidad</label>
-                <select id="listprivado" data-toggle="select" class="form-control">
+                <select id="listprivado" data-toggle="select" class="form-control" name="listprivado">
                   <option value="0">Privado</option>
                   <option value="1">Publico</option>
                 </select>
@@ -35,7 +35,7 @@
 
               <div class="form-group">
                 <label class="form-label" for="liststatus">Estado</label>
-                <select id="liststatus" data-toggle="select" class="form-control">
+                <select id="liststatus" data-toggle="select" class="form-control" name="liststatus">
                   <option value="1">Activo</option>
                   <option value="2">Inactivo</option>
                 </select>

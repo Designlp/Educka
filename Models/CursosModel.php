@@ -73,10 +73,9 @@
         }
 
         //Update
-        public function updatecurso(int $idcurso, int $idautor,string $titulo, string $descripcion, int $private, int $estado){
+        public function updatecurso(int $idcurso, string $titulo, string $descripcion, int $private, int $estado){
             
             $this->intidcurso = $idcurso;
-            $this->intidusuario = $idautor;
 			$this->strtitulo = $titulo;
 			$this->strdescripcion = $descripcion;
             $this->intprivado = $private;
