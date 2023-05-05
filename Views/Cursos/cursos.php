@@ -1,6 +1,6 @@
 <?php 
   headeradmin($data);
-  getmodal('modalcursos',$data);
+
   ?>
 <!-- Page Content -->
 
@@ -54,8 +54,6 @@
 <?php 
 
   footeradmin($data);
-
+  getmodal('modalroles',$data);
+  footerscript($data);
 ?>
-
-</body>
-</html>

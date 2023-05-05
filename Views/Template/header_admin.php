@@ -12,7 +12,7 @@
 
    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap" rel="stylesheet">
    
-   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
 
    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/sweetalert.css">
@@ -52,7 +52,7 @@
 
 
 
-
+   <div class="mdk-drawer-layout js-mdk-drawer-layout" data-push data-responsive-width="992px">
       <div class="mdk-drawer-layout__content page-content">
 
          <!-- header-->

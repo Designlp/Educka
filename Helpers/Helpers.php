@@ -18,6 +18,10 @@
         $viewfooter= "Views/Template/footer_admin.php";
         require_once($viewfooter);
     }
+    function footerscript($data=""){
+        $viewfooter= "Views/Template/footer_script.php";
+        require_once($viewfooter);
+    }
 
     function headerprincipal($data=""){
         $viewheader= "Views/Template/header_principal.php";
