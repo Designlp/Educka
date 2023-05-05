@@ -35,8 +35,8 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="">Privacidad</label>
-                <select id="" data-toggle="select" class="form-control" name="">
+                <label class="form-label" for="listpriv">Privacidad</label>
+                <select id="listpriv" data-toggle="select" class="form-control" name="listpriv">
                   <option value="0">Activo</option>
                   <option value="1">Inactivo</option>
                 </select>
