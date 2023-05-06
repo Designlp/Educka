@@ -110,10 +110,9 @@ function fnteditestudiantes(){
                         document.querySelector("#txtcorreo").value=objdata.data.correo;
                         document.querySelector("#txttelefono").value=objdata.data.telefono;
                     
-                        //Estado Especial
-                        document.querySelector("#liststatus").value=objdata.data.estado;
-                 
-                        $('#liststatus').selectpicker('render');
+                        $('#liststatus').val(objdata.data.estado).trigger('change');
+
+         
 
                         $('#modalformestudiantes').modal("show");
                     }else{

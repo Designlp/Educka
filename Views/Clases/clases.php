@@ -1,5 +1,6 @@
 <?php 
   headeradmin($data);
+
   ?>
 <!-- Page Content -->
 
@@ -11,7 +12,7 @@
                         <li class="breadcrumb-item active">Tables</li>
                     </ol>
                     <br>
-                    <button class="btn btn-primary btn-sm" type="button" onclick="openmodal()">Nuevo</button>
+                    <button class="btn btn-primary btn-sm" type="button" onclick="openmodal()"  >Nuevo</button>
                 </div>
 
                 
@@ -27,15 +28,13 @@
                         <div class="tile">
                             <div class="tile-body">
                             <div class="table-responsive">
-                                <table class="table table-hover table-bordered" id="tableestudiantes">
+                                <table class="table table-hover table-bordered" id="tablecursos">
                                 <thead>
                                     <tr>
                                     <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Apellidos</th>
-                                    <th>Correo</th>
-                                    <th>Rol</th>
-                                    <th>Suscripcion</th>
+                                    <th>Autor</th>
+                                    <th>Titulo</th>
+                                    <th>Privacidad</th>
                                     <th>Estado</th>
                                     <th>Acciones</th>
                                     </tr>
@@ -53,14 +52,8 @@
                 <!-- // END Page Content -->
 
 <?php 
-  
-  footeradmin($data);
-  getmodal('modalestudiantes',$data);
-  footerscript($data);
-  
 
+  footeradmin($data);
+  getmodal('modalcursos',$data);
+  footerscript($data);
 ?>
-    
-                <!-- En el getModal se pone el nombre del archivo-->
-</body>
-</html>
