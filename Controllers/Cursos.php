@@ -121,7 +121,7 @@
 
 
          public function asingclases($idcurso){
-            $_SESSION['iduser']=$idcurso;
+            $_SESSION['idcurso']=$idcurso;
             
          }
  

@@ -1,22 +1,22 @@
 var tablero;
 //Esto es un js
-//Prueba a com
 document.addEventListener("DOMContentLoaded",function(){
-    tablero=$('#tablecursos').DataTable({
+    tablero=$('#tabledocentes').DataTable({
         "aProcessing":true,
         "aSeverSide":true,
         "language" :{
             "url":"https://cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json"
         },
         "ajax":{
-            "url":" "+baseurl+"/Cursos/getcursos",
+            "url":" "+baseurl+"/Docentes/getdocentes",
             "dataSrc":""
         },
         "columns": [
-            { "data": 'idcurso' },
+            { "data": 'idusuario' },
             { "data": 'nombre' },
-            { "data": 'titulo' },
-            { "data": 'privado' },
+            { "data": 'apellidos' },
+            { "data": 'correo' },
+            { "data": 'suscripcion' },
             { "data": 'estado' },
             { "data": 'acciones' }
         ],
@@ -27,32 +27,30 @@ document.addEventListener("DOMContentLoaded",function(){
 
     });
     //Insert
-    var forminsert= document.querySelector("#formcurso");
+    var forminsert= document.querySelector("#formestudiantes");
     forminsert.onsubmit=function(e){
         e.preventDefault();
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = baseurl+'/Cursos/setcurso';
+        var ajaxUrl = baseurl+'/Estudiantes/setestudiantes';
         var formdata=new FormData(forminsert);
         request.open("POST",ajaxUrl,true);
         request.send(formdata);
         request.onreadystatechange =function(){
             if(request.readyState == 4 && request.status==200){
-               
                 //console.log(request.responseText);
                 var obdata=JSON.parse(request.responseText);
                 //console.log(obdata);
                 if(obdata.status){
-                    $('#modalformcursos').modal("hide");
+                    $('#modalformestudiantes').modal("hide");
                     forminsert.reset();
                     //Validar datos repetodos
-                    swal("Administración de Usuarios", obdata.msg ,"success");
+                    swal("Administración de Estudiantes", obdata.msg ,"success");
                     //Ojo 
                     tablero.ajax.reload(function(){
                         //fnteditrol();
                         //fntdelrol();
                         //fntpermisosrol();
                     });
-                   
                 } else{
                     swal("Error",obdata.msg,"error");
                     //forminsert.reset();
@@ -60,18 +58,18 @@ document.addEventListener("DOMContentLoaded",function(){
             }
         }
     }
-
 },false);
 
-$('#tablecursos').DataTable();
+$('#tabledocentes').DataTable();
 function openmodal(){
-    document.querySelector('#idcurso').value="";
-    document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";
+
+    document.querySelector('#idusuario').value="";
+    document.querySelector('#titlemodal').innerHTML = "Nuevo Estudiante";
     document.querySelector('.modal-header').classList.replace("headerupdate","headerregister");
     document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
     document.querySelector('#btntext').innerHTML="Guardar";
-    document.querySelector('#formcurso').reset();
-    $('#modalformcursos').modal("show");
+    document.querySelector('#formdocentes').reset();
+    $('#modalformdocentes').modal("show");
     
 }
 //Funciones Usuarios
@@ -80,14 +78,14 @@ window.addEventListener('load',function(){
 },false)
 
 
-//Updates
-function fnteditcurso(){
-    var btneditusuario=Array.apply(null, document.querySelectorAll(".btneditcurso"));    
-    btneditusuario.forEach(function(btneditusuario){
+//Update
+function fnteditestudiantes(){
+    var btneditestudiantes=Array.apply(null, document.querySelectorAll(".btneditestudiantes"));    
+    btneditestudiantes.forEach(function(btneditestudiantes){
         
-        btneditusuario.addEventListener("click",function(){
-            //alert("Click to close...");s
-            document.querySelector('#titlemodal').innerHTML = "Actualizar Usuario";
+        btneditestudiantes.addEventListener("click",function(){
+            //alert("Click to close...");
+            document.querySelector('#titlemodal').innerHTML = "Actualizar Estudiante";
             document.querySelector('.modal-header').classList.replace("headerregister","headerupdate");
             document.querySelector('#btnactionform').classList.replace("btn-primary","btn-info");
             document.querySelector('#btntext').innerHTML="Actualizar";
@@ -95,7 +93,7 @@ function fnteditcurso(){
             var idkey = this.getAttribute("rl");
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             //El getusuario esta en Singular !Cuidado confunfir!
-            var ajaxUrl = baseurl+'/Cursos/getcurso/'+idkey;
+            var ajaxUrl = baseurl+'/Estudiantes/getestudiante/'+idkey;
             request.open("GET",ajaxUrl,true);
             request.send();
             request.onreadystatechange =function(){
@@ -104,16 +102,18 @@ function fnteditcurso(){
                     var objdata=JSON.parse(request.responseText);
                     
                     if(objdata.status){
-                        document.querySelector("#idcurso").value=objdata.data.idcurso;
-                        document.querySelector("#txttitulo").value=objdata.data.titulo;
-                        document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
-                        
-                        $('#listpriv').val(objdata.data.privado).trigger('change');
+                        document.querySelector("#idusuario").value=objdata.data.idusuario;
+                        document.querySelector("#txtci").value=objdata.data.ci;
+                        document.querySelector("#txtnombre").value=objdata.data.nombre;
+                        document.querySelector("#txtapellido").value=objdata.data.apellidos;
+                        document.querySelector("#txtcorreo").value=objdata.data.correo;
+                        document.querySelector("#txttelefono").value=objdata.data.telefono;
+                    
                         $('#liststatus').val(objdata.data.estado).trigger('change');
-               
-                        
-                     
-                        $('#modalformcursos').modal("show");
+
+         
+
+                        $('#modalformestudiantes').modal("show");
                     }else{
                         swal("Error",objdata.msg,"error");
                     }
@@ -125,19 +125,18 @@ function fnteditcurso(){
     
 }
 
-//Especial
-
 //Delete logic
-function fntdelcurso(){
+
+function fntdelestudiantes(){
    
-    var btndelusuario = document.querySelectorAll(".btndelcurso");
+    var btndelusuario = document.querySelectorAll(".btndelusuario");
 
     btndelusuario.forEach(function(btndelusuario){
         btndelusuario.addEventListener("click",function(){
             var idusuarios = this.getAttribute("rl");
             swal({
-                title:"Eliminar Curso",
-                text: "¿Realmente Quiere eliminar el Usuario?",
+                title:"Eliminar Usuario",
+                text: "¿Realmente Quiere eliminar el Estudiante?",
                 type:"warning",
                 showCancelButton:true,
                 confirmButtonText: "Si, Eliminar",
@@ -147,7 +146,7 @@ function fntdelcurso(){
             },function(isConfirm){
                 if(isConfirm){
                 var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-                var ajaxUrl = baseurl+'/Cursos/delcurso/';
+                var ajaxUrl = baseurl+'/Usuarios/delusuario/';
                 var strdata = "idusuario="+idusuarios;
                 request.open("POST",ajaxUrl,true);
                 request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -178,25 +177,40 @@ function fntdelcurso(){
     });
 }
 
+//Ver al usuario
+function fntviewcliente(idpersona){
+    var idpersona = idpersona;
+    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    var ajaxurl = baseurl+'/Usuarios/getusuario/'+idpersona;
+    request.open("GET",ajaxurl,true);
+    request.send();
+    request.onreadystatechange = function(){
+        if(request.readyState == 4 && request.status == 200){
+            var objdata = JSON.parse(request.responseText);
+            if(objdata.status)
+            {
+               var estadoUsuario = objdata.data.Estado == 1 ? 
+                '<span class="badge badge-success">Activo</span>' : 
+                '<span class="badge badge-danger">Inactivo</span>';
 
+                var ci =objdata.data.ci;
+                var nombre= objdata.data.nombre;
+                var apellido = objdata.data.apellidos;
+                var telefono = objdata.data.telefono;
+                var correo= objdata.data.correo;
+                var pendiente="Datos Pendientes";
 
-function fntclasescurso(){
-   
-    var btndetallesclases = document.querySelectorAll(".btnclases");
-
-    btndetallesclases.forEach(function(btndetallesclases){
-        btndetallesclases.addEventListener("click",function(){
-            var idcurso = this.getAttribute("rl");
-            var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            var ajaxUrl = baseurl+'/Cursos/asingclases/'+idcurso;
-            request.open("GET",ajaxUrl,true);
-            request.send();
-            request.onreadystatechange =function(){
-                if(request.readyState == 4 && request.status==200){
-                    window.location = baseurl + "/Userscenter";
-                }
-            };
-        });
-    });
+                document.querySelector("#celIdentificacion").innerHTML = (ci != null) ? ci : pendiente;
+                document.querySelector("#celNombre").innerHTML = (nombre != null) ? nombre : pendiente;
+                document.querySelector("#celApellido").innerHTML = (apellido != null) ? apellido : pendiente;
+                document.querySelector("#celTelefono").innerHTML = (telefono != null) ? telefono : pendiente;
+                document.querySelector("#celEmail").innerHTML = (correo != null) ? correo : pendiente;
+                document.querySelector("#celEstado").innerHTML = estadoUsuario;
+         
+                $('#modalviewuser').modal('show');
+            }else{
+                swal("Error", objdata.msg , "error");
+            }
+        }
+    }
 }
-

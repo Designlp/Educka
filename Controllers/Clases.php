@@ -21,40 +21,10 @@
             
         }
         //Visualizacion
-        public function getcursos(){
-            $arrdata= $this->model->selectcursos();
+        public function getclases(){
+            $idcurso = $_SESSION['idcurso'];
+            $arrdata= $this->model->selectclases($idcurso);
 
-            for($i=0;$i< count($arrdata);$i++){
-                if($arrdata[$i]['estado']==1){
-                    $arrdata[$i]['estado']='<span class="badge badge-pill badge-success">Activo</span>';
-                }else{
-                    $arrdata[$i]['estado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
-                }
-
-                if($arrdata[$i]['privado']==1){
-                    $arrdata[$i]['privado']='<span class="badge badge-pill badge-success">Publico</span>';
-                }else{
-                    $arrdata[$i]['privado']='<span class="badge badge-pill badge-danger">Privado</span>';
-                }
-              
-                $crudopciones='<div class="dropdown">
-                <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
-                <div class="dropdown-menu dropdown-menu-right" style="">
-                
-                    <a class="dropdown-item btneditcurso" rl="'.$arrdata[$i]['idcurso'].'">Editar</a>
-                    <a class="dropdown-item btnclases" rl="'.$arrdata[$i]['idcurso'].'">Clases</a>
-                    <div class="dropdown-divider"></div>
-                    <a  class="dropdown-item text-danger btndelcurso" rl="'.$arrdata[$i]['idcurso'].'">Eliminar</a>
-                </div>
-                </div>';
-
-                if($i == (count($arrdata)-1)){
-                    //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditcurso(); fntclasescurso(); fntdelcurso();</script>';
-                }
-
-                $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
-            }
             
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             die();
