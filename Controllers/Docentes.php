@@ -14,7 +14,7 @@
             $data['page_title']= "Pagina Principal";
             $data['page_name'] = "docentes";
             $data['page_js'] = "functiondocentes.js";
-            $this->views->getview($this,"estudiantes",$data);
+            $this->views->getview($this,"docentes",$data);
         }
         
         //Visualizacion
