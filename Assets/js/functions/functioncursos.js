@@ -123,9 +123,7 @@ function fnteditcurso(){
     });
     
 }
-$(document).ready(function() {
-    $('#listprivado').select2();
-});
+
 //Especial
 
 //Delete logic
@@ -187,8 +185,16 @@ function fntclasescurso(){
 
     btndetallesclases.forEach(function(btndetallesclases){
         btndetallesclases.addEventListener("click",function(){
-            var idusuarios = this.getAttribute("rl");
-            alert(idusuarios);
+            var idcurso = this.getAttribute("rl");
+            var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            var ajaxUrl = baseurl+'/Cursos/asingclases/'+idcurso;
+            request.open("GET",ajaxUrl,true);
+            request.send();
+            request.onreadystatechange =function(){
+                if(request.readyState == 4 && request.status==200){
+                    window.location = baseurl + "/Userscenter";
+                }
+            };
         });
     });
 }

@@ -118,6 +118,12 @@
             die();
             
          }
+
+
+         public function asingclases($idcurso){
+            $_SESSION['iduser']=$idcurso;
+            
+         }
  
         
 
