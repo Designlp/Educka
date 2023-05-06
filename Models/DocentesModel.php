@@ -40,7 +40,7 @@
         }
 
 
-        public function insertestudiantes(int $idrol,string $ci, string $nombre, string $apellido, string $email, int $telefono, string $suscripcion ,string $password, int $estado){
+        public function insertdocentes(int $idrol,string $ci, string $nombre, string $apellido, string $email, int $telefono, string $suscripcion ,string $password, int $estado){
             $this->intidrol = $idrol;
 			$this->intci = $ci;
 			$this->strnombre = $nombre;

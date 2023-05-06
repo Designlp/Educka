@@ -28,7 +28,7 @@
                         <div class="tile">
                             <div class="tile-body">
                             <div class="table-responsive">
-                                <table class="table table-hover table-bordered" id="tablecursos">
+                                <table class="table table-hover table-bordered" id="tableclases">
                                 <thead>
                                     <tr>
                                     <th>ID</th>
