@@ -18,10 +18,11 @@
         }
         //YO
         public function selectclases(int $idcurso){
+            $this->intidcurso= $idcurso;
             $sql= "SELECT tcl.idclases , tc.idcurso, tc.titulo AS titcurso, tcl.
             FROM tclases tcl 
             JOIN tcursos tc ON tc.idcurso  = tcl.idcurso  
-            WHERE tcl.estado != 0";
+            WHERE tcl.estado != 0 AND tcl.idcurso =  $this->intidcurso";
             $request=$this->selectall($sql);
             return $request;
         }
