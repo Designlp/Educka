@@ -23,6 +23,7 @@
         //Visualizacion
         public function getclases(){
             $idcurso = $_SESSION['idcurso'];
+            echo $idcurso;
             $arrdata= $this->model->selectclases($idcurso);
 
             

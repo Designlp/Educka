@@ -107,7 +107,7 @@ function fnteditcurso(){
                         document.querySelector("#idcurso").value=objdata.data.idcurso;
                         document.querySelector("#txttitulo").value=objdata.data.titulo;
                         document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
-                        
+
                         $('#listpriv').val(objdata.data.privado).trigger('change');
                         $('#liststatus').val(objdata.data.estado).trigger('change');
                
@@ -193,7 +193,7 @@ function fntclasescurso(){
             request.send();
             request.onreadystatechange =function(){
                 if(request.readyState == 4 && request.status==200){
-                    window.location = baseurl + "/Userscenter";
+                    window.location = baseurl + "/Clases";
                 }
             };
         });
