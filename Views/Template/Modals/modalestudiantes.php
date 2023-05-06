@@ -47,7 +47,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="liststatus">Estado</label>
-              <select class="form-control" id="liststatus" name="liststatus" placeholder="Estado">
+              <select class="form-control" id="liststatus" data-toggle="select"  name="liststatus" placeholder="Estado">
                 <option value="1">Activo</option>
                 <option value="2">Inactivo</option>
               </select>
