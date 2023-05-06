@@ -28,13 +28,15 @@
                         <div class="tile">
                             <div class="tile-body">
                             <div class="table-responsive">
-                                <table class="table table-hover table-bordered" id="table">
+                                <table class="table table-hover table-bordered" id="tablecursos">
                                 <thead>
                                     <tr>
                                     <th>ID</th>
-                                    <th>Curso</th>
+                                    <th>Autor</th>
                                     <th>Titulo</th>
+                                    <th>Privacidad</th>
                                     <th>Estado</th>
+                                    <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>

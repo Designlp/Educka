@@ -32,11 +32,9 @@
                                 <thead>
                                     <tr>
                                     <th>ID</th>
-                                    <th>Autor</th>
+                                    <th>Curso</th>
                                     <th>Titulo</th>
-                                    <th>Privacidad</th>
                                     <th>Estado</th>
-                                    <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
