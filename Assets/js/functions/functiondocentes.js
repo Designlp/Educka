@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded",function(){
 
     });
     //Insert
-    var forminsert= document.querySelector("#formestudiantes");
+    var forminsert= document.querySelector("#formdocentes");
     forminsert.onsubmit=function(e){
         e.preventDefault();
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = baseurl+'/Estudiantes/setestudiantes';
+        var ajaxUrl = baseurl+'/Docentes/setdocentes';
         var formdata=new FormData(forminsert);
         request.open("POST",ajaxUrl,true);
         request.send(formdata);
@@ -41,10 +41,10 @@ document.addEventListener("DOMContentLoaded",function(){
                 var obdata=JSON.parse(request.responseText);
                 //console.log(obdata);
                 if(obdata.status){
-                    $('#modalformestudiantes').modal("hide");
+                    $('#modalformdocentes').modal("hide");
                     forminsert.reset();
                     //Validar datos repetodos
-                    swal("Administración de Estudiantes", obdata.msg ,"success");
+                    swal("Administración de Docentes", obdata.msg ,"success");
                     //Ojo 
                     tablero.ajax.reload(function(){
                         //fnteditrol();

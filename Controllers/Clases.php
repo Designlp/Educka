@@ -23,9 +23,8 @@
         //Visualizacion
         public function getclases(){
             $idcurso = $_SESSION['idcurso'];
-            echo $idcurso;
             $arrdata= $this->model->selectclases($idcurso);
-
+            
             
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             die();

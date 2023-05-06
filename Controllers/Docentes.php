@@ -74,7 +74,7 @@
 
         //Insert 
         //Logica update como
-        public function setestudiantes(){
+        public function setdocentes(){
             if($_POST){	
             if(empty($_POST['txtnombre']) || empty($_POST['txtapellido']) || empty($_POST['txtcorreo']) )
             {
@@ -88,7 +88,7 @@
                 $strcorreo = strtolower(strclean($_POST['txtcorreo']));
                 $inttelefono = intval(strclean($_POST['txttelefono']));
                 $intestado = intval(strclean($_POST['liststatus']));
-                $intidrol=intval(3);
+                $intidrol=intval(2);
                 $intsuscripcion = intval(0);
                 //Esto se basa en el id oculto que se usa en rl 
                 if($idusuario == 0)
@@ -98,7 +98,7 @@
                     $strpassword =  empty($_POST['txtcontrasenia']) ? passgenerator() : $_POST['txtcontrasenia'];
                     $strpasswordencript=hash("SHA256",$strpassword);
 
-                    $requestusuario = $this->model->insertestudiantes(
+                    $requestusuario = $this->model->insertdocentes(
                     $intidrol,
                     $strci,
                     $strnombre, 
