@@ -50,7 +50,7 @@
 
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditcurso(); fntdelcurso();</script>';
+                    $script='<script type="text/javascript"> fnteditcurso(); fntclasescurso(); fntdelcurso();</script>';
                 }
 
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';

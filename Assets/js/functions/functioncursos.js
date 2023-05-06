@@ -179,3 +179,17 @@ function fntdelcurso(){
     });
 }
 
+
+
+function fntclasescurso(){
+   
+    var btndetallesclases = document.querySelectorAll(".btnclases");
+
+    btndetallesclases.forEach(function(btndetallesclases){
+        btndetallesclases.addEventListener("click",function(){
+            var idusuarios = this.getAttribute("rl");
+            alert(idusuarios);
+        });
+    });
+}
+
