@@ -59,13 +59,20 @@
         <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
         <script>
             
-            const youtubePlayer = document.querySelector('#player iframe');
-const youtubeButton = youtubePlayer.querySelector('.ytp-chrome-top-buttons .ytp-fullscreen-button');
+const player = new Plyr('#player', {
+  controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
+});
+
+player.on('pause', event => {
+  if (event.detail.plyr.config.youtube) {
+
 const youtubeWatermark = youtubePlayer.querySelector('.ytp-watermark');
 
 // Ocultar el botón de pantalla completa y la marca de agua de YouTube
 youtubeButton.hidden = true;
 youtubeWatermark.hidden = true;
+  }
+});
 
     
   </script>
