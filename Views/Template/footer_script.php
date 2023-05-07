@@ -57,7 +57,11 @@
         <!-- Sidebar Mini JS -->
         <script src="<?= media() ?>/js/template/sidebar-mini.js"></script>
         <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
-
+        <script>
+    const player = new Plyr('#player', {
+      controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
+    });
+  </script>
         <script>
             (function() {
                 'use strict';
