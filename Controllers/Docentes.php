@@ -38,7 +38,7 @@
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
                 <div class="dropdown-menu dropdown-menu-right" style="">
                     <a onClick="fntviewcliente('.$arrdata[$i]['idusuario'].')" class="dropdown-item">Detalles</a>
-                    <a class="dropdown-item btneditestudiantes" rl="'.$arrdata[$i]['idusuario'].'">Editar</a>
+                    <a class="dropdown-item btneditdocentes" rl="'.$arrdata[$i]['idusuario'].'">Editar</a>
                     <div class="dropdown-divider"></div>
                     <a  class="dropdown-item text-danger btndelestudiantes" rl="'.$arrdata[$i]['idusuario'].'">Eliminar</a>
                 </div>
@@ -46,7 +46,7 @@
 
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditestudiantes(); fntdelestudiantes();</script>';
+                    $script='<script type="text/javascript"> fnteditdocentes(); fntdelestudiantes();</script>';
                 }
 
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
@@ -56,11 +56,11 @@
             die();
         }
 
-        public function getestudiante($idusuario){
+        public function getdocente($idusuario){
             
             $intkey=intval(strclean($idusuario));
             if ($intkey>0){
-                $arrdata = $this->model->selectestudiante($intkey);
+                $arrdata = $this->model->selectdocente($intkey);
                 if(empty($arrdata)){
                     $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
                 }else{
@@ -111,7 +111,7 @@
                  );
                 }else{
                     $option = 2;
-                    $requestusuario = $this->model->updateestudiantes(
+                    $requestusuario = $this->model->updatedocentes(
                     $idusuario,
                     $strci,
                     $strnombre, 

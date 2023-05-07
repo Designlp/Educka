@@ -30,7 +30,7 @@
             return $request;
         }
 
-        public function selectestudiante(int $iduser){
+        public function selectdocente(int $iduser){
             $this->intidusuario= $iduser;
             $sql= "SELECT tu.idusuario, tu.ci, tu.nombre, tu.apellidos, tu.correo, tu.telefono, tu.estado
             FROM tusuarios tu
@@ -80,7 +80,7 @@
             return $return;
         }
         //Update
-        public function updateestudiantes(int $idusuario,string $ci,string $nombre, string $apellido, string $correo ,int $telefono, int $estado){
+        public function updatedocentes(int $idusuario,string $ci,string $nombre, string $apellido, string $correo ,int $telefono, int $estado){
 			
             $this->intidusuario = $idusuario;
 			$this->strci        = $ci;

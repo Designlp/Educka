@@ -79,13 +79,13 @@ window.addEventListener('load',function(){
 
 
 //Update
-function fnteditestudiantes(){
-    var btneditestudiantes=Array.apply(null, document.querySelectorAll(".btneditestudiantes"));    
-    btneditestudiantes.forEach(function(btneditestudiantes){
+function fnteditdocentes(){
+    var btneditdocentes=Array.apply(null, document.querySelectorAll(".btneditdocentes"));    
+    btneditdocentes.forEach(function(btneditdocentes){
         
-        btneditestudiantes.addEventListener("click",function(){
+        btneditdocentes.addEventListener("click",function(){
             //alert("Click to close...");
-            document.querySelector('#titlemodal').innerHTML = "Actualizar Estudiante";
+            document.querySelector('#titlemodal').innerHTML = "Actualizar Docente";
             document.querySelector('.modal-header').classList.replace("headerregister","headerupdate");
             document.querySelector('#btnactionform').classList.replace("btn-primary","btn-info");
             document.querySelector('#btntext').innerHTML="Actualizar";
@@ -93,7 +93,7 @@ function fnteditestudiantes(){
             var idkey = this.getAttribute("rl");
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             //El getusuario esta en Singular !Cuidado confunfir!
-            var ajaxUrl = baseurl+'/Estudiantes/getestudiante/'+idkey;
+            var ajaxUrl = baseurl+'/Docentes/getdocente/'+idkey;
             request.open("GET",ajaxUrl,true);
             request.send();
             request.onreadystatechange =function(){
@@ -113,7 +113,7 @@ function fnteditestudiantes(){
 
          
 
-                        $('#modalformestudiantes').modal("show");
+                        $('#modalformdocentes').modal("show");
                     }else{
                         swal("Error",objdata.msg,"error");
                     }
