@@ -35,6 +35,7 @@
                                     <th>Curso</th>
                                     <th>Titulo</th>
                                     <th>Estado</th>
+                                    <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
