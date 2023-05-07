@@ -1,8 +1,3 @@
-.embed-responsive .embed-responsive-item .ytp-chrome-bottom {
-    display: none !important;
-}
-
-/* Cambiar el color del reproductor */
-.embed-responsive .embed-responsive-item .ytp-cued-thumbnail-overlay-image {
-    background-color: #000;
-}
+.plyr__video-embed iframe::after {
+    display: none;
+  }
