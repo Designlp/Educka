@@ -58,19 +58,18 @@
         <script src="<?= media() ?>/js/template/sidebar-mini.js"></script>
         <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
         <script>
-
             
-   const player = new Plyr('#player', {
+            const player = new Plyr('#player', {
   controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
 });
 
-player.on('ready', event => {
-  const youtubeFrame = event.detail.plyr.iframe;
-  const youtubeButton = youtubeFrame.contentDocument.querySelector('.ytp-watermark');
-  if (youtubeButton) {
-    youtubeButton.style.display = 'none';
-  }else{
-    alert("No");
+player.on('pause', event => {
+  if (event.detail.plyr.config.youtube) {
+    alert();
+    const youtubeButton = event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay');
+    if (youtubeButton) {
+      youtubeButton.parentNode.removeChild(youtubeButton);
+    }
   }
 });
     
