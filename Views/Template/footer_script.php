@@ -65,8 +65,8 @@
 
 player.on('pause', event => {
   if (event.detail.plyr.config.youtube) {
-    alert();
-    const youtubeButton = event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay');
+
+    const youtubeButton = event.detail.plyr.elements.wrapper.querySelector('.ytp-watermark');
     if (youtubeButton) {
       youtubeButton.parentNode.removeChild(youtubeButton);
     }
