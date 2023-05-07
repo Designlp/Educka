@@ -59,40 +59,13 @@
         <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
         <script>
             
-            const player = new Plyr('#player', {
-            youtube: {
-                noCookie: true,
-                rel: 0,
-                iv_load_policy: 3,
-                modestbranding: 1,
-                disablekb: 1,
-                controls: 0,
-                autoplay: 1
-            }
-        });
-        
-        player.on('ready', function(event) {
-            const youtubePlayer = event.detail.plyr.embed;
-            const youtubeButton = youtubePlayer.querySelector('button.ytp-large-play-button');
-            
-            if (youtubeButton) {
-                youtubeButton.click();
-            }
-            
-            youtubePlayer.querySelector('.ytp-ce-element').classList.add('hidden');
-            youtubePlayer.querySelector('.ytp-chrome-bottom').classList.add('hidden');
-            youtubePlayer.querySelector('.ytp-gradient-bottom').classList.add('hidden');
-            youtubePlayer.querySelector('.ytp-progress-bar-container').classList.add('hidden');
-            youtubePlayer.querySelector('.ytp-watermark').classList.add('hidden');
-            
-            youtubePlayer.on('pause', function() {
-                youtubePlayer.querySelector('.ytp-ce-element').classList.add('hidden');
-                youtubePlayer.querySelector('.ytp-chrome-bottom').classList.add('hidden');
-                youtubePlayer.querySelector('.ytp-gradient-bottom').classList.add('hidden');
-                youtubePlayer.querySelector('.ytp-progress-bar-container').classList.add('hidden');
-                youtubePlayer.querySelector('.ytp-watermark').classList.add('hidden');
-            });
-        });
+            const youtubePlayer = document.querySelector('#player iframe');
+const youtubeButton = youtubePlayer.querySelector('.ytp-chrome-top-buttons .ytp-fullscreen-button');
+const youtubeWatermark = youtubePlayer.querySelector('.ytp-watermark');
+
+// Ocultar el botón de pantalla completa y la marca de agua de YouTube
+youtubeButton.hidden = true;
+youtubeWatermark.hidden = true;
 
     
   </script>
