@@ -61,12 +61,12 @@
     const player = new Plyr('#player', {
       controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
     });
-    player.on('click', event => {
+    player.on('pause', event => {
   if (event.detail.plyr.config.youtube) {
-    event.detail.plyr.elements.buttons.youtube.hidden = true;
+    event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay').style.display = 'none';
   }
 });
-
+    
   </script>
         <script>
             (function() {
