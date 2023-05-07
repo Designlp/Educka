@@ -129,13 +129,13 @@ function fnteditdocentes(){
 
 function fntdelestudiantes(){
    
-    var btndelusuario = document.querySelectorAll(".btndelusuario");
+    var btndeldocentes = document.querySelectorAll(".btndeldocentes");
 
-    btndelusuario.forEach(function(btndelusuario){
-        btndelusuario.addEventListener("click",function(){
+    btndeldocentes.forEach(function(btndeldocentes){
+        btndeldocentes.addEventListener("click",function(){
             var idusuarios = this.getAttribute("rl");
             swal({
-                title:"Eliminar Usuario",
+                title:"Eliminar Docente",
                 text: "¿Realmente Quiere eliminar el Estudiante?",
                 type:"warning",
                 showCancelButton:true,
