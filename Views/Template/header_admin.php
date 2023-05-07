@@ -39,7 +39,7 @@
    <link type="text/css" href="<?= media() ?>/css/educka.css" rel="stylesheet">
    
    <link type="text/css" href="<?= media() ?>/css/quill.css" rel="stylesheet">
-   
+   <link type="text/css" href="<?= media() ?>/css/style.css" rel="stylesheet">
 </head>
 
 <body class="layout-mini layout-mini">
