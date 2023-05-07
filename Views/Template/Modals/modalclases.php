@@ -181,7 +181,7 @@
                                 </div>
 
                                 <div class="card">
-                                    <div class="embed-responsive embed-responsive-16by9">
+                                    <div class="embed-responsive embed-responsive-16by9 plyr__video-embed">
                                     
 
                                                 <iframe class="embed-responsive-item"

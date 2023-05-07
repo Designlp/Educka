@@ -143,7 +143,7 @@ function fntrolesusuario(){
 
         request.onreadystatechange =function(){
             if(request.readyState == 4 && request.status==200){
-             
+             //Si es caso especial entonces es diferente 
                 document.querySelector('#txtrol').innerHTML= request.responseText;
                 $('#txtrol').val(1).trigger('change');
             }

@@ -56,6 +56,8 @@
 
         <!-- Sidebar Mini JS -->
         <script src="<?= media() ?>/js/template/sidebar-mini.js"></script>
+        <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+
         <script>
             (function() {
                 'use strict';
