@@ -13,12 +13,11 @@ document.addEventListener("DOMContentLoaded",function(){
             "dataSrc":""
         },
         "columns": [
-            { "data": 'idcurso' },
-            { "data": 'nombre' },
-            { "data": 'titulo' },
-            { "data": 'privado' },
-            { "data": 'estado' },
-            { "data": 'acciones' }
+            { "data": 'idclases' },
+            { "data": 'titcurso' },
+            { "data": 'titclase' },
+            { "data": 'estado' }
+        
         ],
         "resonsieve":"true",
         "bDestroy":true,

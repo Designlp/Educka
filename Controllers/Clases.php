@@ -20,7 +20,7 @@
             $this->views->getview($this,"clases",$data);
             
         }
-        
+
         //Visualizacion
         public function getclases(){
             $idcurso = $_SESSION['idcurso'];
@@ -33,11 +33,6 @@
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
                 }
 
-                if($arrdata[$i]['privado']==1){
-                    $arrdata[$i]['privado']='<span class="badge badge-pill badge-success">Publico</span>';
-                }else{
-                    $arrdata[$i]['privado']='<span class="badge badge-pill badge-danger">Privado</span>';
-                }
               
                 $crudopciones='<div class="dropdown">
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
