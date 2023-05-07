@@ -42,7 +42,7 @@
                     <a onClick="fntviewcliente('.$arrdata[$i]['idroles'].')" class="dropdown-item">Detalles</a>
                     <a class="dropdown-item btneditroles" rl="'.$arrdata[$i]['idroles'].'">Editar</a>
                     <div class="dropdown-divider"></div>
-                    <a  class="dropdown-item text-danger btndelroles" rl="'.$arrdata[$i]['idroles'].'">Eliminar</a>
+                    <a class="dropdown-item text-danger btndelroles" rl="'.$arrdata[$i]['idroles'].'">Eliminar</a>
                 </div>
                 </div>';
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
