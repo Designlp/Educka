@@ -49,10 +49,8 @@
           videoId: 'osUFRHYgvQ4',
           playerVars: {
       'origin': 'https://educka.online'
-    },
-          events: {
-            'onReady': onPlayerReady
-          }
+    }
+         
         });
       }
       function onPlayerReady(event) {
