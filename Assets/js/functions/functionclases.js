@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded",function(){
             { "data": 'idclases' },
             { "data": 'titcurso' },
             { "data": 'titclase' },
-            { "data": 'estado' }
-        
+            { "data": 'estado' },
+            { "data": 'acciones' }
         ],
         "resonsieve":"true",
         "bDestroy":true,
