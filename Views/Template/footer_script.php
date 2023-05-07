@@ -64,21 +64,12 @@
 
 player.on('pause', event => {
   if (event.detail.plyr.config.youtube) {
-    const pauseOverlay = event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay');
-    if (pauseOverlay) {
-      pauseOverlay.hidden = true;
-    }else
-    alert();
-  }
-});
-
-player.on('ready', event => {
-  if (event.detail.plyr.config.youtube) {
-    const youtubeLogo = event.detail.plyr.elements.container.querySelector('.ytp-ce-element');
-    if (youtubeLogo) {
-      youtubeLogo.hidden = true;
-    }else
-    alert();
+    const youtubeButton = event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay');
+    if (youtubeButton) {
+      youtubeButton.parentNode.removeChild(youtubeButton);
+    }else{
+        alert();
+    }
   }
 });
     
