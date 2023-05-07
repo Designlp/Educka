@@ -60,21 +60,39 @@
         <script>
             
             const player = new Plyr('#player', {
-  controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
-});
-
-player.on('pause', event => {
-  if (event.detail.plyr.config.youtube) {
-    const youtubePlayer = event.detail.plyr.embed;
-
-    if (youtubePlayer) {
-      const watermark = youtubePlayer.querySelector('.ytp-watermark');
-      if (watermark) {
-        watermark.style.display = 'none';
-      }
-    }
-  }
-});
+            youtube: {
+                noCookie: true,
+                rel: 0,
+                iv_load_policy: 3,
+                modestbranding: 1,
+                disablekb: 1,
+                controls: 0,
+                autoplay: 1
+            }
+        });
+        
+        player.on('ready', function(event) {
+            const youtubePlayer = event.detail.plyr.embed;
+            const youtubeButton = youtubePlayer.querySelector('button.ytp-large-play-button');
+            
+            if (youtubeButton) {
+                youtubeButton.click();
+            }
+            
+            youtubePlayer.querySelector('.ytp-ce-element').classList.add('hidden');
+            youtubePlayer.querySelector('.ytp-chrome-bottom').classList.add('hidden');
+            youtubePlayer.querySelector('.ytp-gradient-bottom').classList.add('hidden');
+            youtubePlayer.querySelector('.ytp-progress-bar-container').classList.add('hidden');
+            youtubePlayer.querySelector('.ytp-watermark').classList.add('hidden');
+            
+            youtubePlayer.on('pause', function() {
+                youtubePlayer.querySelector('.ytp-ce-element').classList.add('hidden');
+                youtubePlayer.querySelector('.ytp-chrome-bottom').classList.add('hidden');
+                youtubePlayer.querySelector('.ytp-gradient-bottom').classList.add('hidden');
+                youtubePlayer.querySelector('.ytp-progress-bar-container').classList.add('hidden');
+                youtubePlayer.querySelector('.ytp-watermark').classList.add('hidden');
+            });
+        });
 
     
   </script>
