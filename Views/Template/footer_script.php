@@ -51,7 +51,7 @@
         <script src="<?= media() ?>/vendor/select2/select2.min.js"></script>
         <script src="<?= media() ?>/js/template/select2.js"></script>
 
-        <script src="<?= media() ?>/vendor/quill.min.js"></script>
+        <script src="<?= media() ?>/vendor/template/quill.min.js"></script>
         <script src="<?= media() ?>/js/quill.js"></script>
 
         <!-- Sidebar Mini JS -->
