@@ -183,8 +183,14 @@
                                 <div class="card">
                                     <div id="player" class="plyr__video-embed embed-responsive embed-responsive-16by9" >
                                     
-                                    <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="mB3SDp1sNEI" data-plyr-config='{ "chromeless": true }'></div>
+                                  
+                                                    <iframe class="embed-responsive-item"
+                                                    src="https://www.youtube.com/embed/G7mH-MBLET4?modestbranding=1&controls=0&disablekb=1&rel=0"
 
+                                                    title="Zoro Prueba el Poder de su Nueva Espada Yoru - One Piece" 
+                                                    frameborder="0" 
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                    allowfullscreen></iframe>
                                 
                                     </div>
                                     <div class="card-body">
