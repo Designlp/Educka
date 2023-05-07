@@ -127,7 +127,7 @@ function fnteditdocentes(){
 
 //Delete logic
 
-function fntdelestudiantes(){
+function fntdeldocentes(){
    
     var btndeldocentes = document.querySelectorAll(".btndeldocentes");
 
