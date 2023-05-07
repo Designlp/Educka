@@ -181,15 +181,16 @@
                                 </div>
 
                                 <div class="card">
-                                    <div class="embed-responsive embed-responsive-16by9 plyr__video-embed" id="player">
+                                    <div class="embed-responsive embed-responsive-16by9">
                                     
-
-                                                <iframe class="embed-responsive-item"
-                                                src="https://www.youtube.com/embed/G7mH-MBLET4" 
-                                                title="Zoro Prueba el Poder de su Nueva Espada Yoru - One Piece" 
-                                                frameborder="0" 
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                                allowfullscreen></iframe>
+                                        <div class="plyr__video-embed" id="player">
+                                                    <iframe class="embed-responsive-item"
+                                                    src="https://www.youtube.com/embed/G7mH-MBLET4" 
+                                                    title="Zoro Prueba el Poder de su Nueva Espada Yoru - One Piece" 
+                                                    frameborder="0" 
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                    allowfullscreen></iframe>
+                                        </div>
                                     </div>
                                     <div class="card-body">
                                         <label class="form-label">URL</label>
