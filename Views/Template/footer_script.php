@@ -58,21 +58,29 @@
         <script src="<?= media() ?>/js/template/sidebar-mini.js"></script>
         <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
         <script>
-    const player = new Plyr('#player', {
-      controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
-    });
-    const player2 = new Plyr('#player');
-    player2.on('pause', event => {
-        if (event.detail.plyr.config.youtube) {
-          event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay').style.display = 'none';
-        }
-      });
+   const player = new Plyr('#player', {
+  controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
+});
 
-      player2.on('ready', event => {
-        if (event.detail.plyr.config.youtube) {
-          event.detail.plyr.elements.buttons.youtube.hidden = true;
-        }
-      });
+player.on('pause', event => {
+  if (event.detail.plyr.config.youtube) {
+    const pauseOverlay = event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay');
+    if (pauseOverlay) {
+      pauseOverlay.hidden = true;
+    }else
+    alert();
+  }
+});
+
+player.on('ready', event => {
+  if (event.detail.plyr.config.youtube) {
+    const youtubeLogo = event.detail.plyr.elements.container.querySelector('.ytp-ce-element');
+    if (youtubeLogo) {
+      youtubeLogo.hidden = true;
+    }else
+    alert();
+  }
+});
     
   </script>
         <script>
