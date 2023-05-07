@@ -1,4 +1,6 @@
 .plyr__video-embed .ytp-cued-thumbnail-overlay {
     display: none !important;
   }
-  
+  .plyr__video-wrapper .ytp-watermark {
+    display: none !important;
+  }
