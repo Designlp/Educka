@@ -63,7 +63,10 @@
     });
     player.on('pause', event => {
   if (event.detail.plyr.config.youtube) {
-    event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay').style.display = 'none';
+    const pauseOverlay = event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay');
+    if (pauseOverlay) {
+      pauseOverlay.style.display = 'none';
+    }
   }
 });
     
