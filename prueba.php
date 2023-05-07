@@ -15,7 +15,7 @@
         player = new YT.Player('player', {
           videoId: 'HI8WFuTy4wc',
           playerVars: {
-            'autoplay': 0,
+    
             'controls': 1,
             'rel': 0,
             'showinfo': 0,
