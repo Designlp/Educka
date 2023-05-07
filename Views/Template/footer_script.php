@@ -65,6 +65,7 @@
   if (event.detail.plyr.config.youtube) {
     const pauseOverlay = event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay');
     if (pauseOverlay) {
+        alert();
       pauseOverlay.style.display = 'none';
     }
   }
