@@ -62,14 +62,13 @@
   controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
 });
 
-player.on('pause', event => {
-  if (event.detail.plyr.config.youtube) {
-    const youtubeButton = event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay');
-    if (youtubeButton) {
-      youtubeButton.parentNode.removeChild(youtubeButton);
-    }else{
-        alert();
-    }
+player.on('ready', event => {
+  const youtubeFrame = event.detail.plyr.iframe;
+  const youtubeButton = youtubeFrame.contentDocument.querySelector('.ytp-share-button-visible');
+  if (youtubeButton) {
+    youtubeButton.style.display = 'none';
+  }else{
+    alert("No");
   }
 });
     
