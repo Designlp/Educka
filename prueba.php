@@ -1,44 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Video de YouTube personalizado</title>
-  </head>
-  <body>
-    <div id="player"></div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Player</title>
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
+</head>
+<body>
+  <div class="plyr__video-embed" id="player">
+  <iframe src="https://www.youtube.com/embed/bCTSCRo3vwM" title="ONE PIECE FILM RED SUMMARY ANIMATION" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
-      var player;
-
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          videoId: 'HI8WFuTy4wc',
-          playerVars: {
-    
-            'controls': 1,
-            'rel': 0,
-            'showinfo': 0,
-            'origin': 'https://educka.online'
-          },
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-
-      function onPlayerReady(event) {
-        // Reproducir video cuando el reproductor esté listo
-        event.target.playVideo();
-      }
-
-      function onPlayerStateChange(event) {
-        // Detectar cambios de estado del reproductor (por ejemplo, cuando finaliza el video)
-        if (event.data == YT.PlayerState.ENDED) {
-          // Inserta aquí la acción que quieras que ocurra después de que finalice el video
-        }
-      }
-    </script>
-  </body>
+  <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+  <script>
+    const player = new Plyr('#player', {
+      controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
+    });
+  </script>
+</body>
 </html>
