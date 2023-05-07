@@ -38,7 +38,7 @@
    <link type="text/css" href="<?= media() ?>/css/app.css" rel="stylesheet">
    <link type="text/css" href="<?= media() ?>/css/educka.css" rel="stylesheet">
    
-
+   <link type="text/css" href="<?= media() ?>/css/quill.css" rel="stylesheet">
    
 </head>
 
