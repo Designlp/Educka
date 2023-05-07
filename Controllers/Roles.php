@@ -38,8 +38,7 @@
 
                 $crudopciones='<div class="dropdown">
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
-                <div class="dropdown-menu dropdown-menu-right" style="">
-                    <a onClick="fntviewcliente('.$arrdata[$i]['idroles'].')" class="dropdown-item">Detalles</a>
+                <div class="dropdown-menu dropdown-menu-right" style=""></div>
                     <a class="dropdown-item btneditroles" rl="'.$arrdata[$i]['idroles'].'">Editar</a>
                     <div class="dropdown-divider"></div>
                     <a  class="dropdown-item text-danger btndelroles" rl="'.$arrdata[$i]['idroles'].'">Eliminar</a>
