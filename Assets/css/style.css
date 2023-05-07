@@ -1,3 +1,6 @@
 .plyr__video-embed iframe::after {
     display: none;
   }
+  .ytp-watermark {
+    display: none !important;
+  }
