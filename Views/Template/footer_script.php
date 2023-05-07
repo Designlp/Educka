@@ -66,7 +66,8 @@ const player = new Plyr('#player', {
 player.on('pause', event => {
   if (event.detail.plyr.config.youtube) {
 
-const youtubeWatermark = document.querySelector('.ytp-watermark');
+const youtubeWatermark = document.querySelector('.ytp-watermark').value;
+alert(youtubeWatermark);
 youtubeWatermark.style.display = 'none';
 // Ocultar el botón de pantalla completa y la marca de agua de YouTube
     
