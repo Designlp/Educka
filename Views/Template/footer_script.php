@@ -65,13 +65,12 @@ const player = new Plyr('#player', {
 
 player.on('pause', event => {
   if (event.detail.plyr.config.youtube) {
-
-    const youtubeWatermark = document.querySelector('.ytp-watermark');
-if (youtubeWatermark) {
-  youtubeWatermark.style.display = 'none';
-}
-// Ocultar el botón de pantalla completa y la marca de agua de YouTube
-    
+    setTimeout(() => {
+      const youtubeWatermark = document.querySelector('.ytp-watermark');
+      if (youtubeWatermark) {
+        youtubeWatermark.style.display = 'none';
+      }
+    }, 1000);
   }
 });
 
