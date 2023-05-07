@@ -47,7 +47,6 @@
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
           videoId: 'osUFRHYgvQ4',
-          origin: 'https://educka.online',
           events: {
             'onReady': onPlayerReady
           }
