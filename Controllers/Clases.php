@@ -20,6 +20,7 @@
             $this->views->getview($this,"clases",$data);
             
         }
+        
         //Visualizacion
         public function getclases(){
             $idcurso = $_SESSION['idcurso'];
