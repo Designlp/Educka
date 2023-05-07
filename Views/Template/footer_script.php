@@ -61,6 +61,18 @@
     const player = new Plyr('#player', {
       controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
     });
+    const player2 = new Plyr('#player');
+    player2.on('pause', event => {
+        if (event.detail.plyr.config.youtube) {
+          event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay').style.display = 'none';
+        }
+      });
+
+      player2.on('ready', event => {
+        if (event.detail.plyr.config.youtube) {
+          event.detail.plyr.elements.buttons.youtube.hidden = true;
+        }
+      });
     
   </script>
         <script>
