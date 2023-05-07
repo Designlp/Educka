@@ -53,6 +53,8 @@
 <?php 
 
   footeradmin($data);
-  getmodal('modalcursos',$data);
+  getmodal('modalclases',$data);
   footerscript($data);
 ?>
+
+

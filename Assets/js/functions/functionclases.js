@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 },false);
 
-$('#tablecursos').DataTable();
+$('#tableclases').DataTable();
 function openmodal(){
     document.querySelector('#idcurso').value="";
     document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";
