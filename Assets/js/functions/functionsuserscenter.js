@@ -145,8 +145,7 @@ function fntrolesusuario(){
             if(request.readyState == 4 && request.status==200){
              
                 document.querySelector('#txtrol').innerHTML= request.responseText;
-                document.querySelector('#txtrol').value=1;
-                $('#txtrol').selectpicker('render');
+                $('#txtrol').val(1).trigger('change');
             }
         }
     }    
