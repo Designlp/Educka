@@ -29,15 +29,23 @@
                 //Id Usuario de acuerdo a su tabla en la base de datos esto recupera los datos de la BD
                 //El funcion fntwiew ya se inicializa con un evento
                 //$btnview='<button class="btn btn-info btn-sm btnviewsstyle btnviewroles" onClick="fntviewcliente('.$arrdata[$i]['idroles'].')" title="Ver usuario"><i class="far fa-eye"></i></button>';
-                $btnedit='<button class="btn btn-primary btn-sm btneditstyle btneditroles" rl="'.$arrdata[$i]['idroles'].'" title="Editar" type="button"><i class="fas fa-pencil-alt"></i></button>';
-                $btndelete='<button class="btn btn-danger btn-sm btndelstyle btndelroles" rl="'.$arrdata[$i]['idroles'].'" title="Eliminar" type="button"><i class="fas fa-trash-alt"></i></button>';
-
+  
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
                     $script='<script type="text/javascript"> fnteditrol(); fntdelrol();</script>';
                 }
 
-                $arrdata[$i]['acciones']= '<div class="text-center"> '.$btnedit.' '.$btndelete.' '.$script.'</div>';
+
+                $crudopciones='<div class="dropdown">
+                <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
+                <div class="dropdown-menu dropdown-menu-right" style="">
+                    <a onClick="fntviewcliente('.$arrdata[$i]['idroles'].')" class="dropdown-item">Detalles</a>
+                    <a class="dropdown-item btneditroles" rl="'.$arrdata[$i]['idroles'].'">Editar</a>
+                    <div class="dropdown-divider"></div>
+                    <a  class="dropdown-item text-danger btndelroles" rl="'.$arrdata[$i]['idroles'].'">Eliminar</a>
+                </div>
+                </div>';
+                $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
             }
             
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
