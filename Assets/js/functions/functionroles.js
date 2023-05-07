@@ -118,7 +118,10 @@ function fnteditrol(){
                                         <option value="1">Activo</option> 
                                         <option value="2">Inactivo</option>
                                         `;
-                        document.querySelector("#liststatus").innerHTML = htmlselect;
+                        
+                        $('#liststatus').val(objdata.data.estado).trigger('change');  
+
+                        
                         $('#modalformroles').modal("show");
                     }else{
                         swal("Error",objdata.msg,"error");
