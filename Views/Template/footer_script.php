@@ -65,12 +65,13 @@ const player = new Plyr('#player', {
 
 player.on('pause', event => {
   if (event.detail.plyr.config.youtube) {
-    setTimeout(() => {
-      const youtubeWatermark = document.querySelector('.ytp-watermark');
-      if (youtubeWatermark) {
-        youtubeWatermark.style.display = 'none';
-      }
-    }, 1000);
+    const youtubePlayer = document.querySelector('.plyr__video-wrapper iframe');
+    const youtubeWatermark = youtubePlayer.querySelector('.ytp-watermark');
+    if (youtubeWatermark) {
+      youtubeWatermark.style.cssText = 'display: none !important;';
+    } else {
+      youtubePlayer.style.cssText = 'pointer-events: none; user-select: none;';
+    }
   }
 });
 
