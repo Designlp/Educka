@@ -65,13 +65,17 @@
 
 player.on('pause', event => {
   if (event.detail.plyr.config.youtube) {
+    const youtubePlayer = event.detail.plyr.embed;
 
-    const youtubeButton = event.detail.plyr.elements.wrapper.querySelector('.ytp-watermark');
-    if (youtubeButton) {
-      youtubeButton.parentNode.removeChild(youtubeButton);
+    if (youtubePlayer) {
+      const watermark = youtubePlayer.querySelector('.ytp-watermark');
+      if (watermark) {
+        watermark.style.display = 'none';
+      }
     }
   }
 });
+
     
   </script>
         <script>
