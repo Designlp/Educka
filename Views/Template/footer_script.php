@@ -64,14 +64,16 @@
   controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
 });
 
-const iframe = document.querySelector('#player iframe');
-iframe.addEventListener('load', () => {
-    alert();
-  const youtubeButton = iframe.contentDocument.querySelector('.ytp-share-button-visible');
+player.on('ready', event => {
+  const youtubeFrame = event.detail.plyr.iframe;
+  const youtubeButton = youtubeFrame.contentDocument.querySelector('.ytp-watermark');
   if (youtubeButton) {
-    youtubeButton.hidden = true;
+    youtubeButton.style.display = 'none';
+  }else{
+    alert("No");
   }
 });
+    
   </script>
         <script>
             (function() {
