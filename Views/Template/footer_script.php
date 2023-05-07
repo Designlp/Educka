@@ -66,6 +66,7 @@
 
 const iframe = document.querySelector('#player iframe');
 iframe.addEventListener('load', () => {
+    alert();
   const youtubeButton = iframe.contentDocument.querySelector('.ytp-share-button-visible');
   if (youtubeButton) {
     youtubeButton.hidden = true;
