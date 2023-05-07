@@ -61,19 +61,12 @@
     const player = new Plyr('#player', {
       controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
     });
-    player.on('statechange', event => {
-      if (event.data === YT.PlayerState.PAUSED) {
-        const iframe = document.querySelector('.plyr__video-embed iframe');
-        const videoWrapper = iframe.parentNode;
-        const playerContainer = videoWrapper.parentNode;
+    player.on('click', event => {
+  if (event.detail.plyr.config.youtube) {
+    event.detail.plyr.elements.buttons.youtube.hidden = true;
+  }
+});
 
-        const suggestionsContainer = document.querySelector('.ytp-ce-element');
-        if (suggestionsContainer) {
-          playerContainer.removeChild(videoWrapper);
-          playerContainer.appendChild(videoWrapper);
-        }
-      }
-    });
   </script>
         <script>
             (function() {
