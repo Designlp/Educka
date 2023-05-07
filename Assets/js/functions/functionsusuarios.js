@@ -112,15 +112,16 @@ function fnteditusuario(){
                         document.querySelector("#txtapellido").value=objdata.data.apellidos;
                         document.querySelector("#txtcorreo").value=objdata.data.correo;
                         document.querySelector("#txttelefono").value=objdata.data.telefono;
-                        //FK especial
-                        document.querySelector("#txtrol").value=objdata.data.idroles;
-                  
-                        $('#txtrol').selectpicker('render');
-                  
+                        //FK especial     
+                        $('#txtrol').val(objdata.data.idroles).trigger('change');
+
+         
+
                         //Estado Especial
-                        document.querySelector("#liststatus").value=objdata.data.estado;
-                 
-                        $('#liststatus').selectpicker('render');
+            
+                        $('#liststatus').val(objdata.data.estado).trigger('change');
+
+         
 
                         $('#modalformusuario').modal("show");
                     }else{
@@ -145,8 +146,10 @@ function fntrolesusuario(){
             if(request.readyState == 4 && request.status==200){
              
                 document.querySelector('#txtrol').innerHTML= request.responseText;
-                document.querySelector('#txtrol').value=1;
-                $('#txtrol').selectpicker('render');
+             
+                $('#txtrol').val(1).trigger('change');
+                
+                
             }
         }
     }    
