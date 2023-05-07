@@ -61,16 +61,6 @@
     const player = new Plyr('#player', {
       controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
     });
-    player.on('pause', event => {
-  if (event.detail.plyr.config.youtube) {
-    const pauseOverlay = event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay');
-    
-    if (pauseOverlay) {
-      
-      pauseOverlay.style.display = 'none';
-    }
-  }
-});
     
   </script>
         <script>
