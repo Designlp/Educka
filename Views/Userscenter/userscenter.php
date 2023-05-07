@@ -53,8 +53,9 @@
                 <!-- // END Page Content -->
 
 <?php 
-  footeradmin($data);
-  getmodal('modaluserscenter',$data);
+footeradmin($data);
+getmodal('modaluserscenter', $data);
+footerscript($data);
 ?>
 
 </body>

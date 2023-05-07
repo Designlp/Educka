@@ -113,18 +113,14 @@ function fnteditusuario(){
                         document.querySelector("#txtcorreo").value=objdata.data.correo;
                         document.querySelector("#txttelefono").value=objdata.data.telefono;
                         //FK especial
-                        document.querySelector("#txtrol").value=objdata.data.idroles;
-                  
-                        $('#txtrol').selectpicker('render');
+                        
+                        $('#txtrol').val(objdata.data.idroles).trigger('change');
 
+                      
+                        $('#listsuscripcion').val(objdata.data.suscripcion).trigger('change');
 
-                        document.querySelector("#listsuscripcion").value=objdata.data.suscripcion;
-                        $('#listsuscripcion').selectpicker('render');
-                  
                         //Estado Especial
-                        document.querySelector("#liststatus").value=objdata.data.estado;
-                 
-                        $('#liststatus').selectpicker('render');
+                        $('#liststatus').val(objdata.data.estado).trigger('change');
 
                         $('#modalformuserscenter').modal("show");
                     }else{
