@@ -64,7 +64,7 @@
     player.on('pause', event => {
   if (event.detail.plyr.config.youtube) {
     const pauseOverlay = event.detail.plyr.elements.wrapper.querySelector('.ytp-pause-overlay');
-    alert();
+    
     if (pauseOverlay) {
       
       pauseOverlay.style.display = 'none';
