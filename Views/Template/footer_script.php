@@ -65,15 +65,13 @@ const player = new Plyr('#player', {
 
 player.on('pause', event => {
   if (event.detail.plyr.config.youtube) {
-    const youtubePlayer = document.querySelector('.plyr__video-wrapper iframe');
-    const youtubeWatermark = youtubePlayer.querySelector('.ytp-watermark');
-    if (youtubeWatermark) {
-      youtubeWatermark.style.cssText = 'display: none !important;';
-    } else {
-      youtubePlayer.style.cssText = 'pointer-events: none; user-select: none;';
-    }
+    const youtubeWatermarks = document.querySelectorAll('.ytp-watermark');
+    youtubeWatermarks.forEach(watermark => {
+      watermark.hidden = true;
+    });
   }
 });
+
 
     
   </script>
