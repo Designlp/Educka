@@ -218,18 +218,8 @@ const iframes = document.querySelectorAll("#youtubeframeid");
 
 
 iframes.forEach(function(iframe){
-  const style = iframe.contentDocument.createElement('style');
-
-    style.textContent = `
-        #youtubeframeid {
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      .ytp-chrome-bottom {
-        display: none !important;
-      }
-    `;
-    iframe.contentDocument.head.appendChild(style);
+    const iframe = iframe.contentWindow;
+    iframe.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+  
 }
 );
