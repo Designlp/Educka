@@ -220,6 +220,6 @@ const iframes = document.querySelectorAll("#youtubeframeid");
 iframes.forEach(function(iframe){
     const iframe = iframe.contentWindow;
     iframe.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-  
+    alert("paso");
 }
 );
