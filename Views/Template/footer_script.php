@@ -57,24 +57,7 @@
         <!-- Sidebar Mini JS -->
         <script src="<?= media() ?>/js/template/sidebar-mini.js"></script>
         <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
-        <script>
-            
-const player = new Plyr('#player', {
-  controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
-});
-
-// player.on('pause', event => {
-//   if (event.detail.plyr.config.youtube) {
-//     const youtubeWatermarks = document.querySelectorAll('.ytp-watermark');
-//     youtubeWatermarks.forEach(watermark => {
-//       watermark.hidden = true;
-//     });
-//   }
-// });
-
-
-    
-  </script>
+ 
         <script>
             (function() {
                 'use strict';
