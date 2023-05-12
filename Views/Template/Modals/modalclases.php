@@ -53,10 +53,10 @@
                                             </div>
 
                                             <div class="card">
-                                                <div id="player" class="embed-responsive embed-responsive-16by9">
+                                                <div id="player" class="embed-responsive embed-responsive-16by9 plyr__video-embed">
 
 
-                                                    <iframe src="https://www.youtube.com/embed/G7mH-MBLET4?modestbranding=1&disablekb=1&rel=0&autoplay=1&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" allowfullscreen></iframe>
+                                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/G7mH-MBLET4?modestbranding=1&disablekb=1&rel=0&autoplay=1&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" allowfullscreen></iframe>
 
                                                 </div>
                                                 <div class="card-body">
