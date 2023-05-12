@@ -219,9 +219,9 @@ const iframes = document.querySelectorAll("#youtubeframeid");
 
 iframes.forEach(function(iframe){
   const style = iframe.contentDocument.createElement('style');
-    alert();
+
     style.textContent = `
-        .youtubeframeid {
+        #youtubeframeid {
         opacity: 0;
         pointer-events: none;
       }
