@@ -217,8 +217,8 @@ const player = new Plyr('#player', {
 const iframes = document.querySelectorAll("#youtubeframeid");
 
 
-iframes.forEach(function(iframes){
-    const style = iframe.contentDocument.createElement('style');
+iframes.forEach(function(iframe){
+  const style = iframe.contentDocument.createElement('style');
     alert();
     style.textContent = `
         .youtubeframeid {
@@ -233,4 +233,3 @@ iframes.forEach(function(iframes){
     iframe.contentDocument.head.appendChild(style);
 }
 );
-
