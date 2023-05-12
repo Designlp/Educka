@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
     });
     //Insert
-    var forminsert= document.querySelector("#formcurso");
+    var forminsert= document.querySelector("#formclase");
     forminsert.onsubmit=function(e){
         e.preventDefault();
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
@@ -69,7 +69,7 @@ function openmodal(){
     document.querySelector('.modal-header').classList.replace("headerupdate","headerregister");
     document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
     document.querySelector('#btntext').innerHTML="Guardar";
-    document.querySelector('#formcurso').reset();
+    document.querySelector('#formclase').reset();
     $('#modalformcursos').modal("show");
     
 }
