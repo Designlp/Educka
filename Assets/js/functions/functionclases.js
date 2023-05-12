@@ -213,6 +213,7 @@ const player = new Plyr('#player', {
 //       });
 //     }
 //   });
+
 const iframes = document.querySelectorAll("#youtubeframeid");
 
 iframes.forEach(iframe => {
