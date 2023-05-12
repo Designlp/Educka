@@ -63,14 +63,14 @@ const player = new Plyr('#player', {
   controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
 });
 
-player.on('pause', event => {
-  if (event.detail.plyr.config.youtube) {
-    const youtubeWatermarks = document.querySelectorAll('.ytp-watermark');
-    youtubeWatermarks.forEach(watermark => {
-      watermark.hidden = true;
-    });
-  }
-});
+// player.on('pause', event => {
+//   if (event.detail.plyr.config.youtube) {
+//     const youtubeWatermarks = document.querySelectorAll('.ytp-watermark');
+//     youtubeWatermarks.forEach(watermark => {
+//       watermark.hidden = true;
+//     });
+//   }
+// });
 
 
     
