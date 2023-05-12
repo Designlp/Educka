@@ -201,9 +201,7 @@ function fntclasescurso(){
 
 
 
-const player = new Plyr('#player', {
-    controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
-  });
+
   
 //   player.on('pause', event => {
 //     if (event.detail.plyr.config.youtube) {
@@ -218,8 +216,7 @@ const iframes = document.querySelectorAll("#youtubeframeid");
 
 
 iframes.forEach(function(iframe){
-    const video = iframe.contentWindow;
-    video.pause();
+  
    
 }
 );
