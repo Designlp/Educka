@@ -32,7 +32,7 @@
                                 <div class="form-group mb-24pt">
                                     <input type="text"
                                            class="form-control form-control-lg"
-                                           placeholder="Course title"
+                                           placeholder="Titulo de la clase"
                                          >
                                     <small class="form-text text-muted">Ingrese su titulo de la clase</small>
                                 </div>
@@ -44,109 +44,7 @@
                                     <small class="form-text text-muted">Pequeña descripción de la clase</small>
                                 </div>
 
-                                <div class="page-separator">
-                                    <div class="page-separator__text">Sections</div>
-                                </div>
-
-                                <div class="accordion js-accordion accordion--boxed mb-24pt"
-                                     id="parent">
-                                    <div class="accordion__item">
-                                        <a href="#"
-                                           class="accordion__toggle collapsed"
-                                           data-toggle="collapse"
-                                           data-target="#course-toc-1"
-                                           data-parent="#parent">
-                                            <span class="flex">Course Overview</span>
-                                            <span class="accordion__toggle-icon material-icons">keyboard_arrow_down</span>
-                                        </a>
-                                        <div class="accordion__menu collapse"
-                                             id="course-toc-1">
-                                            <div class="accordion__menu-link">
-                                                <i class="material-icons text-70 icon-16pt icon--left">drag_handle</i>
-                                                <a class="flex"
-                                                   href="student-lesson.html">Watch Trailer</a>
-                                                <span class="text-muted">1m 10s</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__item open">
-                                        <a href="#"
-                                           class="accordion__toggle"
-                                           data-toggle="collapse"
-                                           data-target="#course-toc-2"
-                                           data-parent="#parent">
-                                            <span class="flex">Getting Started with Angular</span>
-                                            <span class="accordion__toggle-icon material-icons">keyboard_arrow_down</span>
-                                        </a>
-                                        <div class="accordion__menu collapse show"
-                                             id="course-toc-2">
-                                            <div class="accordion__menu-link">
-                                                <i class="material-icons text-70 icon-16pt icon--left">drag_handle</i>
-                                                <a class="flex"
-                                                   href="student-lesson.html">Introduction</a>
-                                                <span class="text-muted">8m 42s</span>
-                                            </div>
-                                            <div class="accordion__menu-link active">
-                                                <i class="material-icons text-70 icon-16pt icon--left">drag_handle</i>
-                                                <a class="flex"
-                                                   href="student-lesson.html">Introduction to TypeScript</a>
-                                                <span class="text-muted">50m 13s</span>
-                                            </div>
-                                            <div class="accordion__menu-link">
-                                                <i class="material-icons text-70 icon-16pt icon--left">drag_handle</i>
-                                                <a class="flex"
-                                                   href="student-lesson.html">Comparing Angular to AngularJS</a>
-                                                <span class="text-muted">12m 10s</span>
-                                            </div>
-                                            <div class="accordion__menu-link">
-                                                <i class="material-icons text-70 icon-16pt icon--left">drag_handle</i>
-                                                <a class="flex"
-                                                   href="student-take-quiz.html">Quiz: Getting Started With Angular</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__item">
-                                        <a href="#"
-                                           class="accordion__toggle collapsed"
-                                           data-toggle="collapse"
-                                           data-target="#course-toc-3"
-                                           data-parent="#parent">
-                                            <span class="flex">Creating and Communicating Between Angular Components</span>
-                                            <span class="accordion__toggle-icon material-icons">keyboard_arrow_down</span>
-                                        </a>
-                                        <div class="accordion__menu collapse"
-                                             id="course-toc-3">
-                                            <div class="accordion__menu-link">
-                                                <i class="material-icons text-70 icon-16pt icon--left">drag_handle</i>
-                                                <a class="flex"
-                                                   href="student-lesson.html">Angular Components</a>
-                                                <span class="text-muted">04:23</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__item">
-                                        <a href="#"
-                                           class="accordion__toggle collapsed"
-                                           data-toggle="collapse"
-                                           data-target="#course-toc-4"
-                                           data-parent="#parent">
-                                            <span class="flex">Exploring the Angular Template Syntax</span>
-                                            <span class="accordion__toggle-icon material-icons">keyboard_arrow_down</span>
-                                        </a>
-                                        <div class="accordion__menu collapse"
-                                             id="course-toc-4">
-                                            <div class="accordion__menu-link">
-                                                <i class="material-icons text-70 icon-16pt icon--left">drag_handle</i>
-                                                <a class="flex"
-                                                   href="student-lesson.html">Template Syntax</a>
-                                                <span class="text-muted">04:23</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <a href="#"
-                                   class="btn btn-outline-secondary mb-24pt mb-sm-0">Add Section</a>
+                              
 
                             </div>
                             <div class="col-md-4">
@@ -154,19 +52,9 @@
                                 <div class="card">
                                     <div class="card-header text-center">
                                         <a href="#"
-                                           class="btn btn-accent">Save changes</a>
+                                           class="btn btn-accent">Guardar</a>
                                     </div>
-                                    <div class="list-group list-group-flush">
-                                        <div class="list-group-item d-flex">
-                                            <a class="flex"
-                                               href="#"><strong>Save Draft</strong></a>
-                                            <i class="material-icons text-muted">check</i>
-                                        </div>
-                                        <div class="list-group-item">
-                                            <a href="#"
-                                               class="text-danger"><strong>Delete Course</strong></a>
-                                        </div>
-                                    </div>
+                                  
                                 </div>
 
                                 <div class="page-separator">
@@ -191,36 +79,23 @@
                                 </div>
 
                                 <div class="page-separator">
-                                    <div class="page-separator__text">Options</div>
+                                    <div class="page-separator__text">Opciones</div>
                                 </div>
 
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label class="form-label">Category</label>
+                                            <label class="form-label">Categorías</label>
                                             <select name="category"
                                                     class="form-control custom-select">
                                                 <option value="vuejs">VueJs</option>
                                                 <option value="vuejs">Angular</option>
                                                 <option value="vuejs">React</option>
                                             </select>
-                                            <small class="form-text text-muted">Select a category.</small>
+                                            <small class="form-text text-muted">Seleccione una categoría</small>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="form-label">Price</label>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="input-group form-inline">
-                                                        <span class="input-group-prepend"><span class="input-group-text">$</span></span>
-                                                        <input type="text"
-                                                               class="form-control"
-                                                               value="24">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <small class="form-text text-muted">The recommended price is between &dollar;17 and &dollar;24</small>
-                                        </div>
-                                        <div class="form-group mb-0">
+                           
+                                        <!-- <div class="form-group mb-0">
                                             <label class="form-label"
                                                    for="select03">Tags</label>
                                             <select id="select03"
@@ -234,7 +109,7 @@
                                                 <option>HTML</option>
                                             </select>
                                             <small class="form-text text-muted">Select one or more tags.</small>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 
