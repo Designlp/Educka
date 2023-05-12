@@ -219,5 +219,6 @@ iframes.forEach(function(iframe){
     iframe = new Plyr('#player', {
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
       });
+    iframe.pause();
 }
 );
