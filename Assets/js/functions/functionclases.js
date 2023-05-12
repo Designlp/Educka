@@ -218,6 +218,7 @@ const iframes = document.querySelectorAll(".youtubeframeid");
 iframes.forEach(iframe => {
   iframe.addEventListener('load', () => {
     const style = iframe.contentDocument.createElement('style');
+    alert();
     style.textContent = `
         .youtubeframeid {
         opacity: 0;
