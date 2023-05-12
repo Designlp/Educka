@@ -213,19 +213,20 @@ const player = new Plyr('#player', {
 //       });
 //     }
 //   });
+const iframes = document.querySelectorAll(".youtubeframeid");
 
-const iframe = document.querySelectorAll(".youtubeframeid");
-iframe.addEventListener('load', () => {
-  const style = document.createElement('style');
-  style.textContent = `
-    .youtubeframeid {
-      opacity: 0;
-      pointer-events: none;
-    }
-    
-    .ytp-chrome-bottom {
-      display: none !important;
-    }
-  `;
-  iframe.contentDocument.head.appendChild(style);
+iframes.forEach(iframe => {
+  iframe.addEventListener('load', () => {
+    const style = iframe.contentDocument.createElement('style');
+    style.textContent = `
+      .ytp-watermark {
+        display: none !important;
+      }
+
+      .ytp-chrome-bottom {
+        display: none !important;
+      }
+    `;
+    iframe.contentDocument.head.appendChild(style);
+  });
 });
