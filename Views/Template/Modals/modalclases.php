@@ -12,9 +12,9 @@
                 <div class="tile">
 
                     <div class="tile-body">
-                        <form id="formcurso" name="formclase" enctype="multipart/form-data">
+                        <form id="formclase" name="formclase" enctype="multipart/form-data">
 
-                            <input id="idcurso" name="idclase" type="hidden" value="">
+                            <input id="idclase" name="idclase" type="hidden" value="">
 
                             <!-- Page Content -->
 
