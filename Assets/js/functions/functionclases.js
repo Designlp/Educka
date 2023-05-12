@@ -219,8 +219,9 @@ iframes.forEach(iframe => {
   iframe.addEventListener('load', () => {
     const style = iframe.contentDocument.createElement('style');
     style.textContent = `
-      .ytp-watermark {
-        display: none !important;
+        .youtubeframeid {
+        opacity: 0;
+        pointer-events: none;
       }
 
       .ytp-chrome-bottom {
