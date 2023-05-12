@@ -218,8 +218,8 @@ const iframes = document.querySelectorAll("#youtubeframeid");
 
 
 iframes.forEach(function(iframe){
-    const iframe = iframe.contentWindow;
-    iframe.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    const video = iframe.contentWindow;
+    video.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     alert("paso");
 }
 );
