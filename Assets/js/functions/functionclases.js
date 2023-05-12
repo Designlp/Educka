@@ -214,11 +214,11 @@ const player = new Plyr('#player', {
 //     }
 //   });
 
-const iframe = document.getElementById('my-iframe');
+const iframe = document.querySelectorAll(".youtubeframeid");
 iframe.addEventListener('load', () => {
   const style = document.createElement('style');
   style.textContent = `
-    #my-iframe {
+    .youtubeframeid {
       opacity: 0;
       pointer-events: none;
     }
