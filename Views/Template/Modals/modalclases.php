@@ -49,13 +49,13 @@
                             </div>
                             <div class="col-md-4">
 
-                                <!-- <div class="card"> -->
-                                    <button class="card-header text-center btnactionform">
-                                        <span 
-                                           class="btn btn-accent btntext">Guardar</span>
+                                <div class="card">
+                                    <div class="card-header text-center">
+                                        <a href="#"
+                                           class="btn btn-accent">Guardar</a>
                                     </div>
                                   
-                                <!-- </div> -->
+                                </div>
 
                                 <div class="page-separator">
                                     <div class="page-separator__text">Video</div>
