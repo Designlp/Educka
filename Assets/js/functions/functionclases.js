@@ -212,11 +212,12 @@ function fntclasescurso(){
 //     }
 //   });
 
-const iframes = document.querySelectorAll("#youtubeframeid");
+const iframes = document.querySelectorAll("#player");
 
 
 iframes.forEach(function(iframe){
-  
-   
+    iframe = new Plyr('#player', {
+        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
+      });
 }
 );
