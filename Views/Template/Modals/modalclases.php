@@ -53,7 +53,7 @@
                                             </div>
 
                                             <div class="card">
-                                                <div id="player" class="embed-responsive embed-responsive-16by9 plyr__video-embed">
+                                                <div id="player" class="embed-responsive embed-responsive-16by9">
 
 
                                                     <iframe 
