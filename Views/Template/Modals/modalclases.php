@@ -50,9 +50,9 @@
                             <div class="col-md-4">
 
                                 <!-- <div class="card"> -->
-                                    <div class="card-header text-center">
-                                        <a href="#"
-                                           class="btn btn-accent">Guardar</a>
+                                    <button class="card-header text-center btnactionform">
+                                        <span 
+                                           class="btn btn-accent btntext">Guardar</span>
                                     </div>
                                   
                                 <!-- </div> -->
