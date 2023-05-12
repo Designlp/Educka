@@ -39,7 +39,7 @@
 
                                 <div class="form-group mb-32pt">
                                     <label class="form-label">Descripción</label>
-                                    <!-- <textarea class="form-control" rows="3" placeholder="Course description"></textarea> -->
+                                     <textarea class="form-control" rows="3" placeholder="Course description"></textarea> 
                                     <div style="height: 150px;"
                                          class="mb-0"
                                          data-toggle="quill"
