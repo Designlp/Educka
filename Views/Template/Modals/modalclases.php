@@ -33,7 +33,7 @@
                                     <input type="text"
                                            class="form-control form-control-lg"
                                            placeholder="Course title"
-                                           value="Angular Fundamentals">
+                                         >
                                     <small class="form-text text-muted">Ingrese su titulo de la clase</small>
                                 </div>
 
