@@ -53,19 +53,25 @@
                                             </div>
 
                                             <div class="card">
-                                                <div id="player" class="embed-responsive embed-responsive-16by9 plyr__video-embed">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                    
 
-
-                                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/G7mH-MBLET4?modestbranding=1&disablekb=1&rel=0&autoplay=1&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" allowfullscreen></iframe>
-
-                                                </div>
-                                                <div class="card-body">
-                                                    <label class="form-label">URL</label>
-                                                    <input type="text" class="form-control" id="txtdescripcion" name="txtdescripcion" placeholder="Enter Video URL">
-                                                    <small class="form-text text-muted">Enter a valid video URL.</small>
-                                                </div>
-                                            </div>
-
+                                                <iframe class="embed-responsive-item"
+                                                src="https://www.youtube.com/embed/G7mH-MBLET4" 
+                                                title="Zoro Prueba el Poder de su Nueva Espada Yoru - One Piece" 
+                                                frameborder="0" 
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                allowfullscreen></iframe>
+                                    </div>
+                                    <div class="card-body">
+                                        <label class="form-label">URL</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               value=""
+                                               placeholder="Enter Video URL">
+                                        <small class="form-text text-muted">Enter a valid video URL.</small>
+                                    </div>
+                                </div>
                                             <div class="page-separator">
                                                 <div class="page-separator__text">Opciones</div>
                                             </div>
