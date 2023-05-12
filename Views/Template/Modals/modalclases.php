@@ -25,30 +25,28 @@
                             <div class="col-md-8">
 
                                 <div class="page-separator">
-                                    <div class="page-separator__text">Basic information</div>
+                                    <div class="page-separator__text">Datos de la clase</div>
                                 </div>
 
-                                <label class="form-label">Course title</label>
+                                <label class="form-label">Titulo</label>
                                 <div class="form-group mb-24pt">
                                     <input type="text"
                                            class="form-control form-control-lg"
                                            placeholder="Course title"
                                            value="Angular Fundamentals">
-                                    <small class="form-text text-muted">Please see our <a href="">course title guideline</a></small>
+                                    <small class="form-text text-muted">Ingrese su titulo de la clase</small>
                                 </div>
 
                                 <div class="form-group mb-32pt">
-                                    <label class="form-label">Description</label>
+                                    <label class="form-label">Descripción</label>
                                     <!-- <textarea class="form-control" rows="3" placeholder="Course description"></textarea> -->
                                     <div style="height: 150px;"
                                          class="mb-0"
                                          data-toggle="quill"
                                          data-quill-placeholder="Course description">
-                                        <h1>Hello World!</h1>
-                                        <p>Some initial <strong>bold</strong> text</p>
-                                        <p><br></p>
+                                       
                                     </div>
-                                    <small class="form-text text-muted">Shortly describe this course.</small>
+                                    <small class="form-text text-muted">Pequeña descripción de la clase</small>
                                 </div>
 
                                 <div class="page-separator">
@@ -184,7 +182,7 @@
                                     <div id="player" class="plyr__video-embed embed-responsive embed-responsive-16by9 " >
                                     
                                   
-                                    <iframe src="https://www.youtube.com/embed/G7mH-MBLET4?modestbranding=1&disablekb=1&rel=0&autoplay=1&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/G7mH-MBLET4?modestbranding=1&disablekb=1&rel=0&autoplay=0&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" allowfullscreen></iframe>
                                 
                                     </div>
                                     <div class="card-body">
