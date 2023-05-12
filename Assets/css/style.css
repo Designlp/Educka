@@ -4,3 +4,12 @@
   .ytp-watermark {
     display: none !important;
   }
+
+
+.youtubeframeid{
+  opacity: 0;
+  pointer-events: none;
+}
+.ytp-chrome-bottom {
+  display: none !important;
+}

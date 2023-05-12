@@ -213,3 +213,19 @@ const player = new Plyr('#player', {
 //       });
 //     }
 //   });
+
+const iframe = document.getElementById('my-iframe');
+iframe.addEventListener('load', () => {
+  const style = document.createElement('style');
+  style.textContent = `
+    #my-iframe {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .ytp-chrome-bottom {
+      display: none !important;
+    }
+  `;
+  iframe.contentDocument.head.appendChild(style);
+});
