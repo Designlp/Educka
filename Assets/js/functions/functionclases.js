@@ -215,7 +215,7 @@ const player = new Plyr('#player', {
 //   });
 
 const iframes = document.querySelectorAll("#youtubeframeid");
-alert();
+
 iframes.forEach(iframe => {
   iframe.addEventListener('load', () => {
     const style = iframe.contentDocument.createElement('style');
