@@ -216,6 +216,12 @@ const player = new Plyr('#player', {
 
 const iframes = document.querySelectorAll("#youtubeframeid");
 
+
+iframes.forEach(function(iframes){
+    alert();
+}
+);
+
 iframes.forEach(iframe => {
   iframe.addEventListener('load', () => {
     const style = iframe.contentDocument.createElement('style');
