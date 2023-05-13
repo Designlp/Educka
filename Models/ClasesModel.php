@@ -40,13 +40,13 @@
         }
 
 
-        public function insertclase(int $idcurso,string $titulo, string $descripcion, int $enlace, int $estado){
+        public function insertclase(int $idcurso,string $titulo, string $descripcion, string $enlace, int $estado){
             $this->intidcurso = $idcurso;
 			$this->strtitulo = $titulo;
 			$this->strdescripcion = $descripcion;
             $this->strenlace = $enlace;
             $this->intestado = $estado;
-            print "Hola, mundo!";
+		
 			$return = 0;
 
 			$sql = "SELECT titulo FROM tclases
