@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 var obdata=JSON.parse(request.responseText);
                 //console.log(obdata);
                 if(obdata.status){
-                    $('#modalformcursos').modal("hide");
+                    $('#modalformclases').modal("hide");
                     forminsert.reset();
                     //Validar datos repetodos
                     swal("Administración de Usuarios", obdata.msg ,"success");
@@ -70,7 +70,7 @@ function openmodal(){
     document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
     document.querySelector('#btntext').innerHTML="Guardar";
     document.querySelector('#formclase').reset();
-    $('#modalformcursos').modal("show");
+    $('#modalformclases').modal("show");
     
 }
 //Funciones Usuarios

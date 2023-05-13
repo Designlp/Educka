@@ -24,6 +24,7 @@
         //Visualizacion
         public function getclases(){
             $idcurso = $_SESSION['idcurso'];
+
             $arrdata= $this->model->selectclases($idcurso);
 
             for($i=0;$i< count($arrdata);$i++){
@@ -77,19 +78,20 @@
         //Logica update como
         public function setcurso(){
             //dep($_POST);
-            $intidcurso=intval($_POST['idcurso']);
-            $intidautor=$_SESSION['iduser'];
+            $idcurso = $_SESSION['idcurso'];
+            $intidclase=intval($_POST['idcurso']);
             $strtitulo=strclean($_POST['txttitulo']);
             $strdescripcion=strclean($_POST['txtdescripcion']);
-            $intprivate=intval($_POST['listpriv']);
-            $intstatus=intval($_POST['liststatus']);
+            $strenlace=strclean($_POST['txtenlace']);
+
+            $intstatus=intval(1);
             
  
-            if($intidcurso == 0){
-                 $requestrol=$this->model->insertcurso($intidautor,$strtitulo,$strdescripcion, $intprivate,$intstatus);
+            if($intidclase == 0){
+                 $requestrol=$this->model->insertclase($idcurso,$strtitulo, $strdescripcion,$strenlace,$intstatus);
                  $option=1;
             }
-            if($intidcurso != 0){
+            if($intidclase != 0){
                  $requestrol=$this->model->updatecurso( $intidcurso,$strtitulo,$strdescripcion, $intprivate,$intstatus);
                  $option=2;
             }

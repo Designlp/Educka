@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modalformcursos" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modalformclases" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header headerregister">
@@ -14,7 +14,7 @@
                     <div class="tile-body">
                         <form id="formclase" name="formclase" enctype="multipart/form-data">
 
-                            <input id="idclase" name="idclase" type="hidden" value="">
+                            <input id="idcurso" name="idcurso" type="hidden" value="">
 
                             <!-- Page Content -->
 
@@ -67,7 +67,7 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <label class="form-label">URL</label>
-                                                    <input type="text" class="form-control" id="txtdescripcion" name="txtdescripcion" placeholder="Enter Video URL">
+                                                    <input type="text" class="form-control" id="txtenlace" name="txtenlace" placeholder="Enter Video URL">
                                                     <small class="form-text text-muted">Enter a valid video URL.</small>
                                                 </div>
                                             </div>
@@ -96,7 +96,7 @@
                                                 <button id="btnactionform" class="btn btn-primary" type="submit">
                                                     <i class="fa fa-fw fa-lg fa-check-circle"></i>
                                                     <span id="btntext">Guardar</span>
-                                                </button><br> &nbsp;&nbsp;&nbsp;
+                                                </button> &nbsp;&nbsp;&nbsp;
                                                 <a class="btn btn-secondary" href="#" data-dismiss="modal">
                                                     <i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
                                             </div>
