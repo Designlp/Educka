@@ -58,6 +58,7 @@
             die();
         }
 
+
         public function getcurso($idcurso){
             
             $intkey=intval(strclean($idcurso));
@@ -79,7 +80,7 @@
         public function setclase(){
             //dep($_POST);
             $idcurso = $_SESSION['idcurso'];
-            $intidclase=intval($_POST['idcurso']);
+            $intidclase=intval($_POST['idclase']);
             $strtitulo=strclean($_POST['txttitulo']);
             $strdescripcion=strclean($_POST['txtdescripcion']);
             $strenlace=$_POST['txtenlace'];
