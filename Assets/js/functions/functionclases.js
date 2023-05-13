@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded",function(){
     forminsert.onsubmit=function(e){
         e.preventDefault();
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = baseurl+'/Cursos/setcurso';
+        var ajaxUrl = baseurl+'/Clases/setclase';
         var formdata=new FormData(forminsert);
         request.open("POST",ajaxUrl,true);
         request.send(formdata);

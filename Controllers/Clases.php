@@ -76,7 +76,7 @@
 
         //Insert 
         //Logica update como
-        public function setcurso(){
+        public function setclase(){
             //dep($_POST);
             $idcurso = $_SESSION['idcurso'];
             $intidclase=intval($_POST['idcurso']);
