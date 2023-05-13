@@ -71,7 +71,6 @@ function openmodal(){
     document.querySelector('#btntext').innerHTML="Guardar";
     document.querySelector('#formclase').reset();
     $('#modalformclases').modal("show");
-    
 }
 //Funciones Usuarios
 window.addEventListener('load',function(){

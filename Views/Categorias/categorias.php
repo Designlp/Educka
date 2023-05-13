@@ -27,14 +27,12 @@ headeradmin($data);
             <div class="tile">
                 <div class="tile-body">
                     <div class="table-responsive">
-                        <table class="table table-hover table-bordered" id="tabledocentes">
+                        <table class="table table-hover table-bordered" id="tablecategorias">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Nombre</th>
-                                    <th>Apellidos</th>
-                                    <th>Correo</th>
-                                    <th>Suscripcion</th>
+                                    <th>Descripcion</th>
                                     <th>Estado</th>
                                     <th>Acciones</th>
                                 </tr>
@@ -54,7 +52,7 @@ headeradmin($data);
 <?php
 
 footeradmin($data);
-getmodal('modaldocentes', $data);
+getmodal('modalcategorias', $data);
 footerscript($data);
 
 
