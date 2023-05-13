@@ -37,7 +37,7 @@
             
 			$return = 0;
 
-			$sql = "SELECT * FROM tcategorias 
+			$sql = "SELECT * FROM tcategoria
                     WHERE nombre = '{$this->strnombre}'";
 			$request = $this->selectall($sql);
 
