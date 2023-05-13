@@ -56,6 +56,7 @@
 
 			if(empty($request))
 			{
+                print "Hola, mundo!";
 				$query  = "INSERT INTO tclases(idcurso,titulo,descripcion,enlace,estado) 
 								  VALUES(?,?,?,?,?)";
 	        	$arrdata = array($this->intidcurso,

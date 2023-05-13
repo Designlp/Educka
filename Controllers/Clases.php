@@ -86,7 +86,6 @@
             $strenlace=$_POST['txtenlace'];
             
             $intstatus=1;
-            print $idcurso;
  
             if($intidclase == 0){
                  $requestrol=$this->model->insertclase($idcurso,$strtitulo, $strdescripcion,$strenlace,$intstatus);
