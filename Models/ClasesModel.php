@@ -50,7 +50,7 @@
 			$return = 0;
 
 			$sql = "SELECT titulo FROM tclases
-                    WHERE titulo = $this->strtitulo";
+                    WHERE titulo = '$this->strtitulo'";
 
 			$request = $this->selectall($sql);
 
