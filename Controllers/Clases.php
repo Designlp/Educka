@@ -84,7 +84,7 @@
             $strtitulo=strclean($_POST['txttitulo']);
             $strdescripcion=strclean($_POST['txtdescripcion']);
             $strenlace=$_POST['txtenlace'];
-
+            print $strenlace;
             $intstatus=1;
             
  
