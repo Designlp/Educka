@@ -85,7 +85,7 @@
             $strdescripcion=strclean($_POST['txtdescripcion']);
             $strenlace=$_POST['txtenlace'];
 
-            $intstatus=intval(1);
+            $intstatus=1;
             
  
             if($intidclase == 0){
