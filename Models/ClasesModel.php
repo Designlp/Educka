@@ -46,14 +46,14 @@
 			$this->strdescripcion = $descripcion;
             $this->strenlace = $enlace;
             $this->intestado = $estado;
-		
+            print "Hola, mundo!";
 			$return = 0;
 
 			$sql = "SELECT titulo FROM tclases
                     WHERE titulo = '$this->strtitulo'";
 
 			$request = $this->selectall($sql);
-            print "Hola, mundo!";
+
 			if(empty($request))
 			{
                 
