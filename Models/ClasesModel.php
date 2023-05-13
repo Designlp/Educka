@@ -62,8 +62,7 @@
         						$this->strtitulo,
         						$this->strdescripcion,
                                 $this->strenlace,
-                                $this->intestado,
-                            );
+                                $this->intestado);
 	        	$request = $this->insert($query,$arrdata);
 	        	$return = $request;
 			}else{

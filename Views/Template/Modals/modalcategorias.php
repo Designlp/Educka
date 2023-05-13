@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Descripcion</label>
-                            <input class="form-control" id="txtdescripcion" name="txtdescripcion" minlength="4" maxlength="20" pattern="[a-zA-Z ]{4,20}" type="text" placeholder="Apellido del Usuario" required="">
+                            <input class="form-control" id="txtdescripcion" name="txtdescripcion" minlength="4" maxlength="50" pattern="[a-zA-Z ]{4,20}" type="text" placeholder="Descripcion" required="">
                         </div>
                     </div>
                
