@@ -30,8 +30,7 @@
         }
 
 
-        public function insertcategorias(int $idcategorias,string $nombre, string $descripcion, int $estado){
-            $this->intcategorias = $idcategorias;
+        public function insertcategorias(string $nombre, string $descripcion, int $estado){
 			$this->strnombre = $nombre;
 			$this->strdescripcion = $descripcion;
 			$this->intestado = $estado;
@@ -44,10 +43,9 @@
 
 			if(empty($request))
 			{
-				$query  = "INSERT INTO tcategoria(idcategoria, nombre, descripcion, estado) 
-								  VALUES(?,?,?,?)";
-	        	$arrdata = array($this->intcategorias,
-        						$this->strnombre,
+				$query  = "INSERT INTO tcategoria(nombre, descripcion, estado) 
+								  VALUES(?,?,?)";
+	        	$arrdata = array($this->strnombre,
                                 $this->strdescripcion,
                                 $this->intestado,
                             );
