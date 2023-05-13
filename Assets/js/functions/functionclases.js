@@ -202,22 +202,14 @@ function fntclasescurso(){
 
 
 
-  
-//   player.on('pause', event => {
-//     if (event.detail.plyr.config.youtube) {
-//       const youtubeWatermarks = document.querySelectorAll('.ytp-watermark');
-//       youtubeWatermarks.forEach(watermark => {
-//         watermark.hidden = true;
-//       });
-//     }
-//   });
+
 
 const iframes = document.querySelectorAll("#player");
 
 
 iframes.forEach(function(iframe){
     const player = new Plyr(iframe, {
-        controls: ['play']
+        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
       });
       player.play();
 }
