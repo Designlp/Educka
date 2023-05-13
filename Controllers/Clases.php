@@ -82,7 +82,7 @@
             $intidclase=intval($_POST['idcurso']);
             $strtitulo=strclean($_POST['txttitulo']);
             $strdescripcion=strclean($_POST['txtdescripcion']);
-            $strenlace=strclean($_POST['txtenlace']);
+            $strenlace=$_POST['txtenlace'];
 
             $intstatus=intval(1);
             
