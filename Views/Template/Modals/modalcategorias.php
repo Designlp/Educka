@@ -11,7 +11,7 @@
             <div class="modal-body">
                 <!-- Form-->
                 <form autocomplete="off" class="form-horizontal" id="formcategorias" name="formcategorias" enctype="multipart/form-data">
-                    <input id="idusuario" name="idusuario" type="hidden" value="">
+                    <input id="idcategoria" name="idcategoria" type="hidden" value="">
                     <p class="text-primary">Todos los campos son obligatorios.</p>
 
                     <!-- Esta es la clase de alertas son los mensaje -->
