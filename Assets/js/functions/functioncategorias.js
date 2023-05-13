@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded",function(){
 
     });
     //Insert
-    var forminsert= document.querySelector("#formdocentes");
+    var forminsert= document.querySelector("#formcategorias");
     forminsert.onsubmit=function(e){
         e.preventDefault();
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = baseurl+'/Docentes/setdocentes';
+        var ajaxUrl = baseurl+'/Categorias/setcategorias';
         var formdata=new FormData(forminsert);
         request.open("POST",ajaxUrl,true);
         request.send(formdata);
@@ -39,10 +39,10 @@ document.addEventListener("DOMContentLoaded",function(){
                 var obdata=JSON.parse(request.responseText);
                 //console.log(obdata);
                 if(obdata.status){
-                    $('#modalformdocentes').modal("hide");
+                    $('#modalformcategorias').modal("hide");
                     forminsert.reset();
                     //Validar datos repetodos
-                    swal("Administración de Docentes", obdata.msg ,"success");
+                    swal("Administración de Categorias", obdata.msg ,"success");
                     //Ojo 
                     tablero.ajax.reload(function(){
                         //fnteditrol();
@@ -77,7 +77,7 @@ window.addEventListener('load',function(){
 
 
 //Update
-function fnteditdocentes(){
+function fnteditcategorias(){
     var btneditdocentes=Array.apply(null, document.querySelectorAll(".btneditdocentes"));    
     btneditdocentes.forEach(function(btneditdocentes){
         
@@ -125,7 +125,7 @@ function fnteditdocentes(){
 
 //Delete logic
 
-function fntdeldocentes(){
+function fntdelcategorias(){
    
     var btndeldocentes = document.querySelectorAll(".btndeldocentes");
 
