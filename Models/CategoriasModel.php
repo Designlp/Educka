@@ -1,31 +1,21 @@
 <?php 
 //Moises
-    class DocentesModel extends Mysql{
+    class CategoriasModel extends Mysql{
         //Nivel de accesos
-        private $intidusuario;
-        private $intidrol;
-        private $strci;
+        private $intcategorias;
         private $strnombre;
-        private $strapellido;
-        private $strcorreo;
+        private $strdescripcion;
         private $intestado;
-        private $inttelefono;
-        private $intci;
-
-        private $strpassword;
-        private $intsuscripcion;
-        private $strtoken;
 
         public function __construct() {
 
             parent::__construct();
         }
         //YO
-        public function selectdocentes(){
-            $sql= "SELECT tu.idusuario, tu.idroles, tu.nombre, tu.apellidos, tu.correo, tu.telefono,tu.password,tu.suscripcion, tu.estado 
-            FROM tusuarios tu 
-            JOIN troles tr ON tu.idroles = tr.idroles 
-            WHERE tu.estado != 0 AND tr.estado = 1";
+        public function seleccategorias(){
+            $sql= "SELECT tc.idcategoria, tc.nombre, tc.descripcion, tc.estado
+            FROM tcategoria tc 
+            WHERE tc.estado != 0";
             $request=$this->selectall($sql);
             return $request;
         }

@@ -19,7 +19,7 @@
         
         //Visualizacion
         public function getcategorias(){
-            $arrdata= $this->model->selectdocentes();
+            $arrdata= $this->model->seleccategorias();
 
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){
