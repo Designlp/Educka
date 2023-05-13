@@ -217,7 +217,8 @@ const iframes = document.querySelectorAll("#player");
 
 iframes.forEach(function(iframe){
     const player = new Plyr(iframe, {
-        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
+        controls: ['play']
       });
+      player.play();
 }
 );
