@@ -1,5 +1,5 @@
 <?php 
-    class Docentes extends Controllers{
+    class Categorias extends Controllers{
         public function __construct() {
             parent::__construct();
             session_start();
@@ -9,16 +9,16 @@
         }
         
         //Visualizacion
-        public function Docentes(){
-            $data['page_tag'] = "Docentes";
+        public function Categorias(){
+            $data['page_tag'] = "Categorias";
             $data['page_title']= "Pagina Principal";
-            $data['page_name'] = "docentes";
-            $data['page_js'] = "functiondocentes.js";
-            $this->views->getview($this,"docentes",$data);
+            $data['page_name'] = "categorias";
+            $data['page_js'] = "functioncategorias.js";
+            $this->views->getview($this,"categorias",$data);
         }
         
         //Visualizacion
-        public function getdocentes(){
+        public function getcategorias(){
             $arrdata= $this->model->selectdocentes();
 
             for($i=0;$i< count($arrdata);$i++){
