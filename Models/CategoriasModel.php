@@ -30,35 +30,25 @@
         }
 
 
-        public function insertdocentes(int $idrol,string $ci, string $nombre, string $apellido, string $email, int $telefono, string $suscripcion ,string $password, int $estado){
-            $this->intidrol = $idrol;
-			$this->intci = $ci;
+        public function insertcategorias(int $idcategorias,string $nombre, string $descripcion, int $estado){
+            $this->intcategorias = $idcategorias;
 			$this->strnombre = $nombre;
-			$this->strapellido = $apellido;
-            $this->strcorreo = $email;
-			$this->inttelefono = $telefono;
-            $this->intsuscripcion = $suscripcion;
-            $this->strpassword = $password;
+			$this->strdescripcion = $descripcion;
 			$this->intestado = $estado;
             
 			$return = 0;
 
-			$sql = "SELECT * FROM tusuarios 
-                    WHERE correo = '{$this->strcorreo}' OR ci = '{$this->intci}'";
+			$sql = "SELECT * FROM tcategorias 
+                    WHERE nombre = '{$this->strnombre}'";
 			$request = $this->selectall($sql);
 
 			if(empty($request))
 			{
-				$query  = "INSERT INTO tusuarios(idroles,ci,nombre, apellidos,correo, telefono, suscripcion, password ,estado) 
-								  VALUES(?,?,?,?,?,?,?,?,?)";
-	        	$arrdata = array($this->intidrol,
-        						$this->intci,
+				$query  = "INSERT INTO tcategoria(idcategoria, nombre, descripcion, estado) 
+								  VALUES(?,?,?,?)";
+	        	$arrdata = array($this->intcategorias,
         						$this->strnombre,
-                                $this->strapellido,
-        						$this->strcorreo,
-        						$this->inttelefono,
-                                $this->intsuscripcion,
-                                $this->strpassword,
+                                $this->strdescripcion,
                                 $this->intestado,
                             );
 	        	$request = $this->insert($query,$arrdata);

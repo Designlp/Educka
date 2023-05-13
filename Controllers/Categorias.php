@@ -81,32 +81,19 @@
                 $arrresponse = array("status" => false, "msg" => 'Datos incorrectos.');
             }else{ 
                 // No importa el orden de las variables
-                $idusuario = intval($_POST['idusuario']);
-                $strci = strclean($_POST['txtci']);
+                $idcategorias = intval($_POST['idcategoria']);
                 $strnombre = ucwords(strclean($_POST['txtnombre']));
-                $strapellido = ucwords(strclean($_POST['txtapellido']));
-                $strcorreo = strtolower(strclean($_POST['txtcorreo']));
-                $inttelefono = intval(strclean($_POST['txttelefono']));
+                $strdescripcion = ucwords(strclean($_POST['txtdescripcion']));
                 $intestado = intval(strclean($_POST['liststatus']));
-                $intidrol=intval(2);
-                $intsuscripcion = intval(0);
+           
                 //Esto se basa en el id oculto que se usa en rl 
-                if($idusuario == 0)
+                if($idcategorias == 0)
                 {
                     //Se incrementa mediante la respuesta del request de model
                     $option = 1;
-                    $strpassword =  empty($_POST['txtcontrasenia']) ? passgenerator() : $_POST['txtcontrasenia'];
-                    $strpasswordencript=hash("SHA256",$strpassword);
-
-                    $requestusuario = $this->model->insertdocentes(
-                    $intidrol,
-                    $strci,
+                    $requestusuario = $this->model->insertcategorias(
                     $strnombre, 
-                    $strapellido, 
-                    $strcorreo,
-                    $inttelefono,
-                    $intsuscripcion,
-                    $strpasswordencript,
+                    $strdescripcion, 
                     $intestado
                  );
                 }else{
