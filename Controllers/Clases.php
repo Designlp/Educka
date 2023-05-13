@@ -78,13 +78,13 @@
         //Insert 
         //Logica update como
         public function setclase(){
-            //dep($_POST);
+            dep($_POST);
             $idcurso = $_SESSION['idcurso'];
             $intidclase=intval($_POST['idclase']);
             $strtitulo=strclean($_POST['txttitulo']);
             $strdescripcion=strclean($_POST['txtdescripcion']);
             $strenlace=$_POST['txtenlace'];
-            print $strenlace;
+            
             $intstatus=1;
             
  
