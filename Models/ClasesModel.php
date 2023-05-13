@@ -41,6 +41,7 @@
 
 
         public function insertclase(int $idcurso,string $titulo, string $descripcion, string $enlace, int $estado){
+            print "Hola, mundo!";
             $this->intidcurso = $idcurso;
 			$this->strtitulo = $titulo;
 			$this->strdescripcion = $descripcion;
