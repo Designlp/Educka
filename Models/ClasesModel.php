@@ -49,7 +49,7 @@
 		
 			$return = 0;
 
-			$sql = "SELECT titulo FROM idclases 
+			$sql = "SELECT titulo FROM tclases
                     WHERE titulo = '{$this->strtitulo}'";
 
 			$request = $this->selectall($sql);
