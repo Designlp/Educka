@@ -47,7 +47,7 @@
 			$this->strdescripcion = $descripcion;
             $this->strenlace = $enlace;
             $this->intestado = $estado;
-            print "Hola, mundo!";
+           
 			$return = 0;
 
 			$sql = "SELECT titulo FROM tclases
@@ -57,7 +57,7 @@
 
 			if(empty($request))
 			{
-                
+                print "Hola, mundo!";
 				$query  = "INSERT INTO tclases(idcurso,titulo,descripcion,enlace,estado) 
 								  VALUES(?,?,?,?,?)";
 	        	$arrdata = array($this->intidcurso,
