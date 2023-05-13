@@ -78,7 +78,7 @@
         //Insert 
         //Logica update como
         public function setclase(){
-            dep($_POST);
+            //dep($_POST);
             $idcurso = $_SESSION['idcurso'];
             $intidclase=intval($_POST['idclase']);
             $strtitulo=strclean($_POST['txttitulo']);
