@@ -215,6 +215,7 @@ iframes.forEach(function(iframe){
         showPosterOnEnd: true,
         toggleControls: false
       });
+      player.toggleControls(false);
       player.on('play', function() {
         player.toggleControls(false);
       });
