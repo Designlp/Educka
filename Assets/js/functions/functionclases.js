@@ -223,7 +223,7 @@ iframes.forEach(function(iframe){
       });
       player.toggleControls(false);
       player.on('play', function() {
-        player.fullscreen(true);
+        player.toggleControls(true);
       });
       
 }
