@@ -224,7 +224,13 @@ iframes.forEach(function(iframe){
       player.toggleControls(false);
       player.on('play', function() {
         player.toggleControls(true);
-        
+        player.setOptions({   fullscreen: {
+            enabled: true,
+            fallback: true,
+            allowAudio: false,
+            iosNative: false,
+            container: null
+        } });
       });
       
 }
