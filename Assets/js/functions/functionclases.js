@@ -215,7 +215,8 @@ iframes.forEach(function(iframe){
         showPosterOnEnd: true
       });
       player.on('play', function() {
-        player.reinit()
+        player.config.controls = ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'];
+
       });
 }
 );
