@@ -214,7 +214,7 @@ iframes.forEach(function(iframe){
         hideControls: false,
         showPosterOnEnd: true,
         fullscreen: {
-            enabled: true,
+            enabled: false,
             fallback: true,
             allowAudio: false,
             iosNative: false,
@@ -223,7 +223,7 @@ iframes.forEach(function(iframe){
       });
       player.toggleControls(false);
       player.on('play', function() {
-        player.toggleControls(true);
+        player.fullscreen(true);
       });
       
 }
