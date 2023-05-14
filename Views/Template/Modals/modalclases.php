@@ -53,10 +53,7 @@
                                             </div>
 
                                             <div class="card">
-                                                <div id="player" class="embed-responsive embed-responsive-16by9 plyr__video-embed">
-                                                <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="3XozqbLvNx4"></div>
-                                                        
-                                                </div>
+                                            <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="3XozqbLvNx4"></div>
                                                 <div class="card-body">
                                                     <label class="form-label">URL</label>
                                                     <input type="text" class="form-control" id="txtenlace" name="txtenlace" placeholder="Enter Video URL">
