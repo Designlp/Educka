@@ -211,15 +211,12 @@ iframes.forEach(function(iframe){
     var player = new Plyr(iframe, {
         controls: ['play'],
         clickToPlay: false,
-        hideControls: true,
+        hideControls: false,
         showPosterOnEnd: true
       });
       player.on('play', function() {
-        player.setOptions({
-          hideControls: false,
-          controls: ['play', 'progress', 'mute', 'volume', 'fullscreen']
-        });
-      });
+        player.toggleControls(true);
+      });  
 }
 );
 
