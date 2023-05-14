@@ -219,6 +219,14 @@ iframes.forEach(function(iframe){
       player.on('play', function() {
         player.toggleControls(true);
       });
+      player.setup({
+        elements: {
+          center: {
+            selector: '.plyr__controls__item:first-child',
+            html: '<button class="plyr__control plyr__control--custom">Custom Button</button>'
+          }
+        }
+      });
 }
 );
 
