@@ -212,11 +212,11 @@ iframes.forEach(function(iframe){
         
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
         clickToPlay: true,
-        hideControls: true,
+        hideControls: false,
         showPosterOnEnd: true,
-        
+    
       });
-     
+  
       player.toggleControls(false);
       player.on('play', function() {
         player.toggleControls(true);
