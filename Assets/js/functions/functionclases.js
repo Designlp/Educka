@@ -216,8 +216,8 @@ iframes.forEach(function(iframe){
         showPosterOnEnd: true,
     
       });
-      player.play(); 
-      //player.toggleControls(false);
+  
+      player.toggleControls(false);
       player.on('play', function() {
         player.toggleControls(true);
       });
