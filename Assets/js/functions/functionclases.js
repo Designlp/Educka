@@ -217,7 +217,7 @@ iframes.forEach(function(iframe){
       });
       player.toggleControls(false);
       player.on('play', function() {
-        player.toggleControls(false);
+        player.toggleControls(true);
       });
 }
 );
