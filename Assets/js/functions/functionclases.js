@@ -213,8 +213,9 @@ iframes.forEach(function(iframe){
         hideControls: false,
         clickToPlay: false,
       });
-      player.on('canplay', function() {
-        player.showControls();
+      player.on('play', function() {
+        const controls = player.elements.controls;
+        controls.classList.add('plyr--paused')
       });
 }
 );
