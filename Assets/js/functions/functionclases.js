@@ -213,8 +213,7 @@ iframes.forEach(function(iframe){
         clickToPlay: true,
         hideControls: false,
         showPosterOnEnd: true,
-        toggleControls: false,
-        fullscreen: false
+        toggleControls: false
       });
       player.toggleControls(false);
       player.on('play', function() {
