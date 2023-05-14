@@ -212,7 +212,7 @@ iframes.forEach(function(iframe){
         controls: ['play']
       });
       player.on('playing', function(event) {
-        alert();
+        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
     });
 }
 );
