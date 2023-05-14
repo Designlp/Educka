@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="modalformclases" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered my-custom-modal modal-dialog-scrollable" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header headerregister">
                 <h5 class="modal-title" id="titlemodal">Nuevo Rol</h5>
@@ -22,7 +22,7 @@
                                 <div class="container page__container">
 
                                     <div class="row">
-                                        <div class="col-md-8">
+                                        <div class="col-md-6">
 
                                             <div class="page-separator">
                                                 <div class="page-separator__text">Datos de la clase</div>
@@ -44,7 +44,7 @@
 
 
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
 
 
 
