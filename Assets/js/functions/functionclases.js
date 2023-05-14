@@ -214,17 +214,13 @@ iframes.forEach(function(iframe){
         hideControls: false,
         showPosterOnEnd: true,
         fullscreen: {
-            enabled: false,
-            fallback: true,
-            allowAudio: false,
-            iosNative: false,
-            container: null
+            enabled: false
         }
       });
       player.toggleControls(false);
       player.on('play', function() {
         player.toggleControls(true);
-        player.fullscreen = true;
+        player.update({ clickToPlay: true });
       });
       
 }
