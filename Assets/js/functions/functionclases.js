@@ -210,6 +210,7 @@ const iframes = document.querySelectorAll("#player");
 iframes.forEach(function(iframe){
     var player = new Plyr(iframe, {
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+        iconUrl: 'https://cdn.plyr.io/3.7.8/plyr.svg',
         clickToPlay: false,
         hideControls: false,
         showPosterOnEnd: true,
