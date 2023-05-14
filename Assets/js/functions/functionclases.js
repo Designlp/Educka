@@ -209,9 +209,8 @@ const iframes = document.querySelectorAll("#player");
 
 iframes.forEach(function(iframe){
     var player = new Plyr(iframe, {
-        controls: ['play-large'],
+        
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-
         clickToPlay: true,
         hideControls: false,
         showPosterOnEnd: true,
@@ -220,7 +219,9 @@ iframes.forEach(function(iframe){
       player.toggleControls(false);
       player.on('play', function() {
         player.toggleControls(true);
-        player.fullscreen.enabled = true;
+        player.updateSettings({
+            controls: ['play', 'progress', 'current-time']
+          });
         
       });
       
