@@ -215,8 +215,8 @@ iframes.forEach(function(iframe){
         showPosterOnEnd: true
       });
       player.on('play', function() {
-        player.showMenuPanel('controls');
-    }); 
+        player.toggleControls(false);
+      });  
 }
 );
 
