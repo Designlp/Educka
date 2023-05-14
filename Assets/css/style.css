@@ -13,3 +13,9 @@
 .ytp-chrome-bottom {
   display: none !important;
 }
+
+
+.my-custom-modal {
+  max-width: 90vw;
+  max-height: 90vh;
+}
