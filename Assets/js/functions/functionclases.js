@@ -215,7 +215,14 @@ iframes.forEach(function(iframe){
         showPosterOnEnd: true
       });
       player.on('play', function() {
-        player.config.controls = ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'];
+        player.source({
+            type: 'video',
+            sources: [{
+                src: 'https://www.youtube.com/watch?v=G7mH-MBLET4',
+                provider: 'youtube'
+            }],
+         
+        });
 
       });
 }
