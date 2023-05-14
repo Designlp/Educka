@@ -209,10 +209,13 @@ const iframes = document.querySelectorAll("#player");
 
 iframes.forEach(function(iframe){
     const player = new Plyr(iframe, {
-        controls: ['play']
+        controls: ['play'],
+        hideControls: false,
+        settings: [],
+        clickToPlay: false
       });
       player.on('playing', function(event) {
-        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
+        player.showControls();
     });
 }
 );
