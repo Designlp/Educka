@@ -207,17 +207,17 @@ function fntclasescurso(){
 const iframes = document.querySelectorAll("#player");
 
 
-// iframes.forEach(function(iframe){
-//     const player = new Plyr(iframe, {
+iframes.forEach(function(iframe){
+    const player = new Plyr(iframe, {
       
-//         hideControls: true
-//       });
+        hideControls: true
+      });
 
-//       player.on('playing', function(event) {
-//         player.toggleControls(); // Muestra la interfaz completa al empezar a reproducir
-//     });
-// }
-// );
+      player.on('playing', function(event) {
+        player.toggleControls(); // Muestra la interfaz completa al empezar a reproducir
+    });
+}
+);
 
 
 
