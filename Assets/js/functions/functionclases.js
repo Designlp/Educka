@@ -212,7 +212,14 @@ iframes.forEach(function(iframe){
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
         clickToPlay: true,
         hideControls: false,
-        showPosterOnEnd: true
+        showPosterOnEnd: true,
+        fullscreen: {
+            enabled: true,
+            fallback: true,
+            allowAudio: false,
+            iosNative: false,
+            container: null
+        }
       });
       player.toggleControls(false);
       player.on('play', function() {
