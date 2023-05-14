@@ -209,23 +209,12 @@ const iframes = document.querySelectorAll("#player");
 
 iframes.forEach(function(iframe){
     const player = new Plyr(iframe, {
-        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-        hideControls: false,
-        clickToPlay: false,
+        controls: ['play']
       });
-      player.on('playing', function() {
-        setTimeout(function() {
-          player.hideControls();
-        }, 2000);
-      });
-      
-      player.on('mouseenter', function() {
-        player.showControls();
-      });
-      
-      player.on('mouseleave', function() {
-        player.hideControls();
-      });
+      player.on('playing', function(event) {
+        const controls = player.getContainer().querySelector('.plyr__controls');
+        controls.classList.remove('plyr__controls--overlaid');
+    });
 }
 );
 
