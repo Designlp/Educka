@@ -219,7 +219,7 @@ btnPrevisualizar.addEventListener('click', function(event) {
         allowfullscreen
         ></iframe>
     `;
-    document.querySelector('.player').innerHTML = htmiframe;
+    document.querySelector('#player').innerHTML = htmiframe;
 
 
     
