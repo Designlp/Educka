@@ -56,11 +56,11 @@
             die();
         }
 
-        public function getdocente($idusuario){
+        public function getcategoria($idkey){
             
-            $intkey=intval(strclean($idusuario));
+            $intkey=intval(strclean($idkey));
             if ($intkey>0){
-                $arrdata = $this->model->selectdocente($intkey);
+                $arrdata = $this->model->selectcategoria($intkey);
                 if(empty($arrdata)){
                     $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
                 }else{
@@ -98,13 +98,10 @@
                  );
                 }else{
                     $option = 2;
-                    $requestusuario = $this->model->updatedocentes(
-                    $idusuario,
-                    $strci,
+                    $requestusuario = $this->model->updatecategorias(
+                    $idcategorias,
                     $strnombre, 
-                    $strapellido, 
-                    $strcorreo,
-                    $inttelefono,
+                    $strdescripcion, 
                     $intestado
                     );
 

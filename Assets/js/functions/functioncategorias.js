@@ -78,12 +78,12 @@ window.addEventListener('load',function(){
 
 //Update
 function fnteditcategorias(){
-    var btneditdocentes=Array.apply(null, document.querySelectorAll(".btneditdocentes"));    
-    btneditdocentes.forEach(function(btneditdocentes){
+    var btneditcategorias=Array.apply(null, document.querySelectorAll(".btneditcategorias"));    
+    btneditcategorias.forEach(function(btneditcategorias){
         
-        btneditdocentes.addEventListener("click",function(){
+        btneditcategorias.addEventListener("click",function(){
             //alert("Click to close...");
-            document.querySelector('#titlemodal').innerHTML = "Actualizar Docente";
+            document.querySelector('#titlemodal').innerHTML = "Actualizar Categorias";
             document.querySelector('.modal-header').classList.replace("headerregister","headerupdate");
             document.querySelector('#btnactionform').classList.replace("btn-primary","btn-info");
             document.querySelector('#btntext').innerHTML="Actualizar";
@@ -91,7 +91,7 @@ function fnteditcategorias(){
             var idkey = this.getAttribute("rl");
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             //El getusuario esta en Singular !Cuidado confunfir!
-            var ajaxUrl = baseurl+'/Docentes/getdocente/'+idkey;
+            var ajaxUrl = baseurl+'/Categorias/getcategoria/'+idkey;
             request.open("GET",ajaxUrl,true);
             request.send();
             request.onreadystatechange =function(){
@@ -100,18 +100,12 @@ function fnteditcategorias(){
                     var objdata=JSON.parse(request.responseText);
                     
                     if(objdata.status){
-                        document.querySelector("#idusuario").value=objdata.data.idusuario;
-                        document.querySelector("#txtci").value=objdata.data.ci;
+                        document.querySelector("#idcategoria").value=objdata.data.idcategoria;
                         document.querySelector("#txtnombre").value=objdata.data.nombre;
-                        document.querySelector("#txtapellido").value=objdata.data.apellidos;
-                        document.querySelector("#txtcorreo").value=objdata.data.correo;
-                        document.querySelector("#txttelefono").value=objdata.data.telefono;
-                    
+                        document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
+        
                         $('#liststatus').val(objdata.data.estado).trigger('change');
-
-         
-
-                        $('#modalformdocentes').modal("show");
+                        $('#modalformcategorias').modal("show");
                     }else{
                         swal("Error",objdata.msg,"error");
                     }

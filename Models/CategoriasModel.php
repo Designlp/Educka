@@ -20,11 +20,11 @@
             return $request;
         }
 
-        public function selectdocente(int $iduser){
-            $this->intidusuario= $iduser;
-            $sql= "SELECT tu.idusuario, tu.ci, tu.nombre, tu.apellidos, tu.correo, tu.telefono, tu.estado
-            FROM tusuarios tu
-            WHERE tu.idusuario = $this->intidusuario";
+        public function selectcategoria(int $iduser){
+            $this->intcategorias= $iduser;
+            $sql= "SELECT tc.idcategoria, tc.nombre, tc.descripcion, tu.estado
+            FROM tcategoria tc
+            WHERE tc.idcategoria = $this->intcategorias";
             $request=$this->select($sql);
             return $request;
         }
@@ -58,7 +58,7 @@
             return $return;
         }
         //Update
-        public function updatedocentes(int $idusuario,string $ci,string $nombre, string $apellido, string $correo ,int $telefono, int $estado){
+        public function updatecategorias(int $idusuario,string $ci,string $nombre, string $apellido, string $correo ,int $telefono, int $estado){
 			
             $this->intidusuario = $idusuario;
 			$this->strci        = $ci;
