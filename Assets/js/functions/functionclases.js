@@ -211,7 +211,10 @@ iframes.forEach(function(iframe){
     const player = new Plyr(iframe, {
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
       });
-      player.play();
+
+      player.on('playing', function(event) {
+        player.toggleControls(); // Muestra la interfaz completa al empezar a reproducir
+    });
 }
 );
 
@@ -220,5 +223,5 @@ iframes.forEach(function(iframe){
 const btnPrevisualizar = document.getElementById('btnprevisualizar');
 
 btnPrevisualizar.addEventListener('click', function(event) {
-    alert();
+    
 });
