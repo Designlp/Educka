@@ -210,19 +210,16 @@ const iframes = document.querySelectorAll("#player");
 iframes.forEach(function(iframe){
     const player = new Plyr(iframe, {
         controls: ['play'],
-        hideControls: false,
         clickToPlay: false,
+        hideControls: false,
+        showPosterOnEnd: true
       });
       player.on('play', function() {
-        const controls = player.getContainer().querySelector('.plyr__controls');
-        controls.style.display = 'block';
+        player.controls = ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'];
+        player.hideControls = false;
+        player.showPosterOnEnd = false;
       });
       
-      const playButton = player.getContainer().querySelector('.plyr__play');
-      playButton.addEventListener('click', function() {
-        const controls = player.getContainer().querySelector('.plyr__controls');
-        controls.style.display = 'none';
-      });
 }
 );
 
