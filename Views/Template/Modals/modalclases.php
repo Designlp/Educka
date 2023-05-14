@@ -68,7 +68,7 @@
                                                   
                                                     <small class="form-text text-muted">Enter a valid video URL.</small><br>
     
-                                                    <button id="btnprevisualizar" class="btn btn-primary">
+                                                    <button id="btnprevisualizar" class="btn btn-primary" type="button">
                                                     <span >Previsualizar</span>
                                                     </button>
                                                 </div>
