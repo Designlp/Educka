@@ -212,14 +212,11 @@ iframes.forEach(function(iframe){
         controls: ['play'],
         clickToPlay: false,
         hideControls: false,
-        showPosterOnEnd: true
+        showPosterOnEnd: true,
+        toggleControls: false
       });
       player.on('play', function() {
         player.toggleControls(true);
-      });
-      
-      player.on('pause', function() {
-        player.toggleControls(false);
       });
 }
 );
