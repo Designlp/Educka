@@ -56,7 +56,7 @@
 
         <!-- Sidebar Mini JS -->
         <script src="<?= media() ?>/js/template/sidebar-mini.js"></script>
-        <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+        <script src="https://cdn.plyr.io/3.8.4/plyr.js"></script>
  
         <script>
             (function() {
