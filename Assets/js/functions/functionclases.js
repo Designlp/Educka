@@ -211,17 +211,15 @@ iframes.forEach(function(iframe){
     var player = new Plyr(iframe, {
         controls: ['play'],
         clickToPlay: false,
-        hideControls: false,
+        hideControls: true,
         showPosterOnEnd: true
       });
-      player.source({
-        type: 'video',
-        sources: [{
-            src: 'https://www.youtube.com/watch?v=G7mH-MBLET4',
-            provider: 'youtube'
-        }],
-     
-    });
+      player.on('play', function() {
+        player.setOptions({
+          hideControls: false,
+          controls: ['play', 'progress', 'mute', 'volume', 'fullscreen']
+        });
+      });
 }
 );
 
