@@ -209,10 +209,9 @@ const iframes = document.querySelectorAll("#player");
 
 iframes.forEach(function(iframe){
     const player = new Plyr(iframe, {
-        controls: ['play'],
+        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
         hideControls: false,
-        settings: [],
-        clickToPlay: false
+        clickToPlay: false,
       });
       player.on('playing', function(event) {
         player.toggleControls(true);
