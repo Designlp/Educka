@@ -212,10 +212,7 @@ iframes.forEach(function(iframe){
         controls: ['play']
       });
 
-      player.on('playing', function(event) {
-        const controls = player.getContainer().querySelector('.plyr__controls');
-        controls.classList.remove('plyr__controls--overlaid');
-    });
+    
 }
 );
 
