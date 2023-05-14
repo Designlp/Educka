@@ -213,8 +213,8 @@ iframes.forEach(function(iframe){
         hideControls: false,
         clickToPlay: false,
       });
-      player.on('play', function() {
-        alert();
+      player.on('canplay', function() {
+        player.showControls();
       });
 }
 );
