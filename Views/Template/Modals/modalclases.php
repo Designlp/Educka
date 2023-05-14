@@ -41,7 +41,12 @@
                                                 <small class="form-text text-muted">Pequeña descripción de la clase</small>
                                             </div>
 
-
+                                            <div class="form-group m-0">
+                                    <div class="custom-file">
+                                        <input type="file" id="file" class="custom-file-input">
+                                        <label for="file" class="custom-file-label">Choose file</label>
+                                    </div>
+                                </div>
 
                                         </div>
                                         <div class="col-md-6">
