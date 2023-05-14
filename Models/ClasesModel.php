@@ -57,7 +57,7 @@
 
 			if(empty($request))
 			{
-           
+                print "Entra a la funcion";
 				$query  = "INSERT INTO tclases(idcurso,titulo,descripcion,enlace,estado) 
 								  VALUES(?,?,?,?,?)";
 	        	$arrdata = array($this->intidcurso,
