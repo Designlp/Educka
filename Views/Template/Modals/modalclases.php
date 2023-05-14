@@ -61,6 +61,13 @@
                                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                                         allowfullscreen
                                                         ></iframe>
+                                                        <button type="button" class="plyr__play-large">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z"/>
+      <path d="M0 0h24v24H0z" fill="none"/>
+    </svg>
+    <span class="plyr__sr-only">Play</span>
+  </button>
                                                 </div>
                                                 <div class="card-body">
                                                     <label class="form-label">URL</label>
