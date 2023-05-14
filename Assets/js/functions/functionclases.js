@@ -225,6 +225,7 @@ iframes.forEach(function(iframe){
       player.on('play', function() {
         player.toggleControls(true);
         player.fullscreen.enabled = true;
+        player.refresh();
       });
       
 }
