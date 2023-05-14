@@ -215,7 +215,7 @@ iframes.forEach(function(iframe){
       });
       player.on('playing', function() {
         player.config.controls = ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'];
-        player.showControls();
+      
     });
 }
 );
