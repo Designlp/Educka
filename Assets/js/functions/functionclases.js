@@ -216,13 +216,10 @@ iframes.forEach(function(iframe){
         showPosterOnEnd: true,
     
       });
-      player.toggleControls(false);
+      player.stop();
+      //player.toggleControls(false);
       player.on('play', function() {
         player.toggleControls(true);
-        player.updateSettings({
-            controls: ['play', 'progress', 'current-time']
-          });
-        
       });
       
 }
