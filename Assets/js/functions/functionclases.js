@@ -219,14 +219,7 @@ iframes.forEach(function(iframe){
       player.on('play', function() {
         player.toggleControls(true);
       });
-      player.setup({
-        elements: {
-          center: {
-            selector: '.plyr__controls__item:first-child',
-            html: '<button class="plyr__control plyr__control--custom">Custom Button</button>'
-          }
-        }
-      });
+      
 }
 );
 
@@ -235,5 +228,14 @@ iframes.forEach(function(iframe){
 const btnPrevisualizar = document.getElementById('btnprevisualizar');
 
 btnPrevisualizar.addEventListener('click', function(event) {
-    
+    htmiframe= `
+        <iframe id="youtubeframeid"
+        class="embed-responsive-item" 
+        src="https://www.youtube.com/embed/G7mH-MBLET4?modestbranding=1&disablekb=1&rel=0&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+        ></iframe>
+    `;
+    document.querySelector('.player').innerHTML = htmiframe;
 });
