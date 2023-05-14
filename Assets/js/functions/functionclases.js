@@ -209,12 +209,12 @@ const iframes = document.querySelectorAll("#player");
 
 iframes.forEach(function(iframe){
     const player = new Plyr(iframe, {
-      
-        hideControls: true
+        controls: ['play']
       });
 
       player.on('playing', function(event) {
-        player.toggleControls(); // Muestra la interfaz completa al empezar a reproducir
+        const controls = player.getContainer().querySelector('.plyr__controls');
+        controls.classList.remove('plyr__controls--overlaid');
     });
 }
 );
