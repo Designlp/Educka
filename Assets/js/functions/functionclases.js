@@ -211,8 +211,9 @@ iframes.forEach(function(iframe){
     const player = new Plyr(iframe, {
         controls: ['play']
       });
-
-    
+      player.on('playing', function(event) {
+        alert();
+    });
 }
 );
 
