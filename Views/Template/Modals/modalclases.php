@@ -65,9 +65,9 @@
                                                 <div class="card-body">
                                                     <label class="form-label">URL</label>
                                                     <input type="text" class="form-control" id="txtenlace" name="txtenlace" placeholder="Enter Video URL">
-                                                    <button id="btnactionform" class="btn btn-primary" type="submit">
-                                                    <i class="fa fa-fw fa-lg fa-check-circle"></i>
-                                                    <span id="btntext">Guardar</span>
+                                                    <button id="btnprevisualizar" class="btn btn-primary">
+                                                    <!-- <i class="fa fa-fw fa-lg fa-check-circle"></i> -->
+                                                    <span id="btntext">Previsualizar</span>
                                                     </button>
                                                     <small class="form-text text-muted">Enter a valid video URL.</small>
                                                 </div>
