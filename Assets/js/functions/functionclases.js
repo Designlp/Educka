@@ -214,17 +214,14 @@ iframes.forEach(function(iframe){
         hideControls: false,
         showPosterOnEnd: true
       });
-      player.on('play', function() {
-        player.source({
-            type: 'video',
-            sources: [{
-                src: 'https://www.youtube.com/watch?v=G7mH-MBLET4',
-                provider: 'youtube'
-            }],
-         
-        });
-
-      });
+      player.source({
+        type: 'video',
+        sources: [{
+            src: 'https://www.youtube.com/watch?v=G7mH-MBLET4',
+            provider: 'youtube'
+        }],
+     
+    });
 }
 );
 
