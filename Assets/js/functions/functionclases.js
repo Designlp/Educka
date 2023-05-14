@@ -210,11 +210,11 @@ const iframes = document.querySelectorAll("#player");
 iframes.forEach(function(iframe){
     const player = new Plyr(iframe, {
         controls: ['play'],
-        hideControls: false,
+        hideControls: true,
         clickToPlay: false,
       });
       player.on('play', function() {
-        const container = document.querySelector('#player-container');
+        const container = document.querySelector('#player');
         container.classList.add('plyr--show-controls');
       });
 }
