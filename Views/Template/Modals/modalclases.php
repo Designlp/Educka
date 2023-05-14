@@ -54,8 +54,6 @@
 
                                             <div class="card">
                                                 <div id="player" class="embed-responsive embed-responsive-16by9 plyr__video-embed">
-
-
                                                     <iframe id="youtubeframeid"
                                                         class="embed-responsive-item" 
                                                         src="https://www.youtube.com/embed/G7mH-MBLET4?modestbranding=1&disablekb=1&rel=0&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" 
@@ -63,11 +61,14 @@
                                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                                         allowfullscreen
                                                         ></iframe>
-
                                                 </div>
                                                 <div class="card-body">
                                                     <label class="form-label">URL</label>
                                                     <input type="text" class="form-control" id="txtenlace" name="txtenlace" placeholder="Enter Video URL">
+                                                    <button id="btnactionform" class="btn btn-primary" type="submit">
+                                                    <i class="fa fa-fw fa-lg fa-check-circle"></i>
+                                                    <span id="btntext">Guardar</span>
+                                                    </button>
                                                     <small class="form-text text-muted">Enter a valid video URL.</small>
                                                 </div>
                                             </div>
