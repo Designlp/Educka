@@ -201,7 +201,7 @@ function fntclasescurso(){
 
 
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 const iframes = document.querySelectorAll("#player");
@@ -214,3 +214,11 @@ iframes.forEach(function(iframe){
       player.play();
 }
 );
+
+
+
+const btnPrevisualizar = document.getElementById('btnprevisualizar');
+
+btnPrevisualizar.addEventListener('click', function(event) {
+    alert();
+});
