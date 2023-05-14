@@ -217,7 +217,12 @@ iframes.forEach(function(iframe){
       player.toggleControls(false);
       player.on('play', function() {
         player.toggleControls(true);
-        player.controls= ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'];
+        player = new Plyr(iframe, {
+            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+            clickToPlay: true,
+            hideControls: false,
+            showPosterOnEnd: true
+          });
       });
       
 }
