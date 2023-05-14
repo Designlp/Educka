@@ -209,6 +209,7 @@ const iframes = document.querySelectorAll("#player");
 
 iframes.forEach(function(iframe){
     var player = new Plyr(iframe, {
+        controls: ['play-large'],
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
 
         clickToPlay: true,
