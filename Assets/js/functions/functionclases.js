@@ -214,7 +214,7 @@ iframes.forEach(function(iframe){
         hideControls: false,
         showPosterOnEnd: true,
         fullscreen: {
-            enabled: true,
+            enabled: false,
             fallback: true,
             allowAudio: false,
             iosNative: false,
