@@ -211,16 +211,10 @@ iframes.forEach(function(iframe){
     var player = new Plyr(iframe, {
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
         iconUrl: 'https://cdn.plyr.io/3.7.8/plyr.svg',
-        clickToPlay: false,
+        clickToPlay: true,
         hideControls: false,
         showPosterOnEnd: true,
-        fullscreen: {
-            enabled: false,
-            fallback: true,
-            allowAudio: false,
-            iosNative: false,
-            container: null
-        }
+    
       });
       player.toggleControls(false);
       player.on('play', function() {
