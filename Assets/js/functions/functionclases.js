@@ -214,8 +214,14 @@ iframes.forEach(function(iframe){
         clickToPlay: false,
       });
       player.on('play', function() {
-        player.config.controls = ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'];
-        player.config.hideControls = false;
+        const controls = player.getContainer().querySelector('.plyr__controls');
+        controls.style.display = 'block';
+      });
+      
+      const playButton = player.getContainer().querySelector('.plyr__play');
+      playButton.addEventListener('click', function() {
+        const controls = player.getContainer().querySelector('.plyr__controls');
+        controls.style.display = 'none';
       });
 }
 );
