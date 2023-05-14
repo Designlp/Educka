@@ -214,8 +214,8 @@ iframes.forEach(function(iframe){
         clickToPlay: false,
       });
       player.on('play', function() {
-        const controls = player.elements.controls;
-        controls.classList.add('plyr--paused')
+        const container = document.querySelector('#player');
+        container.classList.add('plyr--show-controls');
       });
 }
 );
