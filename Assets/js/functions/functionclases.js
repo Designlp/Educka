@@ -213,10 +213,9 @@ iframes.forEach(function(iframe){
         hideControls: false,
         clickToPlay: false,
       });
-      player.on('playing', function() {
-        player.config.controls = ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'];
-        player.showControls();
-    });
+      player.on('play', function() {
+        player.elements.container.classList.add('plyr--show-controls');
+      });
 }
 );
 

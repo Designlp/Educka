@@ -40,7 +40,7 @@
    
    <link type="text/css" href="<?= media() ?>/css/quill.css" rel="stylesheet">
    <link type="text/css" href="<?= media() ?>/css/style.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdn.plyr.io/3.8.4/plyr.css" />
+   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 </head>
 
 <body class="layout-mini layout-mini">
