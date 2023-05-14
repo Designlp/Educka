@@ -208,7 +208,7 @@ const iframes = document.querySelectorAll("#player");
 
 
 iframes.forEach(function(iframe){
-    const player = new Plyr(iframe, {
+    var player = new Plyr(iframe, {
         controls: ['play'],
         clickToPlay: false,
         hideControls: false,
