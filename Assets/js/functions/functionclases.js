@@ -213,9 +213,19 @@ iframes.forEach(function(iframe){
         hideControls: false,
         clickToPlay: false,
       });
-      player.on('playing', function(event) {
-        player.toggleControls(true);
-    });
+      player.on('playing', function() {
+        setTimeout(function() {
+          player.hideControls();
+        }, 2000);
+      });
+      
+      player.on('mouseenter', function() {
+        player.showControls();
+      });
+      
+      player.on('mouseleave', function() {
+        player.hideControls();
+      });
 }
 );
 
