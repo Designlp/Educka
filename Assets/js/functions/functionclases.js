@@ -214,7 +214,7 @@ iframes.forEach(function(iframe){
         clickToPlay: false,
       });
       player.on('play', function() {
-        player.elements.container.classList.add('plyr--show-controls');
+        alert();
       });
 }
 );
