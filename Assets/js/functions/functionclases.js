@@ -211,10 +211,10 @@ iframes.forEach(function(iframe){
     var player = new Plyr(iframe, {
         
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-        clickToPlay: false,
-        hideControls: false,
+        clickToPlay: true,
+        hideControls: true,
         showPosterOnEnd: true,
-    
+        
       });
       player.play(); 
       player.toggleControls(false);
