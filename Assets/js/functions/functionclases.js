@@ -220,7 +220,7 @@ iframes.forEach(function(iframe){
       player.toggleControls(false);
       player.on('play', function() {
         player.toggleControls(true);
-        player.fullscreen.enter();
+        player.fullscreen=true;
       });
       
 }
