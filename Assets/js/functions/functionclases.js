@@ -216,7 +216,7 @@ iframes.forEach(function(iframe){
         toggleControls: false
       });
       player.on('play', function() {
-        player.toggleControls(true);
+        player.toggleControls(false);
       });
 }
 );
