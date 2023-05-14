@@ -210,7 +210,7 @@ const iframes = document.querySelectorAll("#player");
 iframes.forEach(function(iframe){
     var player = new Plyr(iframe, {
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-        clickToPlay: true,
+        clickToPlay: false,
         hideControls: false,
         showPosterOnEnd: true,
         fullscreen: {
@@ -225,7 +225,7 @@ iframes.forEach(function(iframe){
       player.on('play', function() {
         player.toggleControls(true);
         player.fullscreen.enabled = true;
-        player.refresh();
+        
       });
       
 }
