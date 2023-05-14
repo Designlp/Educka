@@ -210,8 +210,7 @@ const iframes = document.querySelectorAll("#player");
 iframes.forEach(function(iframe){
     const player = new Plyr(iframe, {
         controls: ['play'],
-        hideControls: false,
-        clickToPlay: false,
+   
       });
       player.on('playing', function() {
         player.config.controls = ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'];
