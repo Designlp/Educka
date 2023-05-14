@@ -66,11 +66,10 @@
                                                     <label class="form-label">URL</label>
                                                     <input type="text" class="form-control" id="txtenlace" name="txtenlace" placeholder="Enter Video URL">
                                                   
-                                                    <small class="form-text text-muted">Enter a valid video URL.</small>
-
+                                                    <small class="form-text text-muted">Enter a valid video URL.</small><br>
+    
                                                     <button id="btnprevisualizar" class="btn btn-primary">
-                                                    <!-- <i class="fa fa-fw fa-lg fa-check-circle"></i> -->
-                                                    <span id="btntext">Previsualizar</span>
+                                                    <span >Previsualizar</span>
                                                     </button>
                                                 </div>
                                             </div>
