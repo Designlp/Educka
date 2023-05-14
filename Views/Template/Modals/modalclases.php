@@ -42,11 +42,11 @@
                                             </div>
 
                                             <div class="form-group m-0">
-                                    <div class="custom-file">
-                                        <input type="file" id="file" class="custom-file-input">
-                                        <label for="file" class="custom-file-label">Choose file</label>
-                                    </div>
-                                </div>
+                                                <div class="custom-file">
+                                                    <input  id="materialfile" name="materialfile" type="file"  class="custom-file-input">
+                                                    <label for="materialfile" class="custom-file-label">Añadir Material</label>
+                                                </div>
+                                            </div>
 
                                         </div>
                                         <div class="col-md-6">
