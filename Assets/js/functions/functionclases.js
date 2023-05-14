@@ -209,15 +209,16 @@ const iframes = document.querySelectorAll("#player");
 
 iframes.forEach(function(iframe){
     const player = new Plyr(iframe, {
-        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+        controls: ['play'],
         clickToPlay: false,
         hideControls: false,
         showPosterOnEnd: true
       });
       player.on('play', function() {
-        player.showControls();
-    });
-      
+        player.updateSettings({
+          controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen']
+        });
+      });
 }
 );
 
