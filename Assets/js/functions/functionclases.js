@@ -215,8 +215,12 @@ iframes.forEach(function(iframe){
         showPosterOnEnd: true
       });
       player.on('play', function() {
+        player.toggleControls(true);
+      });
+      
+      player.on('pause', function() {
         player.toggleControls(false);
-      });  
+      });
 }
 );
 
