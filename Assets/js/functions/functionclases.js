@@ -261,7 +261,19 @@ btnPrevisualizar.addEventListener('click', function (event) {
             clickToPlay: true,
             hideControls: false,
             showPosterOnEnd: true,
-            disableYouTube: true 
+            disableYouTube: true,
+            youtube: {
+                             noCookie: true,
+                             enablejsapi:1,
+                             rel: 0,
+                             modestbranding: 1,
+                             showinfo: 0,
+                             iv_load_policy: 3,
+                             controls:0,
+                             host: window.location.hostname,
+                             disableClickHandling: true,
+                             disablekb:1
+                          },
 
         });
 
