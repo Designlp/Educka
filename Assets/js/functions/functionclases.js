@@ -213,7 +213,7 @@ iframes.forEach(function (iframe) {
         clickToPlay: true,
         hideControls: false,
         showPosterOnEnd: true,
-        disableYouTube: true, 
+  
  
     });
 
