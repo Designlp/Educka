@@ -224,7 +224,7 @@ iframes.forEach(function (iframe) {
             iv_load_policy: 3,
             controls:0,
             origin:'https://educka.online',
-         
+            disableClickHandling: true,
             disablekb:1
           },
     });

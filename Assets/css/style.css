@@ -1,5 +1,5 @@
 .plyr__video-embed iframe::after {
-    display: none;
+    display: none !important;
   }
   .ytp-watermark {
     display: none !important;
