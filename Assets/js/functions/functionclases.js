@@ -210,16 +210,16 @@ const btnPrevisualizar = document.getElementById('btnprevisualizar');
 
 btnPrevisualizar.addEventListener('click', function (event) {
     let enlace = document.querySelector("#txtenlace").value;
-    htmiframe = `
-        <iframe id="youtubeframeid"
-        class="embed-responsive-item" 
-        src="https://www.youtube.com/embed/${enlace}?modestbranding=1&disablekb=1&rel=0&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen
-        ></iframe>
-    `;
-    document.querySelector('#player').innerHTML = htmiframe;
+    // htmiframe = `
+    //     <iframe id="youtubeframeid"
+    //     class="embed-responsive-item" 
+    //     src="https://www.youtube.com/embed/${enlace}?modestbranding=1&disablekb=1&rel=0&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" 
+    //     frameborder="0" 
+    //     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    //     allowfullscreen
+    //     ></iframe>
+    // `;
+    // document.querySelector('#player').innerHTML = htmiframe;
 
 
 
@@ -236,6 +236,15 @@ btnPrevisualizar.addEventListener('click', function (event) {
             disableYouTube: true 
 
         });
+        player.source = {
+            type: 'video',
+            sources: [
+              {
+                src: enlace,
+                provider: 'youtube',
+              },
+            ],
+          };
 
         player.toggleControls(false);
         player.on('play', function () {
