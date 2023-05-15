@@ -207,7 +207,6 @@ const iframes = document.querySelectorAll("#player");
 
 
 iframes.forEach(function (iframe) {
-    alert();
     var player = new Plyr(iframe, {
 
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
@@ -227,7 +226,6 @@ iframes.forEach(function (iframe) {
         type: 'video',
         sources: [
           {
-            src: '3XozqbLvNx4',
             provider: 'youtube'
           }
         ]
