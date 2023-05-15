@@ -213,14 +213,24 @@ iframes.forEach(function (iframe) {
         clickToPlay: true,
         hideControls: false,
         showPosterOnEnd: true,
-        disableYouTube: true 
-
+        disableYouTube: true, 
+        youtube: {
+            noCookie: true,
+            rel: 0,
+            showinfo: 0,
+            iv_load_policy: 3
+          },
     });
 
-    player.toggleControls(false);
-    player.on('play', function () {
-        player.toggleControls(true);
-    });
+    player.source = {
+        type: 'video',
+        sources: [
+          {
+            src: 'https://www.youtube.com/watch?v=3XozqbLvNx4',
+            provider: 'youtube'
+          }
+        ]
+      };
 
 }
 );
