@@ -241,7 +241,7 @@ btnPrevisualizar.addEventListener('click', function (event) {
             type: 'video',
             sources: [
               {
-                src: enlace,
+                src: 'https://www.youtube.com/embed/3XozqbLvNx4',
                 provider: 'youtube',
               },
             ],
