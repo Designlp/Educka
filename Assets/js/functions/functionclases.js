@@ -247,7 +247,7 @@ btnPrevisualizar.addEventListener('click', function (event) {
             ],
           };
 
-        player.toggleControls(false);
+        //player.toggleControls(false);
         player.on('play', function () {
             player.toggleControls(true);
         });
