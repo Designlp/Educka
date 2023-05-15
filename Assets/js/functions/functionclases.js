@@ -209,7 +209,24 @@ const iframes = document.querySelectorAll("#player");
 iframes.forEach(function (iframe) {
     var player = new Plyr(iframe, {
 
-     
+        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+        clickToPlay: false,
+        hideControls: true,
+        
+        showPosterOnEnd: true,
+        disableYouTube: true, 
+        youtube: {
+            noCookie: true,
+            enablejsapi:1,
+            rel: 0,
+            modestbranding: 1,
+            showinfo: 0,
+            iv_load_policy: 3,
+            controls:0,
+            origin:'https://educka.online',
+            disableClickHandling: true,
+            disablekb:1
+          },
     });
 
 
