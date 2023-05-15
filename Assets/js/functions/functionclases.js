@@ -223,7 +223,7 @@ iframes.forEach(function (iframe) {
             showinfo: 0,
             iv_load_policy: 3,
             controls:0,
-            origin:'https://educka.online',
+            origin:'http://localhost:9000',
             disableClickHandling: true,
             disablekb:1
           },
