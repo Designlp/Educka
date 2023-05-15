@@ -223,7 +223,8 @@ iframes.forEach(function (iframe) {
             iv_load_policy: 3,
             controls:0,
             origin:'https://educka.online',
-            enablejsapi:1
+            enablejsapi:1,
+            disablekb:1
           },
     });
 
@@ -259,8 +260,8 @@ btnPrevisualizar.addEventListener('click', function (event) {
             clickToPlay: true,
             hideControls: false,
             showPosterOnEnd: true,
-            disableYouTube: true ,
-            disablekb: 1
+            disableYouTube: true 
+
         });
 
         player.toggleControls(false);
