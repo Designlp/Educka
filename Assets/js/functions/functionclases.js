@@ -214,7 +214,7 @@ iframes.forEach(function (iframe) {
         hideControls: true,
         
         showPosterOnEnd: true,
-        disableYouTube: false, 
+        disableYouTube: true, 
         youtube: {
             noCookie: true,
             enablejsapi:1,
