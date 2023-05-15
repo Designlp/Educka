@@ -58,7 +58,7 @@
                                             </div>
 
                                             <div class="card">
-                                                <div id="player"  class="embed-responsive embed-responsive-16by9 plyr__video-embed" >
+                                                <div id="player"  class="embed-responsive embed-responsive-16by9 plyr__video-embed" data-plyr-embed-id="3XozqbLvNx4">
                                                     <!-- <iframe id="youtubeframeid"
                                                         class="embed-responsive-item" 
                                                         src="https://www.youtube.com/embed/3XozqbLvNx4?modestbranding=1&disablekb=1&rel=0&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" 

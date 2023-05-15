@@ -203,53 +203,23 @@ function fntclasescurso() {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-const iframes = document.querySelectorAll("#player");
 
-
-iframes.forEach(function (iframe) {
-    var player = new Plyr(iframe, {
-
-        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-        clickToPlay: true,
-        hideControls: false,
-        showPosterOnEnd: true,
-        disableYouTube: true,
-        
-
-    });
-    player.source = {
-        type: 'video',
-        sources: [
-          {
-            src: '3XozqbLvNx4',
-            provider: 'youtube',
-          },
-        ],
-      };
-
-    //player.toggleControls(false);
-    player.on('play', function () {
-        player.toggleControls(true);
-    });
-
-}
-);
 
 
 const btnPrevisualizar = document.getElementById('btnprevisualizar');
 
 btnPrevisualizar.addEventListener('click', function (event) {
     let enlace = document.querySelector("#txtenlace").value;
-    // htmiframe = `
-    //     <iframe id="youtubeframeid"
-    //     class="embed-responsive-item" 
-    //     src="https://www.youtube.com/embed/${enlace}?modestbranding=1&disablekb=1&rel=0&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" 
-    //     frameborder="0" 
-    //     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    //     allowfullscreen
-    //     ></iframe>
-    // `;
-    // document.querySelector('#player').innerHTML = htmiframe;
+    htmiframe = `
+        <iframe id="youtubeframeid"
+        class="embed-responsive-item" 
+        src="https://www.youtube.com/embed/${enlace}?modestbranding=1&disablekb=1&rel=0&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+        ></iframe>
+    `;
+    document.querySelector('#player').innerHTML = htmiframe;
 
 
 
@@ -263,21 +233,11 @@ btnPrevisualizar.addEventListener('click', function (event) {
             clickToPlay: true,
             hideControls: false,
             showPosterOnEnd: true,
-            disableYouTube: true,
-            
+            disableYouTube: true 
 
         });
-        player.source = {
-            type: 'video',
-            sources: [
-              {
-                src: 'https://www.youtube.com/embed/3XozqbLvNx4',
-                provider: 'youtube',
-              },
-            ],
-          };
 
-        //player.toggleControls(false);
+        player.toggleControls(false);
         player.on('play', function () {
             player.toggleControls(true);
         });
