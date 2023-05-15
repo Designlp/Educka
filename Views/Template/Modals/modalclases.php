@@ -62,9 +62,7 @@
                                                     <iframe id="youtubeframeid"
                                                         class="embed-responsive-item" 
                                                         src="https://www.youtube.com/embed/3XozqbLvNx4?showinfo=0&enablejsapi=1&origin=https://educka.online" 
-                                                        frameborder="0" 
-                                          
-                                                        allowfullscreen
+                                                        frameborder="0"
                                                         ></iframe>
                                                         
                                                 </div>
