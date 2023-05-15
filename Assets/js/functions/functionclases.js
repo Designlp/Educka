@@ -203,35 +203,35 @@ function fntclasescurso() {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-const iframes = document.querySelectorAll("#player");
+// const iframes = document.querySelectorAll("#player");
 
 
-iframes.forEach(function (iframe) {
-    var player = new Plyr(iframe, {
+// iframes.forEach(function (iframe) {
+//     var player = new Plyr(iframe, {
 
-        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-        clickToPlay: false,
-        hideControls: true,
+//         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+//         clickToPlay: false,
+//         hideControls: true,
         
-        showPosterOnEnd: true,
-        disableYouTube: true, 
-        youtube: {
-            noCookie: true,
-            enablejsapi:1,
-            rel: 0,
-            modestbranding: 1,
-            showinfo: 0,
-            iv_load_policy: 3,
-            controls:0,
-            host: window.location.hostname,
-            disableClickHandling: true,
-            disablekb:1
-          },
-    });
+//         showPosterOnEnd: true,
+//         disableYouTube: true, 
+//         youtube: {
+//             noCookie: true,
+//             enablejsapi:1,
+//             rel: 0,
+//             modestbranding: 1,
+//             showinfo: 0,
+//             iv_load_policy: 3,
+//             controls:0,
+//             host: window.location.hostname,
+//             disableClickHandling: true,
+//             disablekb:1
+//           },
+//     });
     
 
-}
-);
+// }
+// );
 
 
 const btnPrevisualizar = document.getElementById('btnprevisualizar');
