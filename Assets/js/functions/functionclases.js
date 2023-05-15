@@ -226,7 +226,7 @@ iframes.forEach(function (iframe) {
         type: 'video',
         sources: [
           {
-            src: 'https://www.youtube.com/watch?v=3XozqbLvNx4',
+            src: '3XozqbLvNx4',
             provider: 'youtube'
           }
         ]
