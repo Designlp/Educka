@@ -63,7 +63,7 @@
                                                         class="embed-responsive-item" 
                                                         src="https://www.youtube.com/embed/3XozqbLvNx4?showinfo=0&enablejsapi=1&origin=https://educka.online" 
                                                         frameborder="0" 
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                          
                                                         allowfullscreen
                                                         ></iframe>
                                                         
