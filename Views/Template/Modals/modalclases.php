@@ -61,8 +61,10 @@
                                                 <div id="player"  class="embed-responsive embed-responsive-16by9 plyr__video-embed" >
                                                     <iframe id="youtubeframeid"
                                                         class="embed-responsive-item" 
-                                                        src="https://www.youtube.com/embed/3XozqbLvNx4?showinfo=0&enablejsapi=1&origin=https://educka.online" 
-                                                        frameborder="0"
+                                                        src="https://www.youtube.com/embed/3XozqbLvNx4?modestbranding=1&disablekb=1&rel=0&loop=1&mute=1&showinfo=0&controls=0&iv_load_policy=3" 
+                                                        frameborder="0" 
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                        allowfullscreen
                                                         ></iframe>
                                                         
                                                 </div>

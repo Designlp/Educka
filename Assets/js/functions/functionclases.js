@@ -213,8 +213,17 @@ iframes.forEach(function (iframe) {
         clickToPlay: true,
         hideControls: false,
         showPosterOnEnd: true,
-  
- 
+        disableYouTube: true, 
+        youtube: {
+            noCookie: true,
+            rel: 0,
+            modestbranding: 1,
+            showinfo: 0,
+            iv_load_policy: 3,
+            controls:0,
+            origin:'https://educka.online',
+            enablejsapi:1
+          },
     });
 
     player.source = {
