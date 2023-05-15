@@ -215,6 +215,7 @@ iframes.forEach(function (iframe) {
         
         showPosterOnEnd: true,
         disableYouTube: true, 
+        techOrder: ['youtube'],
         youtube: {
             origin: "https://educka.online",
             noCookie: true,
