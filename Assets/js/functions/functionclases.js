@@ -220,6 +220,7 @@ iframes.forEach(function (iframe) {
             modestbranding: 1,
             showinfo: 0,
             iv_load_policy: 3,
+            controls:0,
             
           },
     });
