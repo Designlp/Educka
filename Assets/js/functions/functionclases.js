@@ -227,14 +227,6 @@ iframes.forEach(function (iframe) {
           },
     });
 
-    player.source = {
-        type: 'video',
-        sources: [
-          {
-            provider: 'youtube'
-          }
-        ]
-      };
 
 }
 );
