@@ -259,8 +259,8 @@ btnPrevisualizar.addEventListener('click', function (event) {
             clickToPlay: true,
             hideControls: false,
             showPosterOnEnd: true,
-            disableYouTube: true 
-
+            disableYouTube: true ,
+            disablekb: 1
         });
 
         player.toggleControls(false);
