@@ -215,17 +215,15 @@ iframes.forEach(function (iframe) {
         
         showPosterOnEnd: true,
         disableYouTube: true, 
-        techOrder: ['youtube'],
         youtube: {
-            origin: "https://educka.online",
             noCookie: true,
-            modestBranding: true,
-            showinfo: 0,
             rel: 0,
+            modestbranding: 1,
+            showinfo: 0,
             iv_load_policy: 3,
-            loop: true,
-            controls: false,
-            endCard: false
+            controls:0,
+            origin:'https://educka.online',
+            enablejsapi:1
           },
     });
 
