@@ -204,26 +204,26 @@ function fntclasescurso() {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-const iframes = document.querySelectorAll("#player");
+ const iframes = document.querySelectorAll("#player");
 
 
-iframes.forEach(function (iframe) {
-    var player = new Plyr(iframe, {
+    iframes.forEach(function (iframe) {
+        var player = new Plyr(iframe, {
 
-        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-        clickToPlay: true,
-        hideControls: false,
-        showPosterOnEnd: true,
+            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+            clickToPlay: true,
+            hideControls: false,
+            showPosterOnEnd: true,
 
-    });
+        });
 
-    player.toggleControls(false);
-    player.on('play', function () {
-        player.toggleControls(true);
-    });
+        player.toggleControls(false);
+        player.on('play', function () {
+            player.toggleControls(true);
+        });
 
-}
-);
+    }
+    );
 
 
 
@@ -254,6 +254,7 @@ btnPrevisualizar.addEventListener('click', function (event) {
             clickToPlay: true,
             hideControls: false,
             showPosterOnEnd: true,
+            disableYouTube: true 
 
         });
 
