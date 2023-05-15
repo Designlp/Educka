@@ -214,7 +214,7 @@ iframes.forEach(function (iframe) {
         hideControls: true,
         
         showPosterOnEnd: true,
-        disableYouTube: true, 
+        disableYouTube: false, 
         youtube: {
             noCookie: true,
             enablejsapi:1,
@@ -228,17 +228,7 @@ iframes.forEach(function (iframe) {
             disablekb:1
           },
     });
-    player = new window['YT'].Player('player', {
-        videoId: this.mediaid,
-        width: '100%',
-        playerVars: { 
-            'autoplay': 1,
-            'controls': 0,
-            'autohide': 1,
-            'wmode': 'opaque',
-            'origin': 'http://localhost:8100' 
-        },
-    })
+    
 
 }
 );
