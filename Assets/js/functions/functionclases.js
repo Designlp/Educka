@@ -270,7 +270,6 @@ btnPrevisualizar.addEventListener('click', function (event) {
                              showinfo: 0,
                              iv_load_policy: 3,
                              controls:0,
-                             host: window.location.hostname,
                              disableClickHandling: true,
                              disablekb:1
                           },
