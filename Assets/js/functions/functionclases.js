@@ -212,6 +212,7 @@ iframes.forEach(function (iframe) {
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
         clickToPlay: false,
         hideControls: false,
+        settings: [],
         showPosterOnEnd: true,
         disableYouTube: true, 
         youtube: {
