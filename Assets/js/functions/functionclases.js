@@ -210,7 +210,7 @@ iframes.forEach(function (iframe) {
     var player = new Plyr(iframe, {
 
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-        clickToPlay: true,
+        clickToPlay: false,
         hideControls: false,
         showPosterOnEnd: true,
         disableYouTube: true, 
