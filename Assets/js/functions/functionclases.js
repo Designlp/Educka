@@ -233,18 +233,16 @@ btnPrevisualizar.addEventListener('click', function (event) {
             clickToPlay: true,
             hideControls: false,
             showPosterOnEnd: true,
-            disableYouTube: true 
-
-        });
-        player.source = {
+            disableYouTube: true,
             type: 'video',
             sources: [
               {
                 src: enlace,
                 provider: 'youtube',
-              },
-            ],
-          };
+              }]
+
+        });
+   
 
         player.toggleControls(false);
         player.on('play', function () {
