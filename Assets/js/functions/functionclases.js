@@ -223,12 +223,22 @@ iframes.forEach(function (iframe) {
             showinfo: 0,
             iv_load_policy: 3,
             controls:0,
-            origin:'http://localhost:9000',
+            origin:'https://educka.online',
             disableClickHandling: true,
             disablekb:1
           },
     });
-
+    player = new window['YT'].Player('player', {
+        videoId: this.mediaid,
+        width: '100%',
+        playerVars: { 
+            'autoplay': 1,
+            'controls': 0,
+            'autohide': 1,
+            'wmode': 'opaque',
+            'origin': 'http://localhost:8100' 
+        },
+    })
 
 }
 );
