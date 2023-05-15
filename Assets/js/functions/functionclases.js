@@ -203,7 +203,27 @@ function fntclasescurso() {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
+const iframes = document.querySelectorAll("#player");
 
+
+iframes.forEach(function (iframe) {
+    var player = new Plyr(iframe, {
+
+        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+        clickToPlay: true,
+        hideControls: false,
+        showPosterOnEnd: true,
+        disableYouTube: true 
+
+    });
+
+    player.toggleControls(false);
+    player.on('play', function () {
+        player.toggleControls(true);
+    });
+
+}
+);
 
 
 const btnPrevisualizar = document.getElementById('btnprevisualizar');
