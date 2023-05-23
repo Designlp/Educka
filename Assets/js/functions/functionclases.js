@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 $('#tableclases').DataTable();
 function openmodal() {
     document.querySelector('#idclase').value = "";
+    document.querySelector('#materialfile').value = "";listfile();
     document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";
     document.querySelector('.modal-header').classList.replace("headerupdate", "headerregister");
     document.querySelector('#btnactionform').classList.replace("btn-info", "btn-primary");
@@ -80,11 +81,11 @@ window.addEventListener('load', function () {
 
 
 //Updates
-function fnteditcurso() {
-    var btneditusuario = Array.apply(null, document.querySelectorAll(".btneditcurso"));
-    btneditusuario.forEach(function (btneditusuario) {
+function fnteditclase() {
+    var btnedit = Array.apply(null, document.querySelectorAll(".btneditclase"));
+    btnedit.forEach(function (btnedit) {
 
-        btneditusuario.addEventListener("click", function () {
+        btnedit.addEventListener("click", function () {
             //alert("Click to close...");s
             document.querySelector('#titlemodal').innerHTML = "Actualizar Usuario";
             document.querySelector('.modal-header').classList.replace("headerregister", "headerupdate");
@@ -94,7 +95,7 @@ function fnteditcurso() {
             var idkey = this.getAttribute("rl");
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             //El getusuario esta en Singular !Cuidado confunfir!
-            var ajaxUrl = baseurl + '/Cursos/getcurso/' + idkey;
+            var ajaxUrl = baseurl + '/Clases/getclase/' + idkey;
             request.open("GET", ajaxUrl, true);
             request.send();
             request.onreadystatechange = function () {
@@ -103,16 +104,20 @@ function fnteditcurso() {
                     var objdata = JSON.parse(request.responseText);
 
                     if (objdata.status) {
-                        document.querySelector("#idcurso").value = objdata.data.idcurso;
-                        document.querySelector("#txttitulo").value = objdata.data.titulo;
+                        document.querySelector("#idclase").value = objdata.data.idclases;
+                        document.querySelector("#txttitulo").value = objdata.data.titclase;
                         document.querySelector("#txtdescripcion").value = objdata.data.descripcion;
+                        document.querySelector("#txtenlace").value = objdata.data.enlace;
 
-                        $('#listpriv').val(objdata.data.privado).trigger('change');
+                        if(objdata.data.archivourl != '' && objdata.data.archivos != ''){
+                            fileupdateexist(objdata.data.archivourl,objdata.data.archivos);
+                        }
+
                         $('#liststatus').val(objdata.data.estado).trigger('change');
 
 
 
-                        $('#modalformcursos').modal("show");
+                        $('#modalformclases').modal("show");
                     } else {
                         swal("Error", objdata.msg, "error");
                     }
@@ -202,6 +207,94 @@ function fntclasescurso() {
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
+
+var _validFileExtensions = [".pdf", ".doc", ".docx", ".zip", ".rar", ".7z"];
+function ValidateSingleInput(oInput) {
+    if (oInput.type == "file") {
+        var sFileName = oInput.value;
+        if (sFileName.length > 0) {
+            var blnValid = false;
+            for (var j = 0; j < _validFileExtensions.length; j++) {
+
+                var sCurExtension = _validFileExtensions[j];
+                
+                if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                    document.querySelector('#validatearchivo').classList.add('d-none');
+                    document.querySelector('#validatearchivo').innerHTML = '';
+                    blnValid = true;
+                    break;
+                }
+            }
+
+            if (!blnValid) {
+                document.querySelector('#validatearchivo').classList.remove('d-none');
+                document.querySelector('#validatearchivo').innerHTML = `Formato invalido, solo se aceptan archivos ${_validFileExtensions.join(", ")}`;
+                oInput.value = "";
+                return false;
+            }else{
+                listfile();
+            }
+
+
+        }
+    }
+    return true;
+}
+
+function listfile(){
+    var input = document.getElementById('materialfile')
+    var output = document.getElementById('fileList');
+    var children = "";
+    for (var i = 0; i < input.files.length; ++i) {
+        children +=  '<li>'+ input.files.item(i).name + ' <span class="remove-list" onclick="removefile(this)"><i class="fa fa-fw fa-lg fa-times-circle"></i></span>' + '</li>'
+    }
+    output.innerHTML = children;
+
+
+}
+
+function removefile(elemento){
+    var parentElement = elemento.parentNode;
+  var inputArchivo = parentElement.querySelector('input[type="file"]');
+  
+  parentElement.remove();
+  
+  if (inputArchivo) {
+    inputArchivo.value = '';
+  }
+}
+
+
+function fileupdateexist(ruta,nombrefile){
+    var inputArchivo = document.getElementById("materialfile");
+
+// URL del archivo existente
+var urlArchivoExistente = ruta; // Reemplaza con la URL de tu archivo existente
+
+// Obtener el archivo existente mediante fetch
+fetch(urlArchivoExistente)
+  .then(response => response.blob())
+  .then(blob => {
+    // Crear un objeto File a partir del Blob
+    var archivoExistente = new File([blob], nombrefile);
+
+    // Crear un objeto DataTransfer y agregar el archivo existente a él
+    var dataTransfer = new DataTransfer();
+    dataTransfer.items.add(archivoExistente);
+
+    // Establecer el valor del input de archivo utilizando el objeto DataTransfer
+    inputArchivo.files = dataTransfer.files;
+    if (inputArchivo.files.length > 0) {
+    
+        }
+    listfile();
+  })
+  .catch(error => {
+    console.log("Error al obtener el archivo existente:", error);
+  });
+  
+}
+
 
 // const iframes = document.querySelectorAll("#player");
 

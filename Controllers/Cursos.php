@@ -10,20 +10,18 @@
         
         //Visualizacion
         public function Cursos(){
-
-       
             $data['page_tag'] = "Usuarios";
             $data['page_title']= "Pagina Principal";
             $data['page_name'] = "usuarios";
             $data['page_js'] = "functioncursos.js";
-    
-            $this->views->getview($this,"cursos",$data);
             
+            $this->views->getview($this,"cursos",$data);
+                
         }
         //Visualizacion
         public function getcursos(){
             $arrdata= $this->model->selectcursos();
-
+            $script='';
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-success">Activo</span>';

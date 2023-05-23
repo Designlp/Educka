@@ -1467,6 +1467,9 @@ headeradmin($data);
 
                 <!-- // END Page Content -->
 
-<?php 
-  footeradmin($data);
+                <?php 
+
+footeradmin($data);
+
+footerscript($data);
 ?>

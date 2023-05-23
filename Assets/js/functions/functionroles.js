@@ -180,3 +180,48 @@ function fntdelrol(){
         });
     });
 }
+
+
+function fntpermisosrol(){
+    var btn = document.querySelectorAll(".btnpermisorol");
+    btn.forEach(function(btn){
+        btn.addEventListener("click",function(){
+            var idrol = this.getAttribute("rl");
+            var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            var ajaxUrl = baseurl+'/Permisos/getpermisos/'+idrol;
+            request.open("GET",ajaxUrl,true);
+            request.send();
+            request.onreadystatechange =function(){
+                if(request.readyState ==4 && request.status==200){
+                    //console.log(request.responseText);
+                    document.querySelector('#contentajax').innerHTML= request.responseText;
+                    $('#modalpermisos').modal("show");
+                    document.querySelector('#formpermisos').addEventListener('submit',fntsavepermisos,false);
+                }
+            }
+            
+        });
+    });
+}
+
+function fntsavepermisos(event){
+    event.preventDefault();
+    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    var ajaxUrl = baseurl+'/Permisos/setpermisos';
+    var formpermisos= document.querySelector("#formpermisos");
+    var formdata=new FormData(formpermisos);
+
+    request.open("POST",ajaxUrl,true);
+    request.send(formdata);
+    request.onreadystatechange = function(){
+        if(request.readyState==4 && request.status ==200){
+            var obdata = JSON.parse(request.responseText);
+            if(obdata.status){
+                swal("Permisos de Usuario",obdata.msg,"success");
+                $('#modalpermisos').modal("hide");
+            }else{
+                swal("Error",obdata.msg,"error");
+            }
+        }
+    }
+}

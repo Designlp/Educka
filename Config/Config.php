@@ -1,14 +1,17 @@
 <?php 
 
-    const BASE_URL = "https://educka.online";
+    const BASE_URL = "http://localhost/Educka-1";
 
     //Zona horaria
 	date_default_timezone_set('UTC');
     
     const DB_HOST = "localhost";
-    const DB_NAME = "u532654912_db_educkaoln";
-    const DB_USER = "u532654912_educkauserdb";
-    const DB_PASSWORD = "Edk.Oln2320";
+    const DB_NAME = "db_educkaonline";
+    //no funca ya lo importe eso vi valio :( )
+    //const DB_USER = "u532654912_educkauserdb";//  errores
+    //const DB_PASSWORD = "Edk.Oln2320";
+    const DB_USER = "root";
+    const DB_PASSWORD = "";
     const DB_CHARSET = "utf8";
 
     const NOMBRE_REMITENTE = "Educka Cursos online";

@@ -20,11 +20,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label class="control-label">Nombre</label>
-                            <input class="form-control" id="txtnombre" name="txtnombre" minlength="2" maxlength="20" pattern="[a-zA-Z ]{2,20}" type="text" placeholder="Nombre de la categoria" required="">
+                            <input class="form-control" id="txtnombre" name="txtnombre"  type="text" placeholder="Nombre de la categoria" required="">
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Descripcion</label>
-                            <input class="form-control" id="txtdescripcion" name="txtdescripcion" minlength="4" maxlength="50" pattern="[a-zA-Z ]{4,20}" type="text" placeholder="Descripcion" required="">
+                            <input class="form-control" id="txtdescripcion" name="txtdescripcion"  type="text" placeholder="Descripcion" required="">
                         </div>
                     </div>
                

@@ -6,6 +6,9 @@
             if(empty($_SESSION['login'])){
                 header('Location: '.base_url()."/login");
             }
+            if(empty($_SESSION['idcurso'])){
+                header('Location: '.base_url()."/Cursos");
+            }
         }
         
         //Visualizacion
@@ -26,7 +29,7 @@
             $idcurso = $_SESSION['idcurso'];
 
             $arrdata= $this->model->selectclases($idcurso);
-
+            $script='';
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-success">Activo</span>';
@@ -39,16 +42,16 @@
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
                 <div class="dropdown-menu dropdown-menu-right" style="">
                 
-                    <a class="dropdown-item btneditcurso" rl="'.$arrdata[$i]['idcurso'].'">Editar</a>
-                    <a class="dropdown-item btnclases" rl="'.$arrdata[$i]['idcurso'].'">Clases</a>
+                    <a class="dropdown-item btneditclase" rl="'.$arrdata[$i]['idclases'].'">Editar</a>
+          
                     <div class="dropdown-divider"></div>
-                    <a  class="dropdown-item text-danger btndelcurso" rl="'.$arrdata[$i]['idcurso'].'">Eliminar</a>
+                    <a  class="dropdown-item text-danger btndelclase" rl="'.$arrdata[$i]['idclases'].'">Eliminar</a>
                 </div>
                 </div>';
 
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditcurso(); fntclasescurso(); fntdelcurso();</script>';
+                    $script='<script type="text/javascript"> fnteditclase(); fntclasescurso(); fntdelcurso();</script>';
                 }
 
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
@@ -59,11 +62,11 @@
         }
 
 
-        public function getcurso($idcurso){
+        public function getclase($idclase){
             
-            $intkey=intval(strclean($idcurso));
+            $intkey=intval(strclean($idclase));
             if ($intkey>0){
-                $arrdata = $this->model->selectcurso($intkey);
+                $arrdata = $this->model->selectclase($intkey);
                 if(empty($arrdata)){
                     $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
                 }else{
@@ -84,25 +87,50 @@
             $strtitulo=strclean($_POST['txttitulo']);
             $strdescripcion=strclean($_POST['txtdescripcion']);
             $strenlace=$_POST['txtenlace'];
-            
+
+            $filename = $_FILES['materialfile']['name'];
+            $filetamanio = $_FILES['materialfile']['size'];
+            $temp = $_FILES['materialfile']['tmp_name'];
+            $fileurl = './Assets/archivos/materiales/' . $filename;
+          
             $intstatus=1;
  
             if($intidclase == 0){
                  $requestrol=$this->model->insertclase($idcurso,$strtitulo, $strdescripcion,$strenlace,$intstatus);
+                 $filename = $strtitulo.' - '.$requestrol.'.pdf';
+                 $fileurl = './Assets/archivos/materiales/' . $filename;
+                 $requestfile=$this->model->insertfile($requestrol,$filename, $fileurl);
                  $option=1;
+                 
             }
             if($intidclase != 0){
-                 $requestrol=$this->model->updatecurso( $intidcurso,$strtitulo,$strdescripcion, $intprivate,$intstatus);
+                 $requestrol=$this->model->updateclase($intidclase,$idcurso,$strtitulo, $strdescripcion,$strenlace,$intstatus);
+                 $filename = $strtitulo.' - '.$intidclase.'.pdf';
+                 $fileurl = './Assets/archivos/materiales/' . $filename;
+                 $requestfile=$this->model->insertfile($intidclase,$filename, $fileurl);
                  $option=2;
+                 
             }
  
             if($requestrol > 0){
  
                  if($option == 1 ){
                      $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
+                     if (file_exists($fileurl)) {
+                        unlink($fileurl);
+                        move_uploaded_file($temp, $fileurl);
+                    }else{
+                        move_uploaded_file($temp, $fileurl);
+                    }
                  }
                  if($option == 2 ){
                      $arrresponse= array('status'=>true,'msg'=>'Datos Actualizados Correctamente');
+                     if (file_exists($fileurl)) {
+                        unlink($fileurl);
+                        move_uploaded_file($temp, $fileurl);
+                    }else{
+                        move_uploaded_file($temp, $fileurl);
+                    }
                  }
                  
             }else{

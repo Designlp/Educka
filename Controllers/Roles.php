@@ -19,20 +19,22 @@
         //Visualizacion
         public function getroles(){
             $arrdata= $this->model->selectroles();
-
+            $script='';
+        $script='';
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-success">Activo</span>';
                 }else{
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
                 }
+                //<button class="btn btn-secondary btn-sm btnpermisostyle btnpermisorol" rl="'.$arrdata[$i]['IdRoles'].'" title="Permisos" type="button"><i class="fas fa-key"></i></button>
                 //Id Usuario de acuerdo a su tabla en la base de datos esto recupera los datos de la BD
                 //El funcion fntwiew ya se inicializa con un evento
                 //$btnview='<button class="btn btn-info btn-sm btnviewsstyle btnviewroles" onClick="fntviewcliente('.$arrdata[$i]['idroles'].')" title="Ver usuario"><i class="far fa-eye"></i></button>';
   
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditrol(); fntdelrol();</script>';
+                    $script='<script type="text/javascript"> fnteditrol(); fntdelrol();fntpermisosrol();</script>';
                 }
 
 
@@ -42,6 +44,7 @@
                 
                 
                     <a class="dropdown-item btneditroles" rl="'.$arrdata[$i]['idroles'].'">Editar</a>
+                    <a class="dropdown-item btnpermisorol" rl="'.$arrdata[$i]['idroles'].'">Permisos</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger btndelroles" rl="'.$arrdata[$i]['idroles'].'">Eliminar</a>
                 </div>

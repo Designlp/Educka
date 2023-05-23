@@ -4,12 +4,17 @@
         //Nivel de accesos
 
         private $intidcurso;
-        private $intidusuario;
+        
+        private $intidclase;
+
         private $strenlace;
         private $strtitulo;
         private $strdescripcion;
-        private $intprivado;
+
         private $intestado;
+
+        private $strfilename;
+        private $strfileurl;
      
 
         public function __construct() {
@@ -27,31 +32,35 @@
             return $request;
         }
 
-        public function selectcurso(int $idcurso){
-            $this->intidcurso= $idcurso;
+        public function selectclase(int $idclase){
+            $this->intidclase= $idclase;
 
-            $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.descripcion, tc.titulo, tc.privado, tc.estado
-            FROM tcursos tc
-            JOIN tusuarios tu ON tc.idusuario = tu.idusuario 
-            WHERE tc.estado != 0 AND tc.idcurso = $this->intidcurso";
+            $sql= "SELECT tcl.idclases ,tcl.enlace ,tcl.archivos,tcl.archivourl, tcl.descripcion ,tc.idcurso, tc.titulo AS titcurso, tcl.titulo AS titclase, tcl.estado
+            FROM tclases tcl 
+            JOIN tcursos tc ON tc.idcurso  = tcl.idcurso  
+            WHERE tcl.estado != 0 AND tcl.idclases =  $this->intidclase";
 
             $request=$this->select($sql);
             return $request;
         }
 
 
-        public function insertclase(int $idcurso,string $titulo, string $descripcion, string $enlace, int $estado){
+        public function insertclase(int $idcurso,string $titulo, string $descripcion, string $enlace,int $estado){
  
             $this->intidcurso = $idcurso;
 			$this->strtitulo = $titulo;
 			$this->strdescripcion = $descripcion;
             $this->strenlace = $enlace;
+
+     
+
             $this->intestado = $estado;
-           
+
+        
 			$return = 0;
 
 			$sql = "SELECT titulo FROM tclases
-                    WHERE titulo = '$this->strtitulo'";
+                    WHERE titulo = '$this->strtitulo' AND idcurso = $this->intidcurso";
 
 			$request = $this->selectall($sql);
 
@@ -76,22 +85,26 @@
         }
 
         //Update
-        public function updatecurso(int $idcurso, string $titulo, string $descripcion, int $private, int $estado){
+        public function updateclase(int $idclase,int $idcurso,string $titulo, string $descripcion, string $enlace,int $estado){
             
+            $this->intidclase = $idclase;
             $this->intidcurso = $idcurso;
 			$this->strtitulo = $titulo;
 			$this->strdescripcion = $descripcion;
-            $this->strenlace = $private;
+            $this->strenlace = $enlace;
+
             $this->intestado = $estado;
 
-            $sql = "SELECT titulo FROM tcursos 
-                    WHERE titulo = '{$this->strtitulo}' AND idcurso != $this->intidcurso";
+
+            $sql = "SELECT titulo FROM tclases 
+                    WHERE titulo = '$this->strtitulo' AND idclases != $this->intidclase AND idcurso = $this->intidcurso";
 
             $requestupdate = $this->selectall($sql);
             
             if(empty($requestupdate)){
-                $queryupdate="UPDATE tcursos SET titulo=?,descripcion=? ,privado = ?, estado = ? WHERE idcurso=$this->intidcurso";
-                $arrdata = array($this->strtitulo,$this->strdescripcion,$this->intprivado,$this->intestado);
+                $queryupdate="UPDATE tclases SET titulo=?,enlace=? ,descripcion = ?, estado = ? WHERE idclases =$this->intidclase";
+
+                $arrdata = array($this->strtitulo,$this->strenlace,$this->strdescripcion,$this->intestado);
                 $requestupdate= $this->update($queryupdate,$arrdata);
                 $return=$requestupdate;
             }else{
@@ -102,7 +115,18 @@
 
         }
 
+        public function insertfile(int $idclase,string $filename ,string $fileurl){
+            $this->intidclase = $idclase;
+            $this->strfilename = $filename;
+            $this->strfileurl = $fileurl;
+            $queryupdate="UPDATE tclases SET archivos = ?,archivourl=?  WHERE idclases = $this->intidclase";
 
+            $arrdata = array($this->strfilename,$this->strfileurl);
+            $requestupdate= $this->update($queryupdate,$arrdata);
+            $return=$requestupdate;
+        }
+
+        
         public function deletecurso(int $idcurso){
             
             $this->intidcurso=$idcurso;

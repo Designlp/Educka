@@ -17,6 +17,13 @@
 
              <div class="flex d-flex flex-column justify-content-start" data-perfect-scrollbar>
                  <ul class="nav flex-shrink-0 flex-nowrap flex-column sidebar-menu mb-0 js-sidebar-mini-tabs" role="tablist">
+                      <!-- data-toggle="tooltip" sin hover de texto-->
+                      <li class="sidebar-menu-item active" data-title="Usuarios" data-placement="right" data-container="body" data-boundary="window">
+                         <a class="sidebar-menu-button" href="#sm_components" data-toggle="tab" role="tab" aria-controls="sm_components">
+                             <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dashboard</i>
+                             <span class="sidebar-menu-text">Usuarios</span>
+                         </a>
+                     </li>
                      <!-- data-toggle="tooltip" sin hover de texto-->
                      <li class="sidebar-menu-item active" data-title="Usuarios" data-placement="right" data-container="body" data-boundary="window">
                          <a class="sidebar-menu-button" href="#sm_components" data-toggle="tab" role="tab" aria-controls="sm_components">
@@ -27,7 +34,7 @@
                      <!-- data-toggle="tooltip" sin hover de texto-->
                      <li class="sidebar-menu-item" data-title="Layouts" data-placement="right" data-boundary="window">
                          <a class="sidebar-menu-button" href="#sm_layouts" data-toggle="tab" role="tab" aria-controls="sm_layouts" aria-selected="false">
-                             <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">view_compact</i>
+                             <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
                              <span class="sidebar-menu-text">Layouts</span>
                          </a>
                      </li>
@@ -42,10 +49,10 @@
          <div class="sidebar sidebar-light sidebar-left flex sidebar-secondary pt-16pt" data-perfect-scrollbar>
 
              <div class="tab-content">
-                 <div class="tab-pane" id="sm_components">
+                 <div class="tab-pane fade active show" id="sm_components">
                      <div class="sidebar-heading">Usuarios</div>
                      <ul class="sidebar-menu">
-                         <li class="sidebar-menu-item">
+                         <li class="sidebar-menu-item active">
                              <a class="sidebar-menu-button" data-toggle="collapse" href="#components_menu">
                                  <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">group</span>
                                  Usuarios
@@ -94,47 +101,21 @@
                          </li>
                      </ul>
                  </div>
+                 
                  <div class="tab-pane" id="sm_layouts">
-                     <div class="sidebar-heading">Layouts</div>
+                     <div class="sidebar-heading">Cursos</div>
                      <ul class="sidebar-menu">
                          <li class="sidebar-menu-item">
-                             <a class="sidebar-menu-button" href="../Compact_App_Layout/index.html">
-                                 <span class="sidebar-menu-text">Compact</span>
+                             <a class="sidebar-menu-button"  href="<?=base_url()?>/Cursos">
+                             <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">school</span>
+                                 <span class="sidebar-menu-text">Cursos</span>
                              </a>
                          </li>
-                         <li class="sidebar-menu-item active">
-                             <a class="sidebar-menu-button" href="../Mini_App_Layout/index.html">
-                                 <span class="sidebar-menu-text">Mini</span>
-                             </a>
-                         </li>
-                         <li class="sidebar-menu-item">
-                             <a class="sidebar-menu-button" href="../Mini_Secondary_Layout/index.html">
-                                 <span class="sidebar-menu-text">Mini + Secondary</span>
-                             </a>
-                         </li>
-                         <li class="sidebar-menu-item">
-                             <a class="sidebar-menu-button" href="../App_Layout/index.html">
-                                 <span class="sidebar-menu-text">App</span>
-                             </a>
-                         </li>
-                         <li class="sidebar-menu-item">
-                             <a class="sidebar-menu-button" href="../Boxed_App_Layout/index.html">
-                                 <span class="sidebar-menu-text">Boxed</span>
-                             </a>
-                         </li>
-                         <li class="sidebar-menu-item">
-                             <a class="sidebar-menu-button" href="../Sticky_App_Layout/index.html">
-                                 <span class="sidebar-menu-text">Sticky</span>
-                             </a>
-                         </li>
-                         <li class="sidebar-menu-item">
-                             <a class="sidebar-menu-button" href="../Fixed_Layout/index.html">
-                                 <span class="sidebar-menu-text">Fixed</span>
-                             </a>
-                         </li>
+                        
                      </ul>
                  </div>
-             </div>
+             
+            </div>
          </div>
 
      </div>

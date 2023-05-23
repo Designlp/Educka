@@ -22,7 +22,7 @@
 
         public function selectcategoria(int $iduser){
             $this->intcategorias= $iduser;
-            $sql= "SELECT tc.idcategoria, tc.nombre, tc.descripcion, tu.estado
+            $sql= "SELECT tc.idcategoria, tc.nombre, tc.descripcion, tc.estado
             FROM tcategoria tc
             WHERE tc.idcategoria = $this->intcategorias";
             $request=$this->select($sql);
@@ -47,7 +47,7 @@
 								  VALUES(?,?,?)";
 	        	$arrdata = array($this->strnombre,
                                 $this->strdescripcion,
-                                $this->intestado,
+                                $this->intestado
                             );
 	        	$request = $this->insert($query,$arrdata);
 	        	$return = $request;
@@ -58,30 +58,24 @@
             return $return;
         }
         //Update
-        public function updatecategorias(int $idusuario,string $ci,string $nombre, string $apellido, string $correo ,int $telefono, int $estado){
+        public function updatecategorias(int $idcategorias,string $nombre, string $descripcion, int $estado){
 			
-            $this->intidusuario = $idusuario;
-			$this->strci        = $ci;
+            $this->intcategorias = $idcategorias;
 			$this->strnombre    = $nombre;
-			$this->strapellido  = $apellido;
-            $this->strcorreo = $correo;
-			$this->inttelefono  = $telefono;
+			$this->strdescripcion  = $descripcion;
             $this->intestado     = $estado;
             
 
-            $sql= "SELECT * FROM tusuarios WHERE nombre='{$this->strnombre}' AND apellidos='{$this->strapellido}' AND idusuario != $this->intidusuario";
+            $sql= "SELECT * FROM tcategoria WHERE nombre='$this->strnombre' AND idcategoria != $this->intcategorias";
             $requestupdate = $this->selectall($sql);
             
             if(empty($requestupdate)){
 
-                    $queryupdate="UPDATE tusuarios SET ci=?, nombre=?, apellidos=?, correo=?,telefono=?,estado=? WHERE idusuario=$this->intidusuario";
+                    $queryupdate="UPDATE tcategoria SET nombre=?, descripcion=?,estado=? WHERE idcategoria =$this->intcategorias";
                     $arrdata = array(
-        						$this->strci,
-        						$this->strnombre,
-                                $this->strapellido,
-        						$this->strcorreo,
-        						$this->inttelefono,
-                                $this->intestado
+                        $this->strnombre,
+                        $this->strdescripcion,
+                        $this->intestado
                                 //Cuidao al borrar
                     );
                 $requestupdate= $this->update($queryupdate,$arrdata);
@@ -95,18 +89,36 @@
 
         }
    
-        public function settokenuser(int $iduser, string $token){
-            $this->intidusuario = $iduser;
-            $this->strtoken= $token;
-            $queryupdate="UPDATE tusuarios SET token = ? WHERE idusuario =$this->intidusuario";
-            $arrdata = array($this->strtoken);
-            $requestupdate= $this->update($queryupdate,$arrdata);
-            return $requestupdate;
-                
-        }
+  
         //Delete
       
+   //Delete
+   public function deletecategoria(int $idcategoria){
+            
+    $this->intcategorias=$idcategoria;
 
+
+  //  $sql= "SELECT * FROM tcategoria WHERE idcategoria=$this->intcategorias";
+//$requestdelete = $this->selectall($sql);
+    
+    //if(empty($requestdelete)){
+        $querydelete="UPDATE tcategoria SET estado=? WHERE idcategoria = $this->intcategorias";
+        $arrdata = array(0);
+        $requestdelete= $this->update($querydelete,$arrdata);
+        if($requestdelete){
+            $requestdelete='ok';
+            $return=$requestdelete;
+        }else{
+            $request='error';
+            $return=$request;
+        }
+    //}else{
+      //  $return='existe';
+  //  }
+    
+    return $return;
+
+}
 
     }
 

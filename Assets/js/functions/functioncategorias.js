@@ -103,7 +103,6 @@ function fnteditcategorias(){
                         document.querySelector("#idcategoria").value=objdata.data.idcategoria;
                         document.querySelector("#txtnombre").value=objdata.data.nombre;
                         document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
-        
                         $('#liststatus').val(objdata.data.estado).trigger('change');
                         $('#modalformcategorias').modal("show");
                     }else{
@@ -121,14 +120,14 @@ function fnteditcategorias(){
 
 function fntdelcategorias(){
    
-    var btndeldocentes = document.querySelectorAll(".btndeldocentes");
+    var btndelcategorias = document.querySelectorAll(".btndelcategorias");
 
-    btndeldocentes.forEach(function(btndeldocentes){
-        btndeldocentes.addEventListener("click",function(){
-            var idusuarios = this.getAttribute("rl");
+    btndelcategorias.forEach(function(btndelcategorias){
+        btndelcategorias.addEventListener("click",function(){
+            var idcategoria = this.getAttribute("rl");
             swal({
-                title:"Eliminar Docente",
-                text: "¿Realmente Quiere eliminar el Estudiante?",
+                title:"Eliminar Categorias",
+                text: "¿Realmente Quiere eliminar el Categorias?",
                 type:"warning",
                 showCancelButton:true,
                 confirmButtonText: "Si, Eliminar",
@@ -138,8 +137,8 @@ function fntdelcategorias(){
             },function(isConfirm){
                 if(isConfirm){
                 var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-                var ajaxUrl = baseurl+'/Usuarios/delusuario/';
-                var strdata = "idusuario="+idusuarios;
+                var ajaxUrl = baseurl+'/Categorias/delcategoria/';
+                var strdata = "idcategoria="+idcategoria;
                 request.open("POST",ajaxUrl,true);
                 request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 request.send(strdata);
@@ -169,40 +168,5 @@ function fntdelcategorias(){
     });
 }
 
-//Ver al usuario
-function fntviewcliente(idpersona){
-    var idpersona = idpersona;
-    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxurl = baseurl+'/Usuarios/getusuario/'+idpersona;
-    request.open("GET",ajaxurl,true);
-    request.send();
-    request.onreadystatechange = function(){
-        if(request.readyState == 4 && request.status == 200){
-            var objdata = JSON.parse(request.responseText);
-            if(objdata.status)
-            {
-               var estadoUsuario = objdata.data.Estado == 1 ? 
-                '<span class="badge badge-success">Activo</span>' : 
-                '<span class="badge badge-danger">Inactivo</span>';
 
-                var ci =objdata.data.ci;
-                var nombre= objdata.data.nombre;
-                var apellido = objdata.data.apellidos;
-                var telefono = objdata.data.telefono;
-                var correo= objdata.data.correo;
-                var pendiente="Datos Pendientes";
 
-                document.querySelector("#celIdentificacion").innerHTML = (ci != null) ? ci : pendiente;
-                document.querySelector("#celNombre").innerHTML = (nombre != null) ? nombre : pendiente;
-                document.querySelector("#celApellido").innerHTML = (apellido != null) ? apellido : pendiente;
-                document.querySelector("#celTelefono").innerHTML = (telefono != null) ? telefono : pendiente;
-                document.querySelector("#celEmail").innerHTML = (correo != null) ? correo : pendiente;
-                document.querySelector("#celEstado").innerHTML = estadoUsuario;
-         
-                $('#modalviewuser').modal('show');
-            }else{
-                swal("Error", objdata.msg , "error");
-            }
-        }
-    }
-}

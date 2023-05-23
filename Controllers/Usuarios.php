@@ -23,7 +23,7 @@
         //Visualizacion
         public function getusuarios(){
             $arrdata= $this->model->selectusuarios();
-
+            $script='';
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-success">Activo</span>';

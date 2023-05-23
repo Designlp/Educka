@@ -20,7 +20,7 @@
         //Visualizacion
         public function getcategorias(){
             $arrdata= $this->model->seleccategorias();
-
+            $script='';
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-success">Activo</span>';
@@ -28,21 +28,17 @@
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
                 }
 
-                if($arrdata[$i]['suscripcion']==1){
-                    $arrdata[$i]['suscripcion']='<span class="badge badge-pill badge-success">Activo</span>';
-                }else{
-                    $arrdata[$i]['suscripcion']='<span class="badge badge-pill badge-danger">Inactivo</span>';
-                }
               
                 $crudopciones='<div class="dropdown">
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
-                <div class="dropdown-menu dropdown-menu-right" style="">
-                    <a onClick="fntviewcliente('.$arrdata[$i]['idcategoria '].')" class="dropdown-item">Detalles</a>
-                    <a class="dropdown-item btneditcategorias" rl="'.$arrdata[$i]['idcategoria '].'">Editar</a>
-                    <div class="dropdown-divider"></div>
-                    <a  class="dropdown-item text-danger btndelcategorias" rl="'.$arrdata[$i]['idcategoria '].'">Eliminar</a>
+                    <div class="dropdown-menu dropdown-menu-right" style="">
+                        <a onClick="fntviewcliente('.$arrdata[$i]['idcategoria'].')" class="dropdown-item">Detalles</a>
+                        <a class="dropdown-item btneditcategorias" rl="'.$arrdata[$i]['idcategoria'].'">Editar</a>
+                        <div class="dropdown-divider"></div>
+                        <a  class="dropdown-item text-danger btndelcategorias" rl="'.$arrdata[$i]['idcategoria'].'">Eliminar</a>
+                    </div>
                 </div>
-                </div>';
+                ';
 
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
@@ -56,20 +52,7 @@
             die();
         }
 
-        public function getcategoria($idkey){
-            
-            $intkey=intval(strclean($idkey));
-            if ($intkey>0){
-                $arrdata = $this->model->selectcategoria($intkey);
-                if(empty($arrdata)){
-                    $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
-                }else{
-                    $arrresponse= array('status'=>true,'data'=>$arrdata);
-                }
-                echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
-            }
-            die();
-        }
+
 
 
         //Insert 
@@ -90,58 +73,90 @@
                 if($idcategorias == 0)
                 {
                     //Se incrementa mediante la respuesta del request de model
-                    $option = 1;
-                    $requestusuario = $this->model->insertcategorias(
+                   
+                    $requestcategorias = $this->model->insertcategorias(
                     $strnombre, 
                     $strdescripcion, 
                     $intestado
-                 );
-                }else{
-                    $option = 2;
-                    $requestusuario = $this->model->updatecategorias(
+                    );
+                    $option = 1;
+                    
+
+                }
+                if($idcategorias != 0){
+                  
+                    $requestcategorias = $this->model->updatecategorias(
                     $idcategorias,
                     $strnombre, 
                     $strdescripcion, 
                     $intestado
                     );
+                    $option = 2;
 
                 }
-                if($requestusuario > 0){
-
+                if($requestcategorias > 0){
+ 
                     if($option == 1 ){
                         $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
-                        $token= token();
-                        $nombreuser= $strnombre.' '.$strapellido;
-                        $stremail = strtolower(strclean($strcorreo));
-                        
-                        $urlrecuperar= base_url().'/Login/confirmuser/'.$stremail.'/'.$token;
-                        $requestupdate = $this->model->settokenuser($requestusuario,$token);
-
-                           $datausuario = array(
-                            'nombreuser'=>$nombreuser,
-                            'email'=>$stremail,
-                            'asunto'=>'Recuperar cuenta - '.NOMBRE_REMITENTE,
-                            'urlrecuperacion'=>$urlrecuperar
-                        );
-                        $sendemail= sendEmail($datausuario,'emailcambiopassword');
-
                     }
                     if($option == 2 ){
                         $arrresponse= array('status'=>true,'msg'=>'Datos Actualizados Correctamente');
                     }
                     
                }else{
-                    if($requestusuario == -1){
-                        $arrresponse= array('status'=>false,'msg'=>'!Atencion! El usuario ya existe');
+                    if($requestcategorias == -1){
+                        $arrresponse= array('status'=>false,'msg'=>'!Atencion! El rol ya existe');
                     }else
                     $arrresponse= array('status'=>true,'msg'=>'No se almaceno los datos');
                }
+               
+
+
+
             }
             echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
         }
         die();
         }
+        public function getcategoria($idkey){
+            
+            $intkey=intval(strclean($idkey));
+            if ($intkey>0){
+                $arrdata = $this->model->selectcategoria($intkey);
+                if(empty($arrdata)){
+                    $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
+                }else{
+                    $arrresponse= array('status'=>true,'data'=>$arrdata);
+                }
+                echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
+            }
+            die();
+        }
+
+
+        //Delete
+        public function delcategoria(){
+            if($_POST){
+                $intidcategoria=intval($_POST['idcategoria']);
+                $requestdelete=$this->model->deletecategoria($intidcategoria);
+                if($requestdelete == 'ok'){
+                    $arrresponse= array('status'=>true,'msg'=>'Datos Eliminados Correctamente'.$requestdelete);
+                
+                }else{
+                    if($requestdelete == 'existe'){
+                        $arrresponse= array('status'=>false,'msg'=>'No es Posible Eliminar Categoria 45 '.$requestdelete);
+                    }else
+                        $arrresponse= array('status'=>true,'msg'=>'No se elimino los datos'.$requestdelete);
+               }
+               echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
+            }
+            die();
+        }
+
+
+
     
 
 
     }
+?>

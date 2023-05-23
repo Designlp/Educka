@@ -43,10 +43,13 @@
 
                                             <div class="form-group m-0">
                                                 <div class="custom-file">
-                                                    <input  id="materialfile" name="materialfile" type="file"  class="custom-file-input">
-                                                    <label for="materialfile" class="custom-file-label">Añadir Material</label>
+                                                    <input  id="materialfile" name="materialfile" type="file" multiple  onchange="ValidateSingleInput(this)" class="custom-file-input" >
+                                                    <label for="materialfile" class="custom-file-label">Añadir Material</label><br><br>
+                                                    <small class="text-danger d-none" id="validatearchivo"></small>
                                                 </div>
+                                                <ul id="fileList" class="file-list"></ul>
                                             </div>
+                                            
 
                                         </div>
                                         <div class="col-md-6">
@@ -83,7 +86,7 @@
                                             <div class="page-separator">
                                                 <div class="page-separator__text">Opciones</div>
                                             </div>
-
+<!-- 
                                             <div class="card">
                                                 <div class="card-body">
                                                     <div class="form-group">
@@ -98,7 +101,7 @@
 
                                 
                                                 </div>
-                                            </div>
+                                            </div> -->
 
                                             <div class="tile-footer">
                                                 <button id="btnactionform" class="btn btn-primary" type="submit">

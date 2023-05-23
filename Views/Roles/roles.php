@@ -52,8 +52,10 @@ headeradmin($data);
 <?php
 footeradmin($data);
 getmodal('modalroles', $data);
+?>
+<div id="contentajax"></div>
+<?php
 footerscript($data);
-
 ?>
 
 </body>
