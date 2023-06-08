@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded",function(){
         "aProcessing":true,
         "aSeverSide":true,
         "language" :{
-            "url":"https://cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json"
+            "url":baseurl+"/Assets/js/plugins/es-ES.json"
         },
         "ajax":{
             "url":" "+baseurl+"/Cursos/getcursos",
