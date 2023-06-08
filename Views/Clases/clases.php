@@ -34,6 +34,7 @@
                                     <th>ID</th>
                                     <th>Curso</th>
                                     <th>Titulo</th>
+                                    <th>Privacidad</th>
                                     <th>Estado</th>
                                     <th>Acciones</th>
                                     </tr>

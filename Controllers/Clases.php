@@ -10,7 +10,7 @@
                 header('Location: '.base_url()."/Cursos");
             }
         }
-        
+            
         //Visualizacion
         public function Clases(){
 
@@ -36,7 +36,11 @@
                 }else{
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
                 }
-
+                if($arrdata[$i]['privacidad']==1){
+                    $arrdata[$i]['privacidad']='<span class="badge badge-pill badge-success">Publico</span>';
+                }else{
+                    $arrdata[$i]['privacidad']='<span class="badge badge-pill badge-danger">Privado</span>';
+                }
               
                 $crudopciones='<div class="dropdown">
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
@@ -89,23 +93,26 @@
             $strenlace=$_POST['txtenlace'];
 
             $filename = $_FILES['materialfile']['name'];
+            $extensionArchivo = pathinfo($filename, PATHINFO_EXTENSION);
             $filetamanio = $_FILES['materialfile']['size'];
             $temp = $_FILES['materialfile']['tmp_name'];
             $fileurl = './Assets/archivos/materiales/' . $filename;
           
-            $intstatus=1;
+            
+            $intprivacidad=intval($_POST['listprivacidad']);
+            $intstatus=intval($_POST['liststatus']);
  
             if($intidclase == 0){
-                 $requestrol=$this->model->insertclase($idcurso,$strtitulo, $strdescripcion,$strenlace,$intstatus);
-                 $filename = $strtitulo.' - '.$requestrol.'.pdf';
+                 $requestrol=$this->model->insertclase($idcurso,$strtitulo, $strdescripcion,$strenlace,$intprivacidad,$intstatus);
+                 $filename = 'Material de Clase - '.$requestrol.'.'.$extensionArchivo;
                  $fileurl = './Assets/archivos/materiales/' . $filename;
                  $requestfile=$this->model->insertfile($requestrol,$filename, $fileurl);
                  $option=1;
                  
             }
             if($intidclase != 0){
-                 $requestrol=$this->model->updateclase($intidclase,$idcurso,$strtitulo, $strdescripcion,$strenlace,$intstatus);
-                 $filename = $strtitulo.' - '.$intidclase.'.pdf';
+                 $requestrol=$this->model->updateclase($intidclase,$idcurso,$strtitulo, $strdescripcion,$strenlace,$intprivacidad,$intstatus);
+                 $filename = 'Material de Clase - '.$intidclase.'.'.$extensionArchivo;
                  $fileurl = './Assets/archivos/materiales/' . $filename;
                  $requestfile=$this->model->insertfile($intidclase,$filename, $fileurl);
                  $option=2;
@@ -147,13 +154,7 @@
          }
 
 
-         public function asingclases($idcurso){
-            $_SESSION['iduser']=$idcurso;
-            
-         }
- 
-        
-
+       
          public function delcurso(){
             if($_POST){
                 $intidcurso=intval($_POST['idcurso']);

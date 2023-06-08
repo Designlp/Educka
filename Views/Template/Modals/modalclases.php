@@ -86,22 +86,26 @@
                                             <div class="page-separator">
                                                 <div class="page-separator__text">Opciones</div>
                                             </div>
-<!-- 
+
                                             <div class="card">
                                                 <div class="card-body">
                                                     <div class="form-group">
-                                                        <label class="form-label">Categorías</label>
-                                                        <select name="category" class="form-control custom-select">
-                                                            <option value="vuejs">VueJs</option>
-                                                            <option value="vuejs">Angular</option>
-                                                            <option value="vuejs">React</option>
+                                                        <label class="form-label">Privacidad</label>
+                                                        <select id="listprivacidad" name="listprivacidad" class="form-control custom-select" data-toggle="select">
+                                                            <option value="0">Privado</option>
+                                                            <option value="1">Publico</option>
                                                         </select>
-                                                        <small class="form-text text-muted">Seleccione una categoría</small>
                                                     </div>
-
-                                
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="liststatus">Estado</label>
+                                                        <select id="liststatus" data-toggle="select" class="form-control custom-select" name="liststatus">
+                                                            <option value="1">Activo</option>
+                                                            <option value="2">Inactivo</option>
+                                                        </select>
+                                                    </div>
+                                                    <small class="form-text text-muted">Configuraciones básicas</small>
                                                 </div>
-                                            </div> -->
+                                            </div>
 
                                             <div class="tile-footer">
                                                 <button id="btnactionform" class="btn btn-primary" type="submit">

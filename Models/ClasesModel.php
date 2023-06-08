@@ -6,7 +6,7 @@
         private $intidcurso;
         
         private $intidclase;
-
+        private $intidprivacidad;
         private $strenlace;
         private $strtitulo;
         private $strdescripcion;
@@ -24,7 +24,7 @@
         //YO
         public function selectclases(int $idcurso){
             $this->intidcurso= $idcurso;
-            $sql= "SELECT tcl.idclases , tc.idcurso, tc.titulo AS titcurso, tcl.titulo AS titclase, tcl.estado
+            $sql= "SELECT tcl.idclases , tc.idcurso, tc.titulo AS titcurso, tcl.titulo AS titclase, tcl.estado, tcl.privacidad
             FROM tclases tcl 
             JOIN tcursos tc ON tc.idcurso  = tcl.idcurso  
             WHERE tcl.estado != 0 AND tcl.idcurso =  $this->intidcurso";
@@ -35,7 +35,7 @@
         public function selectclase(int $idclase){
             $this->intidclase= $idclase;
 
-            $sql= "SELECT tcl.idclases ,tcl.enlace ,tcl.archivos,tcl.archivourl, tcl.descripcion ,tc.idcurso, tc.titulo AS titcurso, tcl.titulo AS titclase, tcl.estado
+            $sql= "SELECT tcl.idclases ,tcl.enlace,tcl.privacidad  ,tcl.archivos,tcl.archivourl, tcl.descripcion ,tc.idcurso, tc.titulo AS titcurso, tcl.titulo AS titclase, tcl.estado
             FROM tclases tcl 
             JOIN tcursos tc ON tc.idcurso  = tcl.idcurso  
             WHERE tcl.estado != 0 AND tcl.idclases =  $this->intidclase";
@@ -45,15 +45,13 @@
         }
 
 
-        public function insertclase(int $idcurso,string $titulo, string $descripcion, string $enlace,int $estado){
+        public function insertclase(int $idcurso,string $titulo, string $descripcion, string $enlace,int $privacidad,int $estado){
  
             $this->intidcurso = $idcurso;
 			$this->strtitulo = $titulo;
 			$this->strdescripcion = $descripcion;
             $this->strenlace = $enlace;
-
-     
-
+            $this->intidprivacidad = $privacidad;
             $this->intestado = $estado;
 
         
@@ -68,12 +66,13 @@
 			{
                 
 
-				$query  = "INSERT INTO tclases(idcurso,titulo,descripcion,enlace,estado) 
-								  VALUES(?,?,?,?,?)";
+				$query  = "INSERT INTO tclases(idcurso,titulo,descripcion,enlace,privacidad,estado) 
+								  VALUES(?,?,?,?,?,?)";
 	        	$arrdata = array($this->intidcurso,
         						$this->strtitulo,
         						$this->strdescripcion,
                                 $this->strenlace,
+                                $this->intidprivacidad,
                                 $this->intestado);
 	        	$request = $this->insert($query,$arrdata);
 	        	$return = $request;
@@ -85,14 +84,14 @@
         }
 
         //Update
-        public function updateclase(int $idclase,int $idcurso,string $titulo, string $descripcion, string $enlace,int $estado){
+        public function updateclase(int $idclase,int $idcurso,string $titulo, string $descripcion, string $enlace,int $privacidad,int $estado){
             
             $this->intidclase = $idclase;
             $this->intidcurso = $idcurso;
 			$this->strtitulo = $titulo;
 			$this->strdescripcion = $descripcion;
             $this->strenlace = $enlace;
-
+            $this->intidprivacidad = $privacidad;
             $this->intestado = $estado;
 
 
@@ -102,9 +101,9 @@
             $requestupdate = $this->selectall($sql);
             
             if(empty($requestupdate)){
-                $queryupdate="UPDATE tclases SET titulo=?,enlace=? ,descripcion = ?, estado = ? WHERE idclases =$this->intidclase";
+                $queryupdate="UPDATE tclases SET titulo=?,enlace=? ,privacidad = ?,descripcion = ?, estado = ? WHERE idclases =$this->intidclase";
 
-                $arrdata = array($this->strtitulo,$this->strenlace,$this->strdescripcion,$this->intestado);
+                $arrdata = array($this->strtitulo,$this->strenlace,$this->intidprivacidad,$this->strdescripcion,$this->intestado);
                 $requestupdate= $this->update($queryupdate,$arrdata);
                 $return=$requestupdate;
             }else{

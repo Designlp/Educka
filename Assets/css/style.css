@@ -18,3 +18,29 @@
 .modal-xl {
   max-width: 90% !important;
 }
+
+.favorite-checkbox {
+  display: none;
+}
+
+.favorite-checkbox:checked + .material-icons {
+  color: red !important;
+}
+
+.cardcurso{
+  
+  display: block; 
+  position: relative; 
+  overflow: hidden; 
+  background-image: url("http://localhost/Educka-1/Assets/images/paths/angular_430x168.png"); 
+  background-size: cover; 
+  background-position: center center; 
+  height: 140px;
+}
+.cardcurso img{
+  visibility: hidden;
+}
+
+.page-section{
+  padding-bottom: 5.5rem !important;
+}

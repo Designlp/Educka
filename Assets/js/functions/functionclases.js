@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { "data": 'idclases' },
             { "data": 'titcurso' },
             { "data": 'titclase' },
+            { "data": 'privacidad' },
             { "data": 'estado' },
             { "data": 'acciones' }
         ],
@@ -66,11 +67,12 @@ document.addEventListener("DOMContentLoaded", function () {
 $('#tableclases').DataTable();
 function openmodal() {
     document.querySelector('#idclase').value = "";
-    document.querySelector('#materialfile').value = "";listfile();
     document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";
     document.querySelector('.modal-header').classList.replace("headerupdate", "headerregister");
     document.querySelector('#btnactionform').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btntext').innerHTML = "Guardar";
+    document.querySelector('#materialfile').value = "";listfile();
+    document.querySelector('#validatearchivo').innerHTML ="";
     document.querySelector('#formclase').reset();
     $('#modalformclases').modal("show");
 }
@@ -91,6 +93,8 @@ function fnteditclase() {
             document.querySelector('.modal-header').classList.replace("headerregister", "headerupdate");
             document.querySelector('#btnactionform').classList.replace("btn-primary", "btn-info");
             document.querySelector('#btntext').innerHTML = "Actualizar";
+            document.querySelector('#materialfile').value = "";listfile();
+            document.querySelector('#validatearchivo').innerHTML ="";
             //Recupera
             var idkey = this.getAttribute("rl");
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
@@ -109,12 +113,12 @@ function fnteditclase() {
                         document.querySelector("#txtdescripcion").value = objdata.data.descripcion;
                         document.querySelector("#txtenlace").value = objdata.data.enlace;
 
-                        if(objdata.data.archivourl != '' && objdata.data.archivos != ''){
+                        if(objdata.data.archivourl != null && objdata.data.archivos != null){
                             fileupdateexist(objdata.data.archivourl,objdata.data.archivos);
                         }
 
+                        $('#listprivacidad').val(objdata.data.privacidad).trigger('change');
                         $('#liststatus').val(objdata.data.estado).trigger('change');
-
 
 
                         $('#modalformclases').modal("show");
@@ -184,31 +188,12 @@ function fntdelcurso() {
 
 
 
-function fntclasescurso() {
-
-    var btndetallesclases = document.querySelectorAll(".btnclases");
-
-    btndetallesclases.forEach(function (btndetallesclases) {
-        btndetallesclases.addEventListener("click", function () {
-            var idcurso = this.getAttribute("rl");
-            var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            var ajaxUrl = baseurl + '/Cursos/asingclases/' + idcurso;
-            request.open("GET", ajaxUrl, true);
-            request.send();
-            request.onreadystatechange = function () {
-                if (request.readyState == 4 && request.status == 200) {
-                    window.location = baseurl + "/Clases";
-                }
-            };
-        });
-    });
-}
 
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-var _validFileExtensions = [".pdf", ".doc", ".docx", ".zip", ".rar", ".7z"];
+var _validFileExtensions = [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2"];
 function ValidateSingleInput(oInput) {
     if (oInput.type == "file") {
         var sFileName = oInput.value;

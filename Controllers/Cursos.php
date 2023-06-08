@@ -28,12 +28,8 @@
                 }else{
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
                 }
-
-                if($arrdata[$i]['privado']==1){
-                    $arrdata[$i]['privado']='<span class="badge badge-pill badge-success">Publico</span>';
-                }else{
-                    $arrdata[$i]['privado']='<span class="badge badge-pill badge-danger">Privado</span>';
-                }
+                
+              
               
                 $crudopciones='<div class="dropdown">
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
@@ -57,6 +53,25 @@
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             die();
         }
+        //Especial funciones de visualizacion
+
+        public function getselecategorias(){
+            $htmloptions="";
+            $arrdata = $this->model->selectcategorias();
+            if(count($arrdata) > 0){
+                for($i=0;$i < count($arrdata); $i++){
+                    $htmloptions.='<option value="'.$arrdata[$i]['idcategoria'].'">'.$arrdata[$i]['nombre'].'</option>';
+                }
+            }
+            echo $htmloptions;
+            die();
+
+        }
+
+
+
+
+
 
         public function getcurso($idcurso){
             
@@ -82,16 +97,16 @@
             $intidautor=$_SESSION['iduser'];
             $strtitulo=strclean($_POST['txttitulo']);
             $strdescripcion=strclean($_POST['txtdescripcion']);
-            $intprivate=intval($_POST['listpriv']);
+            $intcategor=intval($_POST['listcategorias']);
             $intstatus=intval($_POST['liststatus']);
             
  
             if($intidcurso == 0){
-                 $requestrol=$this->model->insertcurso($intidautor,$strtitulo,$strdescripcion, $intprivate,$intstatus);
+                 $requestrol=$this->model->insertcurso($intidautor,$intcategor,$strtitulo,$strdescripcion,$intstatus);
                  $option=1;
             }
             if($intidcurso != 0){
-                 $requestrol=$this->model->updatecurso( $intidcurso,$strtitulo,$strdescripcion, $intprivate,$intstatus);
+                 $requestrol=$this->model->updatecurso( $intidcurso,$intcategor,$strtitulo,$strdescripcion ,$intstatus);
                  $option=2;
             }
  

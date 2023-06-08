@@ -1,61 +1,49 @@
 <!DOCTYPE html>
-<html lang="es"
-      dir="ltr">
+<html lang="es" dir="ltr">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible"
-              content="IE=edge">
-        <meta name="viewport"
-              content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Educka</title>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Educka</title>
 
-        <!-- Prevent the demo from appearing in search engines -->
-        <meta name="robots"
-              content="noindex">
+   <!-- Prevent the demo from appearing in search engines -->
+   <meta name="robots" content="noindex">
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
-              rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap" rel="stylesheet">
+   
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/main.css">
+   <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/sweetalert.css">
+   <!-- la libreria es parte de selectpicker-->
+   <link type="text/css" href="<?= media() ?>/vendor/select2/select2.min.css" rel="stylesheet">
+   <link type="text/css" href="<?= media() ?>/css/select2.css" rel="stylesheet">
+   
+   <!-- Preloader -->
+   <link type="text/css" href="<?= media() ?>/vendor/spinkit.css" rel="stylesheet">
 
-         <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/sweetalert.css">
-         <!-- la libreria es parte de selectpicker-->
-         <link rel="stylesheet" type="text/css" href="<?= media();?>/css/bootstrap-select.min.css">
-    
-        <!-- Preloader -->
-        <link type="text/css"
-              href="<?= media() ?>/vendor/spinkit.css"
-              rel="stylesheet">
+   <!-- Perfect Scrollbar -->
+   <link type="text/css" href="<?= media() ?>/vendor/perfect-scrollbar.css" rel="stylesheet">
 
-        <!-- Perfect Scrollbar -->
-        <link type="text/css"
-              href="<?= media() ?>/vendor/perfect-scrollbar.css"
-              rel="stylesheet">
+   <!-- Material Design Icons -->
+   <link type="text/css" href="<?= media() ?>/css/material-icons.css" rel="stylesheet">
 
-        <!-- Material Design Icons -->
-        <link type="text/css"
-              href="<?= media() ?>/css/material-icons.css"
-              rel="stylesheet">
+   <!-- Font Awesome Icons -->
+   <link type="text/css" href="<?= media() ?>/css/fontawesome.css" rel="stylesheet">
 
-        <!-- Font Awesome Icons -->
-        <link type="text/css"
-              href="<?= media() ?>/css/fontawesome.css"
-              rel="stylesheet">
+   <!-- Preloader -->
+   <link type="text/css" href="<?= media() ?>/css/preloader.css" rel="stylesheet">
 
-        <!-- Preloader -->
-        <link type="text/css"
-              href="<?= media() ?>/css/preloader.css"
-              rel="stylesheet">
+   <!-- App CSS -->
+   <link type="text/css" href="<?= media() ?>/css/app.css" rel="stylesheet">
+   <link type="text/css" href="<?= media() ?>/css/educka.css" rel="stylesheet">
+   
+   <link type="text/css" href="<?= media() ?>/css/quill.css" rel="stylesheet">
+   <link type="text/css" href="<?= media() ?>/css/style.css" rel="stylesheet">
+   <link rel="stylesheet" href="<?= media() ?>/js/dist/plyr.css" />
 
-        <!-- App CSS -->
-        <link type="text/css"
-              href="<?= media() ?>/css/app.css"
-              rel="stylesheet">
-        <link type="text/css"
-              href="<?= media() ?>/css/educka.css"
-              rel="stylesheet">
-
-    </head>
+</head>
 
     <body class="layout-mini layout-mini">
 

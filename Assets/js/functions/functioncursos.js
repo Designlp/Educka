@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded",function(){
             { "data": 'idcurso' },
             { "data": 'nombre' },
             { "data": 'titulo' },
-            { "data": 'privado' },
+            { "data": 'nombrecat' },
             { "data": 'estado' },
             { "data": 'acciones' }
         ],
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded",function(){
                     $('#modalformcursos').modal("hide");
                     forminsert.reset();
                     //Validar datos repetodos
-                    swal("Administración de Usuarios", obdata.msg ,"success");
+                    swal("Administración de Cursos", obdata.msg ,"success");
                     //Ojo 
                     tablero.ajax.reload(function(){
                         //fnteditrol();
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded",function(){
 $('#tablecursos').DataTable();
 function openmodal(){
     document.querySelector('#idcurso').value="";
-    document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";
+    document.querySelector('#titlemodal').innerHTML = "Nuevo Curso";
     document.querySelector('.modal-header').classList.replace("headerupdate","headerregister");
     document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
     document.querySelector('#btntext').innerHTML="Guardar";
@@ -76,9 +76,29 @@ function openmodal(){
 }
 //Funciones Usuarios
 window.addEventListener('load',function(){
-
+    fntcursoscategorias();
 },false)
 
+//Especial
+function fntcursoscategorias(){
+    if( document.querySelector('#listcategorias')){
+        var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        var ajaxUrl = baseurl+'/Cursos/getselecategorias';
+        request.open("GET",ajaxUrl,true);
+        request.send();
+
+        request.onreadystatechange =function(){
+            if(request.readyState == 4 && request.status==200){
+             
+                document.querySelector('#listcategorias').innerHTML= request.responseText;
+             
+                $('#listcategorias').val(1).trigger('change');
+                
+                
+            }
+        }
+    }    
+}
 
 //Updates
 function fnteditcurso(){
@@ -108,7 +128,7 @@ function fnteditcurso(){
                         document.querySelector("#txttitulo").value=objdata.data.titulo;
                         document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
 
-                        $('#listpriv').val(objdata.data.privado).trigger('change');
+                        $('#listcategorias').val(objdata.data.idcategoria).trigger('change');
                         $('#liststatus').val(objdata.data.estado).trigger('change');
                
                         

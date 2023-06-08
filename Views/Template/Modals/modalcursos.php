@@ -35,10 +35,8 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="listpriv">Privacidad</label>
-                <select id="listpriv" data-toggle="select" class="form-control" name="listpriv">
-                  <option value="0">Privado</option>
-                  <option value="1">Publico</option>
+                <label class="form-label" for="listcategorias">Categoria</label>
+                <select id="listcategorias" data-toggle="select" class="form-control" name="listcategorias">
                 </select>
               </div>
  

@@ -8,7 +8,7 @@
         private $intidrol;
         private $strtitulo;
         private $strdescripcion;
-        private $intprivado;
+        private $intcategoria;
         private $intestado;
      
 
@@ -18,9 +18,10 @@
         }
         //YO
         public function selectcursos(){
-            $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.titulo, tc.privado, tc.estado
+            $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.titulo, tc.estado, tcat.nombre AS nombrecat
             FROM tcursos tc 
             JOIN tusuarios tu ON tc.idusuario = tu.idusuario 
+            JOIN tcategoria tcat ON tcat.idcategoria = tc.idcategoria  
             WHERE tc.estado != 0";
             $request=$this->selectall($sql);
             return $request;
@@ -29,9 +30,10 @@
         public function selectcurso(int $idcurso){
             $this->intidcurso= $idcurso;
 
-            $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.descripcion, tc.titulo, tc.privado, tc.estado
+            $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.descripcion, tc.titulo, tc.estado, tcat.nombre AS nombrecat
             FROM tcursos tc
             JOIN tusuarios tu ON tc.idusuario = tu.idusuario 
+            JOIN tcategoria tcat ON tcat.idcategoria = tc.idcategoria  
             WHERE tc.estado != 0 AND tc.idcurso = $this->intidcurso";
 
             $request=$this->select($sql);
@@ -39,11 +41,12 @@
         }
 
 
-        public function insertcurso(int $idautor,string $titulo, string $descripcion, int $private, int $estado){
+        public function insertcurso(int $idautor,int $idcategoria,string $titulo, string $descripcion,  int $estado){
             $this->intidusuario = $idautor;
+            $this->intcategoria = $idcategoria;
 			$this->strtitulo = $titulo;
 			$this->strdescripcion = $descripcion;
-            $this->intprivado = $private;
+          
             $this->intestado = $estado;
 		
 			$return = 0;
@@ -55,12 +58,12 @@
 
 			if(empty($request))
 			{
-				$query  = "INSERT INTO tcursos(idusuario,titulo,descripcion,privado,estado) 
+				$query  = "INSERT INTO tcursos(idusuario,idcategoria,titulo,descripcion,estado) 
 								  VALUES(?,?,?,?,?)";
 	        	$arrdata = array($this->intidusuario,
-        						$this->strtitulo,
+                                $this->intcategoria,
+                                $this->strtitulo,
         						$this->strdescripcion,
-                                $this->intprivado,
                                 $this->intestado,
                             );
 	        	$request = $this->insert($query,$arrdata);
@@ -72,13 +75,23 @@
             return $return;
         }
 
+        //Visualizacion Especial
+        public function selectcategorias(){
+          
+            $sql="SELECT * FROM tcategoria WHERE estado != 0";
+            $request=$this->selectall($sql);
+            return $request;
+        }
+
+        
         //Update
-        public function updatecurso(int $idcurso, string $titulo, string $descripcion, int $private, int $estado){
+        public function updatecurso(int $idcurso,int $idcategoria, string $titulo, string $descripcion, int $estado){
             
             $this->intidcurso = $idcurso;
+            $this->intcategoria = $idcategoria;
 			$this->strtitulo = $titulo;
 			$this->strdescripcion = $descripcion;
-            $this->intprivado = $private;
+           
             $this->intestado = $estado;
 
             $sql = "SELECT titulo FROM tcursos 
@@ -87,8 +100,8 @@
             $requestupdate = $this->selectall($sql);
             
             if(empty($requestupdate)){
-                $queryupdate="UPDATE tcursos SET titulo=?,descripcion=? ,privado = ?, estado = ? WHERE idcurso=$this->intidcurso";
-                $arrdata = array($this->strtitulo,$this->strdescripcion,$this->intprivado,$this->intestado);
+                $queryupdate="UPDATE tcursos SET idcategoria = ?,titulo=?,descripcion=? , estado = ? WHERE idcurso=$this->intidcurso";
+                $arrdata = array($this->intcategoria ,$this->strtitulo,$this->strdescripcion,$this->intestado);
                 $requestupdate= $this->update($queryupdate,$arrdata);
                 $return=$requestupdate;
             }else{

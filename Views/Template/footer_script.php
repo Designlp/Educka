@@ -1,5 +1,5 @@
 
-<script>
+        <script>
             const baseurl="<?= base_url(); ?>";
         </script>
         <!-- jQuery -->
