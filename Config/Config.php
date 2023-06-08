@@ -12,9 +12,9 @@
     const DB_CHARSET = "utf8";
 
     const NOMBRE_REMITENTE = "Educka Cursos online";
-	const EMAIL_REMITENTE = "no-reply@educka.online";
+	const EMAIL_REMITENTE = "no-reply@educka.net";
 	const NOMBRE_EMPESA = "Educka";
-	const WEB_EMPRESA = "educka.online";
+	const WEB_EMPRESA = "educka.net";
     const DIRECCION = "";
     const TELEMPRESA = "";
     const EMAIL_EMPRESA = "educka@gmail.com";
