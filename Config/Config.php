@@ -6,8 +6,8 @@
 	date_default_timezone_set('UTC');
     
     const DB_HOST = "localhost";
-    const DB_NAME = "u583014169_usereducka";
-    const DB_USER = "u583014169_usereducka";
+    const DB_NAME = "u583014169_db_educkanet";
+    const DB_USER = "u583014169_usereduckaADM";
     const DB_PASSWORD = "gtaV19921963";
     const DB_CHARSET = "utf8";
 
