@@ -11,7 +11,7 @@
     const DB_PASSWORD = "gtaV19921963";
     const DB_CHARSET = "utf8";
 
-    const NOMBRE_REMITENTE = "Educka Cursos online";
+    const NOMBRE_REMITENTE = "Educka";
 	const EMAIL_REMITENTE = "no-reply@educka.net";
 	const NOMBRE_EMPESA = "Educka";
 	const WEB_EMPRESA = "educka.net";
