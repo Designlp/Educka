@@ -6,12 +6,12 @@
 	date_default_timezone_set('UTC');
     
     const DB_HOST = "localhost";
-    const DB_NAME = "u583014169_db_educka";
-    //
+    const DB_NAME = "u583014169_usereducka";
+    //no funca ya lo importe eso vi valio :( )
+    //const DB_USER = "u532654912_educkauserdb";//  errores
+    //const DB_PASSWORD = "Edk.Oln2320";
     const DB_USER = "u583014169_usereducka";
-    const DB_PASSWORD = "Edk.Oln2320";
-    // const DB_USER = "root";
-    // const DB_PASSWORD = "";
+    const DB_PASSWORD = "gtaV19921963";
     const DB_CHARSET = "utf8";
 
     const NOMBRE_REMITENTE = "Educka Cursos online";
