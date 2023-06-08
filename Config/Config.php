@@ -17,7 +17,7 @@
 	const WEB_EMPRESA = "educka.net";
     const DIRECCION = "";
     const TELEMPRESA = "";
-    const EMAIL_EMPRESA = "educka@gmail.com";
+    const EMAIL_EMPRESA = "Educka@admin.com";
 
     //Deliminadores decimal y millar Ej. 24,1989.00
 	const SPD = ".";
