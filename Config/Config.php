@@ -1,6 +1,6 @@
 <?php 
 
-    const BASE_URL = "https://educka.net/";
+    const BASE_URL = "https://educka.net";
 
     //Zona horaria
 	date_default_timezone_set('UTC');
