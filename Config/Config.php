@@ -4,6 +4,7 @@
 
 
     const BASE_URL = "https://educka.net";
+    const DB_HOST = "localhost";
     const DB_NAME = "u583014169_db_educkanet";
     const DB_USER = "u583014169_usereduckaADM";
     const DB_PASSWORD = "gtaV19921963";
