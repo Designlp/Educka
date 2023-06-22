@@ -372,7 +372,7 @@ function applyFilters() {
       filteredData = catalogoData.filter(function (clase) {
         const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(clase.idcategoria.toString());
         const platformMatch = selectedPlatforms.length === 0 || selectedPlatforms.includes(clase.idplataforma.toString());
-        const suscripcionMatch =  clase.privacidad === Number(selectedSuscripcion);
+        const suscripcionMatch = selectedSuscripcion === 'all' || clase.privacidad === Number(selectedSuscripcion);
         return categoryMatch && platformMatch && suscripcionMatch;
       });
     }
