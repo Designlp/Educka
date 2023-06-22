@@ -373,7 +373,7 @@ function applyFilters() {
       filteredData = catalogoData.filter(function (clase) {
         const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(clase.idcategoria.toString());
         const platformMatch = selectedPlatforms.length === 0 || selectedPlatforms.includes(clase.idplataforma.toString());
-        const suscripcionMatch = selectedSuscripcion === 'all' || clase.privacidad === Number(selectedSuscripcion) || selectedSuscripcion.includes(clase.privacidad.toString());
+        const suscripcionMatch = selectedSuscripcion === 'all' ||  selectedSuscripcion.includes(clase.privacidad.toString());
         return categoryMatch && platformMatch && suscripcionMatch;
       });
     }
