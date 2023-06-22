@@ -369,6 +369,7 @@ function applyFilters() {
       filteredData = catalogoData.slice();
     } else {
       // Filtrar los datos por categorías, plataformas y suscripción seleccionadas
+      alert(selectedSuscripcion);
       filteredData = catalogoData.filter(function (clase) {
         const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(clase.idcategoria.toString());
         const platformMatch = selectedPlatforms.length === 0 || selectedPlatforms.includes(clase.idplataforma.toString());
