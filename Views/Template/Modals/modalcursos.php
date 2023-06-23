@@ -40,7 +40,7 @@
                 </div>
               </div>
 
-              <div class="form-group">
+              <div class="form-row">
               <div class="form-group mb-3 col-md-6">
                 <label class="control-label">Seleccionar Archivo</label>
                 <div class="custom-file">
