@@ -25,7 +25,7 @@
                 <textarea class="form-control" id="txtdescripcion" name="txtdescripcion" rows="2" placeholder="Descripcion de Rol"></textarea>
               </div>
 
-              <div class="form-group">
+              <div class="form-row">
                 <div class="form-group col-md-6">
                   <label class="form-label" for="listcategorias">Categoria</label>
                   <select id="listcategorias" data-toggle="select" class="form-control" name="listcategorias">
