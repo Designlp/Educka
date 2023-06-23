@@ -32,18 +32,16 @@
                   </select>
                 </div>
                 <div class="form-group col-md-6">
-                  <label class="form-label" for="listcategorias">Categoria</label>
-                  <select id="listcategorias" data-toggle="select" class="form-control" name="listcategorias">
+                  <label class="form-label" for="liststatus">Estado</label>
+                  <select id="liststatus" data-toggle="select" class="form-control" name="liststatus">
+                    <option value="1">Activo</option>
+                    <option value="2">Inactivo</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="liststatus">Estado</label>
-                <select id="liststatus" data-toggle="select" class="form-control" name="liststatus">
-                  <option value="1">Activo</option>
-                  <option value="2">Inactivo</option>
-                </select>
+
               </div>
 
               <div class="tile-footer">
