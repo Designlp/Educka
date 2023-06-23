@@ -41,7 +41,14 @@
               </div>
 
               <div class="form-group">
-
+              <div class="form-group mb-3 col-md-6">
+                <label class="control-label">Seleccionar Archivo</label>
+                <div class="custom-file">
+                  <input type="file" onchange="ValidateSingleInput(this)" id="txtarchivo" name="txtarchivo" class="custom-file-input">
+                  <label class="custom-file-label" for="validatedCustomFile">Seleccione un archivo</label>
+                  <small class="text-danger d-none" id="validatearchivo"></small>
+                </div>
+              </div>
               </div>
 
               <div class="tile-footer">
