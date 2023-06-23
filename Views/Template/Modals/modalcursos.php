@@ -25,6 +25,18 @@
                 <textarea class="form-control" id="txtdescripcion" name="txtdescripcion" rows="2" placeholder="Descripcion de Rol"></textarea>
               </div>
 
+              <div class="form-group">
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="listcategorias">Categoria</label>
+                  <select id="listcategorias" data-toggle="select" class="form-control" name="listcategorias">
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="listcategorias">Categoria</label>
+                  <select id="listcategorias" data-toggle="select" class="form-control" name="listcategorias">
+                  </select>
+                </div>
+              </div>
 
               <div class="form-group">
                 <label class="form-label" for="liststatus">Estado</label>
@@ -33,15 +45,6 @@
                   <option value="2">Inactivo</option>
                 </select>
               </div>
-
-              <div class="form-group">
-                <label class="form-label" for="listcategorias">Categoria</label>
-                <select id="listcategorias" data-toggle="select" class="form-control" name="listcategorias">
-                </select>
-              </div>
- 
-
-              
 
               <div class="tile-footer">
                 <button id="btnactionform" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btntext">Guardar</span></button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="#" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
