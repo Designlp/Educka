@@ -1,6 +1,6 @@
 <?php 
 //Moises
-    class Resetpassword extends Mysql{
+    class ResetpasswordModel extends Mysql{
         //Nivel de accesos
     
 
