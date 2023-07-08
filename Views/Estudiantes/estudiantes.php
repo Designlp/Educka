@@ -60,7 +60,3 @@
   
 
 ?>
-    
-                <!-- En el getModal se pone el nombre del archivo-->
-</body>
-</html>
