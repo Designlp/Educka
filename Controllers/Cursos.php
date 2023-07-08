@@ -129,7 +129,7 @@ class Cursos extends Controllers
         if ($intidcurso == 0) {
             $requestrol = $this->model->insertcurso($intidautor, $intcategor, $strtitulo, $strdescripcion, $intstatus);
 
-            $filename = 'Portada - '.$requestrol.'.'.$extensionArchivo;
+            $filename = 'Portada-'.$requestrol.'.'.$extensionArchivo;
             $fileurl = '/Assets/archivos/portada-curso/' . $filename;
             $requestfile=$this->model->insertfile($requestrol,$filename, $fileurl);
 
@@ -139,7 +139,7 @@ class Cursos extends Controllers
         if ($intidcurso != 0) {
             $requestrol = $this->model->updatecurso($intidcurso, $intcategor, $strtitulo, $strdescripcion, $intstatus);
 
-            $filename = 'Portada - '.$intidcurso.'.'.$extensionArchivo;
+            $filename = 'Portada-'.$intidcurso.'.'.$extensionArchivo;
             $fileurl = '/Assets/archivos/portada-curso/' . $filename;
             $requestfile=$this->model->insertfile($intidcurso,$filename, $fileurl);
 
