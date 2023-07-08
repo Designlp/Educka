@@ -46,12 +46,7 @@
 <body class="layout-mini layout-mini">
 
    <div class="preloader">
-
-
-
    </div>
-
-
 
    <div class="mdk-drawer-layout js-mdk-drawer-layout" data-push data-responsive-width="992px">
       <div class="mdk-drawer-layout__content page-content">
@@ -86,10 +81,10 @@
        
             <!-- Navbar Search -->
 
-            <form class="search-form navbar-search d-none d-md-flex mr-16pt" action="index.html">
+            <!-- <form class="search-form navbar-search d-none d-md-flex mr-16pt" action="index.html">
                <button class="btn" type="submit"><i class="material-icons">search</i></button>
                <input type="text" class="form-control" placeholder="Search ...">
-            </form>
+            </form> -->
 
             <!-- // END Navbar Search -->
 
@@ -114,11 +109,10 @@
 
                   </a>
                   <div class="dropdown-menu dropdown-menu-right">
-                     <div class="dropdown-header"><strong>Account</strong></div>
-                     <a class="dropdown-item" href="edit-account.html">Edit Account</a>
-                     <a class="dropdown-item" href="billing.html">Billing</a>
-                     <a class="dropdown-item" href="billing-history.html">Payments</a>
-                     <a class="dropdown-item" href="login.html">Logout</a>
+                     <div class="dropdown-header"><strong>Cuenta</strong></div>
+                     <a class="dropdown-item" href="<?= base_url() ?>/Cuenta">Editar Datos</a>
+                     <a class="dropdown-item" href="<?= base_url()?>/logout">Cerrar Sesión</a>
+                     <a class="dropdown-item" href="<?= base_url() ?>">Volver</a>
                   </div>
                </div>
             </div>

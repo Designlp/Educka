@@ -17,12 +17,8 @@ function generateCardHTML(clase) {
     <div class="col-md-6 col-lg-4 col-xl-3 card-group-row__col">
     <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay card-group-row__card" data-toggle="popover" data-trigger="click">
         <div class="card-img-top js-image cardcurso" data-position="center"  data-height="140">
-            <img src="${baseurl}/Assets/images/paths/angular_430x168.png" alt="course">
-            <span class="overlay__content">
-                <span class="overlay__action d-flex flex-column text-center">
-       
-                </span>
-            </span>
+            <img src="${baseurl + clase.portadaurl}" alt="course">
+            
         </div>
         <div class="card-body flex">
             <div class="d-flex">

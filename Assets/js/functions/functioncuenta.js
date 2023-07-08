@@ -1,73 +1,65 @@
 var tablero;
 //Esto es un js
-document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("DOMContentLoaded", function () {
 
-    
     //Insert
-    var forminsert= document.querySelector("#formcuentas");
-    forminsert.onsubmit=function(e){
+    var forminsert = document.querySelector("#formcuentas");
+    forminsert.onsubmit = function (e) {
         e.preventDefault();
+
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = baseurl+'/Cuentas/setcuentas';
-        var formdata=new FormData(forminsert);
-        request.open("POST",ajaxUrl,true);
+        var ajaxUrl = baseurl + '/Cuenta/setcuentas';
+        var formdata = new FormData(forminsert);
+        request.open("POST", ajaxUrl, true);
         request.send(formdata);
-        request.onreadystatechange =function(){
-            if(request.readyState == 4 && request.status==200){
-                //console.log(request.responseText);
-                var obdata=JSON.parse(request.responseText);
-                //console.log(obdata);
-                if(obdata.status){
-                    forminsert.reset();
-                    //Validar datos repetodos
-                    swal("Administración de Cuentas", obdata.msg ,"success");
-                    //Ojo 
-                    tablero.ajax.reload(function(){
-                        //fnteditrol();
-                        //fntdelrol();
-                        //fntpermisosrol();
-                    });
-                } else{
-                    swal("Error",obdata.msg,"error");
-                    //forminsert.reset();
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+
+                var obdata = JSON.parse(request.responseText);
+
+                if (obdata.status) {
+
+
+                    fnteditcuenta();
+
+                    swal("Administración de Usuarios", obdata.msg, "success");
+                } else {
+                    swal("Error", obdata.msg, "error");
+
                 }
             }
         }
     }
-},false);
 
+    fnteditcuenta();
 
-
+}, false);
 
 //Update
-function fnteditcuenta(){    
-            //Recupera
-            var idkey = this.getAttribute("rl");
-            var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            //El getusuario esta en Singular !Cuidado confunfir!
-            var ajaxUrl = baseurl+'/Categorias/getcategoria/'+idkey;
-            request.open("GET",ajaxUrl,true);
-            request.send();
-            request.onreadystatechange =function(){
-                if(request.readyState == 4 && request.status==200){
-     
-                    var objdata=JSON.parse(request.responseText);
-                    
-                    if(objdata.status){
-                        document.querySelector("#idcategoria").value=objdata.data.idcategoria;
-                        document.querySelector("#txtnombre").value=objdata.data.nombre;
-                        document.querySelector("#txtdescripcion").value=objdata.data.descripcion;
-                        $('#liststatus').val(objdata.data.estado).trigger('change');
-                        $('#modalformcategorias').modal("show");
-                    }else{
-                        swal("Error",objdata.msg,"error");
-                    }
-                }
+function fnteditcuenta() {
+
+
+    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    var ajaxUrl = baseurl + '/Cuenta/getusuario';
+    request.open("GET", ajaxUrl, true);
+    request.send();
+    request.onreadystatechange = function () {
+
+        if (request.readyState == 4 && request.status == 200) {
+
+            var objdata = JSON.parse(request.responseText);
+
+            if (objdata.status) {
+
+                document.querySelector("#txtci").value = objdata.data.ci;
+                document.querySelector("#txtnombre").value = objdata.data.nombre;
+                document.querySelector("#txtapellido").value = objdata.data.apellidos;
+                document.querySelector("#txttelefono").value = objdata.data.telefono;
+            } else {
+                swal("Error", objdata.msg, "error");
             }
+        }
+    }
+
 }
-
-
-
-
-
 

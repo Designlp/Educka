@@ -84,28 +84,7 @@ headerprincipal($data);
                                 <span class="text-muted">8m 42s</span>
                             </div>
 
-                            <div class="accordion__menu-link active">
-                                <span class="icon-holder icon-holder--small icon-holder--primary rounded-circle d-inline-flex icon--left">
-                                    <i class="material-icons icon-16pt">play_circle_outline</i>
-                                </span>
-                                <a class="flex" href="student-lesson.html">Introduction to TypeScript</a>
-                                <span class="text-muted">50m 13s</span>
-                            </div>
-
-                            <div class="accordion__menu-link">
-                                <span class="icon-holder icon-holder--small icon-holder--light rounded-circle d-inline-flex icon--left">
-                                    <i class="material-icons icon-16pt">lock</i>
-                                </span>
-                                <a class="flex" href="student-lesson.html">Comparing Angular to AngularJS</a>
-                                <span class="text-muted">12m 10s</span>
-                            </div>
-                            
-                            <div class="accordion__menu-link">
-                                <span class="icon-holder icon-holder--small icon-holder--light rounded-circle d-inline-flex icon--left">
-                                    <i class="material-icons icon-16pt">hourglass_empty</i>
-                                </span>
-                                <a class="flex" href="student-take-quiz.html">Quiz: Getting Started With Angular</a>
-                            </div>
+                     
                             
                         </div>
                     </div>
@@ -130,6 +109,10 @@ headerprincipal($data);
         </div>
     </div>
 </div>
+
+
+
+
 
 <!-- <div class="page-section bg-white border-bottom-2">
 

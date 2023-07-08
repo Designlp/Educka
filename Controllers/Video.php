@@ -28,5 +28,15 @@
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             die();
         }
+
+        public function getcurso(){
+            $idclase = $_SESSION['idclasev'];
+
+            $arrdata= $this->model->selectcurso($idclase);
+      
+            echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
+            die();
+        }
+   
    
     }

@@ -6,10 +6,16 @@
             if(empty($_SESSION['login'])){
                 header('Location: '.base_url()."/login");
             }
+            getpermisos(3);
         }
         
         //Visualizacion
         public function Docentes(){
+
+            if(empty($_SESSION['permisosmod']['r'])){
+                header('Location: '.base_url()."/dashboard");
+            }
+
             $data['page_tag'] = "Docentes";
             $data['page_title']= "Pagina Principal";
             $data['page_name'] = "docentes";

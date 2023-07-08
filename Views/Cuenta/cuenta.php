@@ -49,22 +49,22 @@ headeradmin($data);
   
             <div class="form-group">
                 <label class="form-label">Cedula Identidad</label>
-                <input type="text" class="form-control" name="txtci" placeholder="C.I.">
+                <input type="text" class="form-control" id="txtci" name="txtci" placeholder="C.I.">
             </div>
             <div class="form-group">
                 <label class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="txtnombre" placeholder="Nombre">
+                <input type="text" class="form-control"  id="txtnombre" name="txtnombre" placeholder="Nombre">
             </div>
 
             <div class="form-group">
                 <label class="form-label">Apellido</label>
-                <input type="text" class="form-control" name="txtapellido" placeholder="Apellidos">
+                <input type="text" class="form-control"  id="txtapellido" name="txtapellido" placeholder="Apellidos">
             </div>
             <div class="form-group">
                 <label class="form-label"> Telefono</label>
-                <input type="text" class="form-control" name="txttelefono" placeholder="Telefono"> 
+                <input type="text" class="form-control" id="txttelefono" name="txttelefono" placeholder="Telefono"> 
             </div>
-            <button class="btn btn-primary btneditcuentas">Save changes</button>
+            <button class="btn btn-primary btneditcuentas" type="submit" >Save changes</button>
         </form>
     </div>
 </div>

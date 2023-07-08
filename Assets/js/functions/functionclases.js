@@ -1,6 +1,6 @@
 var tablero;
-//Esto es un js
-//Prueba a com
+
+
 document.addEventListener("DOMContentLoaded", function () {
     tablero = $('#tableclases').DataTable({
         "aProcessing": true,
@@ -133,9 +133,8 @@ function fnteditclase() {
 
 }
 
-//Especial
 
-//Delete logic
+
 function fntdelcurso() {
 
     var btndelusuario = document.querySelectorAll(".btndelcurso");
@@ -231,7 +230,8 @@ function listfile(){
     var output = document.getElementById('fileList');
     var children = "";
     for (var i = 0; i < input.files.length; ++i) {
-        children +=  '<li>'+ input.files.item(i).name + ' <span class="remove-list" onclick="removefile(this)"><i class="fa fa-fw fa-lg fa-times-circle"></i></span>' + '</li>'
+        //<i class="fa fa-fw fa-lg fa-times-circle"></i>
+        children +=  '<li>'+ input.files.item(i).name + ' <span class="remove-list" onclick="removefile(this)"></span>' + '</li>'
     }
     output.innerHTML = children;
 
@@ -281,35 +281,6 @@ fetch(urlArchivoExistente)
 }
 
 
-// const iframes = document.querySelectorAll("#player");
-
-
-// iframes.forEach(function (iframe) {
-//     var player = new Plyr(iframe, {
-
-//         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-//         clickToPlay: false,
-//         hideControls: true,
-        
-//         showPosterOnEnd: true,
-//         disableYouTube: true, 
-//         youtube: {
-//             noCookie: true,
-//             enablejsapi:1,
-//             rel: 0,
-//             modestbranding: 1,
-//             showinfo: 0,
-//             iv_load_policy: 3,
-//             controls:0,
-//             host: window.location.hostname,
-//             disableClickHandling: true,
-//             disablekb:1
-//           },
-//     });
-    
-
-// }
-// );
 
 
 const btnPrevisualizar = document.getElementById('btnprevisualizar');

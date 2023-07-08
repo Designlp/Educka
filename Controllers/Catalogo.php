@@ -9,7 +9,8 @@
         //Visualizacion
         public function Catalogo(){
 
-       
+            
+            
             $data['page_tag'] = "Usuarios";
             $data['page_title']= "Pagina Principal";
             $data['page_name'] = "usuarios";

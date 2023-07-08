@@ -2,10 +2,20 @@
     class Roles extends Controllers{
         public function __construct() {
             parent::__construct();
+            session_start();
+            if(empty($_SESSION['login'])){
+                header('Location: '.base_url()."/login");
+            }
+            getpermisos(5);
         }
         
         //Visualizacion
         public function Roles(){
+
+            if(empty($_SESSION['permisosmod']['r'])){
+                header('Location: '.base_url()."/dashboard");
+            }
+       
 
             $data['page_id'] = 1;
             $data['page_tag'] = "Roles";
@@ -20,7 +30,7 @@
         public function getroles(){
             $arrdata= $this->model->selectroles();
             $script='';
-        $script='';
+
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-success">Activo</span>';

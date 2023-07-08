@@ -5,13 +5,12 @@
             session_start();
        
             if(isset($_SESSION['login'])){
-                header('Location: '.base_url()."/dashboard");
+                header('Location: '.base_url()."/Cuenta");
             }
             parent::__construct();
         }
         public function login(){
 
-     
             $data['page_tag'] = "Login";
             $data['page_title']= "Login";
             $data['page_name'] = "login";

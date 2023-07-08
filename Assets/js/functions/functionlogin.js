@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded",function () {
             if (request.status == 200) {
               var obdata = JSON.parse(request.responseText);
               if (obdata.status) {
-                window.location = baseurl + "/dashboard";
+                window.location = baseurl + "/Cuenta";
               } else {
                 swal("Error", obdata.msg, "error");
                 document.querySelector("#txtpassword").value = "";

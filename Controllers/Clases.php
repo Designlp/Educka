@@ -1,5 +1,6 @@
 <?php 
     class Clases extends Controllers{
+        
         public function __construct() {
             parent::__construct();
             session_start();
@@ -9,11 +10,15 @@
             if(empty($_SESSION['idcurso'])){
                 header('Location: '.base_url()."/Cursos");
             }
+            getpermisos(7);
         }
             
         //Visualizacion
         public function Clases(){
 
+            if(empty($_SESSION['permisosmod']['r'])){
+                header('Location: '.base_url()."/dashboard");
+            }
        
             $data['page_tag'] = "Usuarios";
             $data['page_title']= "Pagina Principal";
@@ -55,7 +60,7 @@
 
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditclase(); fntclasescurso(); fntdelcurso();</script>';
+                    $script='<script type="text/javascript"> fnteditclase();  fntdelcurso();</script>';
                 }
 
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
@@ -104,14 +109,17 @@
  
             if($intidclase == 0){
                  $requestrol=$this->model->insertclase($idcurso,$strtitulo, $strdescripcion,$strenlace,$intprivacidad,$intstatus);
+                //acciones para realizar la inserion del archivo
                  $filename = 'Material de Clase - '.$requestrol.'.'.$extensionArchivo;
                  $fileurl = './Assets/archivos/materiales/' . $filename;
                  $requestfile=$this->model->insertfile($requestrol,$filename, $fileurl);
+
                  $option=1;
                  
             }
             if($intidclase != 0){
                  $requestrol=$this->model->updateclase($intidclase,$idcurso,$strtitulo, $strdescripcion,$strenlace,$intprivacidad,$intstatus);
+                 
                  $filename = 'Material de Clase - '.$intidclase.'.'.$extensionArchivo;
                  $fileurl = './Assets/archivos/materiales/' . $filename;
                  $requestfile=$this->model->insertfile($intidclase,$filename, $fileurl);

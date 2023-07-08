@@ -11,12 +11,17 @@
         private $intcategoria;
         private $intestado;
      
+        private $strfilename;
+        private $strfileurl;
+
 
         public function __construct() {
 
             parent::__construct();
         }
         //YO
+
+        
         public function selectcursos(){
             $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.titulo, tc.estado, tcat.nombre AS nombrecat
             FROM tcursos tc 
@@ -30,7 +35,7 @@
         public function selectcurso(int $idcurso){
             $this->intidcurso= $idcurso;
 
-            $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.descripcion, tc.titulo, tc.estado, tcat.nombre AS nombrecat
+            $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.descripcion, tc.titulo, tc.estado, tcat.nombre AS nombrecat, tcat.idcategoria, tc.portadaurl, tc.portadaname
             FROM tcursos tc
             JOIN tusuarios tu ON tc.idusuario = tu.idusuario 
             JOIN tcategoria tcat ON tcat.idcategoria = tc.idcategoria  
@@ -82,7 +87,13 @@
             $request=$this->selectall($sql);
             return $request;
         }
-
+        //Visualizacion Especial
+        public function selectplataformas(){
+            
+            $sql="SELECT * FROM tplataforma WHERE estado != 0";
+            $request=$this->selectall($sql);
+            return $request;
+        }
         
         //Update
         public function updatecurso(int $idcurso,int $idcategoria, string $titulo, string $descripcion, int $estado){
@@ -137,15 +148,25 @@
                     $request='error';
                     $return=$request;
                 }
-                
             }else{
                 $return='existe';
             }
-            
             return $return;
-
         }
 
+
+        public function insertfile(int $idcurso,string $filename ,string $fileurl){
+            $this->intidcurso = $idcurso;
+
+            $this->strfilename = $filename;
+            $this->strfileurl = $fileurl;
+
+            $queryupdate="UPDATE tcursos SET portadaname = ?, portadaurl=?  WHERE idcurso = $this->intidcurso";
+
+            $arrdata = array($this->strfilename,$this->strfileurl);
+            $requestupdate= $this->update($queryupdate,$arrdata);
+            $return=$requestupdate;
+        }
 
     }
 

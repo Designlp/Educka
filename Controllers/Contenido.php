@@ -26,25 +26,28 @@
         public function getclases(){
             $idcurso = $_SESSION['idcursocontent'];
 
+            $intkey=intval($_SESSION['iduser']);
+            
+            $arrdatauser = $this->model->selectusuario($intkey);
+
             $arrdata= $this->model->selectclases($idcurso);
+
             for($i=0;$i< count($arrdata);$i++){
                 if($i == 0){
                     $arrdata[$i]['iconp']='<span class="icon-holder icon-holder--small icon-holder--dark rounded-circle d-inline-flex icon--left">
                     <i class="material-icons icon-16pt">check_circle</i>
                 </span>';
                 }else{
-                    if($arrdata[$i]['privacidad']==1){
+                    if($arrdata[$i]['privacidad'] == 1 || $arrdatauser['suscripcion'] == 1){
                         $arrdata[$i]['iconp']='  <span class="icon-holder icon-holder--small icon-holder--primary rounded-circle d-inline-flex icon--left">
                         <i class="material-icons icon-16pt">play_circle_outline</i>
-                    </span>';
+                        </span>';
                     }else{
                         $arrdata[$i]['iconp']='<span class="icon-holder icon-holder--small icon-holder--light rounded-circle d-inline-flex icon--left">
                         <i class="material-icons icon-16pt">lock</i>
                     </span>';
                     }
                 }
-                
-
             }
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             die();

@@ -38,17 +38,23 @@
                     <option value="2">Inactivo</option>
                   </select>
                 </div>
-              </div>
+              </div><br><br>
 
               <div class="form-row">
-              <div class="form-group mb-3 col-md-6">
-                <label class="control-label">Seleccionar Archivo</label>
-                <div class="custom-file">
-                  <input type="file" onchange="ValidateSingleInput(this)" id="txtarchivo" name="txtarchivo" class="custom-file-input">
-                  <label class="custom-file-label" for="validatedCustomFile">Seleccione un archivo</label>
-                  <small class="text-danger d-none" id="validatearchivo"></small>
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="listplataformas">Plataforma</label>
+                  <select id="listplataformas" data-toggle="select" class="form-control" name="listplataformas">
+                  </select>
                 </div>
-              </div>
+
+                <div class="form-group col-md-6">
+                  <div class="custom-file">
+                    <input id="materialimg" name="materialimg" type="file" multiple onchange="ValidateSingleInput(this)" class="custom-file-input">
+                    <label for="materialimg" class="custom-file-label">Añadir imagen de portada</label><br><br>
+                    <small class="text-danger d-none" id="validatearchivo"></small>
+                  </div>
+                  <ul id="fileList" class="file-list"></ul>
+                </div>
               </div>
 
               <div class="tile-footer">

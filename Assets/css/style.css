@@ -32,13 +32,18 @@
   display: block; 
   position: relative; 
   overflow: hidden; 
-  background-image: url("http://localhost/Educka-1/Assets/images/paths/angular_430x168.png"); 
   background-size: cover; 
   background-position: center center; 
   height: 140px;
+
 }
 .cardcurso img{
-  visibility: hidden;
+  display: block; 
+  position: relative; 
+  overflow: hidden; 
+  background-size: cover; 
+  background-position: center center; 
+  height: 140px;
 }
 
 .page-section{

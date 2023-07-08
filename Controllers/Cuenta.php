@@ -20,6 +20,7 @@
         //Insert 
         //Logica update como
         public function setcuentas(){
+            
             if($_POST){	
             if(empty($_POST['txtnombre']) || empty($_POST['txtapellido']) )
             {
@@ -31,36 +32,38 @@
                 $strnombre = ucwords(strclean($_POST['txtnombre']));
                 $strapellido = ucwords(strclean($_POST['txtapellido']));
                 $strtelefono = ucwords(strclean($_POST['txttelefono']));
+
                 if($intidautor != 0){
-                    $requestcategorias = $this->model->updatecuenta(
+                    $requestusuario = $this->model->updatecuenta(
                     $intidautor,
                     $strci,
                     $strnombre, 
                     $strapellido, 
                     $strtelefono
-                    );
-                    $option = 2;
+                    ); 
+                    $arrresponse= array('status'=>true,'msg'=>'Datos Actualizados Correctamente');
                 }
-                if($requestcategorias > 0){
- 
-                    if($option == 1 ){
-                        $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
-                    }
-                    if($option == 2 ){
-                        $arrresponse= array('status'=>true,'msg'=>'Datos Actualizados Correctamente');
-                    }
-                    
-               }else{
-                    if($requestcategorias == -1){
-                        $arrresponse= array('status'=>false,'msg'=>'!Atencion! El rol ya existe');
-                    }else
-                    $arrresponse= array('status'=>true,'msg'=>'No se almaceno los datos');
-               }
+               
             }
             echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
         }
         die();
         }
 
+        
+        public function getusuario(){
+            
+            $intkey= $_SESSION['iduser'];
+            if ($intkey>0){
+                $arrdata = $this->model->selectusuario($intkey);
+                if(empty($arrdata)){
+                    $arrresponse= array('status'=>false,'msg'=>'Datos no encontrados');
+                }else{
+                    $arrresponse= array('status'=>true,'data'=>$arrdata);
+                }
+                echo json_encode($arrresponse,JSON_UNESCAPED_UNICODE);
+            }
+            die();
+        }
+
     }
-?>

@@ -6,10 +6,14 @@
             if(empty($_SESSION['login'])){
                 header('Location: '.base_url()."/login");
             }
+            getpermisos(8);
         }
         
         //Visualizacion
         public function Categorias(){
+            if(empty($_SESSION['permisosmod']['r'])){
+                header('Location: '.base_url()."/dashboard");
+            }
             $data['page_tag'] = "Categorias";
             $data['page_title']= "Pagina Principal";
             $data['page_name'] = "categorias";
@@ -32,22 +36,18 @@
                 $crudopciones='<div class="dropdown">
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
                     <div class="dropdown-menu dropdown-menu-right" style="">
-                        <a onClick="fntviewcliente('.$arrdata[$i]['idcategoria'].')" class="dropdown-item">Detalles</a>
                         <a class="dropdown-item btneditcategorias" rl="'.$arrdata[$i]['idcategoria'].'">Editar</a>
                         <div class="dropdown-divider"></div>
                         <a  class="dropdown-item text-danger btndelcategorias" rl="'.$arrdata[$i]['idcategoria'].'">Eliminar</a>
                     </div>
                 </div>
                 ';
-
                 if($i == (count($arrdata)-1)){
                     //Necesario agregar para que funciones las funciones de delete y update
                     $script='<script type="text/javascript"> fnteditcategorias(); fntdelcategorias();</script>';
                 }
-
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
             }
-            
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             die();
         }

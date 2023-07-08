@@ -36,9 +36,21 @@
             return $request;
         }
 
+        public function selectcurso(int $idclase){
+
+            $this->intidclase= $idclase;
+
+            $sql= "SELECT tc.titulo, tc.portadaurl, tu.nombre, tu.apellidos
+                   FROM tcursos tc
+                   JOIN tclases tcl ON tc.idcurso  = tcl.idcurso
+                   JOIN tusuarios tu ON tu.idusuario  = tc.idusuario
+                   WHERE tcl.idclases = $this->intidclase";
+
+            $request=$this->select($sql);
+            return $request;
+        }
+
 
 
 
     }
-
-?>
