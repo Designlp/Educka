@@ -124,13 +124,13 @@ class Cursos extends Controllers
         $extensionArchivo = pathinfo($filename, PATHINFO_EXTENSION);
         $filetamanio = $_FILES['materialimg']['size'];
         $temp = $_FILES['materialimg']['tmp_name'];
-        $fileurl = '/Assets/archivos/materiales/' . $filename;
+        $fileurl = './Assets/archivos/materiales/' . $filename;
 
         if ($intidcurso == 0) {
             $requestrol = $this->model->insertcurso($intidautor, $intcategor, $strtitulo, $strdescripcion, $intstatus);
 
-            $filename = 'Portada-'.$requestrol.'.'.$extensionArchivo;
-            $fileurl = '/Assets/archivos/portada-curso/'. $filename;
+            $filename = 'Portada - '.$requestrol.'.'.$extensionArchivo;
+            $fileurl = './Assets/archivos/portada-curso/' . $filename;
             $requestfile=$this->model->insertfile($requestrol,$filename, $fileurl);
 
             $option = 1;
@@ -139,9 +139,10 @@ class Cursos extends Controllers
         if ($intidcurso != 0) {
             $requestrol = $this->model->updatecurso($intidcurso, $intcategor, $strtitulo, $strdescripcion, $intstatus);
 
-            $filename = 'Portada-'.$intidcurso.'.'.$extensionArchivo;
-            $fileurl = '/Assets/archivos/portada-curso/' . $filename;
-            $requestfile=$this->model->insertfile($intidcurso,$filename, $fileurl);
+            $filename = 'Portada - '.$intidcurso.'.'.$extensionArchivo;
+            $fileurl = './Assets/archivos/portada-curso/' . $filename;
+            $fileurl2 = '/Assets/archivos/portada-curso/' . $filename;
+            $requestfile=$this->model->insertfile($intidcurso,$filename, $fileurl2);
 
             $option = 2;
         }
