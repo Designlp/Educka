@@ -130,7 +130,7 @@ class Cursos extends Controllers
             $requestrol = $this->model->insertcurso($intidautor, $intcategor, $strtitulo, $strdescripcion, $intstatus);
 
             $filename = 'Portada-'.$requestrol.'.'.$extensionArchivo;
-            $fileurl = '/Assets/archivos/portada-curso/' . $filename;
+            $fileurl = '/Assets/archivos/portada-curso/'. $filename;
             $requestfile=$this->model->insertfile($requestrol,$filename, $fileurl);
 
             $option = 1;
