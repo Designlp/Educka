@@ -9,26 +9,26 @@ headeradmin($data);
         <form id="formregistro" name="formregistro" class="col-md-5 p-0 mx-auto">
             <div class="form-group">
                 <label class="form-label" for="email">Nombre</label>
-                <input id="email" type="text" class="form-control" placeholder="Your email address ...">
+                <input id="txtnombre" name="txtnombre" type="text" class="form-control" placeholder="Nombre">
             </div>
             <div class="form-group">
                 <label class="form-label" for="email">Apellido</label>
-                <input id="email" type="text" class="form-control" placeholder="Your email address ...">
+                <input id="txtapellido" name="txtapellido" type="text" class="form-control" placeholder="Apellido">
             </div>
             <div class="form-group">
                 <label class="form-label" for="email">Telefono</label>
-                <input id="email" type="text" class="form-control" placeholder="Your email address ...">
+                <input id="txttelefono" name="txttelefono" type="text" class="form-control" placeholder="Telefono">
             </div>
             <div class="form-group">
                 <label class="form-label" for="email">Correo</label>
-                <input id="email" type="text" class="form-control" placeholder="Your email address ...">
+                <input id="txtcorreo" name="txtcorreo" type="email" class="form-control" placeholder="usuario@gmail.com">
             </div>
             <div class="form-group">
                 <label class="form-label" for="password">Contraseña</label>
-                <input id="password" type="password" class="form-control" placeholder="Your first and last name ...">
+                <input id="txtcontras" name="txtcontras" type="password" class="form-control" >
             </div>
             <div class="text-center">
-                <button class="btn btn-primary">Login</button>
+                <button class="btn btn-primary">Crear Usuario</button>
             </div>
         </form>
     </div>

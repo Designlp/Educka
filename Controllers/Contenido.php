@@ -69,7 +69,20 @@
         public function asingclases($idclase){
             $_SESSION['idclasev']=$idclase;
             
-         }
+        }
+
+
+        public function getclase(){
+            
+            $intkey=intval($_SESSION['idclasev']);
+
+            if ($intkey>0){
+                $arrdata = $this->model->selectclase($intkey);
+             
+                echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
+            }
+            die();
+        }
  
 
     }
