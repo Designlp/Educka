@@ -72,3 +72,6 @@ function checkPrivacy(privacidad, idclase, suscripcion) {
     }
 }
 
+function getcurso(){
+    
+}

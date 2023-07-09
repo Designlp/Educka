@@ -1,6 +1,6 @@
 <?php 
 //Moises
-    class DocentesModel extends Mysql{
+    class RegistrosModel extends Mysql{
         //Nivel de accesos
         private $intidusuario;
         private $intidrol;
