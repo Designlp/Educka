@@ -9,7 +9,7 @@
             $data['page_tag'] = "Dashboard";
             $data['page_title']= "Dashboard";
             $data['page_name'] = "Dashboard";
-            $data['page_js'] = "functionlogin.js";
+            $data['page_js'] = "functionresetpassword.js";
             session_start();
             $this->views->getview($this,"resetpassword",$data);
             
