@@ -17,6 +17,7 @@
             $data['page_functions_js'] = "functionlogin.js";
             $this->views->getview($this,"login",$data);
         }
+        
         public function loginuser(){
             //dep($_POST);
             if($_POST){

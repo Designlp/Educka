@@ -1,26 +1,21 @@
 <?php 
-    class Docentes extends Controllers{
+    class Registros extends Controllers{
         public function __construct() {
             parent::__construct();
             session_start();
             if(empty($_SESSION['login'])){
                 header('Location: '.base_url()."/login");
             }
-            getpermisos(3);
+            //getpermisos(3);
         }
         
         //Visualizacion
-        public function Docentes(){
-
-            if(empty($_SESSION['permisosmod']['r'])){
-                header('Location: '.base_url()."/dashboard");
-            }
-
-            $data['page_tag'] = "Docentes";
+        public function Registros(){
+            $data['page_tag'] = "Registros";
             $data['page_title']= "Pagina Principal";
-            $data['page_name'] = "docentes";
-            $data['page_js'] = "functiondocentes.js";
-            $this->views->getview($this,"docentes",$data);
+            $data['page_name'] = "registros";
+            $data['page_js'] = "functionregistros.js";
+            $this->views->getview($this,"registros",$data);
         }
         
         //Visualizacion
