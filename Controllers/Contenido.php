@@ -72,12 +72,12 @@
         }
 
 
-        public function getclase(){
+        public function getcurso(){
             
-            $intkey=intval($_SESSION['idclasev']);
+            $intkey=intval($_SESSION['idcursocontent']);
 
             if ($intkey>0){
-                $arrdata = $this->model->selectclase($intkey);
+                $arrdata = $this->model->selectcurso($intkey);
              
                 echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             }

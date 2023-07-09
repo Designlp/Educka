@@ -28,7 +28,7 @@ headeradmin($data);
                 <input id="txtcontras" name="txtcontras" type="password" class="form-control" >
             </div>
             <div class="text-center">
-                <button class="btn btn-primary">Crear Usuario</button>
+                <button class="btn btn-primary btncrear" type="submit" >Crear Usuario</button>
             </div>
         </form>
     </div>

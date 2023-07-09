@@ -55,6 +55,19 @@
             return $request;
         }
 
+        public function selectcurso(int $idcurso){
+            $this->intidcurso= $idcurso;
+
+            $sql= "SELECT tu.idusuario, tu.nombre, tu.apellidos, tc.idcurso , tc.descripcion, tc.titulo, tc.estado, tcat.nombre AS nombrecat, tcat.idcategoria, tc.portadaurl, tc.portadaname
+            FROM tcursos tc
+            JOIN tusuarios tu ON tc.idusuario = tu.idusuario 
+            JOIN tcategoria tcat ON tcat.idcategoria = tc.idcategoria  
+            WHERE tc.estado != 0 AND tc.idcurso = $this->intidcurso";
+
+            $request=$this->select($sql);
+            return $request;
+        }
+
     }
 
 ?>
