@@ -43,7 +43,7 @@ headeradmin($data);
                     <input type="text" class="form-control" placeholder="Your email address ..." id="txtemailreset" name="txtemailreset" >
                     <small class="form-text text-muted">We will email you with info on how to reset your password.</small>
                 </div>
-                <button class="btn btn-primary">Reset</button>
+                <button type="submit" class="btn btn-primary">Reset</button>
             </form>
         </div>
     </div>
