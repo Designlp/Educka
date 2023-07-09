@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return false;
             } else {
                 var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-                var ajaxUrl = baseurl + "/Login/reset";
+                var ajaxUrl = baseurl + "/Resetpassword/reset";
                 var formdata = new FormData(formreset);
 
                 request.open("POST", ajaxUrl, true);
@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 request.send(formdata);
                 request.onreadystatechange = function () {
                     console.log(request);
+                    
                     if (request.readyState != 4) return;
                     if (request.status == 200){
                         var obdata = JSON.parse(request.responseText);
