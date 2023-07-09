@@ -295,7 +295,7 @@ function listfile(){
 }
 
 
-function fileupdateexist(ruta,nombrefile){
+function fileupdateexist(ruta, nombrefile){
     var inputArchivo = document.getElementById("materialimg");
 
 // URL del archivo existente

@@ -36,10 +36,11 @@ headeradmin($data);
                 </div>
             </div>
 
-            <form action="change-password.html">
+            <form id="formresetpassword" name="formresetpassword" class="forget-form" action="index.html">
+            
                 <div class="form-group">
                     <label class="form-label">Email:</label>
-                    <input type="text" class="form-control" placeholder="Your email address ...">
+                    <input type="text" class="form-control" placeholder="Your email address ..." id="txtemailreset" name="txtemailreset" >
                     <small class="form-text text-muted">We will email you with info on how to reset your password.</small>
                 </div>
                 <button class="btn btn-primary">Reset</button>
