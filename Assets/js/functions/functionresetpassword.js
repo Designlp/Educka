@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded",function () {
       
                     swal({
                       title:"Atencion",
-                      text: obdata.msg,
+                      text: "Exito",
                       type:"success",
                       showCancelButton:true,
                       confirmButtonText: "Aceptar",
