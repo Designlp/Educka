@@ -75,7 +75,7 @@
 
         //Insert 
         //Logica update como
-        public function setdocentes(){
+        public function setregistros(){
             if($_POST){	
             if(empty($_POST['txtnombre']) || empty($_POST['txtapellido']) || empty($_POST['txtcorreo']) )
             {

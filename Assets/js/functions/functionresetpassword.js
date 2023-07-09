@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log(request);
                     if (request.readyState != 4) return;
                     if (request.status == 200){
-                        alert();
                         var obdata = JSON.parse(request.responseText);
                         if (obdata.status) {
                             swal({

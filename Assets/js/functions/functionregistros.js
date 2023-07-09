@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
 
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = baseurl + '/Cuenta/setcuentas';
+        var ajaxUrl = baseurl + '/Registros/setregistros';
         var formdata = new FormData(forminsert);
         request.open("POST", ajaxUrl, true);
         request.send(formdata);
