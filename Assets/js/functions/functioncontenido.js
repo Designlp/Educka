@@ -73,5 +73,24 @@ function checkPrivacy(privacidad, idclase, suscripcion) {
 }
 
 function getcurso(){
+    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    //El getusuario esta en Singular !Cuidado confunfir!
+    var ajaxUrl = baseurl + '/Video/getclase';
+    request.open("GET", ajaxUrl, true);
+    request.send();
+    request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
     
+            var objdata = JSON.parse(request.responseText);
+    
+            if (objdata.estado) {
+                titulo.innerHTML= objdata.titclase;
+                descripcion.innerHTML=objdata.descripcion;
+                getvideo(objdata.enlace);
+                
+            } else {
+                swal("Error", objdata.msg, "error");
+            }
+        }
+    }
 }
