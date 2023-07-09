@@ -5,7 +5,7 @@
 <!-- Page Content -->
 
                 <div class="container page__container page-section pb-0">
-                    <h1 class="h2 mb-0">Tables</h1>
+                    <h1 class="h2 mb-0">Tablessssss</h1>
                     <ol class="breadcrumb m-0 p-0">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item">Components</li>

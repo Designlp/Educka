@@ -152,7 +152,7 @@ class Cursos extends Controllers
             if ($option == 1) {
                 $arrresponse = array('status' => true, 'msg' => 'Datos Guardados Correctamente');
                 if (file_exists($fileurl)) {
-                    //unlink($fileurl);
+                    unlink($fileurl);
                     move_uploaded_file($temp, $fileurl);
                 }else{
                     move_uploaded_file($temp, $fileurl);
@@ -161,7 +161,7 @@ class Cursos extends Controllers
             if ($option == 2) {
                 $arrresponse = array('status' => true, 'msg' => 'Datos Actualizados Correctamente');
                 if (file_exists($fileurl)) {
-                    //unlink($fileurl);
+                    unlink($fileurl);
                     move_uploaded_file($temp, $fileurl);
                 }else{
                     move_uploaded_file($temp, $fileurl);
