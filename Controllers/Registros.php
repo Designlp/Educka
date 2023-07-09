@@ -18,44 +18,7 @@
             $this->views->getview($this,"registros",$data);
         }
         
-        //Visualizacion
-        public function getdocentes(){
-            $arrdata= $this->model->selectdocentes();
-            $script='';
-            for($i=0;$i< count($arrdata);$i++){
-                if($arrdata[$i]['estado']==1){
-                    $arrdata[$i]['estado']='<span class="badge badge-pill badge-success">Activo</span>';
-                }else{
-                    $arrdata[$i]['estado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
-                }
-
-                if($arrdata[$i]['suscripcion']==1){
-                    $arrdata[$i]['suscripcion']='<span class="badge badge-pill badge-success">Activo</span>';
-                }else{
-                    $arrdata[$i]['suscripcion']='<span class="badge badge-pill badge-danger">Inactivo</span>';
-                }
-              
-                $crudopciones='<div class="dropdown">
-                <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
-                <div class="dropdown-menu dropdown-menu-right" style="">
-                    <a onClick="fntviewcliente('.$arrdata[$i]['idusuario'].')" class="dropdown-item">Detalles</a>
-                    <a class="dropdown-item btneditdocentes" rl="'.$arrdata[$i]['idusuario'].'">Editar</a>
-                    <div class="dropdown-divider"></div>
-                    <a  class="dropdown-item text-danger btndeldocentes" rl="'.$arrdata[$i]['idusuario'].'">Eliminar</a>
-                </div>
-                </div>';
-
-                if($i == (count($arrdata)-1)){
-                    //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditdocentes(); fntdeldocentes();</script>';
-                }
-
-                $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
-            }
-            
-            echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
-            die();
-        }
+       
 
         public function getdocente($idusuario){
             
