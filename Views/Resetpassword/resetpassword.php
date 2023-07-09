@@ -36,7 +36,7 @@ headeradmin($data);
                 </div>
             </div>
 
-            <form id="formresetpassword" name="formresetpassword" class="forget-form" action="index.html">
+            <form id="formresetpassword" name="formresetpassword" class="forget-form" >
             
                 <div class="form-group">
                     <label class="form-label">Email:</label>
