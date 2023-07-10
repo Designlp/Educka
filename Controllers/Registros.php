@@ -56,6 +56,22 @@
                     $intestado
                  );
                 if($requestusuario > 0){
+                    $arrresponse= array('status'=>true,'msg'=>'Datos Guardados Correctamente');
+                    $token= token();
+                    $nombreuser= $strnombre.' '.$strapellido;
+                    $stremail = strtolower(strclean($strcorreo));
+                    
+                    $urlrecuperar= base_url().'/Login/confirmuser/'.$stremail.'/'.$token;
+                    $requestupdate = $this->model->settokenuser($requestusuario,$token);
+
+                       $datausuario = array(
+                        'nombreuser'=>$nombreuser,
+                        'email'=>$stremail,
+                        'asunto'=>'Recuperar cuenta - '.NOMBRE_REMITENTE,
+                        'urlrecuperacion'=>$urlrecuperar
+                    );
+                    $sendemail= sendEmail($datausuario,'emailcambiopassword');
+
 
                }else{
                     if($requestusuario == -1){
