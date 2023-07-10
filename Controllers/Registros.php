@@ -33,14 +33,13 @@
                 $strapellido = ucwords(strclean($_POST['txtapellido']));
                 $inttelefono = intval(strclean($_POST['txttelefono']));
                 $strcorreo = strtolower(strclean($_POST['txtcorreo']));
-                $intestado = intval(strclean($_POST['liststatus']));
+                $intestado = intval(1);
                 $intidrol=intval(3);
                 $intsuscripcion = intval(0);
                 //Esto se basa en el id oculto que se usa en rl 
                 if($idusuario == 0)
                 {
                     //Se incrementa mediante la respuesta del request de model
-                    $option = 1;
                     $strpassword =  empty($_POST['txtcontrasenia']) ? passgenerator() : $_POST['txtcontrasenia'];
                     $strpasswordencript=hash("SHA256",$strpassword);
 
@@ -88,4 +87,4 @@
 
 
     }}
-    
+
