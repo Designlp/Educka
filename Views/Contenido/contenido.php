@@ -162,7 +162,7 @@ headerprincipal($data);
             <div class="col-md-7 mb-24pt mb-md-0">
                 <h4>About the author</h4>
                 <p class="text-70 mb-24pt">Eddie Bryan is a software developer at LearnD*ash. With more than 20 years o*f software development experience, he has gained a passion for Agile software development -- especially Lean.</p>
-
+<!-- 
                 <div class="page-separator">
                     <div class="page-separator__text bg-white">More from the author</div>
                 </div>
@@ -219,7 +219,7 @@ headerprincipal($data);
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="list-group list-group-flush">
                     <div class="list-group-item px-0">
