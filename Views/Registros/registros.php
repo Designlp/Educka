@@ -7,6 +7,8 @@ headeradmin($data);
 <div class="pt-32pt pt-sm-64pt pb-32pt">
     <div class="container page__container">
         <form id="formregistro" name="formregistro" class="col-md-5 p-0 mx-auto">
+        <input id="idusuario" name="idusuario" type="hidden" value="">
+         
             <div class="form-group">
                 <label class="form-label" for="email">Nombre</label>
                 <input id="txtnombre" name="txtnombre" type="text" class="form-control" placeholder="Nombre">

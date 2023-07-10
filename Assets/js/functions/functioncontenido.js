@@ -82,6 +82,7 @@ function checkPrivacy(privacidad, idclase, suscripcion) {
 
 const titulo = document.querySelector('.tituloclase');
 const descripcion = document.querySelector('#descripclase');
+const autor = document.querySelector('#idautor');
 
 function getcurso(){
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
@@ -98,6 +99,7 @@ function getcurso(){
 
                 titulo.innerHTML= objdata.titulo;
                 descripcion.innerHTML=objdata.descripcion;
+                autor.innerHTML=objdata.nombre + objdata.apellidos;
 
             } else {
                 swal("Error", objdata.msg, "error");

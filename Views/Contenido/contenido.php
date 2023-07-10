@@ -30,20 +30,20 @@ headerprincipal($data);
                         <img src="images/people/50/guy-6.jpg" width="40" alt="avatar" class="rounded-circle">
                     </span>
                     <div class="media-body">
-                        <a class="card-title m-0" href="teacher-profile.html">Eddie Bryan</a>
-                        <p class="text-50 lh-1 mb-0">Instructor</p>
+                        <a class="card-title m-0" id="idautor" href="teacher-profile.html"> </a>
+                        <p class="text-50 lh-1 mb-0">Docente</p>
                     </div>
                 </div>
             </li>
-            <li class="nav-item navbar-list__item">
+            <!-- <li class="nav-item navbar-list__item">
                 <i class="material-icons text-muted icon--left">schedule</i>
                 2h 46m
             </li>
             <li class="nav-item navbar-list__item">
                 <i class="material-icons text-muted icon--left">assessment</i>
                 Beginner
-            </li>
-            <li class="nav-item ml-sm-auto text-sm-center flex-column navbar-list__item">
+            </li> -->
+            <!-- <li class="nav-item ml-sm-auto text-sm-center flex-column navbar-list__item">
                 <div class="rating rating-24">
                     <div class="rating__item"><i class="material-icons">star</i></div>
                     <div class="rating__item"><i class="material-icons">star</i></div>
@@ -52,7 +52,7 @@ headerprincipal($data);
                     <div class="rating__item"><i class="material-icons">star_border</i></div>
                 </div>
                 <p class="lh-1 mb-0"><small class="text-muted">20 ratings</small></p>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>
