@@ -99,7 +99,7 @@ function getcurso(){
 
                 titulo.innerHTML= objdata.titulo;
                 descripcion.innerHTML=objdata.descripcion;
-                autor.innerHTML=objdata.nombre + objdata.apellidos;
+                autor.innerHTML= objdata.nombre + " " + objdata.apellidos;
 
             } else {
                 swal("Error", objdata.msg, "error");
