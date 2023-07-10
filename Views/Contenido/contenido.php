@@ -9,7 +9,7 @@ headerprincipal($data);
         <div class="hero py-64pt text-center text-sm-left">
             <div class="container page__container">
                 <h1 class="text-white tituloclase"></h1>
-                <p style="color:black !important; font-size: 15px;" class="lead text-white-50 measure-hero-lead">It’s not every day that one of the most important front-end libraries in web development gets a complete overhaul. Keep your skills relevant and up-to-date with this comprehensive introduction to Google’s popular community project.</p>
+                <p style="color:black !important; font-size: 15px;" id="descripclase" class="lead text-white-50 measure-hero-lead"></p>
                 <!-- <div class="d-flex flex-column flex-sm-row align-items-center justify-content-start">
                                     <a href="student-lesson.html"
                                        class="btn btn-outline-white mb-16pt mb-sm-0 mr-sm-16pt">Watch trailer <i class="material-icons icon--right">play_circle_outline</i></a>

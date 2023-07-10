@@ -81,7 +81,7 @@ function checkPrivacy(privacidad, idclase, suscripcion) {
 
 
 const titulo = document.querySelector('.tituloclase');
-
+const descripcion = document.querySelector('#descripclase');
 
 function getcurso(){
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
