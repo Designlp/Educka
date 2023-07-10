@@ -257,10 +257,10 @@ headerprincipal($data);
                     <p class="lh-1">
                         <small class="text-muted">Angular, Web Development</small>
                     </p>
-                    <div class="d-flex flex-column flex-sm-row align-items-center justify-content-start">
+                    <!-- <div class="d-flex flex-column flex-sm-row align-items-center justify-content-start">
                         <a href="teacher-profile.html" class="btn btn-outline-primary mb-16pt mb-sm-0 mr-sm-16pt">Follow</a>
                         <a href="teacher-profile.html" class="btn btn-outline-secondary">View Profile</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
