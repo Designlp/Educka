@@ -20,7 +20,7 @@ headeradmin($data);
                 <input id="txttelefono" name="txttelefono" type="text" class="form-control" placeholder="Telefono">
             </div>
             <div class="form-group">
-                <label class="form-label" for="email">Cedula</label>
+                <label class="form-label" for="email">Cedula de Identidad</label>
                 <input id="txtci" name="txtci" type="text" class="form-control">
             </div>
             <div class="form-group">
