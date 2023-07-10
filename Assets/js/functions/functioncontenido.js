@@ -91,6 +91,7 @@ function getcurso(){
             var objdata = JSON.parse(request.responseText);
     
             if (objdata.estado) {
+                alert();
                 titulo.innerHTML= objdata.titulo;
                 
                 
