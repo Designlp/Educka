@@ -61,7 +61,7 @@ headerprincipal($data);
     <div class="container page__container">
 
         <div class="page-separator">
-            <div class="page-separator__text">Table of Contents</div>
+            <div class="page-separator__text">Tabla de Contenido</div>
         </div>
         <div class="row mb-0">
             <div class="col-lg-7">
@@ -71,7 +71,7 @@ headerprincipal($data);
 
                     <div class="accordion__item open">
                         <a href="#" class="accordion__toggle" data-toggle="collapse" data-parent="#parent">
-                            <span class="flex">Getting Started with Angular</span>
+                            <span class="flex">Comienza las Clases</span>
                             <!-- <span class="accordion__toggle-icon material-icons">keyboard_arrow_down</span> -->
                         </a>
                         <div class="accordion__menu collapse show" id="course-toc-2">
