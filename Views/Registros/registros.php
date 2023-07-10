@@ -1,5 +1,6 @@
 <?php
-headeradmin($data);
+headerprincipal($data);
+
 ?>
 <!-- Page Content -->
 <!-- // END Header -->
@@ -36,7 +37,8 @@ headeradmin($data);
     </div>
 </div>
 <!-- // END Page Content -->
+
 <?php
-footeradmin($data);
-footerscript($data);
+footerprincipal($data);
+
 ?>
