@@ -8,7 +8,7 @@ headerprincipal($data);
     <div class="mdk-box__content">
         <div class="hero py-64pt text-center text-sm-left">
             <div class="container page__container">
-                <h1 class="text-white tituloclase">Angular Fundamentals</h1>
+                <h1 class="text-white tituloclase"></h1>
                 <p style="color:black !important; font-size: 15px;" class="lead text-white-50 measure-hero-lead">It’s not every day that one of the most important front-end libraries in web development gets a complete overhaul. Keep your skills relevant and up-to-date with this comprehensive introduction to Google’s popular community project.</p>
                 <!-- <div class="d-flex flex-column flex-sm-row align-items-center justify-content-start">
                                     <a href="student-lesson.html"
