@@ -97,6 +97,7 @@ function getcurso(){
             if (objdata.estado) {
 
                 titulo.innerHTML= objdata.titulo;
+                descripcion.innerHTML=objdata.descripcion;
 
             } else {
                 swal("Error", objdata.msg, "error");
