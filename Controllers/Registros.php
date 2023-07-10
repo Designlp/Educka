@@ -22,7 +22,7 @@
         //Logica update como
         public function setregistros(){
             if($_POST){	
-            if(empty($_POST['txtnombre']) || empty($_POST['txtapellido']) || empty($_POST['txttelefono'])||  empty($_POST['txtci']) ||  empty($_POST['txtcorreo']) || empty($_POST['txtcontras']))
+            if(empty($_POST['txtnombre']) || empty($_POST['txtapellido']) || empty($_POST['txttelefono'])||  empty($_POST['txtci']) ||  empty($_POST['txtcorreo']))
             {
                 $arrresponse = array("status" => false, "msg" => 'Datos incorrectos.');
             }else{ 
