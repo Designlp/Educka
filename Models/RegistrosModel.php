@@ -53,12 +53,13 @@
 	        	$request = $this->insert($query,$arrdata);
 	        	$return = $request;
 			}else{
-                $return=1; 
+                $return=-1; 
             }
             
             return $return;
         }
  
+
         public function settokenuser(int $iduser, string $token){
             $this->intidusuario = $iduser;
             $this->strtoken= $token;
