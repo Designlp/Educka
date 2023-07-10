@@ -23,10 +23,6 @@ headeradmin($data);
                 <label class="form-label" for="email">Correo</label>
                 <input id="txtcorreo" name="txtcorreo" type="email" class="form-control" placeholder="usuario@gmail.com">
             </div>
-            <div class="form-group">
-                <label class="form-label" for="password">Contraseña</label>
-                <input id="txtcontras" name="txtcontras" type="password" class="form-control" >
-            </div>
             <div class="text-center">
                 <button class="btn btn-primary btncrear" type="submit" >Crear Usuario</button>
             </div>

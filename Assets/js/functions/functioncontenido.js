@@ -1,5 +1,9 @@
 const listclases = document.querySelector('#course-toc-2');
 
+document.addEventListener("DOMContentLoaded",function(){
+    getcurso();
+})
+
 // Obtener información de suscripción del usuario mediante AJAX
 $.ajax({
     url: baseurl + "/Contenido/getusuario",
@@ -91,10 +95,9 @@ function getcurso(){
             var objdata = JSON.parse(request.responseText);
     
             if (objdata.estado) {
-                alert();
+
                 titulo.innerHTML= objdata.titulo;
-                
-                
+
             } else {
                 swal("Error", objdata.msg, "error");
             }
