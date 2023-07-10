@@ -76,13 +76,13 @@ headerprincipal($data);
                         </a>
                         <div class="accordion__menu collapse show" id="course-toc-2">
 
-                            <div class="accordion__menu-link">
+                            <!-- <div class="accordion__menu-link">
                                 <span class="icon-holder icon-holder--small icon-holder--dark rounded-circle d-inline-flex icon--left">
                                     <i class="material-icons icon-16pt">check_circle</i>
                                 </span>
                                 <a class="flex" href="student-lesson.html">Introduction</a>
                                 <span class="text-muted">8m 42s</span>
-                            </div>
+                            </div> -->
 
                      
                             
@@ -98,10 +98,9 @@ headerprincipal($data);
                         <span class="icon-holder icon-holder--outline-secondary rounded-circle d-inline-flex mb-8pt">
                             <i class="material-icons">timer</i>
                         </span>
-                        <h4 class="card-title"><strong>Unlock Library</strong></h4>
-                        <p class="card-subtitle text-70 mb-24pt">Get access to all videos in the library</p>
-                        <a href="pricing.html" class="btn btn-accent mb-8pt">Sign Up - Only $19.00/mo</a>
-                        <p class="mb-0">Have an account? <a href="login.html">Login</a></p>
+                        <h4 class="card-title"><strong>Acceso Limitado</strong></h4>
+                        <p class="card-subtitle text-70 mb-24pt">Para acceder a todo el contenido suscribete</p>
+                   
                     </div>
                 </div>
 
