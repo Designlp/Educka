@@ -19,9 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (obdata.status) {
 
-
-                    fnteditcuenta();
-
                     swal("Usuario Creado", obdata.msg, "success");
                 } else {
                     swal("Error", obdata.msg, "error");
