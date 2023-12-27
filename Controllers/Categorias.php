@@ -24,7 +24,7 @@
         //Visualizacion
         public function getcategorias(){
             $arrdata= $this->model->seleccategorias();
-            $script='';
+       
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-success">Activo</span>';
@@ -34,19 +34,16 @@
 
               
                 $crudopciones='<div class="dropdown">
-                <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
-                    <div class="dropdown-menu dropdown-menu-right" style="">
+                <a  data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
+                    <div class="dropdown-menu dropdown-menu-right">
                         <a class="dropdown-item btneditcategorias" rl="'.$arrdata[$i]['idcategoria'].'">Editar</a>
                         <div class="dropdown-divider"></div>
                         <a  class="dropdown-item text-danger btndelcategorias" rl="'.$arrdata[$i]['idcategoria'].'">Eliminar</a>
                     </div>
                 </div>
                 ';
-                if($i == (count($arrdata)-1)){
-                    //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditcategorias(); fntdelcategorias();</script>';
-                }
-                $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
+             
+                $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.'</div>';
             }
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);
             die();

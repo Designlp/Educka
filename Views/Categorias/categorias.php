@@ -26,21 +26,21 @@ headeradmin($data);
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover table-bordered" id="tablecategorias">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Descripcion</th>
-                                    <th>Estado</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
+
+                    <table id="tablecategorias" class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
         </div>
@@ -58,7 +58,3 @@ footerscript($data);
 
 ?>
 
-<!-- En el getModal se pone el nombre del archivo-->
-</body>
-
-</html>

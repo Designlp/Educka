@@ -8,7 +8,7 @@
              <a href="<?= base_url() ?>" class="sidebar-brand p-0 navbar-height d-flex justify-content-center">
 
                  <span class="avatar avatar-sm ">
-
+                 
                      <span class="avatar-title rounded bg-primary"><img src="<?= media() ?>/images/illustration/student/128/white.svg" class="img-fluid" alt="logo" /></span>
 
                  </span>

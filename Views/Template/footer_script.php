@@ -9,14 +9,14 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="<?= media() ?>/js/jquery-3.3.1.min.js"></script>
         <script src="<?= media() ?>/js/popper.min.js"></script>
-        <!--<script src="<?= media() ?>/js/bootstrap.min.js"></script>-->
+        <script src="<?= media() ?>/js/bootstrap.min.js"></script>
         <script src="<?= media() ?>/vendor/bootstrap.min.js"></script>
         <script src="<?= media() ?>/js/main.js"></script>
         <script src="<?= media() ?>/js/plugins/pace.min.js"></script>
         <script src="<?= media() ?>/js/plugins/bootstrap-notify.min.js"></script>
         <script type="text/javascript" src="<?= media() ?>/js/plugins/sweetalert.min.js"></script>
         <!-- Data table plugin-->
-        <script type="text/javascript" src="<?= media() ?>/js/plugins/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
         
         <!-- Data table plugin-->
         <!-- Permite crear tablas de datos atractivas y altamente funcionales-->
@@ -56,8 +56,11 @@
 
         <!-- Sidebar Mini JS -->
         <script src="<?= media() ?>/js/template/sidebar-mini.js"></script>
+
+        <script src="Assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
         <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
- 
+<!--  
         <script>
             (function() {
                 'use strict';
@@ -71,7 +74,7 @@
                     $(e.target).parent().addClass('active')
                 })
             })()
-        </script>
+        </script> -->
 
 
         <script src="<?= media() ?>/js/functions/<?= $data['page_js'] ?>"></script>

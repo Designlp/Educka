@@ -2,10 +2,16 @@ var tablero;
 //Esto es un js
 document.addEventListener("DOMContentLoaded",function(){
     tablero=$('#tablecategorias').DataTable({
+
+        initComplete: function () {
+            fnteditcategorias();
+            fntdelcategorias();
+        },
+
         "aProcessing":true,
         "aSeverSide":true,
         "language" :{
-            "url":baseurl+"/Assets/js/plugins/es-ES.json"
+            "url":"Assets/js/plugins/es-ES.json"
         },
         "ajax":{
             "url":" "+baseurl+"/Categorias/getcategorias",
@@ -56,9 +62,9 @@ document.addEventListener("DOMContentLoaded",function(){
             }
         }
     }
-},false);
+});
 
-$('#tablecategorias').DataTable();
+
 function openmodal(){
 
     document.querySelector('#idcategoria').value="";
@@ -70,19 +76,13 @@ function openmodal(){
     $('#modalformcategorias').modal("show");
     
 }
-//Funciones Usuarios
-window.addEventListener('load',function(){
 
-},false)
 
 
 //Update
 function fnteditcategorias(){
-    var btneditcategorias=Array.apply(null, document.querySelectorAll(".btneditcategorias"));    
-    btneditcategorias.forEach(function(btneditcategorias){
-        
-        btneditcategorias.addEventListener("click",function(){
-            //alert("Click to close...");
+    $('#tablecategorias').on('click', '.btneditcategorias', function () {
+     
             document.querySelector('#titlemodal').innerHTML = "Actualizar Categorias";
             document.querySelector('.modal-header').classList.replace("headerregister","headerupdate");
             document.querySelector('#btnactionform').classList.replace("btn-primary","btn-info");
@@ -111,7 +111,7 @@ function fnteditcategorias(){
                 }
             }
            
-        });
+ 
     });
     
 }
@@ -120,10 +120,8 @@ function fnteditcategorias(){
 
 function fntdelcategorias(){
    
-    var btndelcategorias = document.querySelectorAll(".btndelcategorias");
+    $('#tablecategorias').on('click', '.btndelcategorias', function () {
 
-    btndelcategorias.forEach(function(btndelcategorias){
-        btndelcategorias.addEventListener("click",function(){
             var idcategoria = this.getAttribute("rl");
             swal({
                 title:"Eliminar Categorias",
@@ -148,13 +146,8 @@ function fntdelcategorias(){
                             var objdata=JSON.parse(request.responseText);
                             if(objdata.status){
                                 swal("Eliminar!",objdata.msg,"success");
-                                //Libreria de reload solucionar
-                                //tablero generico
-                                tablero.ajax.reload(function(){
-                                    //funeditsuario();
-                                    //fundelusuario();
-                                    //fntpermisosrol();
-                                });
+                            
+                                tablero.ajax.reload();
 
                             }else{
                                 swal("Error",objdata.msg,"error");
@@ -165,7 +158,7 @@ function fntdelcategorias(){
 
             });
         });
-    });
+
 }
 
 
