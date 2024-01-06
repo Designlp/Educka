@@ -28,7 +28,8 @@ class Cursos extends Controllers
     public function getcursos()
     {
         $arrdata = $this->model->selectcursos();
-        $script = '';
+        $crudopciones="";
+        
         for ($i = 0; $i < count($arrdata); $i++) {
             if ($arrdata[$i]['estado'] == 1) {
                 $arrdata[$i]['estado'] = '<span class="badge badge-pill badge-success">Activo</span>';
@@ -49,12 +50,9 @@ class Cursos extends Controllers
                 </div>
                 </div>';
 
-            if ($i == (count($arrdata) - 1)) {
-                //Necesario agregar para que funciones las funciones de delete y update
-                $script = '<script type="text/javascript"> fnteditcurso(); fntclasescurso(); fntdelcurso();</script>';
-            }
+       
 
-            $arrdata[$i]['acciones'] = '<div class="text-center">' . $crudopciones . ' ' . $script . '</div>';
+            $arrdata[$i]['acciones'] = '<div class="text-center">' . $crudopciones . '</div>';
         }
 
         echo json_encode($arrdata, JSON_UNESCAPED_UNICODE);
@@ -118,7 +116,10 @@ class Cursos extends Controllers
         $strtitulo = strclean($_POST['txttitulo']);
         $strdescripcion = strclean($_POST['txtdescripcion']);
         $intcategor = intval($_POST['listcategorias']);
+        $intplataforma = intval($_POST['listplataformas']);
+        $intprivacidad = intval($_POST['listprivacidad']);
         $intstatus = intval($_POST['liststatus']);
+        
 
         $filename = $_FILES['materialimg']['name'];
         $extensionArchivo = pathinfo($filename, PATHINFO_EXTENSION);
@@ -127,22 +128,22 @@ class Cursos extends Controllers
         $fileurl = './Assets/archivos/materiales/' . $filename;
 
         if ($intidcurso == 0) {
-            $requestrol = $this->model->insertcurso($intidautor, $intcategor, $strtitulo, $strdescripcion, $intstatus);
+            $requestrol = $this->model->insertcurso($intidautor, $intprivacidad, $intcategor,$intplataforma, $strtitulo, $strdescripcion, $intstatus);
 
             $filename = 'Portada - '.$requestrol.'.'.$extensionArchivo;
             $fileurl = './Assets/archivos/portada-curso/' . $filename;
-            $fileurl2 = '/Assets/archivos/portada-curso/' . $filename;
+            $fileurl2 = './Assets/archivos/portada-curso/' . $filename;
             $requestfile=$this->model->insertfile($requestrol,$filename, $fileurl2);
 
             $option = 1;
         }
         
         if ($intidcurso != 0) {
-            $requestrol = $this->model->updatecurso($intidcurso, $intcategor, $strtitulo, $strdescripcion, $intstatus);
+            $requestrol = $this->model->updatecurso($intidcurso, $intprivacidad, $intcategor,$intplataforma, $strtitulo, $strdescripcion, $intstatus);
 
             $filename = 'Portada - '.$intidcurso.'.'.$extensionArchivo;
             $fileurl = './Assets/archivos/portada-curso/' . $filename;
-            $fileurl2 = '/Assets/archivos/portada-curso/' . $filename;
+            $fileurl2 = './Assets/archivos/portada-curso/' . $filename;
             $requestfile=$this->model->insertfile($intidcurso,$filename, $fileurl2);
 
             $option = 2;

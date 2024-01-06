@@ -3,6 +3,12 @@ var tablero;
 //Prueba a com
 document.addEventListener("DOMContentLoaded",function(){
     tablero=$('#tableplataforma').DataTable({
+
+        initComplete: function () {
+            fnteditplataforma();
+            fntdelplataforma();
+        },
+
         "aProcessing":true,
         "aSeverSide":true,
         "language" :{
@@ -58,8 +64,9 @@ document.addEventListener("DOMContentLoaded",function(){
     }
 
 },false);
-//Activacion del Modal
-$('#tableplataforma').DataTable();
+
+
+
 
 function openmodal(){
     document.querySelector('#idplataforma').value="";
@@ -81,8 +88,7 @@ window.addEventListener('load',function(){
 //Update
 
 function fnteditplataforma(){
-    var btneditplataforma=Array.apply(null, document.querySelectorAll(".btneditplataforma"));
-    btneditplataforma.forEach(function(btneditplataforma){
+    $('#tableplataforma').on('click', '.btneditplataforma', function () {
         
         btneditplataforma.addEventListener("click",function(){
             //alert("Click to close...");

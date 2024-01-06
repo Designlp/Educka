@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
-
-
     if (document.querySelector('#formresetpassword')) {
         let formreset = document.querySelector('#formresetpassword');
         formreset.onsubmit = function (e) {

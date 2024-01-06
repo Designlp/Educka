@@ -22,7 +22,7 @@
 
               <div class="form-group">
                 <label class="control-label">Descripcion</label>
-                <textarea class="form-control" id="txtdescripcion" name="txtdescripcion" rows="2" placeholder="Descripcion de Rol"></textarea>
+                <textarea class="form-control" id="txtdescripcion" name="txtdescripcion" rows="2" placeholder="Descripcion del Curso"></textarea>
               </div>
 
               <div class="form-row">
@@ -54,6 +54,17 @@
                     <small class="text-danger d-none" id="validatearchivo"></small>
                   </div>
                   <ul id="fileList" class="file-list"></ul>
+                </div>
+              </div>
+
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label class="form-label">Privacidad</label>
+                  <select id="listprivacidad" name="listprivacidad" class="form-control custom-select" data-toggle="select">
+                    <option value="0">Privado</option>
+                    <option value="1">Publico</option>
+                  </select>
                 </div>
               </div>
 

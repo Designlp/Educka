@@ -32,9 +32,10 @@
         //Visualizacion
         public function getclases(){
             $idcurso = $_SESSION['idcurso'];
-
+            $crudopciones="";
+            
             $arrdata= $this->model->selectclases($idcurso);
-            $script='';
+         
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-success">Activo</span>';
@@ -58,12 +59,8 @@
                 </div>
                 </div>';
 
-                if($i == (count($arrdata)-1)){
-                    //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditclase();  fntdelcurso();</script>';
-                }
-
-                $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
+            
+                $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.'</div>';
             }
             
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);

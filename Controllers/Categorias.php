@@ -24,7 +24,8 @@
         //Visualizacion
         public function getcategorias(){
             $arrdata= $this->model->seleccategorias();
-       
+            $crudopciones="";
+            
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-success">Activo</span>';

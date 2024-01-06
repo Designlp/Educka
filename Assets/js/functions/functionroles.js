@@ -3,6 +3,13 @@ var tablero;
 //Prueba a com
 document.addEventListener("DOMContentLoaded",function(){
     tablero=$('#tableroles').DataTable({
+
+        initComplete: function () {
+            fnteditrol();
+            fntdelrol();
+            fntpermisosrol();
+        },
+
         "aProcessing":true,
         "aSeverSide":true,
         "language" :{
@@ -62,7 +69,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 },false);
 //Activacion del Modal
-$('#tableroles').DataTable();
+
 
 function openmodal(){
     document.querySelector('#idrol').value="";
@@ -84,12 +91,7 @@ window.addEventListener('load',function(){
 //Update
 
 function fnteditrol(){
-    var btneditrol=Array.apply(null, document.querySelectorAll(".btneditroles"));
- 
-    
-    btneditrol.forEach(function(btneditrol){
-        
-        btneditrol.addEventListener("click",function(){
+    $('#tableroles').on('click', '.btneditroles', function () {
             //alert("Click to close...");
             document.querySelector('#titlemodal').innerHTML = "Actualizar Rol";
             document.querySelector('.modal-header').classList.replace("headerregister","headerupdate");
@@ -130,16 +132,14 @@ function fnteditrol(){
             }
            
         });
-    });
-    //alert(btneditrol);
+
+
 }
 
 //Delete logic
 
 function fntdelrol(){
-    var btndelrol = document.querySelectorAll(".btndelroles");
-    btndelrol.forEach(function(btndelrol){
-        btndelrol.addEventListener("click",function(){
+     $('#tableroles').on('click', '.btndelroles', function () {
             var idrol = this.getAttribute("rl");
             swal({
                 title:"Eliminar Rol",
@@ -178,14 +178,12 @@ function fntdelrol(){
 
             });
         });
-    });
+   
 }
 
 
 function fntpermisosrol(){
-    var btn = document.querySelectorAll(".btnpermisorol");
-    btn.forEach(function(btn){
-        btn.addEventListener("click",function(){
+    $('#tableroles').on('click', '.btnpermisorol', function () {
             var idrol = this.getAttribute("rl");
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             var ajaxUrl = baseurl+'/Permisos/getpermisos/'+idrol;
@@ -201,7 +199,7 @@ function fntpermisosrol(){
             }
             
         });
-    });
+   
 }
 
 function fntsavepermisos(event){

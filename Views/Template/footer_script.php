@@ -16,8 +16,10 @@
         <script src="<?= media() ?>/js/plugins/bootstrap-notify.min.js"></script>
         <script type="text/javascript" src="<?= media() ?>/js/plugins/sweetalert.min.js"></script>
         <!-- Data table plugin-->
-        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
-        
+        <script type="text/javascript" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+        <script src="Assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="Assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
         <!-- Data table plugin-->
         <!-- Permite crear tablas de datos atractivas y altamente funcionales-->
         <script type="text/javascript" src="<?= media() ?>/js/plugins/dataTables.bootstrap.min.js"></script>
@@ -57,10 +59,10 @@
         <!-- Sidebar Mini JS -->
         <script src="<?= media() ?>/js/template/sidebar-mini.js"></script>
 
-        <script src="Assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+ 
 
         <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
-<!--  
+        <!--  
         <script>
             (function() {
                 'use strict';

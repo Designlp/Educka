@@ -24,7 +24,8 @@
             $this->views->getview($this,"userscenter",$data);
             
         }
-        //Visualizacion
+        
+
         public function getusuarios(){
             $arrdata= $this->model->selectusuarios();
             $script='';
@@ -44,17 +45,14 @@
                 $crudopciones='<div class="dropdown">
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
                 <div class="dropdown-menu dropdown-menu-right" style="">
-                    <a onClick="fntviewcliente('.$arrdata[$i]['idusuario'].')" class="dropdown-item">Detalles</a>
+                    <a class="dropdown-item btnviewusuario" rl="'.$arrdata[$i]['idusuario'].'">Detalles</a>
                     <a class="dropdown-item btneditusuario" rl="'.$arrdata[$i]['idusuario'].'">Editar</a>
                     <div class="dropdown-divider"></div>
                     <a  class="dropdown-item text-danger btndelusuario" rl="'.$arrdata[$i]['idusuario'].'">Eliminar</a>
                 </div>
                 </div>';
 
-                if($i == (count($arrdata)-1)){
-                    //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditusuario(); fntdelusuario();</script>';
-                }
+            
 
                 $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
             }
@@ -183,9 +181,4 @@
             die();
 
         }
-
-        
-
-
-
     }

@@ -40,36 +40,35 @@
         }
 
 
-        public function insertestudiantes(int $idrol,string $ci, string $nombre, string $apellido, string $email, int $telefono, string $suscripcion ,string $password, int $estado){
+        public function insertestudiantes(int $idrol,string $ci, string $nombre, string $apellido, int $telefono,string $email,  string $suscripcion ,string $password, int $estado){
             $this->intidrol = $idrol;
 			$this->intci = $ci;
 			$this->strnombre = $nombre;
 			$this->strapellido = $apellido;
-            $this->strcorreo = $email;
 			$this->inttelefono = $telefono;
+            $this->strcorreo = $email;
             $this->intsuscripcion = $suscripcion;
             $this->strpassword = $password;
 			$this->intestado = $estado;
             
 			$return = 0;
-
 			$sql = "SELECT * FROM tusuarios 
                     WHERE correo = '{$this->strcorreo}' OR ci = '{$this->intci}'";
 			$request = $this->selectall($sql);
 
 			if(empty($request))
 			{
-				$query  = "INSERT INTO tusuarios(idroles,ci,nombre, apellidos,correo, telefono, suscripcion, password ,estado) 
+				$query  = "INSERT INTO tusuarios(idroles,ci,nombre, apellidos, telefono, correo, suscripcion, password ,estado) 
 								  VALUES(?,?,?,?,?,?,?,?,?)";
 	        	$arrdata = array($this->intidrol,
         						$this->intci,
         						$this->strnombre,
                                 $this->strapellido,
-        						$this->strcorreo,
         						$this->inttelefono,
+        						$this->strcorreo,
                                 $this->intsuscripcion,
                                 $this->strpassword,
-                                $this->intestado,
+                                $this->intestado
                             );
 	        	$request = $this->insert($query,$arrdata);
 	        	$return = $request;

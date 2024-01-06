@@ -5,11 +5,11 @@
 <!-- Page Content -->
 
                 <div class="container page__container page-section pb-0">
-                    <h1 class="h2 mb-0">Tablessssss</h1>
+                    <h1 class="h2 mb-0">Administracion de Cursos</h1>
                     <ol class="breadcrumb m-0 p-0">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item">Components</li>
-                        <li class="breadcrumb-item active">Tables</li>
+                        <li class="breadcrumb-item">Home</a></li>
+                        <li class="breadcrumb-item">Administracion</li>
+                        <li class="breadcrumb-item active">Cursos</li>
                     </ol>
                     <br>
                     <button class="btn btn-primary btn-sm" type="button" onclick="openmodal()"  >Nuevo</button>
@@ -20,7 +20,7 @@
                 <div class="container page__container page-section">
 
                     <div class="page-separator">
-                        <div class="page-separator__text">Employees</div>
+                        <div class="page-separator__text">Cursos</div>
                     </div>
 
                     <div class="row">

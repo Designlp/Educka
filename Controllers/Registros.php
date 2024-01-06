@@ -5,9 +5,7 @@ class Registros extends Controllers
     {
         parent::__construct();
         session_start();
-        if (empty($_SESSION['login'])) {
-            header('Location: ' . base_url() . "/login");
-        }
+       
         //getpermisos(3);
     }
 

@@ -3,6 +3,12 @@ var tablero;
 //Prueba a com
 document.addEventListener("DOMContentLoaded",function(){
     tablero=$('#tableusuarios').DataTable({
+        initComplete: function () {
+            fnteditusuario();
+            fntdelusuario();
+            fntviewcliente();
+        },
+
         "aProcessing":true,
         "aSeverSide":true,
         "language" :{
@@ -57,7 +63,7 @@ document.addEventListener("DOMContentLoaded",function(){
                    
                 } else{
                     swal("Error",obdata.msg,"error");
-                    //forminsert.reset();
+          
                 }
             }
         }
@@ -65,7 +71,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 },false);
 
-$('#tableusuarios').DataTable();
+
 function openmodal(){
     document.querySelector('#idusuario').value="";
     document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";
@@ -84,10 +90,7 @@ window.addEventListener('load',function(){
 
 //Update
 function fnteditusuario(){
-    var btneditusuario=Array.apply(null, document.querySelectorAll(".btneditusuario"));    
-    btneditusuario.forEach(function(btneditusuario){
-        
-        btneditusuario.addEventListener("click",function(){
+    $('#tableusuarios').on('click', '.btneditusuario', function () {
             //alert("Click to close...");
             document.querySelector('#titlemodal').innerHTML = "Actualizar Usuario";
             document.querySelector('.modal-header').classList.replace("headerregister","headerupdate");
@@ -130,7 +133,7 @@ function fnteditusuario(){
             }
            
         });
-    });
+   
     
 }
 //Especial
@@ -152,11 +155,7 @@ function fntrolesusuario(){
 }
 //Delete logic
 function fntdelusuario(){
-   
-    var btndelusuario = document.querySelectorAll(".btndelusuario");
-
-    btndelusuario.forEach(function(btndelusuario){
-        btndelusuario.addEventListener("click",function(){
+    $('#tableusuarios').on('click', '.btndelusuario', function () {
             var idusuarios = this.getAttribute("rl");
             swal({
                 title:"Eliminar Usuario",
@@ -177,7 +176,7 @@ function fntdelusuario(){
                 request.send(strdata);
                 request.onreadystatechange =function(){
                         if(request.readyState == 4 && request.status==200){
-                            console.log(request.responseText);
+                            
                             var objdata=JSON.parse(request.responseText);
                             if(objdata.status){
                                 swal("Eliminar!",objdata.msg,"success");
@@ -198,12 +197,16 @@ function fntdelusuario(){
 
             });
         });
-    });
+
 }
 
 //Ver al usuario
-function fntviewcliente(idpersona){
-    var idpersona = idpersona;
+function fntviewcliente(){
+
+    $('#tableusuarios').on('click', '.btnviewusuario', function () {
+    var idpersona = this.getAttribute("rl");
+
+
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxurl = baseurl+'/Usuarios/getusuario/'+idpersona;
     request.open("GET",ajaxurl,true);
@@ -237,4 +240,6 @@ function fntviewcliente(idpersona){
             }
         }
     }
+    })        	
+
 }

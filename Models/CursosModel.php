@@ -9,6 +9,8 @@
         private $strtitulo;
         private $strdescripcion;
         private $intcategoria;
+        private $intplataforma;
+        private $intprivacidad;
         private $intestado;
      
         private $strfilename;
@@ -46,9 +48,11 @@
         }
 
 
-        public function insertcurso(int $idautor,int $idcategoria,string $titulo, string $descripcion,  int $estado){
+        public function insertcurso(int $idautor, int $idprivacidad, int $idcategoria,int $idplataforma,string $titulo, string $descripcion,  int $estado){
             $this->intidusuario = $idautor;
             $this->intcategoria = $idcategoria;
+            $this->intplataforma = $idplataforma;
+            $this->intprivacidad = $idprivacidad;
 			$this->strtitulo = $titulo;
 			$this->strdescripcion = $descripcion;
           
@@ -63,10 +67,12 @@
 
 			if(empty($request))
 			{
-				$query  = "INSERT INTO tcursos(idusuario,idcategoria,titulo,descripcion,estado) 
-								  VALUES(?,?,?,?,?)";
+				$query  = "INSERT INTO tcursos(idusuario,privacidad,idcategoria,idplataforma ,titulo,descripcion,estado) 
+								  VALUES(?,?,?,?,?,?,?)";
 	        	$arrdata = array($this->intidusuario,
+                                $this->intprivacidad,
                                 $this->intcategoria,
+                                $this->intplataforma,
                                 $this->strtitulo,
         						$this->strdescripcion,
                                 $this->intestado,
@@ -96,10 +102,12 @@
         }
         
         //Update
-        public function updatecurso(int $idcurso,int $idcategoria, string $titulo, string $descripcion, int $estado){
+        public function updatecurso(int $idcurso,int $idprivacidad ,int $idcategoria,int $idplataforma, string $titulo, string $descripcion, int $estado){
             
             $this->intidcurso = $idcurso;
             $this->intcategoria = $idcategoria;
+            $this->intplataforma = $idplataforma;
+            $this->intprivacidad = $idprivacidad;
 			$this->strtitulo = $titulo;
 			$this->strdescripcion = $descripcion;
            
@@ -111,8 +119,8 @@
             $requestupdate = $this->selectall($sql);
             
             if(empty($requestupdate)){
-                $queryupdate="UPDATE tcursos SET idcategoria = ?,titulo=?,descripcion=? , estado = ? WHERE idcurso=$this->intidcurso";
-                $arrdata = array($this->intcategoria ,$this->strtitulo,$this->strdescripcion,$this->intestado);
+                $queryupdate="UPDATE tcursos SET privacidad=?, idcategoria = ?, idplataforma=?, titulo=?, descripcion=? , estado = ? WHERE idcurso=$this->intidcurso";
+                $arrdata = array($this->intprivacidad,$this->intcategoria, $this->intplataforma ,$this->strtitulo,$this->strdescripcion,$this->intestado);
                 $requestupdate= $this->update($queryupdate,$arrdata);
                 $return=$requestupdate;
             }else{

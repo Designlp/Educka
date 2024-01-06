@@ -3,10 +3,17 @@ var tablero;
 //Prueba a com
 document.addEventListener("DOMContentLoaded", function () {
     tablero = $('#tablecursos').DataTable({
+
+        initComplete: function () {
+            fnteditcurso();
+            fntdelcurso();
+            fntclasescurso();
+        },
+
         "aProcessing": true,
         "aSeverSide": true,
         "language": {
-            "url": baseurl + "/Assets/js/plugins/es-ES.json"
+            "url": "Assets/js/plugins/es-ES.json"
         },
         "ajax": {
             "url": " " + baseurl + "/Cursos/getcursos",
@@ -63,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 }, false);
 
-$('#tablecursos').DataTable();
+
 function openmodal() {
     document.querySelector('#idcurso').value = "";
     document.querySelector('#titlemodal').innerHTML = "Nuevo Curso";
@@ -123,10 +130,7 @@ function fntcursosplataforma() {
 }
 //Updates
 function fnteditcurso() {
-    var btneditusuario = Array.apply(null, document.querySelectorAll(".btneditcurso"));
-    btneditusuario.forEach(function (btneditusuario) {
-
-        btneditusuario.addEventListener("click", function () {
+     $('#tablecursos').on('click', '.btneditcurso', function () {
             //alert("Click to close...");s
             document.querySelector('#titlemodal').innerHTML = "Actualizar Usuario";
             document.querySelector('.modal-header').classList.replace("headerregister", "headerupdate");
@@ -167,7 +171,7 @@ function fnteditcurso() {
             }
 
         });
-    });
+
 
 }
 
@@ -176,10 +180,8 @@ function fnteditcurso() {
 //Delete logic
 function fntdelcurso() {
 
-    var btndelusuario = document.querySelectorAll(".btndelcurso");
+    $('#tablecursos').on('click', '.btndelcurso', function () {
 
-    btndelusuario.forEach(function (btndelusuario) {
-        btndelusuario.addEventListener("click", function () {
             var idusuarios = this.getAttribute("rl");
             swal({
                 title: "Eliminar Curso",
@@ -221,17 +223,14 @@ function fntdelcurso() {
 
             });
         });
-    });
+    
 }
 
 
 
 function fntclasescurso() {
 
-    var btndetallesclases = document.querySelectorAll(".btnclases");
-
-    btndetallesclases.forEach(function (btndetallesclases) {
-        btndetallesclases.addEventListener("click", function () {
+    $('#tablecursos').on('click', '.btnclases', function () {
             var idcurso = this.getAttribute("rl");
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             var ajaxUrl = baseurl + '/Cursos/asingclases/' + idcurso;
@@ -243,7 +242,7 @@ function fntclasescurso() {
                 }
             };
         });
-    });
+   
 }
 
 

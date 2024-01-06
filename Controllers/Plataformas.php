@@ -27,17 +27,15 @@
         //Visualizacion
         public function getplataformas(){
             $arrdata= $this->model->selecplataformas();
-            $script='';
+            $crudopciones='';
             for($i=0;$i< count($arrdata);$i++){
                 if($arrdata[$i]['estado']==1){
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-success">Activo</span>';
                 }else{
                     $arrdata[$i]['estado']='<span class="badge badge-pill badge-danger">Inactivo</span>';
                 }
-                if($i == (count($arrdata)-1)){
-                    //Necesario agregar para que funciones las funciones de delete y update
-                    $script='<script type="text/javascript"> fnteditplataforma(); fntdelplataforma();</script>';
-                }
+              
+                
                 $crudopciones='<div class="dropdown">
                 <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
                 <div class="dropdown-menu dropdown-menu-right" style="">
@@ -46,7 +44,8 @@
                     <a class="dropdown-item text-danger btndelplataforma" rl="'.$arrdata[$i]['idplataforma'].'">Eliminar</a>
                 </div>
                 </div>';
-                $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.' '.$script.'</div>';
+
+                $arrdata[$i]['acciones']= '<div class="text-center">'.$crudopciones.'</div>';
             }
             
             echo json_encode($arrdata,JSON_UNESCAPED_UNICODE);

@@ -2,10 +2,17 @@ var tablero;
 //Esto es un js
 document.addEventListener("DOMContentLoaded",function(){
     tablero=$('#tableestudiantes').DataTable({
+
+        initComplete: function () {
+            fnteditestudiantes();
+            fntdelestudiantes();
+            fntviewcliente();
+        },
+
         "aProcessing":true,
         "aSeverSide":true,
         "language" :{
-            "url":baseurl+"/Assets/js/plugins/es-ES.json"
+            "url":"Assets/js/plugins/es-ES.json"
         },
         "ajax":{
             "url":" "+baseurl+"/Estudiantes/getestudiantes",
@@ -48,9 +55,7 @@ document.addEventListener("DOMContentLoaded",function(){
                     swal("Administración de Estudiantes", obdata.msg ,"success");
                     //Ojo 
                     tablero.ajax.reload(function(){
-                        //fnteditrol();
-                        //fntdelrol();
-                        //fntpermisosrol();
+                       
                     });
                 } else{
                     swal("Error",obdata.msg,"error");
@@ -61,7 +66,7 @@ document.addEventListener("DOMContentLoaded",function(){
     }
 },false);
 
-$('#tableestudiantes').DataTable();
+
 function openmodal(){
 
     document.querySelector('#idusuario').value="";
@@ -81,11 +86,7 @@ window.addEventListener('load',function(){
 
 //Update
 function fnteditestudiantes(){
-    var btneditestudiantes=Array.apply(null, document.querySelectorAll(".btneditestudiantes"));    
-    btneditestudiantes.forEach(function(btneditestudiantes){
-        
-        btneditestudiantes.addEventListener("click",function(){
-            //alert("Click to close...");
+    $('#tableestudiantes').on('click', '.btneditestudiantes', function () {
             document.querySelector('#titlemodal').innerHTML = "Actualizar Estudiante";
             document.querySelector('.modal-header').classList.replace("headerregister","headerupdate");
             document.querySelector('#btnactionform').classList.replace("btn-primary","btn-info");
@@ -122,18 +123,14 @@ function fnteditestudiantes(){
             }
            
         });
-    });
-    
+   
 }
 
 //Delete logic
 
 function fntdelestudiantes(){
    
-    var btndelusuario = document.querySelectorAll(".btndelusuario");
-
-    btndelusuario.forEach(function(btndelusuario){
-        btndelusuario.addEventListener("click",function(){
+    $('#tableestudiantes').on('click', '.btndelusuario', function () {
             var idusuarios = this.getAttribute("rl");
             swal({
                 title:"Eliminar Usuario",
@@ -175,12 +172,14 @@ function fntdelestudiantes(){
 
             });
         });
-    });
+   
 }
 
 //Ver al usuario
-function fntviewcliente(idpersona){
-    var idpersona = idpersona;
+function fntviewcliente(){
+    $('#tableestudiantes').on('click', '.btnviewusuario', function () {
+    var idpersona = this.getAttribute("rl");
+
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxurl = baseurl+'/Usuarios/getusuario/'+idpersona;
     request.open("GET",ajaxurl,true);
@@ -214,4 +213,5 @@ function fntviewcliente(idpersona){
             }
         }
     }
+})
 }

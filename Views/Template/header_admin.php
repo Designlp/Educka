@@ -43,15 +43,29 @@
    <link type="text/css" href="<?= media() ?>/css/quill.css" rel="stylesheet">
    <link type="text/css" href="<?= media() ?>/css/style.css" rel="stylesheet">
 
-   <link href="<?= media() ?>/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+   <!-- <link href="<?= media() ?>/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" /> -->
+   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
+   <link href="Assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+   <link href="Assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css" />
 </head>
 
 <body class="layout-mini layout-mini">
 
-   <div class="preloader">
-   </div>
+   
+<div class="preloader">
+        <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+        </div>
+
+        
+    </div>
 
    <div class="mdk-drawer-layout js-mdk-drawer-layout" data-push data-responsive-width="992px">
       <div class="mdk-drawer-layout__content page-content">

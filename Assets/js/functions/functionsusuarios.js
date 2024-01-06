@@ -22,10 +22,13 @@ document.addEventListener("DOMContentLoaded",function(){
             { "data": 'estado' },
             { "data": 'acciones' }
         ],
-        "resonsieve":"true",
-        "bDestroy":true,
-        "iDisplayLength":10,
-        "order":[[0,"desc"]]
+        responsive: true,
+        bDestroy: true,
+        iDisplayLength: 10,
+        order: [[0, "desc"]],
+        columnDefs: [
+            { "type": "num", "targets": 0 }
+        ],
 
     });
     //Insert

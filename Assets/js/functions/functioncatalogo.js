@@ -351,34 +351,34 @@ listsuscripcion.innerHTML = suscripcionHTML;
 
 function applyFilters() {
     const selectedCategories = Array.from(listcategoria.querySelectorAll('input[type="checkbox"]:checked')).map(function (checkbox) {
-      return checkbox.value;
+        return checkbox.value;
     });
-  
-    const selectedPlatforms = Array.from(listplataforma.querySelectorAll('input[type="checkbox"]:checked')).map(function (checkbox) {
-      return checkbox.value;
-    });
-  
-    const selectedSuscripcion = listsuscripcion.querySelector('input[type="radio"]:checked').value;
-  
-    if ((selectedCategories.length === 0 || selectedCategories.includes('all')) && (selectedPlatforms.length === 0 || selectedPlatforms.includes('all')) && selectedSuscripcion === 'all') {
-      // No se seleccionaron categorías, plataformas ni suscripción, se muestran todos los cursos
-      filteredData = catalogoData.slice();
-    } else {
-      // Filtrar los datos por categorías, plataformas y suscripción seleccionadas
-    
-      filteredData = catalogoData.filter(function (clase) {
-        const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(clase.idcategoria.toString());
-        const platformMatch = selectedPlatforms.length === 0 || selectedPlatforms.includes(clase.idplataforma.toString());
-        const suscripcionMatch = selectedSuscripcion === 'all' ||  selectedSuscripcion.includes(clase.privacidad.toString());
-        return categoryMatch && platformMatch && suscripcionMatch;
-      });
-    }
-  
-    handlePageChange(1);
-  }
-  
 
-  // Eventos para cambiar los filtros de categorías y plataformas
+    const selectedPlatforms = Array.from(listplataforma.querySelectorAll('input[type="checkbox"]:checked')).map(function (checkbox) {
+        return checkbox.value;
+    });
+
+    const selectedSuscripcion = listsuscripcion.querySelector('input[type="radio"]:checked').value;
+
+    if ((selectedCategories.length === 0 || selectedCategories.includes('all')) && (selectedPlatforms.length === 0 || selectedPlatforms.includes('all')) && selectedSuscripcion === 'all') {
+        // No se seleccionaron categorías, plataformas ni suscripción, se muestran todos los cursos
+        filteredData = catalogoData.slice();
+    } else {
+        // Filtrar los datos por categorías, plataformas y suscripción seleccionadas
+
+        filteredData = catalogoData.filter(function (clase) {
+            const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(clase.idcategoria.toString());
+            const platformMatch = selectedPlatforms.length === 0 || selectedPlatforms.includes(clase.idplataforma.toString());
+            const suscripcionMatch = selectedSuscripcion === 'all' || selectedSuscripcion.includes(clase.privacidad.toString());
+            return categoryMatch && platformMatch && suscripcionMatch;
+        });
+    }
+
+    handlePageChange(1);
+}
+
+
+// Eventos para cambiar los filtros de categorías y plataformas
 listcategoria.addEventListener('change', applyFilters);
 listplataforma.addEventListener('change', applyFilters);
 listsuscripcion.addEventListener('change', applyFilters);
@@ -391,15 +391,15 @@ listsuscripcion.addEventListener('change', applyFilters);
 
 //evento para redireccion al curso
 function fntcurso(rl) {
-   var idcurso= rl;
-      
-            var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            var ajaxUrl = baseurl+'/Catalogo/asingclases/'+idcurso;
-            request.open("GET",ajaxUrl,true);
-            request.send();
-            request.onreadystatechange =function(){
-                if(request.readyState == 4 && request.status==200){
-                    window.location = baseurl + "/Contenido";
-                }
-            };
-    }
+    var idcurso = rl;
+
+    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    var ajaxUrl = baseurl + '/Catalogo/asingclases/' + idcurso;
+    request.open("GET", ajaxUrl, true);
+    request.send();
+    request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
+            window.location = baseurl + "/Contenido";
+        }
+    };
+}

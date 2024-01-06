@@ -3,13 +3,19 @@ var tablero;
 
 document.addEventListener("DOMContentLoaded", function () {
     tablero = $('#tableclases').DataTable({
+        
+        initComplete: function () {
+            fnteditclase();
+            fntdelcurso();
+        },
+
         "aProcessing": true,
         "aSeverSide": true,
         "language": {
-            "url":baseurl+"/Assets/js/plugins/es-ES.json"
+            "url":"Assets/js/plugins/es-ES.json"
         },
         "ajax": {
-            "url": " " + baseurl + "/Clases/getclases",
+            "url": baseurl + "/Clases/getclases",
             "dataSrc": ""
         },
         "columns": [
@@ -64,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 }, false);
 
-$('#tableclases').DataTable();
+
 function openmodal() {
     document.querySelector('#idclase').value = "";
     document.querySelector('#titlemodal').innerHTML = "Nuevo Usuario";
@@ -84,11 +90,9 @@ window.addEventListener('load', function () {
 
 //Updates
 function fnteditclase() {
-    var btnedit = Array.apply(null, document.querySelectorAll(".btneditclase"));
-    btnedit.forEach(function (btnedit) {
-
-        btnedit.addEventListener("click", function () {
+    $('#tableclases').on('click', '.btneditclase', function () {
             //alert("Click to close...");s
+
             document.querySelector('#titlemodal').innerHTML = "Actualizar Usuario";
             document.querySelector('.modal-header').classList.replace("headerregister", "headerupdate");
             document.querySelector('#btnactionform').classList.replace("btn-primary", "btn-info");
@@ -129,7 +133,7 @@ function fnteditclase() {
             }
 
         });
-    });
+
 
 }
 
@@ -137,10 +141,8 @@ function fnteditclase() {
 
 function fntdelcurso() {
 
-    var btndelusuario = document.querySelectorAll(".btndelcurso");
-
-    btndelusuario.forEach(function (btndelusuario) {
-        btndelusuario.addEventListener("click", function () {
+    $('#tableclases').on('click', '.btndelcurso', function () {
+        
             var idusuarios = this.getAttribute("rl");
             swal({
                 title: "Eliminar Curso",
@@ -182,7 +184,7 @@ function fntdelcurso() {
 
             });
         });
-    });
+  
 }
 
 

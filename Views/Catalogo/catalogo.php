@@ -3,8 +3,6 @@ headerprincipal($data);
 
 ?>
 
-<div data-push data-responsive-width="992px" data-has-scrolling-region data-fullbleed class="mdk-drawer-layout js-mdk-drawer-layout">
-    <div class="mdk-drawer-layout__content" data-perfect-scrollbar>
 
         <div class="page-section">
             <div class="container page__container">

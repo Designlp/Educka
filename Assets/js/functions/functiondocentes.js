@@ -2,10 +2,17 @@ var tablero;
 //Esto es un js
 document.addEventListener("DOMContentLoaded",function(){
     tablero=$('#tabledocentes').DataTable({
+
+        initComplete: function () {
+            fnteditdocentes();
+            fntdeldocentes();
+            fntviewcliente();
+        },
+
         "aProcessing":true,
         "aSeverSide":true,
         "language" :{
-            "url":baseurl+"/Assets/js/plugins/es-ES.json"
+            "url":"Assets/js/plugins/es-ES.json"
         },
         "ajax":{
             "url":" "+baseurl+"/Docentes/getdocentes",
@@ -60,11 +67,11 @@ document.addEventListener("DOMContentLoaded",function(){
     }
 },false);
 
-$('#tabledocentes').DataTable();
+
 function openmodal(){
 
     document.querySelector('#idusuario').value="";
-    document.querySelector('#titlemodal').innerHTML = "Nuevo Estudiante";
+    document.querySelector('#titlemodal').innerHTML = "Nuevo Docente";
     document.querySelector('.modal-header').classList.replace("headerupdate","headerregister");
     document.querySelector('#btnactionform').classList.replace("btn-info","btn-primary");
     document.querySelector('#btntext').innerHTML="Guardar";
@@ -80,10 +87,7 @@ window.addEventListener('load',function(){
 
 //Update
 function fnteditdocentes(){
-    var btneditdocentes=Array.apply(null, document.querySelectorAll(".btneditdocentes"));    
-    btneditdocentes.forEach(function(btneditdocentes){
-        
-        btneditdocentes.addEventListener("click",function(){
+    $('#tabledocentes').on('click', '.btneditdocentes', function () {
             //alert("Click to close...");
             document.querySelector('#titlemodal').innerHTML = "Actualizar Docente";
             document.querySelector('.modal-header').classList.replace("headerregister","headerupdate");
@@ -121,18 +125,14 @@ function fnteditdocentes(){
             }
            
         });
-    });
-    
+ 
 }
 
 //Delete logic
 
 function fntdeldocentes(){
    
-    var btndeldocentes = document.querySelectorAll(".btndeldocentes");
-
-    btndeldocentes.forEach(function(btndeldocentes){
-        btndeldocentes.addEventListener("click",function(){
+    $('#tabledocentes').on('click', '.btndeldocentes', function () {
             var idusuarios = this.getAttribute("rl");
             swal({
                 title:"Eliminar Docente",
@@ -174,11 +174,13 @@ function fntdeldocentes(){
 
             });
         });
-    });
+  
 }
 
 //Ver al usuario
-function fntviewcliente(idpersona){
+function fntviewcliente(){
+    $('#tabledocentes').on('click', '.btnviewdocentes', function () {
+        var idpersona = this.getAttribute("rl");
     var idpersona = idpersona;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxurl = baseurl+'/Usuarios/getusuario/'+idpersona;
@@ -213,4 +215,5 @@ function fntviewcliente(idpersona){
             }
         }
     }
+})
 }

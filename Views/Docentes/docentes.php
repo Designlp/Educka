@@ -4,11 +4,11 @@ headeradmin($data);
 <!-- Page Content -->
 
 <div class="container page__container page-section pb-0">
-    <h1 class="h2 mb-0">Tables</h1>
+    <h1 class="h2 mb-0">Administracion de Docentes</h1>
     <ol class="breadcrumb m-0 p-0">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item">Components</li>
-        <li class="breadcrumb-item active">Tables</li>
+        <li class="breadcrumb-item">Administracion</li>
+        <li class="breadcrumb-item active">Docentes</li>
     </ol>
     <br>
     <button class="btn btn-primary btn-sm" type="button" onclick="openmodal()">Nuevo</button>
@@ -19,7 +19,7 @@ headeradmin($data);
 <div class="container page__container page-section">
 
     <div class="page-separator">
-        <div class="page-separator__text">Employees</div>
+        <div class="page-separator__text">Docentes</div>
     </div>
 
     <div class="row">
